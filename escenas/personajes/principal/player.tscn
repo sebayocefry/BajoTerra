@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1g1xyccjsj8f" path="res://assets/movimientoPersonaje/char_run_right_anim_strip_6.png" id="7_oprun"]
 [ext_resource type="Texture2D" uid="uid://bndoijoq77umo" path="res://assets/movimientoPersonaje/char_run_up_anim_strip_6.png" id="8_a8ls1"]
 [ext_resource type="Script" uid="uid://buegdhl065y1r" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
+[ext_resource type="Script" uid="uid://bo4njsikkv4pc" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_ur7pv")
@@ -405,3 +406,6 @@ autoplay = "idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353022949]
 position = Vector2(3172, 2044)
 shape = SubResource("RectangleShape2D_ur7pv")
+
+[node name="Movimiento" type="Node" parent="." unique_id=434910059]
+script = ExtResource("10_oecxe")
