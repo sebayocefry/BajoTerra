@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dhsh3d78phm"]
+
+[ext_resource type="Texture2D" uid="uid://b0pouugiatlfy" path="res://demonio.png" id="1_d4y2b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6r3ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d4y2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re0ri"]
+size = Vector2(15453, 17654)
+
+[node name="diablo" type="CharacterBody2D" unique_id=1162291902]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1402524528]
+position = Vector2(18256.252, 11012.002)
+scale = Vector2(28.327734, 40.656506)
+sprite_frames = SubResource("SpriteFrames_6r3ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663275540]
+position = Vector2(17356, 8156)
+shape = SubResource("RectangleShape2D_re0ri")

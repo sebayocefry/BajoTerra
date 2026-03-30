@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://k3tcwhntjle4"]
+
+[ext_resource type="Texture2D" uid="uid://dv4oqv16y06bp" path="res://assets/decoracion/altarfuego.png" id="1_qvj82"]
+
+[node name="puertafuego" type="Node2D" unique_id=227412734]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657384709]
+position = Vector2(7135.5005, -11036)
+scale = Vector2(23.12435, 22.554688)
+texture = ExtResource("1_qvj82")
