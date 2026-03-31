@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var mana : int = 0
 #el oro en enteros, que se redonde nomas
 @export var oro : int = 0
-#@export var listaObjetos : Array[Objeto] = []
+@export var listaObjetos : Array[Objeto] = []
 
 @onready var animation_sprite = $AnimatedSprite2D
 # Instanciamos la funcion de movimiento 

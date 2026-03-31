@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Consumible" format=3 uid="uid://bjqoclop8cuck"]
+
+[ext_resource type="Script" uid="uid://cfvgcgcvi2o8" path="res://scripts/objetos/consumibles/consumible.gd" id="1_1x4ok"]
+
+[resource]
+script = ExtResource("1_1x4ok")
+cura_vida = 50
+metadata/_custom_type_script = "uid://cfvgcgcvi2o8"
