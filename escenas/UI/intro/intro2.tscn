@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b1qx3lmhuuubb"]
+
+[ext_resource type="Script" uid="uid://b5t10itfp0rhw" path="res://scripts/UI/intro/intro2.gd" id="1_680p7"]
+[ext_resource type="Texture2D" uid="uid://b2wkkwsc6e8df" path="res://assets/fondos_intro/Bruja.png" id="2_2hp7p"]
+[ext_resource type="AudioStream" uid="uid://gogroj1t3hpk" path="res://musica/intro/luisranm-musica-fundo-suspense-e-terror-423727.mp3" id="3_n7ubq"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_kckwp"]
+
+[node name="intro2" type="Node2D" unique_id=1791498578]
+script = ExtResource("1_680p7")
+
+[node name="Control" type="Control" parent="." unique_id=834387898]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=539963088]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1885356255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -13.0
+offset_right = 1491.0
+offset_bottom = 971.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7552058, 0.66147393)
+texture = ExtResource("2_2hp7p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2106816452]
+stream = ExtResource("3_n7ubq")
+volume_db = -25.752
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=182479143]
+
+[node name="DialogueLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1339335630]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_kckwp")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"

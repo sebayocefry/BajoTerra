@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b1x77dfagdfuy"]
+
+[ext_resource type="Script" uid="uid://0ui1nm3v0b38" path="res://scripts/UI/iu_principal.gd" id="1_uwkqv"]
+[ext_resource type="Texture2D" uid="uid://cm1yklyer5iwd" path="res://assets/fondos_intro/EntradaMina.png" id="2_2kxjt"]
+[ext_resource type="FontFile" uid="uid://cesbn4yurrfjs" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="3_4scsb"]
+[ext_resource type="AudioStream" uid="uid://f1732ls5351x" path="res://musica/intro/slimeyfox-the-last-terror-472321.mp3" id="4_1rqw0"]
+[ext_resource type="AudioStream" uid="uid://cr4r8ci24own8" path="res://musica/intro/universfield-mouse-click-117076.mp3" id="4_2kxjt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwkqv"]
+bg_color = Color(0.011764706, 0.023529412, 0.02745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akdx2"]
+bg_color = Color(0.011764706, 0.023529412, 0.02745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4scsb"]
+bg_color = Color(0.011764706, 0.023529412, 0.02745098, 1)
+
+[node name="IU" type="Control" unique_id=632528346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwkqv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1252781073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1011077361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2kxjt")
+expand_mode = 2
+stretch_mode = 6
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=902819192]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -169.0
+offset_right = 88.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 9
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1466716518]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4scsb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_uwkqv")
+text = "Nueva Partida"
+
+[node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1321157683]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4scsb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_akdx2")
+text = "Cargar Partida "
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=257802728]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4scsb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4scsb")
+text = "SALIR"
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="." unique_id=1702152959]
+stream = ExtResource("4_1rqw0")
+volume_db = -30.705
+autoplay = true
+
+[node name="Boton" type="AudioStreamPlayer" parent="." unique_id=384960864]
+stream = ExtResource("4_2kxjt")
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Creditos" to="." method="_on_creditos_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Salir" to="." method="_on_salir_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Salir" to="." method="_on_salir_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

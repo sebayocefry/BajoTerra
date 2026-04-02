@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dty4x8wibdl1f"]
+
+[ext_resource type="Script" uid="uid://cmt6sgr0k8j2q" path="res://scripts/UI/intro/intro.gd" id="1_ibon1"]
+[ext_resource type="Texture2D" uid="uid://do4irj8e64so1" path="res://assets/fondos_intro/cueva1.png" id="2_epm5u"]
+[ext_resource type="AudioStream" uid="uid://gogroj1t3hpk" path="res://musica/intro/luisranm-musica-fundo-suspense-e-terror-423727.mp3" id="3_joccb"]
+[ext_resource type="FontFile" uid="uid://cesbn4yurrfjs" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="4_nlps7"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="5_n8gwc"]
+
+[node name="Intro" type="Node2D" unique_id=2024464086]
+script = ExtResource("1_ibon1")
+
+[node name="Control" type="Control" parent="." unique_id=2028804290]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2002114202]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1015612282]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.9
+anchor_bottom = 16.275
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_epm5u")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1023235102]
+stream = ExtResource("3_joccb")
+volume_db = -29.715
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2110223009]
+
+[node name="DialogueLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1111865216]
+offset_right = 1168.0
+offset_bottom = 653.0
+theme_override_fonts/normal_font = ExtResource("4_nlps7")
+script = ExtResource("5_n8gwc")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
