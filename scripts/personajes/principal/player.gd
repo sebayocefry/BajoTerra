@@ -1,9 +1,11 @@
-extends CharacterBody2D
+extends Entidad
+
+
+
+class_name Player
 
 # Atributos del Jugador
 #con el @export podemos manipular desde el editor de forma mas visual por si el proyecto crece mucho
-@export var Nombre: String = "MineroUcein"
-@export var vida: int = 100
 @export var mana : int = 0
 #el oro en enteros, que se redonde nomas
 @export var oro : int = 0
@@ -38,3 +40,25 @@ func handle_animations(direction: Vector2):
 
 func update_animation(state):
 	animation_sprite.play(state + "_" + last_direction)
+
+# este metodo sirve para escuchar cuando el jugador presiona la tecla para usar el objeto del inventario
+func _unhandled_input(event):
+	#con el ui acept es como un mapa de teclas enter que tiene godot
+	#es como cuando usamos el "click" en java, altiro sabe que es
+	if event.is_action_pressed("ui_accept"):
+		
+		usar_objeto_inventario(0)
+
+# este metodo para manejar la lista del inventario y usar el metodo usar()
+
+func usar_objeto_inventario(indice: int):
+	if indice < listaObjetos.size() and listaObjetos[indice] != null:
+		var objeto_actual = listaObjetos[indice]
+		objeto_actual.usar(self)
+		if objeto_actual is Consumible:
+			#no elimino de la lista ya que al ser dinamica, de forma visual se achicaria y podria darle 
+			# problemas en la interfaz 
+			listaObjetos[indice] = null
+			print("el objesto se uso y se elimino de la lista ")
+	else:
+		print("la mochila esta vacia en ese espacio ")

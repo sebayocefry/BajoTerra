@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dvmksj7uvdkjc"]
 
 [ext_resource type="Texture2D" uid="uid://c0r5s131nr05x" path="res://assets/movimientoPersonaje/char_idle_down_anim_strip_6.png" id="1_ur7pv"]
+[ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="2_0fn1c"]
 [ext_resource type="Texture2D" uid="uid://ccg6qmy21xgyt" path="res://assets/movimientoPersonaje/char_idle_left_anim_strip_6.png" id="2_y4r1p"]
+[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="3_0piy6"]
 [ext_resource type="Texture2D" uid="uid://d345h0l5mr84u" path="res://assets/movimientoPersonaje/char_idle_right_anim_strip_6.png" id="3_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://djkwmabodkelv" path="res://assets/movimientoPersonaje/char_idle_up_anim_strip_6.png" id="4_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://bgr7j72xlas4n" path="res://assets/movimientoPersonaje/char_run_down_anim_strip_6.png" id="5_jej6c"]
@@ -395,6 +397,7 @@ size = Vector2(5218, 7122)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1943970634]
 script = ExtResource("9_qfm1y")
+listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058999725]
 position = Vector2(3204, 2371.5)

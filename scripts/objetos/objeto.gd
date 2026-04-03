@@ -7,6 +7,7 @@ class_name Objeto
 @export var nombre: String = "Objeto Desconocido"
 @export_multiline var descripcion: String = ""
 @export var icono: Texture2D # La imagen que se mostrará en la UI del inventario
+@export var precio_oro: int = 0
 
 func usar(jugador: CharacterBody2D) -> void:
 	# Como esta es la clase padre (abstracta), aquí no hace nada.
