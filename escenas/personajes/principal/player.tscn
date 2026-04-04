@@ -393,21 +393,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
-size = Vector2(5218, 7122)
+size = Vector2(138.71875, 155.34375)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1943970634]
 script = ExtResource("9_qfm1y")
 listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
+velocidad = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058999725]
-position = Vector2(3204, 2371.5)
-scale = Vector2(401.5, 471.0625)
+position = Vector2(2, 5)
+scale = Vector2(10.547678, 9.976076)
 sprite_frames = SubResource("SpriteFrames_fuw3a")
 animation = &"run_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353022949]
-position = Vector2(3172, 2044)
+position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_ur7pv")
 
 [node name="Movimiento" type="Node" parent="." unique_id=434910059]

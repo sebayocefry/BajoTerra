@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c82y13ssow7bp"]
+
+[ext_resource type="Script" uid="uid://by4w0d0iaed0i" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_f36mv"]
+[ext_resource type="Texture2D" uid="uid://tbxp8fcccn8h" path="res://assets/spritsEnemigos/fanastma_fondo_negro.png" id="2_00cxu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kd540"]
+radius = 76.0
+height = 236.0
+
+[node name="fanastma" type="CharacterBody2D" unique_id=2071527795]
+script = ExtResource("1_f36mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1566412666]
+texture = ExtResource("2_00cxu")
+hframes = 8
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1259035698]
+position = Vector2(12, 26)
+shape = SubResource("CapsuleShape2D_kd540")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=638808414]
