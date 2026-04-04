@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="BajoTerra"
 run/main_scene="uid://dbtb8yalyre7h"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,13 +25,10 @@ DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
-<<<<<<< HEAD
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=4
-=======
-window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
->>>>>>> c6c8a9c3415df8e4e25f815878f870dbd034c1e4
 
 [editor_plugins]
 
