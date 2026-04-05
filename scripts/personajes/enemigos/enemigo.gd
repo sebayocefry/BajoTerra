@@ -8,7 +8,7 @@
 extends Entidad 
 class_name Enemigo
 
-@export var dano_contacto: int = 30
+@export var dano_contacto: int = 10
 @export var mana_morir: int = 20
 @export var distancia_vision : float = 300.0
 
@@ -33,41 +33,25 @@ func _physics_process(_delta):
 		
 		var distancia = global_position.distance_to(jugador.global_position)
 		
-		# --- EL ARREGLO FiSICO ESTA AQUI ---
-		# Definimos la distancia a la que el cuerpo físico debe detenerse.
-		# Si el fantasma se frena a 50px, ya no se superpondrán físicamente.
-		var distancia_parada_fisica = 50.0 
-		
-		# 1. Definimos la velocidad basándonos en la distancia.
-		
-		# Estado A: Te ve, pero esta lo suficientemente lejos para moverse (fuera de 50)
-		if distancia < distancia_vision and distancia > distancia_parada_fisica:
+		# maquina de estado para perseguir por rango de vision
+		if distancia < distancia_vision:
 			
 			var direccion = global_position.direction_to(jugador.global_position)
-			# Aplicamos la velocidad que heredas de Entidad
-			velocity = direccion * velocidad 
 			
-		# Estado B: Esta muy lejos (fuera de visión) o YA te alcanzo (a 50 o menos)
+			#las sacamos del padre
+			velocity = direccion * velocidad  
 		else:
-			# Forzamos reposo absoluto
+			# Estado: REPOSO (Si el jugador se aleja mucho, el fantasma se detiene), asi no choca contra la pared siempre
 			velocity = Vector2.ZERO
-
-		
 		move_and_slide()
-
-	else:
-		
-		print("esperando al jugador...")
-		pass
-#el error nunca estuvo en el script sino en la escena, donde los characterBody2d se volvian locos 
-#esto porque tomaba fisicas tipo mario y no top down, por lo tanto el motion mode debe ser floatin
-
-
-func _on_zona_ataque_body_entered(body):
-	print('el fantasma toco a ', body.name)
-	if body is Player:
-		print("se reconoce el cuerpo del jugador")
-		body.recibir_dano(dano_contacto)
-	else:
-		print("el fantsma toco a ", body.name, "pero no lo reonoce como jugador")
 	
+		var cuerpo_tocando = $Zona_ataque.get_overlapping_bodies()
+
+		for cuerpo in cuerpo_tocando:
+			if cuerpo is Player:
+				#le manda a la funion de la claswe entidad y esta ve si esta true o false
+
+				cuerpo.recibir_dano(dano_contacto)
+	else:
+
+		print("el fantasma no detecta al jugador")
