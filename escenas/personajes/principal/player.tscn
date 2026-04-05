@@ -396,6 +396,7 @@ animations = [{
 size = Vector2(138.71875, 155.34375)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1943970634]
+motion_mode = 1
 script = ExtResource("9_qfm1y")
 listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 velocidad = 50
