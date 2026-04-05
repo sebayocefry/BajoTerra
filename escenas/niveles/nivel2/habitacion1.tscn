@@ -48,12 +48,12 @@ position = Vector2(-702, -164)
 velocidad = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
-position = Vector2(702, 164)
+position = Vector2(484, 26)
 zoom = Vector2(1.2, 1.2)
-limit_left = -1073
-limit_top = -800
-limit_right = 1043
-limit_bottom = 822
+limit_left = -1424
+limit_top = -968
+limit_right = 692
+limit_bottom = 654
 
 [node name="fanastma" parent="." unique_id=2071527795 instance=ExtResource("2_qdgj3")]
 position = Vector2(527, 378)

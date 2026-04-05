@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://camm6gdy348ej"]
+
+[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_lw455"]
+[ext_resource type="Script" uid="uid://dckpwrt4pli0d" path="res://escenas/niveles/nivelPrueva/player_brr.gd" id="2_m7duj"]
+[ext_resource type="Texture2D" uid="uid://cn6r5lp75102q" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 5 abr 2026, 01_29_02.png" id="3_2rqw3"]
+[ext_resource type="Texture2D" uid="uid://c6sosdjbjgp0t" path="res://escenas/niveles/nivelPrueva/Full.png" id="3_mmvcn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_luqub"]
+radius = 72.44998
+
+[node name="EsenaPr" type="Node2D" unique_id=2063538581]
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=487668549]
+texture = ExtResource("1_lw455")
+
+[node name="player_brr" type="CharacterBody2D" parent="." unique_id=266887647]
+script = ExtResource("2_m7duj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_brr" unique_id=1977849436]
+shape = SubResource("CircleShape2D_luqub")
+
+[node name="mano" type="Node2D" parent="player_brr" unique_id=1321118351]
+position = Vector2(-20, 21)
+rotation = -6.2831855
+
+[node name="mano" type="Sprite2D" parent="player_brr/mano" unique_id=1888593756]
+position = Vector2(33.000008, 2.000002)
+rotation = 3.1415927
+scale = Vector2(0.12109373, 0.121093735)
+texture = ExtResource("3_2rqw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="player_brr" unique_id=1613867768]
+position = Vector2(0.9999981, -3.0000038)
+scale = Vector2(0.1779476, 0.17794758)
+texture = ExtResource("3_mmvcn")
+
+[node name="Camera2D" type="Camera2D" parent="player_brr" unique_id=126314164]
+position = Vector2(0, 1)
+
+[node name="disparo" type="Node2D" parent="player_brr" unique_id=1667735618]
+position = Vector2(-84, 3)

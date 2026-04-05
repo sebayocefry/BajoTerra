@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpd484gfa0hsn"]
+
+[ext_resource type="Script" uid="uid://c155lyu2vjgo" path="res://escenas/niveles/extra_brr/bala.gd" id="1_usiti"]
+[ext_resource type="Texture2D" uid="uid://bck3w2tngok08" path="res://escenas/niveles/extra_brr/ChatGPT Image 5 abr 2026, 01_56_55.png" id="2_u4kg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2x8i"]
+size = Vector2(69, 19)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1111504033]
+script = ExtResource("1_usiti")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=709505313]
+position = Vector2(25, 2)
+scale = Vector2(0.08947393, 0.08203126)
+texture = ExtResource("2_u4kg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96248770]
+position = Vector2(24.5, -0.5)
+shape = SubResource("RectangleShape2D_f2x8i")
