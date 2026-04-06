@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b3rxrno55g1p6"]
+
+[ext_resource type="Texture2D" uid="uid://c6wl72bov1bc6" path="res://assets/decoracion/coffins.png" id="1_3u101"]
+[ext_resource type="Script" uid="uid://b2nrlkdiywanx" path="res://scripts/objetos/luces/antorcha.gd" id="1_afu1a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u101"]
+atlas = ExtResource("1_3u101")
+region = Rect2(0, 0, 47, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwsxv"]
+atlas = ExtResource("1_3u101")
+region = Rect2(47, 0, 47, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlfl5"]
+atlas = ExtResource("1_3u101")
+region = Rect2(94, 0, 47, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwsxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u101")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwsxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlfl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=906602604]
+script = ExtResource("1_afu1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2099493121]
+position = Vector2(94.25001, 143.5)
+scale = Vector2(4.3229165, 4.4875)
+sprite_frames = SubResource("SpriteFrames_kwsxv")
+frame_progress = 0.68774277
