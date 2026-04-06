@@ -8,13 +8,28 @@
 extends Entidad 
 class_name Enemigo
 
+
+#atributos del enemigo
 @export var dano_contacto: int = 10
 @export var mana_morir: int = 20
 @export var distancia_vision : float = 300.0
+#@export var distancia_ataque : float = 60.0
+
+# nombre de las animaciones 
+@export_group("animaciones_enemigo")
+@export var anim_reposo : String = "idle"
+@export var anim_movimiento :String = "correr"
+@export var anim_ataque : String = "atacar"
+
 
 # Esta variable almacena la referencia al obj jugador para que el enemigo
 # entregue el mana al morir y este no se pierda.
 var jugador : Entidad = null
+# es una referencua al nodo de animaciones 
+@onready var animacion: AnimationPlayer = get_node("AnimationPlayer")
+#@onready var animacion = $AnimatedSprite2D
+@onready var sprite = $Sprite2D
+
 
 func _ready():
 	# Buscamos al jugador en el grupo que creamos antes
@@ -27,31 +42,6 @@ func morir():
 
 	super.morir() # Llamo el método de la clase padre que mata y borra el nodo
 
-func _physics_process(_delta):
-	
-	if jugador:
-		
-		var distancia = global_position.distance_to(jugador.global_position)
-		
-		# maquina de estado para perseguir por rango de vision
-		if distancia < distancia_vision:
-			
-			var direccion = global_position.direction_to(jugador.global_position)
-			
-			#las sacamos del padre
-			velocity = direccion * velocidad  
-		else:
-			# Estado: REPOSO (Si el jugador se aleja mucho, el fantasma se detiene), asi no choca contra la pared siempre
-			velocity = Vector2.ZERO
-		move_and_slide()
-	
-		var cuerpo_tocando = $Zona_ataque.get_overlapping_bodies()
 
-		for cuerpo in cuerpo_tocando:
-			if cuerpo is Player:
-				#le manda a la funion de la claswe entidad y esta ve si esta true o false
-
-				cuerpo.recibir_dano(dano_contacto)
-	else:
-
-		print("el fantasma no detecta al jugador")
+#borre lo funcion que le daba comportamientos al enemigo porquew estaba gigante 
+#la separe en una arquitectura mas separada y limpia. ya que no tenia sentido haCer una maquina de estado si iba a tener muchos if 

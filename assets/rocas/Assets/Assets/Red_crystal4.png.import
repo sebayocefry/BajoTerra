@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvayi6e4o3mso"
-path="res://.godot/imported/Red_crystal4.png-c320102aefda4d7cc253d5523e3f2968.ctex"
+path="res://.godot/imported/Red_crystal4.png-c678e6cdf096f3be3dac567eeec21286.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocas/Assets/Red_crystal4.png"
-dest_files=["res://.godot/imported/Red_crystal4.png-c320102aefda4d7cc253d5523e3f2968.ctex"]
+source_file="res://assets/rocas/Assets/Assets/Red_crystal4.png"
+dest_files=["res://.godot/imported/Red_crystal4.png-c678e6cdf096f3be3dac567eeec21286.ctex"]
 
 [params]
 

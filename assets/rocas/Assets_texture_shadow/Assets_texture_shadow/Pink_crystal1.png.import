@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk3njuo2v2pip"
-path="res://.godot/imported/Pink_crystal1.png-1d4f501922c0fcfb9e0b799370d5729e.ctex"
+path="res://.godot/imported/Pink_crystal1.png-309a0c5784073a259bde98a41504e8ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocas/Assets_texture_shadow/Pink_crystal1.png"
-dest_files=["res://.godot/imported/Pink_crystal1.png-1d4f501922c0fcfb9e0b799370d5729e.ctex"]
+source_file="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Pink_crystal1.png"
+dest_files=["res://.godot/imported/Pink_crystal1.png-309a0c5784073a259bde98a41504e8ce.ctex"]
 
 [params]
 
