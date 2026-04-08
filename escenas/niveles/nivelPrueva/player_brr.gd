@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 400.0
+var speed = 700.0
 var paketeBala = preload("res://escenas/niveles/extra_brr/bala.tscn")
 
 func _physics_process(_delta):
