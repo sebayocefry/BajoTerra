@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mqgu35c6uyp2"]
+
+[ext_resource type="Script" uid="uid://b2nrlkdiywanx" path="res://scripts/objetos/luces/antorcha.gd" id="1_fg5bu"]
+[ext_resource type="Texture2D" uid="uid://bcm0fhg6lbrap" path="res://assets/decoracion/cofre.png" id="2_idkjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynwns"]
+atlas = ExtResource("2_idkjr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2td3n"]
+atlas = ExtResource("2_idkjr")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ctoc"]
+atlas = ExtResource("2_idkjr")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wf3r"]
+atlas = ExtResource("2_idkjr")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2jto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynwns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2td3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ctoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wf3r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1798520526]
+script = ExtResource("1_fg5bu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1050937876]
+position = Vector2(52.499996, 53.499996)
+scale = Vector2(4.28125, 4.34375)
+sprite_frames = SubResource("SpriteFrames_c2jto")
