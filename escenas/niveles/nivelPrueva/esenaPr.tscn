@@ -1,17 +1,187 @@
 [gd_scene format=3 uid="uid://camm6gdy348ej"]
 
-[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_lw455"]
+[ext_resource type="Texture2D" uid="uid://dne46p2l0q5hb" path="res://assets/spritesMundos/level1/tierra/tierra1.png" id="1_2rqw3"]
 [ext_resource type="Script" uid="uid://dckpwrt4pli0d" path="res://escenas/niveles/nivelPrueva/player_brr.gd" id="2_m7duj"]
 [ext_resource type="Texture2D" uid="uid://cn6r5lp75102q" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 5 abr 2026, 01_29_02.png" id="3_2rqw3"]
+[ext_resource type="Texture2D" uid="uid://d0ls3f02fe1jl" path="res://escenas/niveles/nivelPrueva/pared2.png" id="3_3vkjn"]
 [ext_resource type="Texture2D" uid="uid://c6sosdjbjgp0t" path="res://escenas/niveles/nivelPrueva/Full.png" id="3_mmvcn"]
+[ext_resource type="Texture2D" uid="uid://b5s0quo7u7hfd" path="res://escenas/niveles/nivelPrueva/pared.png" id="3_x03oj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luqub"]
 radius = 72.44998
 
 [node name="EsenaPr" type="Node2D" unique_id=2063538581]
 
-[node name="fondo" type="Sprite2D" parent="." unique_id=487668549]
-texture = ExtResource("1_lw455")
+[node name="fondo" type="Sprite2D" parent="." unique_id=898823573]
+
+[node name="pieza2" type="Sprite2D" parent="fondo" unique_id=855870014]
+position = Vector2(2888, -3455.0002)
+scale = Vector2(2.6135278, 2.6135278)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza2" unique_id=639413950]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza" type="Sprite2D" parent="fondo" unique_id=884340953]
+position = Vector2(3004.9998, 19.000046)
+scale = Vector2(2.6860352, 2.6860352)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza" unique_id=1189333831]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="repow" type="Sprite2D" parent="fondo" unique_id=147354719]
+position = Vector2(-28, 15)
+scale = Vector2(1.9545898, 1.9545898)
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte" type="Sprite2D" parent="fondo" unique_id=1883343278]
+position = Vector2(1360, 46)
+rotation = 1.5707964
+texture = ExtResource("1_2rqw3")
+
+[node name="puentes 2 y 3" type="Sprite2D" parent="fondo" unique_id=704426444]
+position = Vector2(6531, 52)
+rotation = -1.5707963
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo4" type="Sprite2D" parent="fondo/puentes 2 y 3" unique_id=1651446676]
+position = Vector2(1867, -2605.0002)
+rotation = -1.5707963
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza3" type="Sprite2D" parent="fondo" unique_id=1625652774]
+position = Vector2(8022, 18.999998)
+scale = Vector2(2.6860352, 2.6860352)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza3" unique_id=1572319381]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte pr2" type="Sprite2D" parent="fondo" unique_id=473875446]
+position = Vector2(11685, 10)
+rotation = 1.5707964
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza4" type="Sprite2D" parent="fondo" unique_id=1888791282]
+position = Vector2(13192, 15)
+scale = Vector2(2.6135278, 2.6135278)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza4" unique_id=1235812413]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza5" type="Sprite2D" parent="fondo" unique_id=820684780]
+position = Vector2(13297, -3455.0002)
+scale = Vector2(2.6135278, 2.6135278)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza5" unique_id=1569441149]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza6" type="Sprite2D" parent="fondo" unique_id=50655678]
+position = Vector2(18333, 8)
+scale = Vector2(2.6135278, 2.6135278)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza6" unique_id=1408829614]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="pieza7" type="Sprite2D" parent="fondo" unique_id=1208550651]
+position = Vector2(13387, 3357.0002)
+scale = Vector2(2.6135278, 2.6135278)
+texture = ExtResource("1_2rqw3")
+
+[node name="fondo" type="Sprite2D" parent="fondo/pieza7" unique_id=240690336]
+position = Vector2(722.1152, 5.003724)
+scale = Vector2(0.997181, 0.99718124)
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte2" type="Sprite2D" parent="fondo" unique_id=453665042]
+position = Vector2(16703, 55)
+rotation = 1.5707964
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte3" type="Sprite2D" parent="fondo" unique_id=514195789]
+position = Vector2(14163, -1744)
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte4" type="Sprite2D" parent="fondo" unique_id=1075983091]
+position = Vector2(14275, 1584)
+rotation = 3.1415927
+texture = ExtResource("1_2rqw3")
+
+[node name="purnte5" type="Sprite2D" parent="fondo" unique_id=80153683]
+position = Vector2(14161, -5213)
+rotation = 3.1415927
+texture = ExtResource("1_2rqw3")
+
+[node name="fin" type="Sprite2D" parent="fondo" unique_id=1214375208]
+position = Vector2(14118, -6487)
+rotation = 1.5707964
+scale = Vector2(1.9545898, 1.9545898)
+texture = ExtResource("1_2rqw3")
+
+[node name="muros2" type="Sprite2D" parent="." unique_id=27568441]
+
+[node name="paredcamino" type="Sprite2D" parent="muros2" unique_id=1985985944]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(1437, 629)
+texture = ExtResource("3_x03oj")
+
+[node name="paredcamino2" type="Sprite2D" parent="muros2" unique_id=2036847688]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(1420, -579)
+rotation = 3.1415927
+texture = ExtResource("3_x03oj")
+
+[node name="muros" type="Sprite2D" parent="." unique_id=1017707570]
+
+[node name="paredcamino" type="Sprite2D" parent="muros" unique_id=489352317]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(-13, 1089)
+scale = Vector2(1.4316407, 1.0423177)
+texture = ExtResource("3_x03oj")
+
+[node name="paredcamino2" type="Sprite2D" parent="muros" unique_id=73323297]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(-53.398994, -1183.0001)
+rotation = 3.1415927
+scale = Vector2(1.5087672, 1.1040661)
+texture = ExtResource("3_x03oj")
+
+[node name="paredcamino3" type="Sprite2D" parent="muros" unique_id=1669475726]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(-1084, -31.000002)
+rotation = 1.5707964
+scale = Vector2(1.543456, 1.1040661)
+texture = ExtResource("3_x03oj")
+
+[node name="paredcamino4" type="Sprite2D" parent="muros" unique_id=145191772]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(885, -1000.9999)
+rotation = 4.712389
+scale = Vector2(0.90364236, 1.1387535)
+texture = ExtResource("3_3vkjn")
+
+[node name="paredcamino5" type="Sprite2D" parent="muros" unique_id=1545197649]
+modulate = Color(0.39, 0.30848998, 0.26129997, 1)
+position = Vector2(915, 1077.0001)
+rotation = 4.712389
+scale = Vector2(0.90364236, 1.1387535)
+texture = ExtResource("3_3vkjn")
 
 [node name="player_brr" type="CharacterBody2D" parent="." unique_id=266887647]
 script = ExtResource("2_m7duj")
@@ -36,6 +206,7 @@ texture = ExtResource("3_mmvcn")
 
 [node name="Camera2D" type="Camera2D" parent="player_brr" unique_id=126314164]
 position = Vector2(0, 1)
+zoom = Vector2(0.6, 0.6)
 
 [node name="disparo" type="Node2D" parent="player_brr" unique_id=1667735618]
 position = Vector2(-84, 3)
