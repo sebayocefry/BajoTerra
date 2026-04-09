@@ -1,41 +1,39 @@
 extends Estado
 
-var zona_ataque: Area2D
+@export var cooldown_ataque: float = 1.0
+var temporizador: float = 0.0
 
 func entrar():
     enemigo.velocity = Vector2.ZERO
-    if animacion.current_animation != enemigo.anim_ataque:
-        animacion.play(enemigo.anim_ataque)
-        
-    if not zona_ataque:
-        zona_ataque = enemigo.get_node("Zona_ataque")
-        
-    # Conectamos la señal para saber cundo el jugador se aleja
-    zona_ataque.body_exited.connect(_al_jugador_salir)
+    
+    # Igualamos el temporizador al cooldown para que el 
+    # primer golpe lo dé instantáneamente nada más entrar al estado.
+    temporizador = cooldown_ataque 
 
-func salir():
-    if zona_ataque.body_exited.is_connected(_al_jugador_salir):
-        zona_ataque.body_exited.disconnect(_al_jugador_salir)
-
-func _al_jugador_salir(cuerpo: Node2D):
-    if cuerpo == enemigo.jugador:
-        transicion.emit("Perseguir")
-
-func actualizar_fisica(_delta: float):
+func actualizar_fisica(delta: float):
     if not enemigo.jugador:
         return
         
-    
+    # 1. Mantener la mirada hacia el jugador
     var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
-    if direccion.x < 0:
-        sprite.flip_h = true
-    elif direccion.x > 0:
-        sprite.flip_h = false
+    enemigo.sprite.flip_h = direccion.x < 0
         
-    # Sistema de daño a los cuerpos dentro de la zona
-    var cuerpos_tocando = zona_ataque.get_overlapping_bodies()
-    for cuerpo in cuerpos_tocando:
-        if cuerpo == enemigo.jugador: 
-            print("Atacando a: ", cuerpo.name)
-            if cuerpo.has_method("recibir_dano"):
-                cuerpo.recibir_dano(enemigo.dano_contacto)
+    #  Si el minero se alejo, cortamos el ataque y avisamos a la maquina
+    if not enemigo.jugador_en_rango:
+        transicion.emit("Perseguir")
+        return
+        
+    # lpgica del cooldown por delta 
+    temporizador += delta
+    if temporizador >= cooldown_ataque:
+        ejecutar_golpe()
+        temporizador = 0.0 # Reiniciamos el reloj para el proximo golpe
+
+func ejecutar_golpe():
+    # Solo reproducimos la animación desde cero si no se esta reproduciendo ya
+    if animacion.current_animation != enemigo.anim_ataque:
+        animacion.play(enemigo.anim_ataque)
+        
+    # Aplicamos el daño directamente (confiamos en que el Player tiene su invulnerabilidad)
+    print("Fantasma asesta un golpe de: ", enemigo.dano_contacto)
+    enemigo.jugador.recibir_dano(enemigo.dano_contacto)

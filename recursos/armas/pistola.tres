@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Arma" format=3 uid="uid://bpl2tr5snti78"]
+
+[ext_resource type="PackedScene" uid="uid://bcfubf2n4bv5j" path="res://escenas/objetos/balas/Bala.tscn" id="1_8p76o"]
+[ext_resource type="Script" uid="uid://b8gw81fkn2kbp" path="res://scripts/objetos/armas/arma.gd" id="1_qe40q"]
+
+[resource]
+script = ExtResource("1_qe40q")
+escena_bala = ExtResource("1_8p76o")
+metadata/_custom_type_script = "uid://b8gw81fkn2kbp"

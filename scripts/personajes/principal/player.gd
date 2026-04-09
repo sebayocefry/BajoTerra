@@ -14,7 +14,9 @@ class_name Player
 @onready var animation_sprite = $AnimatedSprite2D
 # Instanciamos la funcion de movimiento 
 @onready var movement = $Movimiento
-#codigo automatico generado por godot que sirve para saber donde miraba el personaje 
+#@onready var mano = $Mano
+@onready var gestor_armas = $Gestor_armas
+
 var last_direction = "down"
 
 func _physics_process(_delta):
@@ -25,6 +27,8 @@ func _physics_process(_delta):
 	
 	# 2. El jugador se encarga de su lógica de animación
 	handle_animations(input_direction)
+	gestor_armas.actualizar_apuntado(last_direction)
+	
 
 func handle_animations(direction: Vector2):
 	if direction == Vector2.ZERO:
@@ -41,13 +45,25 @@ func handle_animations(direction: Vector2):
 func update_animation(state):
 	animation_sprite.play(state + "_" + last_direction)
 
+
+#func actualizar_posicio_mano():
+#	var distancia_mano = 15 #lo ajustamos despues dependiendo del tamaño del sprite
+#	match last_direction:
+#		"up": mano.position = Vector2(0, -distancia_mano)
+#		"down": mano.position = Vector2(0, distancia_mano)
+#		"left": mano.position = Vector2(-distancia_mano, 0)
+#		"right": mano.position = Vector2(distancia_mano, 0)
+
+
 # este metodo sirve para escuchar cuando el jugador presiona la tecla para usar el objeto del inventario
 func _unhandled_input(event):
 	#con el ui acept es como un mapa de teclas enter que tiene godot
 	#es como cuando usamos el "click" en java, altiro sabe que es
 	if event.is_action_pressed("ui_accept"):
-		
 		usar_objeto_inventario(0)
+	elif event.is_action_pressed("disparar"):
+		gestor_armas.apretar_gatillo(last_direction)
+
 
 # este metodo para manejar la lista del inventario y usar el metodo usar()
 
@@ -62,3 +78,8 @@ func usar_objeto_inventario(indice: int):
 			print("el objesto se uso y se elimino de la lista ")
 	else:
 		print("la mochila esta vacia en ese espacio ")
+
+
+	
+	
+

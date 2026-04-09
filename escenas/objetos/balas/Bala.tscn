@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bcfubf2n4bv5j"]
+
+[ext_resource type="Texture2D" uid="uid://5k8waulvsofj" path="res://assets/spritesBalas/balaMana.png" id="1_5cpik"]
+[ext_resource type="Script" uid="uid://dmrorco7h1gu" path="res://scripts/objetos/balas/bala.gd" id="1_hstim"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hstim"]
+radius = 523.81104
+
+[node name="Area2D" type="Area2D" unique_id=1762316999]
+script = ExtResource("1_hstim")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2027022842]
+texture = ExtResource("1_5cpik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1126649805]
+shape = SubResource("CircleShape2D_hstim")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1841652869]
+position = Vector2(81, 18)
+rect = Rect2(-660, -549, 1146, 1040)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

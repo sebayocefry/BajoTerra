@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bck3w2tngok08"
-path="res://.godot/imported/ChatGPT Image 5 abr 2026, 01_56_55.png-f767d75a8698d8fabb099967b662e0c4.ctex"
+uid="uid://bx2uodiytt425"
+path="res://.godot/imported/personaje.png-fe81f16ccc85a7e8e3ccd525e7d006e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://escenas/niveles/extra_brr/ChatGPT Image 5 abr 2026, 01_56_55.png"
-dest_files=["res://.godot/imported/ChatGPT Image 5 abr 2026, 01_56_55.png-f767d75a8698d8fabb099967b662e0c4.ctex"]
+source_file="res://assets/Principal/personaje.png"
+dest_files=["res://.godot/imported/personaje.png-fe81f16ccc85a7e8e3ccd525e7d006e2.ctex"]
 
 [params]
 

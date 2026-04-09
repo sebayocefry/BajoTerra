@@ -107,7 +107,6 @@ height = 278.0
 motion_mode = 1
 script = ExtResource("1_f36mv")
 distancia_vision = 600.0
-distancia_ataque = 300.0
 anim_reposo = "reposo"
 anim_movimiento = "perseguir"
 
@@ -145,3 +144,6 @@ script = ExtResource("5_8h27v")
 
 [node name="Atacar" type="Node" parent="Maquina_estados" unique_id=2106550640]
 script = ExtResource("6_8mf71")
+
+[connection signal="body_entered" from="Zona_ataque" to="." method="_on_zona_ataque_body_entered"]
+[connection signal="body_exited" from="Zona_ataque" to="." method="_on_zona_ataque_body_exited"]

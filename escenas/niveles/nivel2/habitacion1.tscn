@@ -45,6 +45,7 @@ shape = SubResource("RectangleShape2D_nx3q6")
 
 [node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("3_0qbj0")]
 position = Vector2(-702, -164)
+mana = 100000
 velocidad = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]

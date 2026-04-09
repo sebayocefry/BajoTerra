@@ -25,6 +25,8 @@ class_name Enemigo
 # Esta variable almacena la referencia al obj jugador para que el enemigo
 # entregue el mana al morir y este no se pierda.
 var jugador : Entidad = null
+var jugador_en_rango : bool = false
+
 # es una referencua al nodo de animaciones 
 @onready var animacion: AnimationPlayer = get_node("AnimationPlayer")
 #@onready var animacion = $AnimatedSprite2D
@@ -45,3 +47,15 @@ func morir():
 
 #borre lo funcion que le daba comportamientos al enemigo porquew estaba gigante 
 #la separe en una arquitectura mas separada y limpia. ya que no tenia sentido haCer una maquina de estado si iba a tener muchos if 
+
+
+
+func _on_zona_ataque_body_entered(body: Node2D) -> void:
+	if body == jugador:
+		jugador_en_rango = true
+
+
+func _on_zona_ataque_body_exited(body: Node2D) -> void:
+	if body == jugador:
+		jugador_en_rango = false
+		

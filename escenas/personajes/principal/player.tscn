@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bndoijoq77umo" path="res://assets/movimientoPersonaje/char_run_up_anim_strip_6.png" id="8_a8ls1"]
 [ext_resource type="Script" uid="uid://buegdhl065y1r" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
 [ext_resource type="Script" uid="uid://bo4njsikkv4pc" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
+[ext_resource type="Script" uid="uid://c25e6s02ptpug" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
+[ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="14_y2iy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_ur7pv")
@@ -398,6 +400,7 @@ size = Vector2(138.71875, 155.34375)
 [node name="Jugador" type="CharacterBody2D" unique_id=1943970634]
 motion_mode = 1
 script = ExtResource("9_qfm1y")
+mana = 100
 listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 velocidad = 50
 
@@ -414,3 +417,11 @@ shape = SubResource("RectangleShape2D_ur7pv")
 
 [node name="Movimiento" type="Node" parent="." unique_id=434910059]
 script = ExtResource("10_oecxe")
+
+[node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
+script = ExtResource("13_0piy6")
+arma_inicial = ExtResource("14_y2iy6")
+
+[node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
+
+[node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
