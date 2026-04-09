@@ -1,3 +1,18 @@
-# Godot 4+ specific ignores
+# Godot-specific ignores
 .godot/
-/android/
+.import/
+export/
+*.translation
+
+# Mono/C# specific (si llegas a usarlo)
+.mono/
+*.csproj
+*.sln
+
+# User-specific files
+.pck
+.zip
+
+# System files
+.DS_Store
+Thumbs.db
