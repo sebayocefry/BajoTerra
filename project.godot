@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+Eventos="*uid://cbvdlhrlwb2ah"
 
 [display]
 

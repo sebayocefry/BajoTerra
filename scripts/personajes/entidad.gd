@@ -14,6 +14,8 @@ func recibir_dano(cantidad: int):
 	if estado_invulnerable:
 		return #no recibe daño y no ejecuta el resto de codigo
 	vida -= cantidad
+	#laura aqui se deberia conectar 
+	Eventos.vida_actualizada.emit(vida, 100)
 	print(nombre_entidad, " recibió ", cantidad, " de daño. Vida restante: ", vida)
 	if vida <= 0:
 		morir()

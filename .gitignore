@@ -1,18 +1,8 @@
-# Godot-specific ignores
+# Godot ignores
 .godot/
 .import/
+*.import
+*.uid
 export/
-*.translation
-
-# Mono/C# specific (si llegas a usarlo)
-.mono/
-*.csproj
-*.sln
-
-# User-specific files
-.pck
-.zip
-
-# System files
 .DS_Store
 Thumbs.db

@@ -27,7 +27,7 @@ func _physics_process(_delta):
 	
 	# 2. El jugador se encarga de su lógica de animación
 	handle_animations(input_direction)
-	gestor_armas.actualizar_apuntado(last_direction)
+	#gestor_armas.actualizar_apuntado(last_direction)
 	
 
 func handle_animations(direction: Vector2):
