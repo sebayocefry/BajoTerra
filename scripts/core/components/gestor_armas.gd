@@ -14,6 +14,9 @@ func _ready():
 	if arma_inicial:
 		equipar_arma(arma_inicial)
 
+func _process(_delta):
+	apuntar_al_raton()
+
 func equipar_arma(nueva_arma: Arma):
 	arma_equipada = nueva_arma
 	# Actualizamos el dibujo en pantalla con el icono del inventario
@@ -27,15 +30,23 @@ func actualizar_apuntado(direccion_texto: String):
 		"left": position = Vector2(-distancia, 0)
 		"right": position = Vector2(distancia, 0)
 
-func apretar_gatillo(direccion_texto: String):
+
+
+func apuntar_al_raton():
+	var posicion_raton = get_global_mouse_position()
+	look_at(posicion_raton)
+
+	#para que no se vea como la pistola boca a bajo o entrando al cuerpo del jugador cuando cambiamos de lado la mira
+	if posicion_raton.x < global_position.x:
+		sprite_arma.flip_v = true
+	else:
+		sprite_arma.flip_v = false
+
+
+
+func apretar_gatillo():
 	if arma_equipada:
-		var vector_disparo = Vector2.ZERO
-		match direccion_texto:
-			"up": vector_disparo = Vector2.UP
-			"down": vector_disparo = Vector2.DOWN
-			"left": vector_disparo = Vector2.LEFT
-			"right": vector_disparo = Vector2.RIGHT
-			
+		var vector_disparo = global_position.direction_to(get_global_mouse_position())	
 		# Le pasamos el Player (owner), la dirección, Y LA POSICIÓN FÍSICA de la mano
 		arma_equipada.disparar(owner as Player, vector_disparo, mano.global_position)
 	else:

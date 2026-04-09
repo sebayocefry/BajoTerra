@@ -62,7 +62,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):
 		usar_objeto_inventario(0)
 	elif event.is_action_pressed("disparar"):
-		gestor_armas.apretar_gatillo(last_direction)
+		gestor_armas.apretar_gatillo()
 
 
 # este metodo para manejar la lista del inventario y usar el metodo usar()
@@ -82,4 +82,3 @@ func usar_objeto_inventario(indice: int):
 
 	
 	
-

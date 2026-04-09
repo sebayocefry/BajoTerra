@@ -17,17 +17,19 @@ func _physics_process(delta: float):
 
 # Esta señal se dispara cuando la bala toca CUALQUIER cuerpo físico
 func _on_body_entered(cuerpo: Node2D):
-    # Duck Typing: No preguntamos qué es, preguntamos si puede recibir daño.
-    # Excluimos al Player para que no se dispare a sí mismo.
-    if cuerpo.has_method("recibir_dano") and not cuerpo is Player:
-        cuerpo.recibir_dano(dano)
-        queue_free() # Destruye la bala al impactar
+    # Si la bala toca al Minero por accidente, la ignoramos
+    if cuerpo is Player:
+        return
         
-    # Si choca contra una pared (TileMap) u otro obstáculo del mundo, se destruye
-    elif cuerpo is TileMap:
-        queue_free()
+    #  Duck Typing: Si lo que tocamos sabe recibir daño, se lo hacemos
+    # (Esto servirá para enemigos, jefes, ¡o incluso cajas de madera destructibles)
+    if cuerpo.has_method("recibir_dano"):
+        cuerpo.recibir_dano(dano)
+        
+    # Si la bala choco contra CUALQUIER otra cosa 
+    # (enemigo, muro, piedra, tilemap), se destruye.
+    queue_free()
 
-# Como medida de seguridad (Clean Code), borramos la bala si sale de la pantalla
-# Para esto, agrégale un nodo 'VisibleOnScreenNotifier2D' a la escena de tu bala y conecta su señal:
+# borramos la bala 
 func _on_visible_on_screen_notifier_2d_screen_exited():
     queue_free()

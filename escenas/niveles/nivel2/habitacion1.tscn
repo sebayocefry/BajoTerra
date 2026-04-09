@@ -22,6 +22,7 @@ size = Vector2(1614.3297, 88.4317)
 texture = ExtResource("1_s4v4f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=585155463]
+collision_mask = 0
 
 [node name="arriba" type="CollisionShape2D" parent="StaticBody2D" unique_id=219623845]
 position = Vector2(-1, -866.25)
@@ -45,7 +46,9 @@ shape = SubResource("RectangleShape2D_nx3q6")
 
 [node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("3_0qbj0")]
 position = Vector2(-702, -164)
-mana = 100000
+collision_layer = 2
+collision_mask = 5
+mana = 50
 velocidad = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
@@ -58,3 +61,5 @@ limit_bottom = 825
 
 [node name="fanastma" parent="." unique_id=2071527795 instance=ExtResource("2_qdgj3")]
 position = Vector2(527, 378)
+collision_layer = 4
+collision_mask = 3
