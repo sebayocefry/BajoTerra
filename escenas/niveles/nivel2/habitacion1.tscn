@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5b4npieaa6uf"]
 
-[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
+[ext_resource type="Texture2D" uid="uid://cvpapnumm8hev" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
 [ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="2_qdgj3"]
 [ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
 

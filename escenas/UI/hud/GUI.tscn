@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b8hyfb6xkhqwf"]
+
+[node name="Gui" type="CanvasLayer" unique_id=1866949275]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=123663398]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=532535042]
+layout_mode = 2
+
+[node name="BarraVida" type="TextureProgressBar" parent="MarginContainer/VBoxContainer" unique_id=425948721]
+layout_mode = 2
+
+[node name="espaciador" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1230254430]
+layout_mode = 2
+
+[node name="FilaInferior" type="BoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1648299665]
+layout_mode = 2
+
+[node name="CajaArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=501408766]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaArma" unique_id=1305160183]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CajaObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=1203406284]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaObjeto" unique_id=691727991]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=68388404]
+layout_mode = 2
