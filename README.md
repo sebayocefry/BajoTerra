@@ -62,4 +62,12 @@ Para agregar un nuevo elemento al juego, configura su sección **Collision** de 
 * **Layer:** [Ninguna] *(Para evitar que las balas choquen entre ellas en el aire)*
 * **Mask:** 1 (`Muros`), 3 (`Enemigos`) *(Al chocar con muro se destruyen, al chocar con enemigo aplican `recibir_dano()` y se destruyen)*
 
+#### 5. Cristales y Botín (`Area2D`)
+* **Layer:** 5 (`Objetos / Loot`)
+* **Mask:** 2 (`Jugador`)
+* **Descripción:** Elementos recolectables que el enemigo suelta al morir.
+
+* **Nota Técnica:** Al estar en la Capa 5, los proyectiles (que miran Capas 1 y 3) no chocarán con el botín, permitiendo disparar a través de él sin perder la bala.
+
 ⚠️ **Nota para el equipo:** Nunca programen colisiones con `if body.name == "Muro"`. usen las mask. Si un objeto está en la capa correcta, la física funcionará sola.
+
