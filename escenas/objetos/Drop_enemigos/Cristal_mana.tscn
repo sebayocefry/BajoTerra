@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dsx5dgire1s5f"]
+
+[ext_resource type="Script" uid="uid://c3oc4kfymoeh8" path="res://scripts/objetos/loot/cristal_mana.gd" id="1_822tu"]
+[ext_resource type="Texture2D" uid="uid://bpb8pn8j85req" path="res://assets/SpriteLoot/cristalMana.png" id="2_a4txa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l500j"]
+radius = 124.57807
+
+[node name="CristalMana" type="Area2D" unique_id=604163804]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_822tu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=208493122]
+position = Vector2(1, 1)
+scale = Vector2(0.10101318, 0.07434082)
+texture = ExtResource("2_a4txa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2096207295]
+position = Vector2(2.0000153, 1)
+scale = Vector2(0.36987305, 0.2758789)
+shape = SubResource("CircleShape2D_l500j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

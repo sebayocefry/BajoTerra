@@ -107,5 +107,10 @@ func usar_objeto_inventario(indice: int):
 		print("la mochila esta vacia en ese espacio ")
 
 
-	
+func sumar_mana(cantidad: int):
+	mana += cantidad
+    # Laura aca te aviso para que escuches el evento 
+	Eventos.mana_actualizado.emit(mana)
+	#para mi debugg
+	print("Maná recogido: +", cantidad, " | Total: ", mana)
 	

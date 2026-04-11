@@ -24,7 +24,7 @@ func  _ready():
     
 func _physics_process(delta):
     if estado_actual:
-        print("ESTADO ACTIVO: ", estado_actual.name)
+        #print("ESTADO ACTIVO: ", estado_actual.name)
         estado_actual.actualizar_fisica(delta)
     else:
         print("ERROR: La máquina no tiene un estado actual")

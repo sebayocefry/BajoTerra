@@ -20,6 +20,8 @@ class_name Enemigo
 @export var anim_movimiento :String = "correr"
 @export var anim_ataque : String = "atacar"
 
+@export var escena_cristal: PackedScene # con esto arrastramo la escena del cistal en el godot
+
 # Esta variable almacena la referencia al obj jugador para que el enemigo
 # entregue el mana al morir y este no se pierda.
 var jugador : Entidad = null
@@ -39,11 +41,15 @@ func _ready():
     jugador = get_tree().get_first_node_in_group("player")
 
 func morir():
-    if jugador:
-        jugador.mana += mana_morir
-        print("El enemigo murió y le soltó maná al jugador")
-
-    super.morir() # Llamo el método de la clase padre que mata y borra el nodo
+    #ya no suma al morir como orden porque si, ahora solatara el mana bien 
+    if escena_cristal:
+        var nuevo_cristal = escena_cristal.instantiate()
+        nuevo_cristal.global_position = global_position
+        # para agregar el cristal de forma segura al nivel principal.
+		#la unica forma que no se rompa 
+        get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
+        
+    super.morir()
 
 #borre lo funcion que le daba comportamientos al enemigo porquew estaba gigante 
 #la separe en una arquitectura mas separada y limpia. ya que no tenia sentido haCer una maquina de estado si iba a tener muchos if 
