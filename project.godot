@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BajoTerra"
-run/main_scene="uid://camm6gdy348ej"
+run/main_scene="uid://c82y13ssow7bp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
