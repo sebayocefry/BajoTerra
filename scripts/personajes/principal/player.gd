@@ -65,6 +65,33 @@ func _unhandled_input(event):
 		gestor_armas.apretar_gatillo()
 
 
+
+func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
+	# Guardamos la vida que teníamos antes del golpe
+	var vida_anterior = vida
+	super.recibir_dano(cantidad, vector_empuje)
+    
+    #cosas exclusivas del Jugador:
+    # Si la vida realmente bajó (no esquivamos el golpe)
+	if vida < vida_anterior:
+        # Avisamos a la UI de Laura SOLO cuando el Player es herido
+		Eventos.vida_actualizada.emit(vida, 100) 
+        
+  
+		if vida > 0:
+			activar_invulnerabilidad(1.0)
+
+
+func activar_invulnerabilidad(duracion: float):
+	estado_invulnerable = true
+	# como que el personaje se va a poner transparente por un momento para que se sienta el cambio de estado
+	modulate.a = 0.5
+	#esto es una promesa, es programacion asincronas
+	await get_tree().create_timer(duracion).timeout
+	modulate.a = 1.0
+	estado_invulnerable = false 
+
+
 # este metodo para manejar la lista del inventario y usar el metodo usar()
 
 func usar_objeto_inventario(indice: int):

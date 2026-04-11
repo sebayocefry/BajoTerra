@@ -6,6 +6,11 @@
 **State**
     lo usamos para cambiar el comportamiento del enmigo y probablemente lo usare para jugador
 
+***Observer**
+    Es un patrón de diseño de comportamiento que permite definir un mecanismo de suscripción para notificar a múltiples objetos (la GUI, efectos de sonido, logros) sobre cualquier evento que le suceda al objeto que están observando (el Jugador), sin que estos objetos estén acoplados entre sí.
+
+    lo usamos: Para respetar el principio de Desacoplamiento. El Jugador no necesita saber que la GUI existe; solo emite una señal al Eventos.gd y quien esté interesado, que escuche el evento.
+
 
 
 

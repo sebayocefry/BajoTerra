@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_nx3q6")
 position = Vector2(-702, -164)
 collision_layer = 2
 collision_mask = 5
-mana = 50
+mana = 80
 velocidad = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
