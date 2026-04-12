@@ -26,6 +26,31 @@ Para mantener el orden en el codigo de BajoTerra, todos los enemigos base deben 
 *Nota:* Si un enemigo necesita animaciones con nombres distintos (ej. `caminar_lento`), el animador solo debe cambiar el nombre en la sección "Nombres de Animaciones" del Inspector en Godot. **No es necesario modificar el script de la clase.**
 
 
+## ⚙️ Configuración de Físicas y Nodos (Obligatorio)
+
+Para evitar crasheos y errores de movimiento (como el "efecto velcro" en los muros) al crear o duplicar enemigos, todo el equipo debe respetar estas reglas en el Inspector:
+
+### 1. Movimiento Top-Down (Floating)
+Godot aplica por defecto físicas de gravedad (Grounded). Para **BajoTerra**, esto debe cambiarse para permitir deslizamiento fluido:
+* **Nodo:** Raíz del enemigo (`CharacterBody2D`).
+* **Propiedad:** `Motion Mode` -> Cambiar a **`Floating`**.
+
+### 2. Estandarización de Nombres (Case Sensitive)
+Los scripts de la Máquina de Estados fallarán si los nombres no son exactos. Se debe respetar estrictamente el uso de mayúsculas:
+* **Área de detección:** Debe llamarse exactamente `Zona_ataque`.
+* **Gestor de IA:** Debe llamarse exactamente `Maquina_estados`.
+
+### 3. Optimización de Colisiones (Pies)
+Para evitar que el enemigo se trabe en las esquinas de los pasillos:
+* **Forma:** Usar preferentemente `CapsuleShape2D` o `CircleShape2D`.
+* **Posición:** Ajustar la colisión **solo a los pies** del sprite. Esto permite que el cuerpo visual pueda "solaparse" un poco con los muros, dando una sensación de profundidad y evitando atascos mecánicos(este ultimo punto es solo por gusto de cada uno, ahi deciden eso ustedes).
+
+> [!IMPORTANT]
+> **Jerarquía de Nodos:** Nunca pongas un Area2D como hijo de un CollisionShape2D. La estructura correcta es: `Enemigo (Root) > Zona_ataque (Area2D) > CollisionShape2D (Hijo)`.
+
+
+
+
 > **Regla  (Duck Typing Físico):**
 > * **Layer (Etiqueta):** "Lo que soy". En qué capa existe físicamente este objeto.
 > * **Mask (Lentes):** "Lo que busco". Con qué capas choca o interactúa este objeto.
