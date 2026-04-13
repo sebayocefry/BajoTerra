@@ -70,13 +70,13 @@ func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
 	# Guardamos la vida que teníamos antes del golpe
 	var vida_anterior = vida
 	super.recibir_dano(cantidad, vector_empuje)
-    
-    #cosas exclusivas del Jugador:
-    # Si la vida realmente bajó (no esquivamos el golpe)
+	
+	#cosas exclusivas del Jugador:
+	# Si la vida realmente bajó (no esquivamos el golpe)
 	if vida < vida_anterior:
-        # Avisamos a la UI de Laura SOLO cuando el Player es herido
+		# Avisamos a la UI de Laura SOLO cuando el Player es herido
 		Eventos.vida_actualizada.emit(vida, 100) 
-        
+		
   
 		if vida > 0:
 			activar_invulnerabilidad(1.0)
@@ -109,7 +109,7 @@ func usar_objeto_inventario(indice: int):
 
 func sumar_mana(cantidad: int):
 	mana += cantidad
-    # Laura aca te aviso para que escuches el evento 
+	# Laura aca te aviso para que escuches el evento 
 	Eventos.mana_actualizado.emit(mana)
 	#para mi debugg
 	print("Maná recogido: +", cantidad, " | Total: ", mana)
