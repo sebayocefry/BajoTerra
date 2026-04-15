@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://camm6gdy348ej"]
 
 [ext_resource type="Texture2D" uid="uid://7357b4wt3dvv" path="res://assets/spritesMundos/level1/tierra/tierra1.png" id="1_2rqw3"]
-[ext_resource type="Texture2D" uid="uid://cn6r5lp75102q" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 5 abr 2026, 01_29_02.png" id="3_2rqw3"]
-[ext_resource type="Texture2D" uid="uid://d0ls3f02fe1jl" path="res://escenas/niveles/nivelPrueva/pared2.png" id="3_3vkjn"]
-[ext_resource type="Texture2D" uid="uid://c6sosdjbjgp0t" path="res://escenas/niveles/nivelPrueva/Full.png" id="3_mmvcn"]
-[ext_resource type="Texture2D" uid="uid://b5s0quo7u7hfd" path="res://escenas/niveles/nivelPrueva/pared.png" id="3_x03oj"]
+[ext_resource type="Script" uid="uid://dckpwrt4pli0d" path="res://escenas/niveles/nivelPrueva/player_brr.gd" id="2_m7duj"]
+[ext_resource type="Texture2D" uid="uid://0qv6sft0wxj6" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 5 abr 2026, 01_29_02.png" id="3_2rqw3"]
+[ext_resource type="Texture2D" uid="uid://br36jsxxqncb3" path="res://escenas/niveles/nivelPrueva/pared2.png" id="3_3vkjn"]
+[ext_resource type="Texture2D" uid="uid://dyh7v82p48jix" path="res://escenas/niveles/nivelPrueva/Full.png" id="3_mmvcn"]
+[ext_resource type="Texture2D" uid="uid://ddmxyy3ndb7ui" path="res://escenas/niveles/nivelPrueva/pared.png" id="3_x03oj"]
 [ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="7_3vkjn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luqub"]
@@ -38,7 +39,7 @@ scale = Vector2(0.997181, 0.99718124)
 texture = ExtResource("1_2rqw3")
 
 [node name="repow" type="Sprite2D" parent="fondo" unique_id=147354719]
-position = Vector2(-25, 22)
+position = Vector2(-28, 15)
 scale = Vector2(1.9545898, 1.9545898)
 texture = ExtResource("1_2rqw3")
 
@@ -661,6 +662,7 @@ scale = Vector2(2.5755937, 1.608842)
 texture = ExtResource("3_3vkjn")
 
 [node name="player_brr" type="CharacterBody2D" parent="." unique_id=266887647]
+script = ExtResource("2_m7duj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_brr" unique_id=1977849436]
 shape = SubResource("CircleShape2D_luqub")

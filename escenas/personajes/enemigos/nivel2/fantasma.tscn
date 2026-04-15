@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c82y13ssow7bp"]
 
-[ext_resource type="Script" uid="uid://dmr2q6h2ee6se" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_f36mv"]
-[ext_resource type="Texture2D" uid="uid://tbxp8fcccn8h" path="res://assets/spritsEnemigos/fanastma_fondo_negro.png" id="2_00cxu"]
+[ext_resource type="Script" uid="uid://coamc74eh64la" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_f36mv"]
+[ext_resource type="Texture2D" uid="uid://ccbhqjljg31s0" path="res://assets/spritsEnemigos/fanastma_fondo_negro.png" id="2_00cxu"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_d2e63"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="3_wsgfi"]
-[ext_resource type="Script" uid="uid://bdxdqs5qqffo" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="4_d2e63"]
-[ext_resource type="Script" uid="uid://b63fdobg6ac54" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="5_8h27v"]
-[ext_resource type="Script" uid="uid://df1igny3gik37" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="6_8mf71"]
+[ext_resource type="Script" uid="uid://dl0shy3i2s5jg" path="res://scripts/maquina_estados/maquina_estados.gd" id="3_wsgfi"]
+[ext_resource type="Script" uid="uid://ducxelivnujlf" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="4_d2e63"]
+[ext_resource type="Script" uid="uid://dnxyg55hfei8j" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="5_8h27v"]
+[ext_resource type="Script" uid="uid://dxn2aoi76cgga" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="6_8mf71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kd540"]
 radius = 76.0
@@ -46,7 +46,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_00cxu"]
 resource_name = "correr"
 length = 0.8333333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

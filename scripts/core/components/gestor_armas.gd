@@ -22,7 +22,7 @@ func equipar_arma(nueva_arma: Arma):
 	# Actualizamos el dibujo en pantalla con el icono del inventario
 	sprite_arma.texture = arma_equipada.icono 
 	#Laura aca se conecta el arma 
-	#Eventos.arma_equipada_cambiada.emit(arma_equipada.icono)
+	Eventos.arma_equipada_cambiada.emit(arma_equipada.icono)
 
 #func actualizar_apuntado(direccion_texto: String):
 #	var distancia = 15
