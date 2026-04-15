@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://c71q3u2hgdhk2"]
 
-[ext_resource type="Script" uid="uid://coamc74eh64la" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_2ba4v"]
+[ext_resource type="Script" uid="uid://by4w0d0iaed0i" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_2ba4v"]
+[ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_v8d5q"]
 [ext_resource type="Texture2D" uid="uid://blp1ht4h7weme" path="res://assets/spritsEnemigos/Mutant_1/Attack_2.png" id="2_ycj03"]
-[ext_resource type="Script" uid="uid://ducxelivnujlf" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="3_v8d5q"]
-[ext_resource type="Script" uid="uid://dl0shy3i2s5jg" path="res://scripts/maquina_estados/maquina_estados.gd" id="3_ycj03"]
-[ext_resource type="Script" uid="uid://dnxyg55hfei8j" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="4_8nc0j"]
-[ext_resource type="Script" uid="uid://dxn2aoi76cgga" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="5_gclr3"]
+[ext_resource type="Script" uid="uid://dpb2upmjxgqp6" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="3_v8d5q"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="3_ycj03"]
+[ext_resource type="Script" uid="uid://dn75v0jnugvoj" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="4_8nc0j"]
+[ext_resource type="Script" uid="uid://c1huyomb1cia8" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="5_gclr3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02thl"]
 radius = 21.0
@@ -86,12 +87,14 @@ _data = {
 radius = 26.57066
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1661008805]
+scale = Vector2(4, 4)
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_2ba4v")
 dano_contacto = 20
 mana_morir = 30
+escena_cristal = ExtResource("2_v8d5q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=300751895]
 position = Vector2(0, -15)
@@ -119,6 +122,8 @@ script = ExtResource("5_gclr3")
 libraries/ = SubResource("AnimationLibrary_mrwqm")
 
 [node name="Zona_ataque" type="Area2D" parent="." unique_id=411559073]
+collision_layer = 2
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataque" unique_id=1841072999]
 position = Vector2(2, 18)

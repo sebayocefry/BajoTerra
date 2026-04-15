@@ -37,6 +37,7 @@ var jugador_en_rango : bool = false
 @onready var maquina_estados = get_node("Maquina_estados") 
 
 func _ready():
+    super._ready()
     # Buscamos al jugador en el grupo que creamos antes
     jugador = get_tree().get_first_node_in_group("player")
 
