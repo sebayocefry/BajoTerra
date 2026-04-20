@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://c5b4npieaa6uf"]
 
-[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
+[ext_resource type="Texture2D" uid="uid://cvpapnumm8hev" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
 [ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="2_qdgj3"]
 [ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
+[ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="6_yn3n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
 size = Vector2(2288, 102.5)
@@ -70,3 +71,5 @@ collision_mask = 3
 position = Vector2(123, -534)
 
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
+
+[node name="Esqueleto" parent="." unique_id=1921202342 instance=ExtResource("6_yn3n7")]
