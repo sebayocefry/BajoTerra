@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="6_yn3n7"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="7_ivsxo"]
+[ext_resource type="PackedScene" uid="uid://ch1gyh7x7b26p" path="res://escenas/personajes/enemigos/slime/slime.tscn" id="8_mied4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
 size = Vector2(2288, 102.5)
@@ -73,3 +75,10 @@ position = Vector2(123, -534)
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
 
 [node name="Esqueleto" parent="." unique_id=1921202342 instance=ExtResource("6_yn3n7")]
+position = Vector2(37, 192)
+
+[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("7_ivsxo")]
+position = Vector2(-204, 144)
+
+[node name="Slime" parent="." unique_id=1378643767 instance=ExtResource("8_mied4")]
+position = Vector2(-899, 513)
