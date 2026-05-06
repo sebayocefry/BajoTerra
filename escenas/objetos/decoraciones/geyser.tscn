@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bc3q1fnbbmwvg"]
+
+[ext_resource type="Texture2D" uid="uid://c1w25ti0n4kh5" path="res://assets/geyser/1.png" id="1_4gep4"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_rpw21"]
+[ext_resource type="Texture2D" uid="uid://c7tnpdoh5gwdy" path="res://assets/geyser/2.png" id="2_rpw21"]
+[ext_resource type="Texture2D" uid="uid://dh8k2j57sktxf" path="res://assets/geyser/3.png" id="3_a2688"]
+[ext_resource type="Texture2D" uid="uid://c5rr2bajl62pp" path="res://assets/geyser/4.png" id="4_lehsk"]
+[ext_resource type="Texture2D" uid="uid://c0oj3tdk5idye" path="res://assets/geyser/5.png" id="5_1uepp"]
+[ext_resource type="Texture2D" uid="uid://dpddijiw2xew2" path="res://assets/geyser/6.png" id="6_7wfkl"]
+[ext_resource type="Texture2D" uid="uid://dny4fw8sqgptr" path="res://assets/geyser/7.png" id="7_y718a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ige8"]
+atlas = ExtResource("1_4gep4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axili"]
+atlas = ExtResource("2_rpw21")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63bx0"]
+atlas = ExtResource("3_a2688")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htvmt"]
+atlas = ExtResource("4_lehsk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l500l"]
+atlas = ExtResource("5_1uepp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ucap"]
+atlas = ExtResource("6_7wfkl")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg72t"]
+atlas = ExtResource("7_y718a")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpj2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ige8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axili")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63bx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htvmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l500l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ucap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg72t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="geyser" type="StaticBody2D" unique_id=1958011699]
+script = ExtResource("1_rpw21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=772457106]
+position = Vector2(19.5, 39.5)
+scale = Vector2(1.3046875, 1.6171875)
+sprite_frames = SubResource("SpriteFrames_gpj2o")
+frame_progress = 0.22004457

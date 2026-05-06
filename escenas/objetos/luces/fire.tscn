@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bxn30cmidq5oy"]
+
+[ext_resource type="Texture2D" uid="uid://b5mj4mab3cenm" path="res://assets/decoracion/fire.png" id="1_2pqqt"]
+[ext_resource type="Script" uid="uid://b2nrlkdiywanx" path="res://scripts/objetos/luces/antorcha.gd" id="2_5ltu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ltu8"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(84, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ecg"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(196, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icfi2"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(308, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo6dx"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(420, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2yji"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(532, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjybw"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(644, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f37y5"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(756, 0, 28, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgnow"]
+atlas = ExtResource("1_2pqqt")
+region = Rect2(868, 0, 28, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwgbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ltu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6ecg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icfi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo6dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2yji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjybw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f37y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgnow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=352358547]
+script = ExtResource("2_5ltu8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1038919846]
+position = Vector2(189.25, 2)
+scale = Vector2(4.4821424, 4)
+sprite_frames = SubResource("SpriteFrames_bwgbv")
+frame_progress = 0.17864932

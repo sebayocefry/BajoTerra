@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b5125yfn26ln5"]
+
+[ext_resource type="Script" uid="uid://bfuj4rbmjf3li" path="res://escenas/transicion/level_transition.gd" id="1_04y4f"]
+[ext_resource type="Shader" uid="uid://k7goh84i33se" path="res://escenas/transicion/level_transition.gdshader" id="2_wr8b7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wr8b7"]
+shader = ExtResource("2_wr8b7")
+shader_parameter/radius = 0.0
+shader_parameter/center = Vector2(0.5, 0.5)
+
+[node name="LevelTransition" type="CanvasLayer" unique_id=1645034107]
+process_mode = 3
+script = ExtResource("1_04y4f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1832250416]
+material = SubResource("ShaderMaterial_wr8b7")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
