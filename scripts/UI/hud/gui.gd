@@ -5,10 +5,10 @@ extends CanvasLayer
 # Si renombras un nodo en el panel de la izquierda, debes cambiarlo aquí también.
 # ---------------------------------
 
-@onready var barra_vida = $MarginContainer/VBoxContainer/BarraVida
-@onready var texto_mana = $MarginContainer/VBoxContainer/FilaInferior/TextoMana
-@onready var icono_arma = $MarginContainer/VBoxContainer/FilaInferior/CajaArma/Icono
-@onready var icono_objeto = $MarginContainer/VBoxContainer/FilaInferior/CajaObjeto/Icono
+@onready var barra_vida = %BarraVida
+@onready var texto_mana = %TextoMana
+@onready var icono_arma = %IconoArma
+@onready var icono_objeto = %IconoObjeto
 
 func _ready():
     Eventos.vida_actualizada.connect(_on_vida_actualizada)
@@ -18,8 +18,12 @@ func _ready():
 
 #  Reacciones (Defensivas: validamos que el nodo exista antes de cambiarlo)
 func _on_vida_actualizada(v_actual: int, v_max: int):
+    #print("GUI ESCUCH LA SEnAL: Vida = ", v_actual, " / ", v_max)
     if barra_vida:
         barra_vida.max_value = v_max
+        #paara reakizar una animacion al bajar vida 
+        var tween = get_tree().create_tween()
+        tween.tween_property(barra_vida, "value", v_actual, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
         barra_vida.value = v_actual
 
 func _on_mana_actualizado(m_actual: int):
