@@ -37,6 +37,7 @@ var jugador_en_rango : bool = false
 @onready var maquina_estados = get_node("Maquina_estados") 
 
 func _ready():
+    super._ready()
     # Buscamos al jugador en el grupo que creamos antes
     jugador = get_tree().get_first_node_in_group("player")
 
@@ -48,6 +49,11 @@ func morir():
         # para agregar el cristal de forma segura al nivel principal.
 		#la unica forma que no se rompa 
         get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
+
+	if not ya_cambio_escena:
+		ya_cambio_escena = true
+		LevelTransition.change_scene_to("res://escenas/niveles/nivel1/habitacion_1_nivel1.tscn")
+
         
     super.morir()
 

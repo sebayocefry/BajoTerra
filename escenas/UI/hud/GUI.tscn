@@ -23,7 +23,7 @@ layout_mode = 2
 
 [node name="BarraVida" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=503630833]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 25)
+custom_minimum_size = Vector2(400, 25)
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_kesuo")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c4x6tueta56hm"]
+
+[ext_resource type="Texture2D" uid="uid://cy54de6med2qd" path="res://assets/SpriteComerciante/comerciante.png" id="1_atrvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21kyf"]
+size = Vector2(985.5, 985.5)
+
+[sub_resource type="Gradient" id="Gradient_jm1b6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1d2sn"]
+gradient = SubResource("Gradient_jm1b6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsn2m"]
+size = Vector2(1239, 1408.5)
+
+[node name="Comerciante" type="StaticBody2D" unique_id=631148056]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166120188]
+position = Vector2(-15, 2)
+texture = ExtResource("1_atrvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1505943522]
+position = Vector2(-10, 1)
+shape = SubResource("RectangleShape2D_21kyf")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=692755766]
+position = Vector2(417.00003, -50)
+scale = Vector2(7.359375, 11.609375)
+color = Color(0.7194407, 0.07345035, 0.76430017, 1)
+texture = SubResource("GradientTexture2D_1d2sn")
+
+[node name="ZonaInteraccion" type="Area2D" parent="." unique_id=950973374]
+position = Vector2(787, -325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion" unique_id=1860463349]
+position = Vector2(-788, 432.75)
+shape = SubResource("RectangleShape2D_nsn2m")

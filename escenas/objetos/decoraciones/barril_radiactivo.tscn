@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b7ee6joypqart"]
+
+[ext_resource type="Texture2D" uid="uid://ddnhkhgq3hb8v" path="res://assets/decoracion/barril.png" id="1_bxqg3"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="2_tnwmr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnwmr"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(1, 111, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gqfg"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(135, 111, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx7ol"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(269, 111, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2mcf"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(1, 212, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp3fs"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(135, 212, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quyh3"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(269, 212, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc2sj"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(1, 313, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w52ho"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(135, 313, 134, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp5wh"]
+atlas = ExtResource("1_bxqg3")
+region = Rect2(269, 313, 134, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sajjt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnwmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gqfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx7ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2mcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp3fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quyh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc2sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w52ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp5wh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=714526157]
+script = ExtResource("2_tnwmr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=558878095]
+position = Vector2(2, -21.5)
+scale = Vector2(1.0298507, 1.1980197)
+sprite_frames = SubResource("SpriteFrames_sajjt")
+frame_progress = 0.24191654
