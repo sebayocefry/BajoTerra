@@ -11,6 +11,8 @@ class_name Player
 @export var oro : int = 0
 @export var listaObjetos : Array[Objeto] = []
 
+@export var limite_inventario : int = 5 
+
 @onready var animation_sprite = $AnimatedSprite2D
 # Instanciamos la funcion de movimiento 
 @onready var movement = $Movimiento
@@ -113,4 +115,31 @@ func sumar_mana(cantidad: int):
 	Eventos.mana_actualizado.emit(mana)
 	#para mi debugg
 	print("Maná recogido: +", cantidad, " | Total: ", mana)
-	
+
+# trate de hacer lo mas limpio posible y quitarle resposabilidades a la clase jugador
+
+# El jugador solo responde si puede o no pagar
+func tiene_oro_suficiente(cantidad: int) -> bool:
+    return oro >= cantidad
+
+# El jugador solo resta oro e informa a la UI
+func gastar_oro(cantidad: int):
+    oro -= cantidad
+    Eventos.oro_actualizado.emit(oro)
+
+# El jugador solo recibe el objeto, asume que alguien  ya valido el pago
+func recibir_objeto(nuevo_objeto: Objeto) -> bool:
+    # Buscamos huecos libres
+    for i in range(listaObjetos.size()):
+        if listaObjetos[i] == null:
+            listaObjetos[i] = nuevo_objeto
+            return true
+            
+    #  Si no hay huecos, agregamos al final si hay límite
+    if listaObjetos.size() < limite_inventario:
+        listaObjetos.append(nuevo_objeto)
+        return true
+        
+    print("Inventario lleno.")
+    return false
+
