@@ -11,6 +11,26 @@
 
     lo usamos: Para respetar el principio de Desacoplamiento. El Jugador no necesita saber que la GUI existe; solo emite una señal al Eventos.gd y quien esté interesado, que escuche el evento.
 
+**Singleton (Autoload)**
+Es un patrón de diseño creacional que garantiza que una clase tenga una única instancia y proporciona un punto de acceso global a ella. En Godot, lo implementamos mediante los nodos **Autoload**.
+
+* **Uso en BajoTerra:** Se utiliza en `DatosJugador.gd`, `GestorEscenas.gd` y `Eventos.gd`.
+* **Propósito:** Mantener la persistencia de datos (vida, oro, inventario) y coordinar sistemas globales que no deben destruirse al cambiar de escena.
+
+### **Memento / Snapshot**
+Es un patrón de diseño de comportamiento que permite capturar y externalizar el estado interno de un objeto sin violar su encapsulamiento, de modo que el objeto pueda restaurarse a este estado más tarde.
+
+* **Uso en BajoTerra:** El `GestorEscenas` captura una "foto" de las variables locales del `Player` antes de destruir el nivel y las reinyecta en el nuevo `Player` al cargar la siguiente habitación.
+* **Propósito:** Evitar que el jugador pierda su progreso al transicionar entre archivos `.tscn`.
+
+### **Mediator (Controlador de Nivel)**
+Es un patrón de diseño de comportamiento que reduce las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre los objetos y los obliga a colaborar únicamente a través de un objeto mediador.
+
+* **Uso en BajoTerra:** La clase `ControladorNivel.gd` actúa como mediador entre los enemigos y la puerta de salida (`PuntoSalida`).
+* **Propósito:** Los enemigos no necesitan conocer la existencia de la puerta; simplemente avisan que murieron y el mediador decide cuándo abrir el camino basándose en el estado de la habitación.
+
+
+
 
 
 
@@ -96,3 +116,63 @@ Para agregar un nuevo elemento al juego, configura su sección **Collision** de 
 
 ⚠️ **Nota para el equipo:** Nunca programen colisiones con `if body.name == "Muro"`. usen las mask. Si un objeto está en la capa correcta, la física funcionará sola.
 
+
+
+# Arquitectura de Progresión y Persistencia en BajoTerra
+
+Este sistema gestiona la transición entre niveles y habitaciones asegurando la persistencia del estado del jugador y la "memoria" del mundo (enemigos que no reviven). Se basa en el **Patrón Snapshot** y el uso de **Singletons (Autoloads)** para desacoplar los datos de las escenas físicas.
+
+---
+
+## 1. Componentes del Sistema
+
+### A. DatosJugador (Singleton de Persistencia)
+Es la "Fuente Única de Verdad". Este script nunca se destruye y almacena el estado del jugador durante los cambios de escena.
+* **Responsabilidad:** Guardar vida, maná, oro, inventario y el registro de habitaciones ya completadas (`habitaciones_limpias`).
+* **Lógica:** Antes de salir de una habitación, captura una "foto" de las estadísticas del jugador y las reinyecta en el nuevo nodo `Player` al cargar la siguiente escena.
+
+### B. GestorEscenas (Singleton de Control)
+Es el encargado de ejecutar la transición técnica entre archivos `.tscn`.
+* **Responsabilidad:** Orquestar el guardado de datos, realizar el cambio de escena mediante `call_deferred` (para evitar errores de colisión en tiempo de ejecución) e inyectar los datos guardados en el nuevo nivel.
+
+### C. ControladorNivel (Cerebro de la Habitación)
+Script adjunto al nodo raíz de cada nivel o habitación.
+* **Responsabilidad:** Consultar al inicio si la habitación ya fue marcada como "limpia" en `DatosJugador`. Si es así, elimina a los enemigos automáticamente. Si no, coordina la apertura de la salida cuando el contador de enemigos llega a cero.
+
+### D. PuntoSalida (Interacción)
+Nodo `Area2D` que detecta la llegada del jugador.
+* **Responsabilidad:** Determinar si el cambio es hacia una nueva habitación (mismo piso) o hacia un nivel final (cambio de piso), notificando al `GestorEscenas` para iniciar la transición.
+
+---
+
+## 2. Configuración en el Motor (Godot)
+
+### Registro de Autoloads
+Para que el sistema funcione, los scripts globales deben registrarse en **Proyecto -> Configuración del Proyecto -> Autoload**:
+
+1. **DatosJugador**: Registrar `res://scripts/autoLoad/DatosJugador.gd`.
+2. **GestorEscenas**: Registrar `res://scripts/autoLoad/GestorEscenas.gd`.
+3. **Eventos**: Registrar `res://scripts/autoLoad/Eventos.gd`.
+
+*Nota: Es fundamental que `DatosJugador` esté por encima de `GestorEscenas` en la lista para asegurar el orden de inicialización.*
+
+### Identificación del Jugador
+Para que el sistema encuentre al personaje tras el cambio de escena, el nodo raíz de la escena del jugador (`Player.tscn`) **debe** pertenecer al grupo **"Player"** (Panel de Nodos -> Grupos).
+
+---
+
+## 3. Flujo de Trabajo para Crear Niveles
+
+1. **Crear Escena:** Crear una nueva escena `Node2D` para la habitación.
+2. **Asignar Controlador:** Vincular el script `ControladorNivel.gd` al nodo raíz de la escena.
+3. **Configurar Salida:** Instanciar la escena `PuntoSalida`. En el Inspector, definir el `Tipo de Salida` y arrastrar el archivo `.tscn` de destino al campo `Siguiente Nivel`.
+4. **Etiquetar Enemigos:** Todos los enemigos posicionados en la habitación deben pertenecer al grupo **"Enemigos"**.
+
+---
+
+## 4. Beneficios de esta Arquitectura
+
+* **Escalabilidad:** Se puede añadir un número infinito de habitaciones sin duplicar lógica de código.
+* **Persistencia:** El jugador mantiene su progreso (vida/objetos) de forma transparente entre cargas.
+* **Memoria de Mundo:** Permite volver a habitaciones anteriores sin que el estado se resetee (los enemigos muertos permanecen muertos).
+* **Desacoplamiento:** La lógica de combate (Entidad) no depende de la lógica de guardado (DatosJugador), facilitando el testeo aislado.
