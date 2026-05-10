@@ -116,26 +116,26 @@ func curar(cantidad: int):
 
 # El jugador solo responde si puede o no pagar
 func tiene_oro_suficiente(cantidad: int) -> bool:
-    return oro >= cantidad
+	return oro >= cantidad
 
 # El jugador solo resta oro e informa a la UI
 func gastar_oro(cantidad: int):
-    oro -= cantidad
-    Eventos.oro_actualizado.emit(oro)
+	oro -= cantidad
+	Eventos.oro_actualizado.emit(oro)
 
 # El jugador solo recibe el objeto, asume que alguien  ya valido el pago
 func recibir_objeto(nuevo_objeto: Objeto) -> bool:
     # Buscamos huecos libres
-    for i in range(listaObjetos.size()):
-        if listaObjetos[i] == null:
-            listaObjetos[i] = nuevo_objeto
-            return true
+	for i in range(listaObjetos.size()):
+		if listaObjetos[i] == null:
+			listaObjetos[i] = nuevo_objeto
+			return true
             
     #  Si no hay huecos, agregamos al final si hay límite
-    if listaObjetos.size() < limite_inventario:
-        listaObjetos.append(nuevo_objeto)
-        return true
+	if listaObjetos.size() < limite_inventario:
+		listaObjetos.append(nuevo_objeto)
+		return true
         
-    print("Inventario lleno.")
-    return false
+	print("Inventario lleno.")
+	return false
 

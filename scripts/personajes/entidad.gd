@@ -12,6 +12,8 @@ var estado_invulnerable : bool = false
 var empuje_actual: Vector2 = Vector2.ZERO
 var vida : int 
 
+signal entidad_morir
+
 func _ready():
     vida = vida_maxima
 
@@ -26,5 +28,6 @@ func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
         morir()
 
 func morir():
+    entidad_morir.emit()
     queue_free()
 	

@@ -21,9 +21,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*uid://c3rodes2l3gxb"
 Eventos="*uid://cqud440ujptxl"
-LevelTransition="*uid://b5125yfn26ln5"
+DialogueManager="*uid://c3rodes2l3gxb"
+DatosJugador="*uid://o4whvv1mgii3"
+GestorEscenas="*uid://b610qbt5qnul4"
+LevelTransition="uid://b5125yfn26ln5"
 
 [display]
 

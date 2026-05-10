@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
-[ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="6_yn3n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
 size = Vector2(2288, 102.5)
@@ -71,6 +70,3 @@ collision_mask = 3
 position = Vector2(123, -534)
 
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
-
-[node name="Comerciante" parent="." unique_id=631148056 instance=ExtResource("6_yn3n7")]
-position = Vector2(545, -841)
