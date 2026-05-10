@@ -26,3 +26,38 @@ func cargar_estado_jugador(player: Player):
     Eventos.vida_actualizada.emit(player.vida, 100) 
     Eventos.mana_actualizado.emit(player.mana)
     Eventos.oro_actualizado.emit(player.oro)
+
+
+# Prepara los datos para ser guardados en disco
+func obtener_datos_diccionario() -> Dictionary:
+    var inventario_rutas = []
+
+    for item in inventario:
+        if item != null:
+            inventario_rutas.append(item.resource_path)
+        else:
+            inventario_rutas.append("") 
+
+    return {
+        "vida_actual": vida_actual,
+        "mana_actual": mana_actual,
+        "oro_actual": oro_actual,
+        "habitaciones_limpias": habitaciones_limpias,
+        "inventario_rutas": inventario_rutas,
+        "ultima_escena": get_tree().current_scene.scene_file_path # Guardamos donde stabamos
+    }
+
+# Restaura los datos leidos desde el disco
+func cargar_datos_diccionario(datos: Dictionary):
+    vida_actual = datos.get("vida_actual", 100)
+    mana_actual = datos.get("mana_actual", 0)
+    oro_actual = datos.get("oro_actual", 0)
+    habitaciones_limpias = datos.get("habitaciones_limpias", {})
+    
+    inventario.clear()
+    var rutas = datos.get("inventario_rutas", [])
+    for ruta in rutas:
+        if ruta != "":
+            inventario.append(load(ruta)) # Volvemos a cargar el Resource en memoria
+        else:
+            inventario.append(null)

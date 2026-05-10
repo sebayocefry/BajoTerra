@@ -139,3 +139,14 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 	print("Inventario lleno.")
 	return false
 
+
+func morir():
+	print("El jugador ha muerto. Iniciando Game Over.")
+	Eventos.jugador_muerto.emit()
+    
+	# Detenemos el proceso físico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
+	set_physics_process(false)
+	$CollisionShape2D.set_deferred("disabled", true)
+    
+    
+    # animation_sprite.play("muerte")

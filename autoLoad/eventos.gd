@@ -8,3 +8,5 @@ signal consumible_equipado_cambiado(icono: Texture2D)
 
 signal abrir_ui_tienda(inventario: Array, referencia_comerciante: Comerciante, referencia_jugador: Player)
 signal cerrar_ui_tienda()
+
+signal jugador_muerto()
