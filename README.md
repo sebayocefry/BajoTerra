@@ -84,6 +84,8 @@ Para evitar que el enemigo se trabe en las esquinas de los pasillos:
 | **2** | `Jugador` | El Minero / Entidad controlada por el usuario. |
 | **3** | `Enemigos` | NPCs hostiles (Fantasmas, Jefes, etc.). |
 | **4** | `Proyectiles` | Ataques a distancia o magia. |
+| **5** | Botín / Loot | Cristales y objetos recolectables. |
+| **6** | **Interactivos** | Zonas de activación (E) para guardado, cofres o diálogos. |
 
 ---
 
@@ -176,3 +178,26 @@ Para que el sistema encuentre al personaje tras el cambio de escena, el nodo ra�
 * **Persistencia:** El jugador mantiene su progreso (vida/objetos) de forma transparente entre cargas.
 * **Memoria de Mundo:** Permite volver a habitaciones anteriores sin que el estado se resetee (los enemigos muertos permanecen muertos).
 * **Desacoplamiento:** La lógica de combate (Entidad) no depende de la lógica de guardado (DatosJugador), facilitando el testeo aislado.
+
+
+### 💾 Guía para el Equipo: Cómo Crear Nuevos Puntos de Guardado
+
+Para mantener la coherencia visual y lógica de *BajoTerra*, sigan estos pasos al crear nuevos puntos de descanso o guardado:
+
+#### 1. Estructura de la Escena
+No creen el objeto desde cero. Utilicen la escena base `PuntoGuardado.tscn` como plantilla o creen una **Escena Heredada** para asegurar que la lógica de guardado no se rompa.
+
+* **Nodo Raíz (`StaticBody2D`):** Debe estar en la **Capa 1** para que el jugador no atraviese al NPC.
+* **ZonaInteraccion (`Area2D`):** Este es el "sensor". Debe estar en la **Capa 6** y su **Mask** debe ser exclusivamente la **Capa 2** (Jugador).
+* **Sprite2D:** Aquí pueden cambiar la imagen por un NPC, un tótem, una fogata o cualquier entidad del lore.
+
+#### 2. Configuración en el Inspector
+El script `PuntoGuardado.gd` es modular. No necesitan tocar el código para personalizarlo:
+
+1.  **Cambiar el Visual:** Simplemente arrastren la nueva textura al nodo `Sprite2D`.
+2.  **Ajustar el área:** Si el NPC es muy grande, escalen el `CollisionShape2D` del nodo `ZonaInteraccion`.
+3.  **Identificador de Diálogo:** (Opcional) Si el NPC tiene líneas de texto únicas, cambien la variable exportada `id_dialogo` para que el gestor de diálogos sepa qué decir antes de guardar.
+
+#### 3. Reglas de Oro para el Equipo
+* **Validación de Clase:** El sistema solo permite guardar si el cuerpo detectado es de la clase `Player`. Asegúrense de que el script del jugador mantenga su `class_name`.
+* **Ubicación:** No coloquen puntos de guardado cerca de bordes de pantalla o zonas de transición de nivel (Puertas), para evitar conflictos entre el guardado de datos y el cambio de escena asíncrono.
