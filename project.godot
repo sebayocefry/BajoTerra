@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BajoTerra"
-run/main_scene="uid://c82y13ssow7bp"
+run/main_scene="uid://b1x77dfagdfuy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 DatosJugador="*uid://o4whvv1mgii3"
 SistemaGuardado="*uid://fa1glytet3jv"
 GestorEscenas="*uid://b610qbt5qnul4"
+PantallaMuerte="*uid://bkushrxj8qmx1"
 LevelTransition="uid://b5125yfn26ln5"
 
 [display]
