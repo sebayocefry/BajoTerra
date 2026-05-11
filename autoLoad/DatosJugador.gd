@@ -12,10 +12,22 @@ var inventario : Array = []
 var habitaciones_limpias : Dictionary = {}
 
 func guardar_estado_jugador(player: Player):
+    print("--- INICIANDO EXTRACCIÓN DE DATOS ---")
+    
+    # Extraemos uno por uno para ver cuál hace crashear el juego
     vida_actual = player.vida
+    print("Vida extraída: ", vida_actual)
+    
     mana_actual = player.mana
+    print("Maná extraído: ", mana_actual)
+    
     oro_actual = player.oro
-    inventario = player.listaObjetos.duplicate() 
+    print("Oro extraído: ", oro_actual)
+    
+    inventario = player.listaObjetos.duplicate()
+    print("Inventario duplicado. Cantidad de objetos: ", inventario.size())
+    
+    print("--- EXTRACCIÓN EXITOSA, PASANDO A SISTEMA GUARDADO ---")
 func cargar_estado_jugador(player: Player):
     player.vida = vida_actual
     player.mana = mana_actual

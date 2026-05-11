@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dtohxppjijlpo"]
+
+[ext_resource type="Texture2D" uid="uid://cdjkw3oryiv5y" path="res://assets/spritsEnemigos/EnemigosRaros/Beholder1_Attack_body.png" id="1_h1fs8"]
+[ext_resource type="Script" uid="uid://svfmedlb8wed" path="res://scripts/common/PuntoGuardado.gd" id="1_s66po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1fs8"]
+size = Vector2(144, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s66po"]
+radius = 130.20752
+
+[node name="PuntoGuardado" type="StaticBody2D" unique_id=548028025]
+collision_mask = 0
+script = ExtResource("1_s66po")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1053751711]
+position = Vector2(1.0000076, 3)
+scale = Vector2(4.453125, 3)
+texture = ExtResource("1_h1fs8")
+hframes = 12
+vframes = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=585235218]
+position = Vector2(4, 31)
+shape = SubResource("RectangleShape2D_h1fs8")
+
+[node name="ZonaInteraccion" type="Area2D" parent="." unique_id=1317240051]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion" unique_id=1318364644]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_s66po")
