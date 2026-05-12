@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://c5b4npieaa6uf"]
 
 [ext_resource type="Texture2D" uid="uid://cvpapnumm8hev" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
-[ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="2_qdgj3"]
 [ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
-[ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
-[ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="6_yn3n7"]
-[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="7_ivsxo"]
-[ext_resource type="PackedScene" uid="uid://ch1gyh7x7b26p" path="res://escenas/personajes/enemigos/slime/slime.tscn" id="8_mied4"]
+[ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="9_pqfd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
 size = Vector2(2288, 102.5)
@@ -50,7 +46,7 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
 [node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("3_0qbj0")]
-position = Vector2(-702, -164)
+position = Vector2(-909, 602)
 collision_layer = 2
 collision_mask = 5
 mana = 80
@@ -64,21 +60,6 @@ limit_top = -797
 limit_right = 1057
 limit_bottom = 825
 
-[node name="fanastma" parent="." unique_id=2071527795 instance=ExtResource("2_qdgj3")]
-position = Vector2(527, 378)
-collision_layer = 4
-collision_mask = 3
-
-[node name="Zombie" parent="." unique_id=1661008805 instance=ExtResource("4_nx3q6")]
-position = Vector2(123, -534)
-
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
 
-[node name="Esqueleto" parent="." unique_id=1921202342 instance=ExtResource("6_yn3n7")]
-position = Vector2(37, 192)
-
-[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("7_ivsxo")]
-position = Vector2(-204, 144)
-
-[node name="Slime" parent="." unique_id=1378643767 instance=ExtResource("8_mied4")]
-position = Vector2(-899, 513)
+[node name="JefeSlime1" parent="." unique_id=1584594003 instance=ExtResource("9_pqfd2")]

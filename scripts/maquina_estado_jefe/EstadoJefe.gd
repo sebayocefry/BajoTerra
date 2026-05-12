@@ -1,9 +1,10 @@
-extends Node 
-class_name Estado
+extends Node
+class_name EstadoJefe
 
-var enemigo : Enemigo 
+var enemigo : EnemigoJefeBrr
 var animacion : AnimationPlayer
-var sprite : Sprite2D
+var sprite_chico : Sprite2D
+var sprite_demonio : Sprite2D
 
 signal transicion(nuevo_estado_nombre : String)
 

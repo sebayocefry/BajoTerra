@@ -21,7 +21,7 @@ func  _ready():
 	if estado_inicial:
 		estado_actual = get_node(estado_inicial)
 		estado_actual.entrar()
-	
+
 func _physics_process(delta):
 	if estado_actual:
 		#print("ESTADO ACTIVO: ", estado_actual.name)
