@@ -163,22 +163,6 @@ Para que el sistema encuentre al personaje tras el cambio de escena, el nodo ra�
 
 ---
 
-## 3. Flujo de Trabajo para Crear Niveles
-
-1. **Crear Escena:** Crear una nueva escena `Node2D` para la habitación.
-2. **Asignar Controlador:** Vincular el script `ControladorNivel.gd` al nodo raíz de la escena.
-3. **Configurar Salida:** Instanciar la escena `PuntoSalida`. En el Inspector, definir el `Tipo de Salida` y arrastrar el archivo `.tscn` de destino al campo `Siguiente Nivel`.
-4. **Etiquetar Enemigos:** Todos los enemigos posicionados en la habitación deben pertenecer al grupo **"Enemigos"**.
-
----
-
-## 4. Beneficios de esta Arquitectura
-
-* **Escalabilidad:** Se puede añadir un número infinito de habitaciones sin duplicar lógica de código.
-* **Persistencia:** El jugador mantiene su progreso (vida/objetos) de forma transparente entre cargas.
-* **Memoria de Mundo:** Permite volver a habitaciones anteriores sin que el estado se resetee (los enemigos muertos permanecen muertos).
-* **Desacoplamiento:** La lógica de combate (Entidad) no depende de la lógica de guardado (DatosJugador), facilitando el testeo aislado.
-
 
 ### 💾 Guía para el Equipo: Cómo Crear Nuevos Puntos de Guardado
 
@@ -201,3 +185,59 @@ El script `PuntoGuardado.gd` es modular. No necesitan tocar el código para pers
 #### 3. Reglas de Oro para el Equipo
 * **Validación de Clase:** El sistema solo permite guardar si el cuerpo detectado es de la clase `Player`. Asegúrense de que el script del jugador mantenga su `class_name`.
 * **Ubicación:** No coloquen puntos de guardado cerca de bordes de pantalla o zonas de transición de nivel (Puertas), para evitar conflictos entre el guardado de datos y el cambio de escena asíncrono.
+
+
+## 🗺️ Arquitectura de Escenas y Transiciones
+
+Para mantener la escalabilidad, evitar fugas de memoria y prevenir el lag (stuttering) al abrir puertas, el proyecto divide la navegación en dos sistemas de ingeniería estrictos: **Micro-Viajes** (transiciones internas) y **Macro-Viajes** (cargas de niveles pesados).
+
+### 1. Sistema Core (Autoloads / Singletons)
+Estos sistemas NO son escenas físicas en el mapa. Son scripts globales que sobreviven durante toda la ejecución.
+*Deber ser configurados en: Proyecto > Configuración del Proyecto > Autoload*
+
+*   **`Eventos`** (Nodo: `Node` | Script: `Eventos.gd`): El bus global de señales. Desacopla el frontend del backend.
+*   **`DatosJugador`** (Nodo: `Node` | Script: `DatosJugador.gd`): Memoria RAM volátil. Extrae y retiene la vida/inventario del jugador durante un Macro-Viaje.
+*   **`GestorEscenas`** (Nodo: `Node` | Script: `GestorEscenas.gd`): Cerebro de los Macro-Viajes. Destruye árboles enteros de nodos para limpiar memoria y carga mundos nuevos.
+
+---
+
+### 2. El Nivel Contenedor (Mundos Principales)
+**REGLA DE ORO:** NUNCA destruyas esta escena para cambiar de una habitación a otra. Esta escena aloja las entidades permanentes e inyecta los mapas de fondo dinámicamente.
+
+*   **Escena Base:** `mundo.tscn` (o `mundo2.tscn`)
+*   **Nodo Raíz:** `Node2D` (Nombrado: `Mundo_X`) -> **Script Obligatorio:** `GestorNivel.gd`
+    *   ↳ `%Player` (`CharacterBody2D`): Tu minero. Instanciado directamente aquí. ¡Asegúrate de marcarlo como "Acceso Único" (clic derecho -> Access as Unique Name)!
+        *   ↳ `Camera2D`: Hija del jugador para que lo siga.
+    *   ↳ `HUD` (`CanvasLayer` o instanciado de UI): Para la vida, oro y maná.
+    *   ↳ `MenuTienda` (`CanvasLayer`): Autoload o instanciado oculto.
+    *   ↳ `ContenedorHabitaciones` (`Node2D`): Nodo completamente **vacío**.
+        *   ↳ `habitacion_1_nivel1.tscn` (`Node2D`): Instancia manual inicial. El script del Mundo reemplazará este nodo en tiempo de ejecución.
+
+---
+
+### 3. Las Habitaciones (El Entorno)
+Son escenas "tontas". No gestionan la memoria ni al jugador. Su única responsabilidad es contener paredes, luces y enemigos.
+
+*   **Escenas:** `habitacion_1_nivel1.tscn`, `habitacion_2_nivel1.tscn`, etc.
+*   **Nodo Raíz:** `Node2D` (Sin script de gestión).
+    *   ↳ Tilemaps (Paredes, suelo).
+    *   ↳ Props, Enemigos, NPCs (Comerciante).
+    *   ↳ Instancias de `PuertaTransicion`.
+
+---
+
+### 4. Triggers de Navegación (Las Puertas)
+Existen dos tipos de puertas, no se deben mezclar:
+
+**A. Puerta de Pasillo (Micro-Viaje)**
+*   **Uso:** Moverse dentro del mismo mundo de forma instantánea sin destruir al `Player`.
+*   **Escena:** `PuertaTransicion.tscn`
+*   **Nodo Raíz:** `Area2D` -> **Script:** `PuertaTransicion.gd`
+    *   ↳ `CollisionShape2D`: El área de contacto.
+*   **Mecánica:** Emite `Eventos.transicion_habitacion_solicitada` enviando la ruta de la nueva habitación y las coordenadas X,Y de destino.
+
+**B. Puerta de Jefe / Cambio de Mundo (Macro-Viaje)**
+*   **Uso:** Pasar de `Intro.tscn` a `mundo.tscn`, o del `mundo.tscn` al `mundo2.tscn`.
+*   **Escena:** (Ej: `PuertaMundo.tscn` o un Botón de Interfaz)
+*   **Nodo Raíz:** `Area2D` -> **Script:** [Script independiente que invoque al Gestor]
+*   **Mecánica:** Ejecuta `GestorEscenas.cambiar_nivel(ruta)`. Este proceso es destructivo: extrae datos al Autoload, destruye el mundo actual, limpia la RAM y construye el nuevo mundo.
