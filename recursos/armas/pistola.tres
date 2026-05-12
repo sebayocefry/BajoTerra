@@ -6,4 +6,6 @@
 [resource]
 script = ExtResource("1_qe40q")
 escena_bala = ExtResource("1_8p76o")
+nombre = "Pistols"
+precio_oro = 200
 metadata/_custom_type_script = "uid://b8gw81fkn2kbp"

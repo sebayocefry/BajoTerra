@@ -125,17 +125,17 @@ func gastar_oro(cantidad: int):
 
 # El jugador solo recibe el objeto, asume que alguien  ya valido el pago
 func recibir_objeto(nuevo_objeto: Objeto) -> bool:
-    # Buscamos huecos libres
+	# Buscamos huecos libres
 	for i in range(listaObjetos.size()):
 		if listaObjetos[i] == null:
 			listaObjetos[i] = nuevo_objeto
 			return true
-            
-    #  Si no hay huecos, agregamos al final si hay límite
+			
+	#  Si no hay huecos, agregamos al final si hay límite
 	if listaObjetos.size() < limite_inventario:
 		listaObjetos.append(nuevo_objeto)
 		return true
-        
+		
 	print("Inventario lleno.")
 	return false
 
@@ -143,10 +143,10 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 func morir():
 	print("El jugador ha muerto. Iniciando Game Over.")
 	Eventos.jugador_muerto.emit()
-    
+	
 	# Detenemos el proceso físico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
-    
-    
-    # animation_sprite.play("muerte")
+	
+	
+	# animation_sprite.play("muerte")

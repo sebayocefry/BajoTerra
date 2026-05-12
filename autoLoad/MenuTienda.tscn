@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bd6ixvva28trc" path="res://scripts/UI/menus/MenuTienda.gd" id="1_27jqc"]
 [ext_resource type="Texture2D" uid="uid://ccg40ivqx512m" path="res://assets/Fondos/FondoTienda2..png" id="1_kxyb7"]
+[ext_resource type="PackedScene" uid="uid://dpeu4dld4dwtc" path="res://escenas/objetos/botones/BotonItemTienda.tscn" id="2_1xff7"]
 
 [node name="MenuTienda" type="CanvasLayer" unique_id=731150284]
 script = ExtResource("1_27jqc")
+escena_boton_item = ExtResource("2_1xff7")
 
 [node name="Panel" type="TextureRect" parent="." unique_id=914923000]
 offset_right = 1188.0
 offset_bottom = 649.0
+mouse_filter = 2
 texture = ExtResource("1_kxyb7")
 expand_mode = 1
 
@@ -22,7 +25,23 @@ columns = 3
 
 [node name="BotonSalir" type="Button" parent="." unique_id=306069780]
 unique_name_in_owner = true
-offset_right = 178.0
-offset_bottom = 48.0
+offset_left = 547.0
+offset_top = 568.0
+offset_right = 725.0
+offset_bottom = 618.0
 theme_override_font_sizes/font_size = 30
 text = "Salir"
+
+[node name="LabelOro" type="Label" parent="." unique_id=1073213396]
+unique_name_in_owner = true
+offset_left = 1013.0
+offset_top = 530.0
+offset_right = 1129.0
+offset_bottom = 610.0
+
+[node name="LabelMensaje" type="Label" parent="." unique_id=367546893]
+unique_name_in_owner = true
+offset_left = 199.0
+offset_top = 436.0
+offset_right = 1024.0
+offset_bottom = 521.0

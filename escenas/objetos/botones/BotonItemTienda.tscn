@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dpeu4dld4dwtc"]
+
+[ext_resource type="Script" uid="uid://dr5stjyg51k5" path="res://scripts/core/components/boton_item.gd" id="1_vbcbj"]
+
+[node name="BotonItemTienda" type="Button" unique_id=1381518158]
+offset_right = 250.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+script = ExtResource("1_vbcbj")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1192070189]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.924
+anchor_bottom = 1.0120001
+offset_right = 15.0
+offset_bottom = 0.039993286
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=233051305]
+layout_mode = 0
+offset_right = 246.0
+offset_bottom = 89.0
+mouse_filter = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=393256007]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1615973630]
+unique_name_in_owner = true
+layout_mode = 2

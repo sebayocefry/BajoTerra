@@ -6,6 +6,8 @@ signal mana_actualizado(mana_actual: int)
 signal arma_equipada_cambiada(icono: Texture2D)
 signal consumible_equipado_cambiado(icono: Texture2D)
 
+signal oro_actualizado(nuevo_total: int)
+
 signal solicitar_apertura_tienda(inventario: Array, comerciante_referencia: Comerciante)
 signal cerrar_ui_tienda()
 

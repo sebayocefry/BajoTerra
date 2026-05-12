@@ -9,6 +9,7 @@ var jugador_en_rango: Player = null
 signal tienda_solicitada(inventario: Array[Objeto], comerciante: Comerciante)
 
 func _ready():
+	assert($ZonaInteraccion != null, "CRiTICO: Falta el nodo ZonaInteraccion (Area2D) en el Comerciante")
 	$ZonaInteraccion.body_entered.connect(_on_zona_interaccion_body_entered)
 	$ZonaInteraccion.body_exited.connect(_on_zona_interaccion_body_exited)
 
@@ -51,3 +52,5 @@ func intentar_comprar_objeto(jugador: Player, objeto_a_comprar: Objeto):
 
 func cerrar_tienda():
 	print("Cerrando la UI de la tienda")
+	Eventos.cerrar_ui_tienda.emit()
+
