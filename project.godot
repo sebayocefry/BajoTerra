@@ -27,6 +27,7 @@ DatosJugador="*uid://o4whvv1mgii3"
 SistemaGuardado="*uid://fa1glytet3jv"
 GestorEscenas="*uid://b610qbt5qnul4"
 PantallaMuerte="*uid://bkushrxj8qmx1"
+MenuTienda="*uid://uaerwuhxvp4u"
 LevelTransition="uid://b5125yfn26ln5"
 
 [display]
@@ -35,7 +36,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="uid://bj04mxbofrfqm"
 
 [editor_plugins]
 
