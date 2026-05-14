@@ -31,8 +31,8 @@ func actualizar_fisica(delta: float):
 
 func ejecutar_golpe():
 	# Solo reproducimos la animación desde cero si no se esta reproduciendo ya
-	if animacion.current_animation != enemigo.anim_ataque:
-		animacion.play(enemigo.anim_ataque)
+	if animador.current_animation != enemigo.anim_ataque:
+		animador.play(enemigo.anim_ataque)
 		
 	# Aplicamos el daño directamente (confiamos en que el Player tiene su invulnerabilidad)
 	print("Fantasma asesta un golpe de: ", enemigo.dano_contacto)

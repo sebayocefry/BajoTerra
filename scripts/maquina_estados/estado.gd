@@ -6,17 +6,18 @@ var actor : Entidad
 # Esto nos permite inyectarle cualquier nodo que cumpla con la función
 var animador 
 var visual 
+var enemigo : Enemigo 
 
 signal transicion(nuevo_estado_nombre : String)
 
 func entrar():
-    pass
+	pass
 
 func actualizar_fisica(_delta : float):
-    pass
+	pass
 
 func manejar_input(_evento : InputEvent):
-    pass
+	pass
 
 func salir():
-    pass
+	pass

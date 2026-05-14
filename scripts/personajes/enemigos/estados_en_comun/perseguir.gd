@@ -3,8 +3,8 @@ extends Estado
 var zona_ataque: Area2D
 
 func entrar():
-	if animacion.current_animation != enemigo.anim_movimiento:
-		animacion.play(enemigo.anim_movimiento)
+	if animador.current_animation != enemigo.anim_movimiento:
+		animador.play(enemigo.anim_movimiento)
 		
 	if not zona_ataque:
 		zona_ataque = enemigo.get_node("Zona_ataque")
@@ -44,8 +44,8 @@ func actualizar_fisica(_delta: float):
 		
 		# Truco del espejo
 		if direccion.x < 0:
-			sprite.flip_h = true
+			visual.flip_h = true
 		elif direccion.x > 0:
-			sprite.flip_h = false
+			visual.flip_h = false
 		
 		enemigo.move_and_slide()

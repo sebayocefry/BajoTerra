@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvpapnumm8hev" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
 [ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="2_qdgj3"]
-[ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
+[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="2_yn3n7"]
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="6_yn3n7"]
@@ -48,15 +48,11 @@ rotation = 1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
-[node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("3_0qbj0")]
-position = Vector2(-702, -164)
-collision_layer = 2
-collision_mask = 5
-mana = 80
-velocidad = 500
+[node name="Jugador2" parent="." unique_id=1545161310 groups=["player"] instance=ExtResource("2_yn3n7")]
+velocidad = 250
 
-[node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
-position = Vector2(484, 26)
+[node name="Camera2D" type="Camera2D" parent="Jugador2" unique_id=1758778630]
+position = Vector2(-218, -138)
 zoom = Vector2(1.2, 1.2)
 limit_left = -1059
 limit_top = -797
@@ -64,12 +60,12 @@ limit_right = 1057
 limit_bottom = 825
 
 [node name="fanastma" parent="." unique_id=2071527795 instance=ExtResource("2_qdgj3")]
-position = Vector2(527, 378)
+position = Vector2(714, 538)
 collision_layer = 4
 collision_mask = 3
 
 [node name="Zombie" parent="." unique_id=1661008805 instance=ExtResource("4_nx3q6")]
-position = Vector2(123, -534)
+position = Vector2(-415, -756)
 
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
 

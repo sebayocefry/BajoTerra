@@ -2,8 +2,8 @@ extends Estado
 
 func entrar():
 	enemigo.velocity = Vector2.ZERO
-	if animacion.current_animation != enemigo.anim_reposo:
-		animacion.play(enemigo.anim_reposo)
+	if animador.current_animation != enemigo.anim_reposo:
+		animador.play(enemigo.anim_reposo)
 
 func actualizar_fisica(_delta: float):
 	if enemigo.jugador:
