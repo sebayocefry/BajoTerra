@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5b4npieaa6uf"]
 
-[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
+[ext_resource type="Texture2D" uid="uid://cvpapnumm8hev" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_s4v4f"]
 [ext_resource type="PackedScene" uid="uid://c82y13ssow7bp" path="res://escenas/personajes/enemigos/nivel2/fantasma.tscn" id="2_qdgj3"]
 [ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="3_0qbj0"]
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
@@ -22,6 +22,7 @@ size = Vector2(1614.3297, 88.4317)
 [node name="Habitacion" type="Node2D" unique_id=1160383842]
 
 [node name="fondo" type="Sprite2D" parent="." unique_id=95117601]
+position = Vector2(5, -7)
 texture = ExtResource("1_s4v4f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=585155463]

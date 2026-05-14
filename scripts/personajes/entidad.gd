@@ -15,19 +15,19 @@ var vida : int
 signal entidad_morir
 
 func _ready():
-    vida = vida_maxima
+	vida = vida_maxima
 
 # Función universal de daño
 func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
-    if estado_invulnerable:
-        return 
-    vida -= cantidad
-    empuje_actual = vector_empuje
-    print(nombre_entidad, " recibió ", cantidad, " de daño. Vida restante: ", vida)
-    if vida <= 0:
-        morir()
+	if estado_invulnerable:
+		return 
+	vida -= cantidad
+	empuje_actual = vector_empuje
+	print(nombre_entidad, " recibió ", cantidad, " de daño. Vida restante: ", vida)
+	if vida <= 0:
+		morir()
 
 func morir():
-    entidad_morir.emit()
-    queue_free()
+	entidad_morir.emit()
+	queue_free()
 	

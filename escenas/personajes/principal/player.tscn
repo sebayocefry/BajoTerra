@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://dvmksj7uvdkjc"]
 
-[ext_resource type="Texture2D" uid="uid://c0r5s131nr05x" path="res://assets/movimientoPersonaje/char_idle_down_anim_strip_6.png" id="1_ur7pv"]
-[ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="2_0fn1c"]
-[ext_resource type="Texture2D" uid="uid://ccg6qmy21xgyt" path="res://assets/movimientoPersonaje/char_idle_left_anim_strip_6.png" id="2_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://lju41wwyydjj" path="res://assets/movimientoPersonaje/char_idle_down_anim_strip_6.png" id="1_ur7pv"]
+[ext_resource type="Script" uid="uid://cae2yq6txkmps" path="res://scripts/objetos/objeto.gd" id="2_0fn1c"]
+[ext_resource type="Texture2D" uid="uid://nlvhhctf57kc" path="res://assets/movimientoPersonaje/char_idle_left_anim_strip_6.png" id="2_y4r1p"]
 [ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="3_0piy6"]
-[ext_resource type="Texture2D" uid="uid://d345h0l5mr84u" path="res://assets/movimientoPersonaje/char_idle_right_anim_strip_6.png" id="3_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://djkwmabodkelv" path="res://assets/movimientoPersonaje/char_idle_up_anim_strip_6.png" id="4_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://bgr7j72xlas4n" path="res://assets/movimientoPersonaje/char_run_down_anim_strip_6.png" id="5_jej6c"]
-[ext_resource type="Texture2D" uid="uid://c8fq27fabhikv" path="res://assets/movimientoPersonaje/char_run_left_anim_strip_6.png" id="6_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://b1g1xyccjsj8f" path="res://assets/movimientoPersonaje/char_run_right_anim_strip_6.png" id="7_oprun"]
-[ext_resource type="Texture2D" uid="uid://bndoijoq77umo" path="res://assets/movimientoPersonaje/char_run_up_anim_strip_6.png" id="8_a8ls1"]
-[ext_resource type="Script" uid="uid://buegdhl065y1r" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
-[ext_resource type="Script" uid="uid://bo4njsikkv4pc" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
-[ext_resource type="Script" uid="uid://c25e6s02ptpug" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
+[ext_resource type="Texture2D" uid="uid://cdhp41t4002wa" path="res://assets/movimientoPersonaje/char_idle_right_anim_strip_6.png" id="3_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://dvxrniqm0ra5m" path="res://assets/movimientoPersonaje/char_idle_up_anim_strip_6.png" id="4_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://b02mjpynuqah2" path="res://assets/movimientoPersonaje/char_run_down_anim_strip_6.png" id="5_jej6c"]
+[ext_resource type="Texture2D" uid="uid://cvttjxllyoyvs" path="res://assets/movimientoPersonaje/char_run_left_anim_strip_6.png" id="6_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://hskcqfbl8tfn" path="res://assets/movimientoPersonaje/char_run_right_anim_strip_6.png" id="7_oprun"]
+[ext_resource type="Texture2D" uid="uid://c2wuia5xvguac" path="res://assets/movimientoPersonaje/char_run_up_anim_strip_6.png" id="8_a8ls1"]
+[ext_resource type="Script" uid="uid://de2qea0pm4beo" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
+[ext_resource type="Script" uid="uid://8osbbkl1qr1o" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
+[ext_resource type="Script" uid="uid://coxqqr0f6dmds" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="14_y2iy6"]
+[ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="15_1udg1"]
+[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="16_l0suh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_ur7pv")
@@ -425,3 +427,14 @@ arma_inicial = ExtResource("14_y2iy6")
 [node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
 
 [node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1912659526]
+position = Vector2(0, 155)
+rotation = -0.030430794
+scale = Vector2(0.3559148, 0.5088641)
+color = Color(0.9303971, 1.1038921, 0.23641731, 1)
+energy = 1.18
+shadow_enabled = true
+texture = ExtResource("15_1udg1")
+offset = Vector2(-25, 150)
+script = ExtResource("16_l0suh")

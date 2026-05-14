@@ -32,7 +32,7 @@ func change_scene_to(scene_path: String) -> void:
 		color_rect.material,
 		"shader_parameter/radius",
 		0.0,
-		1.0  # ⏱️ más lento también
+		1.0  #más lento también
 	)
 
 func _load_new_scene() -> void:

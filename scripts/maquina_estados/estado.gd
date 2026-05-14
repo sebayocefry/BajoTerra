@@ -8,10 +8,10 @@ var sprite : Sprite2D
 signal transicion(nuevo_estado_nombre : String)
 
 func entrar():
-    pass
+	pass
 
 func actualizar_fisica(_delta : float):
-    pass
+	pass
 
 func salir():
-    pass
+	pass

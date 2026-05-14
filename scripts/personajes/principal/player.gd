@@ -17,7 +17,10 @@ class_name Player
 # @onready var mano = $Mano
 @onready var gestor_armas = $Gestor_armas
 
+@onready var luz_linterna = $PointLight2D
 var last_direction = "down"
+
+
 
 func _ready():
 	super._ready()
@@ -25,6 +28,10 @@ func _ready():
 	# Sincronizamos la UI con los valores iniciales al nacer
 	Eventos.vida_actualizada.emit(vida, vida_maxima) 
 	Eventos.mana_actualizado.emit(mana)
+	
+	luz_linterna.energy = 4.5
+	luz_linterna.texture_scale = 0.5
+	luz_linterna.color = Color(1.0, 0.95, 0.8)
 
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -35,6 +42,9 @@ func _physics_process(_delta):
 	# 2. El jugador se encarga de su lógica de animación
 	handle_animations(input_direction)
 	# gestor_armas.actualizar_apuntado(last_direction)
+	
+	#Dirección linterna
+	actualizar_linterna(_delta)
 
 func handle_animations(direction: Vector2):
 	if direction == Vector2.ZERO:
@@ -48,6 +58,40 @@ func handle_animations(direction: Vector2):
 		
 		update_animation("run")
 
+#Linterna
+func actualizar_linterna(delta):
+
+	var objetivo = Vector2(0, -10)
+	var rotacion_objetivo = 0.0
+
+	match last_direction:
+
+		"up":
+			objetivo = Vector2(0, -6)
+			rotacion_objetivo = 180.0
+
+		"down":
+			objetivo = Vector2(0, 6)
+			rotacion_objetivo = 0.0
+
+		"left":
+			objetivo = Vector2(-6, 0)
+			rotacion_objetivo = 90.0
+
+		"right":
+			objetivo = Vector2(6, 0)
+			rotacion_objetivo = -90.0
+
+	# Movimiento suave de la luz
+	luz_linterna.position = luz_linterna.position.lerp(objetivo, delta * 8)
+
+	# Rotación suave
+	luz_linterna.rotation_degrees = lerp(
+		luz_linterna.rotation_degrees,
+		rotacion_objetivo,
+		delta * 8
+	)
+	
 func update_animation(state):
 	animation_sprite.play(state + "_" + last_direction)
 
