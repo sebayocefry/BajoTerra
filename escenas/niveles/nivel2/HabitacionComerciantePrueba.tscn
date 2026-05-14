@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bcrdnfk5tj2t5"]
 
 [ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_oswpc"]
-[ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="2_7gtd0"]
 [ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="5_8wywf"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_kcvj7"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="6_3e6lv"]
 [ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="7_5tc7a"]
+[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="8_inj1v"]
 [ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="8_kcvj7"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="9_3e6lv"]
 
@@ -49,22 +49,6 @@ rotation = 1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
-[node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("2_7gtd0")]
-position = Vector2(-702, -164)
-collision_layer = 2
-collision_mask = 5
-mana = 80
-oro = 9000
-velocidad = 500
-
-[node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
-position = Vector2(484, 26)
-zoom = Vector2(1.2, 1.2)
-limit_left = -1059
-limit_top = -797
-limit_right = 1057
-limit_bottom = 825
-
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_kcvj7")]
 
 [node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("6_3e6lv")]
@@ -73,3 +57,14 @@ position = Vector2(795, -601)
 [node name="Comerciante" parent="." unique_id=631148056 instance=ExtResource("5_8wywf")]
 position = Vector2(0, -648)
 inventario_tienda = Array[ExtResource("7_5tc7a")]([ExtResource("8_kcvj7"), ExtResource("9_3e6lv")])
+
+[node name="Jugador2" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("8_inj1v")]
+position = Vector2(-630, 129)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador2" unique_id=1758778630]
+position = Vector2(412, -267)
+zoom = Vector2(1.2, 1.2)
+limit_left = -1059
+limit_top = -797
+limit_right = 1057
+limit_bottom = 825
