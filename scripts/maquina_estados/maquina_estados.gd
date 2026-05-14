@@ -23,15 +23,7 @@ func  _ready():
 	if estado_inicial:
 		estado_actual = get_node(estado_inicial)
 		estado_actual.entrar()
-
-#Agregué _process(delta) en la máquina de estados 
-#porque algunos estados del Muki no estaban funcionando 
-#correctamente usando solo _physics_process().
-#El Muki usa varias lógicas visuales y 
-#temporaless (hostigamiento, hurt, animaciones y timers async) 
-#que no necesariamente dependen de física o movimiento, entonces 
-#necesitaba un update normal por frame además del físico.
-
+		
 func _process(delta):
 
 	if estado_actual:
@@ -39,12 +31,11 @@ func _process(delta):
 		if estado_actual.has_method("actualizar"):
 
 			estado_actual.actualizar(delta)
-			
+	
 func _physics_process(delta):
 	if estado_actual:
 		#print("ESTADO ACTIVO: ", estado_actual.name)
 		estado_actual.actualizar_fisica(delta)
-		
 	else:
 		print("ERROR: La máquina no tiene un estado actual")
 

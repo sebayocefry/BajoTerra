@@ -17,12 +17,18 @@ class_name Player
 # @onready var mano = $Mano
 @onready var gestor_armas = $Gestor_armas
 
+
 @onready var luz_linterna = $PointLight2D
+
+# NUEVO: Referencia al área que detecta NPCs para que la Máquina de Estados la lea
+@onready var detector_npc = $DetectorNPC 
+
 var last_direction = "down"
 
 
 
 func _ready():
+
 	super._ready()
 	await get_tree().process_frame
 	# Sincronizamos la UI con los valores iniciales al nacer
@@ -45,6 +51,13 @@ func _physics_process(_delta):
 	
 	#Dirección linterna
 	actualizar_linterna(_delta)
+
+	super._ready()
+	await get_tree().process_frame
+	# Sincronizamos la UI con los valores iniciales al nacer
+	Eventos.vida_actualizada.emit(vida, vida_maxima) 
+	Eventos.mana_actualizado.emit(mana)
+
 
 func handle_animations(direction: Vector2):
 	if direction == Vector2.ZERO:
@@ -94,15 +107,6 @@ func actualizar_linterna(delta):
 	
 func update_animation(state):
 	animation_sprite.play(state + "_" + last_direction)
-
-# este metodo sirve para escuchar cuando el jugador presiona la tecla para usar el objeto del inventario
-func _unhandled_input(event):
-	# con el ui acept es como un mapa de teclas enter que tiene godot
-	# es como cuando usamos el "click" en java, altiro sabe que es
-	if event.is_action_pressed("ui_accept"):
-		usar_objeto_inventario(0)
-	elif event.is_action_pressed("disparar"):
-		gestor_armas.apretar_gatillo()
 
 func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
 	# Guardamos la vida que teníamos antes del golpe
@@ -175,7 +179,7 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 			listaObjetos[i] = nuevo_objeto
 			return true
 			
-	#  Si no hay huecos, agregamos al final si hay límite
+	#  Si no hay huecos, agregamos al final si hay limite
 	if listaObjetos.size() < limite_inventario:
 		listaObjetos.append(nuevo_objeto)
 		return true
@@ -187,8 +191,6 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 func morir():
 	print("El jugador ha muerto. Iniciando Game Over.")
 	Eventos.jugador_muerto.emit()
-	
-	# Detenemos el proceso físico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	
