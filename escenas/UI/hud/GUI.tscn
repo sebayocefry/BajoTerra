@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8hyfb6xkhqwf"]
 
-[ext_resource type="Script" uid="uid://bah2fwyx7jvcg" path="res://scripts/UI/hud/gui.gd" id="1_msgfq"]
+[ext_resource type="Script" uid="uid://dr8tda1hy3qhm" path="res://scripts/UI/hud/gui.gd" id="1_msgfq"]
+[ext_resource type="Texture2D" uid="uid://bx87h6fdjs3nc" path="res://assets/Fondos/fondoUiObjetos.png" id="2_k5hc5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kesuo"]
 bg_color = Color(0.05, 0.039166667, 0, 1)
@@ -14,14 +15,15 @@ bg_color = Color(0.6, 0.036000002, 0.036000002, 1)
 [node name="Gui" type="CanvasLayer" unique_id=1866949275]
 script = ExtResource("1_msgfq")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=123663398]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ContenedorArriba" type="MarginContainer" parent="." unique_id=123663398]
+offset_right = 400.0
+offset_bottom = 129.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=532535042]
+[node name="VBoxContainer" type="VBoxContainer" parent="ContenedorArriba" unique_id=532535042]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="BarraVida" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=503630833]
+[node name="BarraVida" type="ProgressBar" parent="ContenedorArriba/VBoxContainer" unique_id=503630833]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 25)
 layout_mode = 2
@@ -29,30 +31,88 @@ size_flags_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_kesuo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_msgfq")
 
-[node name="espaciador" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1230254430]
+[node name="espaciador" type="Control" parent="ContenedorArriba/VBoxContainer" unique_id=1230254430]
 layout_mode = 2
 
-[node name="FilaInferior" type="BoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1648299665]
-layout_mode = 2
-
-[node name="CajaArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=501408766]
-layout_mode = 2
-
-[node name="IconoArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaArma" unique_id=1305160183]
+[node name="TextoMana" type="Label" parent="ContenedorArriba/VBoxContainer" unique_id=68388404]
 unique_name_in_owner = true
-layout_mode = 0
+layout_mode = 2
+text = "Mana:0"
+
+[node name="TextoOro" type="Label" parent="ContenedorArriba" unique_id=992563180]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Oro:0"
+
+[node name="ContenedorAbajo" type="MarginContainer" parent="." unique_id=232197473]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
 offset_right = 40.0
-offset_bottom = 40.0
+grow_vertical = 0
 
-[node name="CajaObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=1203406284]
+[node name="FondoHotBar" type="TextureRect" parent="ContenedorAbajo" unique_id=508719173]
+custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
+texture = ExtResource("2_k5hc5")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_lock_ = true
 
-[node name="IconoObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaObjeto" unique_id=691727991]
-unique_name_in_owner = true
+[node name="GridHotbar" type="GridContainer" parent="ContenedorAbajo/FondoHotBar" unique_id=1591017967]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 60.0
+offset_top = 55.0
+offset_right = 196.0
+offset_bottom = 119.0
+theme_override_constants/h_separation = 4
+columns = 3
 
-[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=68388404]
-unique_name_in_owner = true
+[node name="CajaArma" type="ColorRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar" unique_id=26186474]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+color = Color(0.058420584, 0.0584206, 0.058420606, 1)
+
+[node name="IconoArma" type="TextureRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar/CajaArma" unique_id=1305160183]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CajaObjeto" type="ColorRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar" unique_id=843803155]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(0.06469653, 0.06469653, 0.06469653, 1)
+
+[node name="IconoObjeto" type="TextureRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar/CajaObjeto" unique_id=691727991]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CajaObjeto2" type="ColorRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar" unique_id=1565919533]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(0.078814976, 0.07881499, 0.078814976, 1)
+
+[node name="IconoObjeto2" type="TextureRect" parent="ContenedorAbajo/FondoHotBar/GridHotbar/CajaObjeto2" unique_id=1035668363]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4

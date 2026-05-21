@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="Arma" format=3 uid="uid://bpl2tr5snti78"]
 
 [ext_resource type="PackedScene" uid="uid://bcfubf2n4bv5j" path="res://escenas/objetos/balas/Bala.tscn" id="1_8p76o"]
-[ext_resource type="Script" uid="uid://b8gw81fkn2kbp" path="res://scripts/objetos/armas/arma.gd" id="1_qe40q"]
+[ext_resource type="Script" uid="uid://lbv1k3ok4nwj" path="res://scripts/objetos/armas/arma.gd" id="1_qe40q"]
+[ext_resource type="Texture2D" uid="uid://p3qiw00sk888" path="res://assets/spritesArmas/psito-Photoroom.png" id="2_l8scy"]
 
 [resource]
 script = ExtResource("1_qe40q")
 escena_bala = ExtResource("1_8p76o")
 nombre = "Pistols"
+icono = ExtResource("2_l8scy")
 precio_oro = 200
-metadata/_custom_type_script = "uid://b8gw81fkn2kbp"

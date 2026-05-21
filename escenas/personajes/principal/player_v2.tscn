@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://cfuireiuab5gd"]
 
-[ext_resource type="Script" uid="uid://cae2yq6txkmps" path="res://scripts/objetos/objeto.gd" id="2_0fn1c"]
-[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="3_0piy6"]
 [ext_resource type="Texture2D" uid="uid://eibimpldkhl6" path="res://assets/SpriteMinero/EstaticoFrente/estatico1.png" id="4_xw4gp"]
 [ext_resource type="Texture2D" uid="uid://84pmipnl7voh" path="res://assets/SpriteMinero/EstaticoFrente/estatico2.png" id="5_74tsq"]
 [ext_resource type="Texture2D" uid="uid://cnyt1t8pc55jw" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI1.png" id="6_p4r2q"]
 [ext_resource type="Texture2D" uid="uid://bfhdinqjhm5uc" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI2.png" id="7_2n6m8"]
 [ext_resource type="Texture2D" uid="uid://b8bra37dpde5b" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD1.png" id="8_dnn21"]
 [ext_resource type="Texture2D" uid="uid://dfyr72nxj0tro" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD2.png" id="9_ajrcj"]
-[ext_resource type="Script" uid="uid://de2qea0pm4beo" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
+[ext_resource type="Script" uid="uid://1rrox6g2wslm" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://vpyk80ym31kl" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE1.png" id="10_a6vc4"]
-[ext_resource type="Script" uid="uid://8osbbkl1qr1o" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
+[ext_resource type="Script" uid="uid://bo4njsikkv4pc" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
 [ext_resource type="Texture2D" uid="uid://c6ixemevgtcma" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE2.png" id="11_yvfvj"]
 [ext_resource type="Texture2D" uid="uid://drpm7j36y8ckq" path="res://assets/SpriteMinero/RunFrente/run1.png" id="12_woisn"]
 [ext_resource type="Script" uid="uid://coxqqr0f6dmds" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
@@ -26,9 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://cjyo4uqriq6r4" path="res://assets/SpriteMinero/RunEspalda/RunE1.png" id="21_djrho"]
 [ext_resource type="Texture2D" uid="uid://dhfx77h3qo0xc" path="res://assets/SpriteMinero/RunEspalda/RunE2.png" id="22_fdhd4"]
 [ext_resource type="Texture2D" uid="uid://dxy83rd14mr3o" path="res://assets/SpriteMinero/RunEspalda/RunE3.png" id="23_54uao"]
+[ext_resource type="Script" uid="uid://lbv1k3ok4nwj" path="res://scripts/objetos/armas/arma.gd" id="24_p3vbo"]
+[ext_resource type="Script" uid="uid://c7auorqap7hiq" path="res://scripts/core/components/Gestor_inventario.gd" id="25_b3tl3"]
 [ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="27_74tsq"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
+[ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="27_rx50a"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
+[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="28_rsewi"]
+[ext_resource type="Script" uid="uid://dl0shy3i2s5jg" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
 [ext_resource type="Script" uid="uid://d0e1m8t7qrken" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2x7k2"]
@@ -221,11 +223,12 @@ size = Vector2(138.71875, 155.34375)
 size = Vector2(178, 166.5)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1943970634]
+collision_layer = 2
+collision_mask = 53
 motion_mode = 1
 script = ExtResource("9_qfm1y")
 mana = 100
-listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
-velocidad = 50
+velocidad = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058999725]
 position = Vector2(-8.723518, 2.2435977)
@@ -243,11 +246,16 @@ script = ExtResource("10_oecxe")
 
 [node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
 script = ExtResource("13_0piy6")
-arma_inicial = ExtResource("14_y2iy6")
+armas_disponibles = Array[ExtResource("24_p3vbo")]([ExtResource("14_y2iy6")])
 
 [node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
 
 [node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
+scale = Vector2(0.05, 0.05)
+
+[node name="Gestor_inventario" type="Node" parent="." unique_id=2127443183]
+script = ExtResource("25_b3tl3")
+listaObjetos = Array[ExtResource("27_rx50a")]([ExtResource("28_rsewi"), ExtResource("28_rsewi")])
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1755864465]
 position = Vector2(0, 155)
@@ -260,10 +268,11 @@ texture = ExtResource("27_74tsq")
 offset = Vector2(-25, 150)
 script = ExtResource("28_p4r2q")
 
-[node name="dtectorNPC" type="Area2D" parent="." unique_id=1088014150]
-collision_mask = 32
+[node name="detectorNPC" type="Area2D" parent="." unique_id=1088014150]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dtectorNPC" unique_id=951038440]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectorNPC" unique_id=951038440]
 position = Vector2(-8, -13)
 shape = SubResource("RectangleShape2D_rx50a")
 

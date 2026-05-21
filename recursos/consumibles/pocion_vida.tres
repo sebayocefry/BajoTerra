@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_1x4ok")
-cura_vida = 50
+recupera_mana = 200
 nombre = "Pocion de vida"
 descripcion = "Una pocion de vida echa con sangre de los que perecieron"
 icono = ExtResource("1_lsyka")

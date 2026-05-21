@@ -7,15 +7,13 @@ class_name Player
 @export var mana : int = 0
 # el oro en enteros, que se redonde nomas
 @export var oro : int = 0
-@export var listaObjetos : Array[Objeto] = []
-
-@export var limite_inventario : int = 5 
 
 @onready var animation_sprite = $AnimatedSprite2D
 # Instanciamos la funcion de movimiento 
 @onready var movement = $Movimiento
 # @onready var mano = $Mano
 @onready var gestor_armas = $Gestor_armas
+@onready var gestor_inventario = $Gestor_inventario
 
 # NUEVO: Referencia al área que detecta NPCs para que la Máquina de Estados la lea
 @onready var detector_npc = $DetectorNPC 
@@ -28,12 +26,15 @@ func _ready():
 	# Sincronizamos la UI con los valores iniciales al nacer
 	Eventos.vida_actualizada.emit(vida, vida_maxima) 
 	Eventos.mana_actualizado.emit(mana)
+	Eventos.oro_actualizado.emit(oro)
+	gestor_armas.inicializar_armas()
+	gestor_inventario.actualizar_ui_objeto()
 
 func handle_animations(direction: Vector2):
 	if direction == Vector2.ZERO:
 		update_animation("idle")
 	else:
-		# Lógica para determinar last_direction
+		# Logica para determinar last_direction
 		if abs(direction.x) > abs(direction.y):
 			last_direction = "right" if direction.x > 0 else "left"
 		else:
@@ -67,20 +68,6 @@ func activar_invulnerabilidad(duracion: float):
 	modulate.a = 1.0
 	estado_invulnerable = false 
 
-# este metodo para manejar la lista del inventario y usar el metodo usar()
-func usar_objeto_inventario(indice: int):
-	if indice < listaObjetos.size() and listaObjetos[indice] != null:
-		var objeto_actual = listaObjetos[indice]
-		objeto_actual.usar(self)
-		if objeto_actual is Consumible:
-			# no elimino de la lista ya que al ser dinamica, de forma visual se achicaria y podria darle 
-			# problemas en la interfaz 
-			listaObjetos[indice] = null
-			print("el objesto se uso y se elimino de la lista ")
-			Eventos.consumible_equipado_cambiado.emit(null)
-	else:
-		print("la mochila esta vacia en ese espacio ")
-
 func sumar_mana(cantidad: int):
 	mana += cantidad
 	# Laura aca te aviso para que escuches el evento 
@@ -107,29 +94,14 @@ func gastar_oro(cantidad: int):
 	oro -= cantidad
 	Eventos.oro_actualizado.emit(oro)
 
-# El jugador solo recibe el objeto, asume que alguien  ya valido el pago
-func recibir_objeto(nuevo_objeto: Objeto) -> bool:
-	# Buscamos huecos libres
-	for i in range(listaObjetos.size()):
-		if listaObjetos[i] == null:
-			listaObjetos[i] = nuevo_objeto
-			return true
-			
-	#  Si no hay huecos, agregamos al final si hay límite
-	if listaObjetos.size() < limite_inventario:
-		listaObjetos.append(nuevo_objeto)
-		return true
-		
-	print("Inventario lleno.")
-	return false
-
+func sumar_oro(cantidad: int):
+	oro += cantidad
+	Eventos.oro_actualizado.emit(oro)
 
 func morir():
 	print("El jugador ha muerto. Iniciando Game Over.")
 	Eventos.jugador_muerto.emit()
 	
-	# Detenemos el proceso físico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
+	# Detenemos el proceso fisico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
-	
-  

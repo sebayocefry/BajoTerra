@@ -15,3 +15,6 @@ signal jugador_muerto()
 
 # Transiciones internas del nivel
 signal transicion_habitacion_solicitada(ruta_habitacion: String, coordenada_destino: Vector2)
+
+#para manejar el inventario en la ui 
+signal inventario_completo_actualizado(lista_objetos: Array)

@@ -9,12 +9,13 @@ extends CanvasLayer
 @onready var texto_mana = %TextoMana
 @onready var icono_arma = %IconoArma
 @onready var icono_objeto = %IconoObjeto
-
+@onready var texto_oro = %TextoOro 
 func _ready():
     Eventos.vida_actualizada.connect(_on_vida_actualizada)
     Eventos.mana_actualizado.connect(_on_mana_actualizado)
     Eventos.arma_equipada_cambiada.connect(_on_arma_cambiada)
     Eventos.consumible_equipado_cambiado.connect(_on_objeto_cambiado)
+    Eventos.oro_actualizado.connect(_on_oro_actualizado)
 
 #  Reacciones (Defensivas: validamos que el nodo exista antes de cambiarlo)
 func _on_vida_actualizada(v_actual: int, v_max: int):
@@ -31,9 +32,20 @@ func _on_mana_actualizado(m_actual: int):
         texto_mana.text = str(m_actual)
 
 func _on_arma_cambiada(nuevo_sprite: Texture2D):
+    print("--- DEBUG GUI ---")
+    print("1. La señal llegó a la GUI.")
+    print("2. El sprite recibido es: ", nuevo_sprite)
+    
     if icono_arma:
         icono_arma.texture = nuevo_sprite
+        print("3. Textura asignada exitosamente al nodo visual.")
+    else:
+        print("ERROR CRÍTICO: El nodo %IconoArma no fue encontrado por el script.")
 
 func _on_objeto_cambiado(nuevo_sprite: Texture2D):
     if icono_objeto:
         icono_objeto.texture = nuevo_sprite
+
+func _on_oro_actualizado(nuevo_total: int):
+    if texto_oro:
+        texto_oro.text = str(nuevo_total)

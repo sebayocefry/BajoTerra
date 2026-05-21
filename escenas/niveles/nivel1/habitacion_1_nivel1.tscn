@@ -2,15 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://buwnl7tf1con7" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion.png" id="1_ca32q"]
 [ext_resource type="Texture2D" uid="uid://b61a21kjiifbc" path="res://assets/spritesMundos/level1/paredes/pared1_habitacion1_mundo1.png" id="2_j3y4y"]
-[ext_resource type="Texture2D" uid="uid://cenobg5qwdgjr" path="res://assets/puertas/puerta_cerrada_1.png" id="3_j3y4y"]
-[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
-[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
-[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
-[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
+[ext_resource type="Texture2D" uid="uid://btv057y4o73gn" path="res://assets/puertas/puerta_cerrada_1.png" id="3_j3y4y"]
+[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
+[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
+[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
+[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
 [ext_resource type="Texture2D" uid="uid://cl6mo1g45ade6" path="res://assets/esqueletos/Objects_separately/Bones_grass_shadow1.png" id="8_j466s"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="9_fv5mg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
-[ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="11_lr6cd"]
+[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="11_heiiv"]
+[ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="12_7767w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fs37"]
 size = Vector2(1947, 125)
@@ -156,7 +157,7 @@ position = Vector2(364, 399.00003)
 scale = Vector2(2.1979167, 2.1847825)
 texture = ExtResource("10_vasvg")
 
-[node name="colisiones" type="Node2D" parent="." unique_id=1153417298]
+[node name="colisiones" type="StaticBody2D" parent="." unique_id=572586574]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones" unique_id=1677729743]
 position = Vector2(-28, 555.5)
@@ -280,8 +281,12 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
 
-[node name="Jugador" parent="." unique_id=1943970634 instance=ExtResource("11_lr6cd")]
-position = Vector2(959, 509)
+[node name="Jugador2" parent="." unique_id=1943970634 instance=ExtResource("11_heiiv")]
+position = Vector2(478, 669)
 
-[node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=6821162]
-position = Vector2(10, 58)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=6821162]
+position = Vector2(922, 583)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("12_7767w")]
