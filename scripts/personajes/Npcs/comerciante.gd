@@ -53,4 +53,3 @@ func intentar_comprar_objeto(jugador: Player, objeto_a_comprar: Objeto):
 func cerrar_tienda():
 	print("Cerrando la UI de la tienda")
 	Eventos.cerrar_ui_tienda.emit()
-

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8hyfb6xkhqwf"]
 
 [ext_resource type="Script" uid="uid://bah2fwyx7jvcg" path="res://scripts/UI/hud/gui.gd" id="1_msgfq"]
+[ext_resource type="PackedScene" uid="uid://ye4sppq8udsl" path="res://escenas/UI/hud/PantallaInventario.tscn" id="2_msgfq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kesuo"]
 bg_color = Color(0.05, 0.039166667, 0, 1)
@@ -36,23 +37,57 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CajaArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=501408766]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="IconoArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaArma" unique_id=1305160183]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+expand_mode = 2
+stretch_mode = 5
 
 [node name="CajaObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=1203406284]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="IconoObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaObjeto" unique_id=691727991]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+expand_mode = 2
+stretch_mode = 5
 
 [node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=68388404]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="TextoOro" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=748291054]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Oro: 0"
+
+[node name="PantallaInventario" parent="." instance=ExtResource("2_msgfq")]
+
+[node name="ImagenGuardado" type="TextureRect" parent="." unique_id=748291053]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 6

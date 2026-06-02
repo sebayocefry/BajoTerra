@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b1qx3lmhuuubb"]
 
-[ext_resource type="Script" uid="uid://b5t10itfp0rhw" path="res://scripts/UI/intro/intro2.gd" id="1_680p7"]
-[ext_resource type="Texture2D" uid="uid://b2wkkwsc6e8df" path="res://assets/fondos_intro/Bruja.png" id="2_2hp7p"]
-[ext_resource type="AudioStream" uid="uid://gogroj1t3hpk" path="res://musica/intro/luisranm-musica-fundo-suspense-e-terror-423727.mp3" id="3_n7ubq"]
-[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_kckwp"]
+[ext_resource type="Script" uid="uid://bpvv50bx6e5lg" path="res://scripts/UI/intro/intro2.gd" id="1_680p7"]
+[ext_resource type="Texture2D" uid="uid://c1h8liktuf83v" path="res://assets/fondos_intro/Bruja.png" id="2_2hp7p"]
+[ext_resource type="AudioStream" uid="uid://dmddqkg6at21d" path="res://musica/intro/luisranm-musica-fundo-suspense-e-terror-423727.mp3" id="3_n7ubq"]
+[ext_resource type="Script" uid="uid://crtlfhigy18x4" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_kckwp"]
 
 [node name="intro2" type="Node2D" unique_id=1791498578]
 script = ExtResource("1_680p7")
@@ -45,4 +45,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_kckwp")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
-metadata/_custom_type_script = "uid://g32um0mltv5d"

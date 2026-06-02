@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cull3xlnhnw73"]
+
+[ext_resource type="Texture2D" uid="uid://dnwwwwec6siry" path="res://assets/spritesMundos/comerciante/decoraciones/libro.png" id="1_2k7wl"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_cep4j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cep4j"]
+atlas = ExtResource("1_2k7wl")
+region = Rect2(166, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60qgb"]
+atlas = ExtResource("1_2k7wl")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k5w2"]
+atlas = ExtResource("1_2k7wl")
+region = Rect2(324, 0, 162, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8jg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cep4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60qgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k5w2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="libros" type="StaticBody2D" unique_id=1001017675]
+script = ExtResource("1_cep4j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2045919844]
+position = Vector2(-25.5, -35)
+scale = Vector2(0.6927711, 0.72)
+sprite_frames = SubResource("SpriteFrames_h8jg5")
+frame_progress = 0.0016690736

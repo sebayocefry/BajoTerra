@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ddwewg1uwvbiy"]
+
+[ext_resource type="Script" uid="uid://kcdfh2ayfhwp" path="res://scripts/personajes/Npcs/npc_dialogo.gd" id="1_6cdhf"]
+[ext_resource type="Texture2D" uid="uid://4crbb1vrvigx" path="res://escenas/personajes/Bruja/pixel_art_small (9).png" id="1_swbve"]
+[ext_resource type="Resource" uid="uid://dgtwvk3ajqupp" path="res://DialogosIntro/Dialogo_historia2.dialogue" id="2_so4t7"]
+[ext_resource type="Texture2D" uid="uid://dqyrfh2kwbbwf" path="res://escenas/personajes/Bruja/pixel_art_small (10).png" id="2_ud0ye"]
+[ext_resource type="Texture2D" uid="uid://d3x4x7filniws" path="res://escenas/personajes/Bruja/pixel_art_small (11).png" id="3_6cdhf"]
+[ext_resource type="Script" uid="uid://ckdo7aawriyua" path="res://escenas/personajes/enemigos/animated_sprite_2d.gd" id="4_so4t7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vu2jb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_swbve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ud0ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6cdhf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryaqa"]
+size = Vector2(1005, 1142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yao7k"]
+size = Vector2(631.8038, 82.72909)
+
+[node name="bruja_zombie" type="Area2D"]
+script = ExtResource("1_6cdhf")
+dialogo = ExtResource("2_so4t7")
+activar_automaticamente = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(548, 567)
+scale = Vector2(3.6926253, 4.5145006)
+sprite_frames = SubResource("SpriteFrames_vu2jb")
+frame_progress = 0.8713818
+script = ExtResource("4_so4t7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(569, 601)
+shape = SubResource("RectangleShape2D_ryaqa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(154.00002, 367)
+scale = Vector2(1.3734236, 13.502163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(300.70837, 15.553064)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_yao7k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

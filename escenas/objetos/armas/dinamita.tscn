@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://crrjfaf0cob26"]
+
+[ext_resource type="Script" uid="uid://grlh2ot3pcn4" path="res://scripts/objetos/balas/dinamita.gd" id="1_din"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/armas/explosion.tscn" id="2_din"]
+[ext_resource type="Texture2D" uid="uid://bq1mfr2fupqvh" path="res://assets/spritesArmas/dinamita/1.png" id="3_ui3qk"]
+[ext_resource type="Texture2D" uid="uid://diicfmonforyc" path="res://assets/spritesArmas/dinamita/2.png" id="4_jkpv1"]
+[ext_resource type="Texture2D" uid="uid://b0qe5c2e5n70q" path="res://assets/spritesArmas/dinamita/3.png" id="5_wewoq"]
+[ext_resource type="Texture2D" uid="uid://c76qxtxgkcwm2" path="res://assets/spritesArmas/dinamita/4.png" id="6_v03fb"]
+
+[sub_resource type="CircleShape2D" id="Circle_1"]
+radius = 22.090721
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htjax"]
+atlas = ExtResource("3_ui3qk")
+region = Rect2(0, 0, 507, 519)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qjp7"]
+atlas = ExtResource("4_jkpv1")
+region = Rect2(0, 0, 519, 507)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swcnu"]
+atlas = ExtResource("5_wewoq")
+region = Rect2(0, 0, 507, 519)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0q31"]
+atlas = ExtResource("6_v03fb")
+region = Rect2(0, 0, 519, 507)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vownb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htjax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qjp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swcnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0q31")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Dinamita" type="Area2D" unique_id=1531406603]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_din")
+escena_explosion = ExtResource("2_din")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2134991317]
+shape = SubResource("Circle_1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212137453]
+position = Vector2(2, -4.000001)
+scale = Vector2(0.1688856, 0.16064547)
+sprite_frames = SubResource("SpriteFrames_vownb")
+frame_progress = 0.51627105
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1845184632]
+position = Vector2(-8, -8)
+rect = Rect2(-10, -10, 35, 36)

@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://by1u1a2hwhmn0"]
 
 [ext_resource type="Texture2D" uid="uid://buwnl7tf1con7" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion.png" id="1_ca32q"]
+[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="1_f0ece"]
 [ext_resource type="Texture2D" uid="uid://b61a21kjiifbc" path="res://assets/spritesMundos/level1/paredes/pared1_habitacion1_mundo1.png" id="2_j3y4y"]
-[ext_resource type="Texture2D" uid="uid://cenobg5qwdgjr" path="res://assets/puertas/puerta_cerrada_1.png" id="3_j3y4y"]
-[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
-[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
-[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
-[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
-[ext_resource type="Texture2D" uid="uid://cl6mo1g45ade6" path="res://assets/esqueletos/Objects_separately/Bones_grass_shadow1.png" id="8_j466s"]
+[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
+[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
+[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
+[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="9_fv5mg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
-[ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="11_lr6cd"]
+[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
+[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
+[ext_resource type="PackedScene" uid="uid://dx4sevydfwo8o" path="res://escenas/personajes/enemigos/muki.tscn" id="12_f0ece"]
+[ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fs37"]
-size = Vector2(1947, 125)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j466s"]
+shader = ExtResource("1_f0ece")
+shader_parameter/fog_color = Color(0.12539999, 0.15086003, 0.38, 0.6039216)
+shader_parameter/speed = 0.1890000089775
+shader_parameter/scale = 4.5030001663925
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27vdn"]
 size = Vector2(61, 1029)
@@ -23,6 +29,9 @@ size = Vector2(1972.5, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63auv"]
 size = Vector2(64, 1138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fs37"]
+size = Vector2(671.5, 125)
 
 [sub_resource type="Gradient" id="Gradient_bvhaj"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -44,75 +53,79 @@ fill_from = Vector2(0.48, 0.5)
 
 [node name="habitacion1" type="Node2D" unique_id=1138420938]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=461304548]
+material = SubResource("ShaderMaterial_j466s")
+offset_left = 25.0
+offset_top = 46.0
+offset_right = 1929.0
+offset_bottom = 1065.0
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1370990560]
+z_index = -10
 offset_left = 4.0
 offset_top = 7.0
 offset_right = 1916.0
 offset_bottom = 1071.0
 texture = ExtResource("1_ca32q")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1459389745]
+[node name="Decoraciones" type="StaticBody2D" parent="." unique_id=1459389745]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=884782092]
+[node name="Sprite2D" type="Sprite2D" parent="Decoraciones" unique_id=884782092]
 position = Vector2(107, 75)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=405700370]
+[node name="Sprite2D2" type="Sprite2D" parent="Decoraciones" unique_id=405700370]
 position = Vector2(308.00003, 75)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=2002683513]
+[node name="Sprite2D3" type="Sprite2D" parent="Decoraciones" unique_id=2002683513]
 position = Vector2(514, 73)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D" unique_id=1218033215]
+[node name="Sprite2D4" type="Sprite2D" parent="Decoraciones" unique_id=1218033215]
 position = Vector2(711, 71.00001)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D" unique_id=446103150]
+[node name="Sprite2D5" type="Sprite2D" parent="Decoraciones" unique_id=446103150]
 position = Vector2(913.99994, 71)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D6" type="Sprite2D" parent="StaticBody2D" unique_id=1123913456]
+[node name="Sprite2D6" type="Sprite2D" parent="Decoraciones" unique_id=1123913456]
 position = Vector2(1040, 76)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D7" type="Sprite2D" parent="StaticBody2D" unique_id=1773563190]
+[node name="Sprite2D7" type="Sprite2D" parent="Decoraciones" unique_id=1773563190]
 position = Vector2(1230.5, 73.5)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D8" type="Sprite2D" parent="StaticBody2D" unique_id=695375617]
+[node name="Sprite2D8" type="Sprite2D" parent="Decoraciones" unique_id=695375617]
 position = Vector2(1430, 70)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D9" type="Sprite2D" parent="StaticBody2D" unique_id=556720231]
+[node name="Sprite2D9" type="Sprite2D" parent="Decoraciones" unique_id=556720231]
 position = Vector2(1628.0001, 75)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="Sprite2D10" type="Sprite2D" parent="StaticBody2D" unique_id=1902402077]
+[node name="Sprite2D10" type="Sprite2D" parent="Decoraciones" unique_id=1902402077]
 position = Vector2(1824, 78)
 scale = Vector2(0.3430989, 0.2763672)
 texture = ExtResource("2_j3y4y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129141258]
-position = Vector2(946, 104)
-shape = SubResource("RectangleShape2D_8fs37")
+[node name="Puertas" type="Node2D" parent="." unique_id=122640264]
+
+[node name="PuntoSalida" parent="Puertas" unique_id=1215575025 instance=ExtResource("12_heiiv")]
+position = Vector2(942, 125)
 
 [node name="decoraciones" type="Node2D" parent="." unique_id=1469682939]
-
-[node name="PuertaCerrada1" type="Sprite2D" parent="decoraciones" unique_id=494476635]
-position = Vector2(902.9999, 124.74999)
-scale = Vector2(0.36393228, 0.4487305)
-texture = ExtResource("3_j3y4y")
 
 [node name="VioletCrystal3" type="Sprite2D" parent="decoraciones" unique_id=2036846827]
 position = Vector2(588, 256)
@@ -133,11 +146,6 @@ position = Vector2(1096, 341)
 scale = Vector2(1.15625, 1.15625)
 texture = ExtResource("7_f0ece")
 
-[node name="BonesGrassShadow1" type="Sprite2D" parent="decoraciones" unique_id=1490107369]
-position = Vector2(900.99994, -7)
-scale = Vector2(1.921875, 1.859375)
-texture = ExtResource("8_j466s")
-
 [node name="StaticBody2D" parent="decoraciones" unique_id=1400319159 instance=ExtResource("9_fv5mg")]
 position = Vector2(409, 169)
 
@@ -156,7 +164,8 @@ position = Vector2(364, 399.00003)
 scale = Vector2(2.1979167, 2.1847825)
 texture = ExtResource("10_vasvg")
 
-[node name="colisiones" type="Node2D" parent="." unique_id=1153417298]
+[node name="colisiones" type="StaticBody2D" parent="." unique_id=1872869092]
+z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones" unique_id=1677729743]
 position = Vector2(-28, 555.5)
@@ -170,16 +179,25 @@ shape = SubResource("RectangleShape2D_epxev")
 position = Vector2(1953, 604)
 shape = SubResource("RectangleShape2D_63auv")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="colisiones" unique_id=129141258]
+position = Vector2(308.25, 104)
+shape = SubResource("RectangleShape2D_8fs37")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="colisiones" unique_id=80576443]
+position = Vector2(1554, 92)
+shape = SubResource("RectangleShape2D_8fs37")
+
 [node name="Sombras" type="Node2D" parent="." unique_id=527405941]
 
 [node name="PointLight2D" type="PointLight2D" parent="Sombras" unique_id=178150515]
-position = Vector2(898, 112)
-scale = Vector2(6.7423854, 5.8495274)
+position = Vector2(911.99994, 61.999996)
+scale = Vector2(13.209032, 7.205225)
 color = Color(0.007843138, 0.02745098, 0.972549, 1)
 energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_xhco0")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Sombras" unique_id=571626262]
 position = Vector2(581, 256)
@@ -189,6 +207,7 @@ energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("12_7767w")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Sombras" unique_id=2016334065]
 position = Vector2(1216, 257)
@@ -198,6 +217,7 @@ energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("12_7767w")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Sombras" unique_id=1597000011]
 position = Vector2(1094, 342)
@@ -207,6 +227,7 @@ energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("12_7767w")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Sombras" unique_id=1069828713]
 position = Vector2(670, 346)
@@ -216,6 +237,7 @@ energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("12_7767w")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Sombras" unique_id=1554067130]
 position = Vector2(1254, 928)
@@ -225,15 +247,17 @@ energy = 1.54
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Sombras/PointLight2D7" unique_id=695345012]
-position = Vector2(-152.71663, -8.732733)
+position = Vector2(-158.23825, 13.1961155)
 scale = Vector2(0.9708174, 1.1337075)
 color = Color(0.2627451, 0.1764706, 0.8392157, 1)
 energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Sombras/PointLight2D7/PointLight2D5" unique_id=246334563]
 position = Vector2(240.52596, 4.9640245)
@@ -243,15 +267,17 @@ energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Sombras/PointLight2D7/PointLight2D5/PointLight2D5" unique_id=523396968]
-position = Vector2(-162.19008, 14.041653)
+position = Vector2(-174.98642, 45.899597)
 scale = Vector2(0.9708174, 1.1337075)
 color = Color(0.2627451, 0.08235294, 0.8392157, 1)
 energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Sombras" unique_id=1831080837]
 position = Vector2(113, 281)
@@ -261,6 +287,7 @@ energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D9" type="PointLight2D" parent="Sombras" unique_id=2069084818]
 position = Vector2(369, 398.99997)
@@ -270,6 +297,7 @@ energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
 [node name="PointLight2D10" type="PointLight2D" parent="Sombras" unique_id=265570225]
 position = Vector2(1599, 377.99997)
@@ -279,9 +307,23 @@ energy = 2.49
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_oa1rv")
 texture_scale = 1.19
+script = ExtResource("11_heiiv")
 
-[node name="Jugador" parent="." unique_id=1943970634 instance=ExtResource("11_lr6cd")]
-position = Vector2(959, 509)
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=697085023]
 
-[node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=6821162]
-position = Vector2(10, 58)
+[node name="spawn_entrada" type="Marker2D" parent="SpawnPoints" unique_id=935299067]
+position = Vector2(917, 838)
+
+[node name="spawn_salida" type="Marker2D" parent="SpawnPoints" unique_id=1994649817]
+position = Vector2(905, 328)
+
+[node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
+
+[node name="Muki" parent="Enemigos" unique_id=1997461237 instance=ExtResource("12_f0ece")]
+position = Vector2(585, 414)
+
+[node name="Muki2" parent="Enemigos" unique_id=1259878405 instance=ExtResource("12_f0ece")]
+position = Vector2(1176, 408)
+
+[node name="ControladorNivel" type="Node2D" parent="." unique_id=1494421045]
+script = ExtResource("13_j466s")

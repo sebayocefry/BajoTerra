@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://l22fhd10ao1r"]
 
 [ext_resource type="Script" uid="uid://bvlyh3au5uvk3" path="res://scripts/personajes/enemigos/enemigo_gollem.gd" id="1_baq2c"]
-[ext_resource type="Texture2D" uid="uid://biqnqxion021g" path="res://assets/spritsEnemigos/PNG/Golem2/Attack/Golem2_Attack_full.png" id="1_vioc1"]
-[ext_resource type="Texture2D" uid="uid://brotxsirrsfkv" path="res://assets/spritsEnemigos/PNG/Golem2/Idle/Golem2_Idle_full.png" id="2_dxd8i"]
-[ext_resource type="Texture2D" uid="uid://wg0ggc8sdr4s" path="res://assets/spritsEnemigos/PNG/Golem2/Death/Golem2_Death_full.png" id="2_hnno7"]
-[ext_resource type="Texture2D" uid="uid://d1kcg2ujm6fo1" path="res://assets/spritsEnemigos/PNG/Golem2/Run/Golem2_Run_full.png" id="3_hnno7"]
-[ext_resource type="Texture2D" uid="uid://b20svsi68com2" path="res://assets/spritsEnemigos/PNG/Golem2/Hurt/Golem2_Hurt_full.png" id="4_cji5b"]
+[ext_resource type="Texture2D" uid="uid://biqnqxion021g" path="res://assets/spritsEnemigos/golem/Golem2/Attack/Golem2_Attack_full.png" id="1_vioc1"]
+[ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_cji5b"]
+[ext_resource type="Texture2D" uid="uid://brotxsirrsfkv" path="res://assets/spritsEnemigos/golem/Golem2/Idle/Golem2_Idle_full.png" id="2_dxd8i"]
+[ext_resource type="Texture2D" uid="uid://wg0ggc8sdr4s" path="res://assets/spritsEnemigos/golem/Golem2/Death/Golem2_Death_full.png" id="2_hnno7"]
+[ext_resource type="Texture2D" uid="uid://d1kcg2ujm6fo1" path="res://assets/spritsEnemigos/golem/Golem2/Run/Golem2_Run_full.png" id="3_hnno7"]
+[ext_resource type="Texture2D" uid="uid://b20svsi68com2" path="res://assets/spritsEnemigos/golem/Golem2/Hurt/Golem2_Hurt_full.png" id="4_cji5b"]
 [ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_x623i"]
-[ext_resource type="Texture2D" uid="uid://bc1rrh6hhjdd3" path="res://assets/spritsEnemigos/PNG/Golem2/Walk/Golem2_Walk_full.png" id="5_hnno7"]
+[ext_resource type="Texture2D" uid="uid://bc1rrh6hhjdd3" path="res://assets/spritsEnemigos/golem/Golem2/Walk/Golem2_Walk_full.png" id="5_hnno7"]
 [ext_resource type="Script" uid="uid://blkklhmed4w3c" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/reposo_gollem.gd" id="9_baq2c"]
-[ext_resource type="Script" uid="uid://c7ye3xss3ht0j" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/perseguir_gollem.gd" id="10_cji5b"]
-[ext_resource type="Script" uid="uid://clu5iru6lup3r" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/atacar_gollem.gd" id="11_gff3e"]
+[ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/perseguir_gollem.gd" id="10_cji5b"]
+[ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/atacar_gollem.gd" id="11_gff3e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x623i"]
 atlas = ExtResource("1_vioc1")
@@ -881,7 +882,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yndgu")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_right",
 "speed": 12.0
 }, {
@@ -1293,13 +1294,14 @@ height = 286.0
 
 [node name="Gollem" type="CharacterBody2D" unique_id=1419715020 groups=["player"]]
 script = ExtResource("1_baq2c")
+escena_cristal = ExtResource("2_cji5b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1315364369]
 position = Vector2(18.000008, 34.999992)
 scale = Vector2(4.5273438, 5.4804688)
 sprite_frames = SubResource("SpriteFrames_ybjjc")
-animation = &"death_up"
-autoplay = "attack_down"
+animation = &"idle_down"
+autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640242852]
 position = Vector2(11, -9)

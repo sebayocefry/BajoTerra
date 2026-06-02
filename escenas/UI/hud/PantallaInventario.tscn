@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ye4sppq8udsl"]
+
+[ext_resource type="Texture2D" uid="uid://bx87h6fdjs3nc" path="res://assets/Fondos/fondoUiObjetos.png" id="1_4vav8"]
+[ext_resource type="Script" uid="uid://bp0otnvld0e1m" path="res://scripts/UI/hud/pantalla_inventario.gd" id="1_d68tm"]
+[ext_resource type="PackedScene" uid="uid://db6s06vs3rnui" path="res://escenas/UI/hud/SlotInventario.tscn" id="2_g4l0q"]
+
+[node name="PantallaInventario" type="CanvasLayer" unique_id=910099051]
+script = ExtResource("1_d68tm")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=258795600]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+
+[node name="CajaInventario" type="TextureRect" parent="." unique_id=531883343]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4vav8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="CajaInventario" unique_id=1252312522]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 298.0
+offset_right = 1570.0
+offset_bottom = 692.0
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="SlotInventario" parent="CajaInventario/GridContainer" unique_id=315358181 instance=ExtResource("2_g4l0q")]
+layout_mode = 2
+
+[node name="SlotInventario2" parent="CajaInventario/GridContainer" unique_id=1454905463 instance=ExtResource("2_g4l0q")]
+layout_mode = 2
+
+[node name="SlotInventario3" parent="CajaInventario/GridContainer" unique_id=915778604 instance=ExtResource("2_g4l0q")]
+layout_mode = 2

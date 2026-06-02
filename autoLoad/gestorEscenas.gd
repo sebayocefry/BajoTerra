@@ -2,6 +2,11 @@ extends Node
 
 signal nivel_cargado(nombre_nivel: String)
 
+## Habitación a la que volver al salir del comerciante.
+## Lo escribe PuertaHaciaComerciate antes de cargar la habitación del comerciante;
+## lo lee PuertaSalidaComerciate al salir.
+var habitacion_post_comerciante: String = ""
+
 func cambiar_nivel(ruta_nuevo_nivel: String):
     #  Antes de destruir la escena, guardamos al jugador
     var player = get_tree().get_first_node_in_group("Player")

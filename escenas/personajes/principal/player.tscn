@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="14_y2iy6"]
 [ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="15_1udg1"]
 [ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="16_l0suh"]
+[ext_resource type="Script" path="res://scripts/core/components/Gestor_inventario.gd" id="17_gestorinv"]
+[ext_resource type="Script" path="res://scripts/objetos/armas/arma.gd" id="18_armascript"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_ur7pv")
@@ -403,7 +405,6 @@ size = Vector2(138.71875, 155.34375)
 motion_mode = 1
 script = ExtResource("9_qfm1y")
 mana = 100
-listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 velocidad = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058999725]
@@ -422,11 +423,17 @@ script = ExtResource("10_oecxe")
 
 [node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
 script = ExtResource("13_0piy6")
-arma_inicial = ExtResource("14_y2iy6")
+armas_disponibles = Array[ExtResource("18_armascript")]([ExtResource("14_y2iy6")])
 
 [node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
 
 [node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
+
+[node name="Gestor_inventario" type="Node" parent="." unique_id=987654321]
+script = ExtResource("17_gestorinv")
+listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
+
+[node name="BrazoArma" type="AnimatedSprite2D" parent="." unique_id=112233445]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1912659526]
 position = Vector2(0, 155)

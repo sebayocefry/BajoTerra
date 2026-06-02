@@ -13,5 +13,10 @@ signal cerrar_ui_tienda()
 
 signal jugador_muerto()
 
+signal progreso_guardado()
+
+# Inventario
+signal inventario_completo_actualizado(lista: Array)
+
 # Transiciones internas del nivel
-signal transicion_habitacion_solicitada(ruta_habitacion: String, coordenada_destino: Vector2)
+signal transicion_habitacion_solicitada(ruta_habitacion: String, spawn_destino: String)

@@ -48,6 +48,7 @@ func _unhandled_input(event):
 func _al_cambiar_estado(nuevo_estado_n : String):
 	var nuevo_estado = get_node_or_null(nuevo_estado_n)
 	if nuevo_estado and nuevo_estado != estado_actual:
-		estado_actual.salir()
+		if estado_actual:
+			estado_actual.salir()
 		estado_actual = nuevo_estado
 		estado_actual.entrar()
