@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0cekv4jra70q"]
 
 [ext_resource type="Texture2D" uid="uid://bsg77kljtlcvc" path="res://assets/spritesMundos/level1/tierra/tierra_nivefinal.png" id="1_tktx4"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="2_d20dd"]
 [ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_o17o7"]
 [ext_resource type="Texture2D" uid="uid://be8tiubvs14vv" path="res://assets/spritesMundos/level1/paredes/pared_final_nivel1.png" id="2_sn1bj"]
 [ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="3_1dk3o"]
@@ -94,6 +95,16 @@ offset_right = 2879.0
 offset_bottom = 1362.0
 mouse_filter = 2
 texture = ExtResource("1_tktx4")
+
+[node name="Rayo" parent="." unique_id=564489403 instance=ExtResource("2_d20dd")]
+position = Vector2(0, -1)
+color_rayo = Color(0.97, 0.029099973, 0.029099973, 1)
+duracion_flash = 0.5
+cantidad_rayos = 10
+transparencia = 0.407
+rotacion_max = 80.0
+luz_energia = 50.0
+luz_radio = 1000.0
 
 [node name="neblina" type="ColorRect" parent="." unique_id=1775311411]
 material = SubResource("ShaderMaterial_d20dd")
@@ -457,7 +468,7 @@ position = Vector2(573, 680)
 position = Vector2(2334, 669)
 
 [node name="JefeNivel1" parent="Enemigos" unique_id=421596498 instance=ExtResource("16_jvhvx")]
-position = Vector2(995, 426)
+position = Vector2(998, 391)
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=702666213]
 

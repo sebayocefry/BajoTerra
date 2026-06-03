@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
 [ext_resource type="PackedScene" uid="uid://ba0xps7ubued8" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion4_nivel1.tscn" id="6_h4n1"]
 [ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="7_or5df"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2l72"]
 shader = ExtResource("2_7jgji")
@@ -84,6 +85,15 @@ texture = ExtResource("1_or5df")
 material = SubResource("ShaderMaterial_u2l72")
 offset_right = 1928.0
 offset_bottom = 1075.0
+
+[node name="Rayo" parent="." unique_id=1375249887 instance=ExtResource("7_or5df")]
+color_rayo = Color(1, 0.37, 0.16000003, 1)
+duracion_flash = 0.2
+cantidad_rayos = 15
+transparencia = 0.189
+rotacion_max = 79.553
+luz_energia = 90.0
+luz_radio = 1000.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1213651737]
 offset_left = -150.0
