@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://pysus3o7btm1"]
 
 [ext_resource type="Script" uid="uid://drjt7i4vhbalr" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefe_slime_1.gd" id="1_xycwc"]
-[ext_resource type="Texture2D" uid="uid://cpqjyw1ae7fn" path="res://assets/spritsEnemigos/Slime/idle.png" id="2_3ojgo"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="2_l3mhe"]
+[ext_resource type="Texture2D" uid="uid://dnjsokm3kirtg" path="res://assets/spritsEnemigos/Rat/ataque_sprite_H19_FRAME147x146_ALINEADO_BRILLANTE_TRANSPARENTE.png" id="3_jc636"]
 [ext_resource type="Texture2D" uid="uid://b3gakeyencvkf" path="res://assets/spritsEnemigos/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="3_yuiqn"]
+[ext_resource type="Texture2D" uid="uid://b0ljfs5001cd2" path="res://assets/spritsEnemigos/flama_sprite_H6_504x92.png" id="4_jc636"]
 [ext_resource type="Script" uid="uid://ul0vlymd4r74" path="res://scripts/maquina_estado_jefe/maquina_estado_2.gd" id="4_tw6aw"]
 [ext_resource type="Script" uid="uid://c1c7n0o2yl4d7" path="res://escenas/personajes/enemigos/enmigoJefe_1/perseguir.gd" id="5_yteuj"]
 [ext_resource type="Script" uid="uid://box6ox2ynedlc" path="res://escenas/personajes/enemigos/enmigoJefe_1/reposo.gd" id="6_l3mhe"]
@@ -10,129 +12,135 @@
 [ext_resource type="Script" uid="uid://mrxqiaqsqs2g" path="res://escenas/personajes/enemigos/enmigoJefe_1/fase_chica.gd" id="8_xvomy"]
 [ext_resource type="Script" uid="uid://bgcnd3is5u1yc" path="res://escenas/personajes/enemigos/enmigoJefe_1/transformacion.gd" id="9_jc636"]
 [ext_resource type="Script" uid="uid://ct2rmp1sbycad" path="res://escenas/personajes/enemigos/enmigoJefe_1/fase_demonio.gd" id="10_kcayi"]
+[ext_resource type="Script" uid="uid://bth36rwkj4o5i" path="res://escenas/personajes/enemigos/jefeSlime/lanza_fuego.gd" id="10_tw6aw"]
+[ext_resource type="Script" uid="uid://8frusmpb2dkg" path="res://escenas/personajes/enemigos/jefeSlime/ataque_basico_demonio.gd" id="10_yteuj"]
+[ext_resource type="Script" uid="uid://bx7sfag3l2tnd" path="res://escenas/personajes/enemigos/jefeSlime/salto_impacto.gd" id="11_yteuj"]
+[ext_resource type="Script" uid="uid://by7fyrbnmdfnw" path="res://escenas/personajes/enemigos/jefeSlime/invocar_enemigos.gd" id="12_l3mhe"]
+[ext_resource type="Script" uid="uid://bqwjg1xrb6baw" path="res://escenas/personajes/enemigos/enmigoJefe_1/curacion_demonio.gd" id="15_vbusn"]
+[ext_resource type="Texture2D" uid="uid://inrdxbartwqe" path="res://assets/spritsEnemigos/invocacion_sin_fondo.png" id="17_xvomy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2kgw"]
-radius = 99.0
-height = 198.0
+radius = 135.0
+height = 284.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xre3k"]
-radius = 140.0
-height = 326.0
+radius = 254.0
+height = 544.0
 
 [sub_resource type="Animation" id="Animation_6ai2c"]
 length = 48.633335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_3ojgo")]
+"values": [14]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [14]
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("Sprite2D:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/path = NodePath("Sprite2D:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [Vector2i(0, 4)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D:frame_coords")
+tracks/4/path = NodePath("SpriteGrande:texture")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 4)]
+"values": [ExtResource("3_yuiqn")]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("SpriteGrande:texture")
+tracks/5/path = NodePath("SpriteGrande:hframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_yuiqn")]
+"values": [22]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("SpriteGrande:hframes")
+tracks/6/path = NodePath("SpriteGrande:vframes")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [22]
+"values": [5]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("SpriteGrande:vframes")
+tracks/7/path = NodePath("SpriteGrande:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [5]
+"values": [0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("SpriteGrande:frame")
+tracks/8/path = NodePath("Sprite2D:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [true]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Sprite2D:visible")
+tracks/9/path = NodePath("CollisionShape2D:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -144,7 +152,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CollisionShape2D:visible")
+tracks/10/path = NodePath("Zona_ataque:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -156,19 +164,19 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Zona_ataque:visible")
+tracks/11/path = NodePath("ColisionDemonio:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("ColisionDemonio:visible")
+tracks/12/path = NodePath("Zona_ataqueDemonio:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -180,7 +188,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Zona_ataqueDemonio:visible")
+tracks/13/path = NodePath("SpriteGrande:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -192,132 +200,120 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("SpriteGrande:visible")
+tracks/14/path = NodePath("Zona_ataqueDemonio/CollisionShape2D:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Zona_ataqueDemonio/CollisionShape2D:visible")
+tracks/15/path = NodePath("Sprite2D:texture:load_path")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["res://.godot/imported/flama_sprite_H6_504x92_TRANSPARENTE (1).png-ca50031355baf809b408daa29722650b.ctex"]
 }
 
 [sub_resource type="Animation" id="Animation_5hxh4"]
 resource_name = "chico_atacar"
-length = 0.4849
-loop_mode = 1
+length = 0.6341
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("SpriteGrande:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_3ojgo")]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("ColisionDemonio:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [14]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("Zona_ataqueDemonio:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/path = NodePath("Sprite2D:texture:load_path")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.23060785),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": ["res://.godot/imported/ataque_sprite_H19_FRAME147x146_ALINEADO_BRILLANTE_TRANSPARENTE.png-8c2148e44a091d02defd8d795688dd94.ctex"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SpriteGrande:visible")
+tracks/4/path = NodePath("Sprite2D:hframes")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [19]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColisionDemonio:visible")
+tracks/5/path = NodePath("Sprite2D:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Zona_ataqueDemonio:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 }
 
-[sub_resource type="Animation" id="Animation_7x656"]
+[sub_resource type="Animation" id="Animation_kcayi"]
 resource_name = "chico_correr"
-length = 0.4849
+length = 0.1384
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D:texture:load_path")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_3ojgo")]
+"values": ["res://.godot/imported/movimiento_sprite_H6_FRAME147x146_ALINEADO_BRILLANTE_TRANSPARENTE.png-a196962bc90b82943f99beaf0d378aaf.ctex"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -329,7 +325,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [14]
+"values": [6]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -338,147 +334,87 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:vframes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("SpriteGrande:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ColisionDemonio:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Zona_ataqueDemonio:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_f6ak2"]
 resource_name = "chico_idle"
-length = 0.4849
+length = 0.46666667
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("ColisionDemonio:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_3ojgo")]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("SpriteGrande:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [14]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("Sprite2D:texture:load_path")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13]
+"values": ["res://.godot/imported/idle_sprite_H14_FRAME147x146_ALINEADO_TRANSPARENTE.png-ed39da8d3c0c7e8c1f82b20bcc8b3ad3.ctex"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/path = NodePath("Sprite2D:hframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [14]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Zona_ataqueDemonio:visible")
+tracks/4/path = NodePath("Sprite2D:vframes")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [1]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColisionDemonio:visible")
+tracks/5/path = NodePath("Sprite2D:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("SpriteGrande:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 
 [sub_resource type="Animation" id="Animation_taxuf"]
@@ -742,6 +678,46 @@ tracks/9/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_xvomy"]
+resource_name = "demonio_curacion"
+length = 1.5666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteGrande:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [22]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteGrande:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteGrande:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.46641335, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.93333334, 0.9669779, 1, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2661749, 1.3000001, 1.3333334, 1.3666668, 1.4000001, 1.4333334, 1.4666667, 1.5000001, 1.5333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 88, 89, 90, 91, 92, 93, 94, 95, 96]
+}
+
 [sub_resource type="Animation" id="Animation_68a8i"]
 resource_name = "demonio_idle"
 length = 0.2202
@@ -995,21 +971,21 @@ tracks/9/keys = {
 _data = {
 &"RESET": SubResource("Animation_6ai2c"),
 &"chico_atacar": SubResource("Animation_5hxh4"),
-&"chico_correr": SubResource("Animation_7x656"),
+&"chico_correr": SubResource("Animation_kcayi"),
 &"chico_idle": SubResource("Animation_f6ak2"),
 &"demonio_atacar": SubResource("Animation_taxuf"),
 &"demonio_correr": SubResource("Animation_uudbi"),
+&"demonio_curacion": SubResource("Animation_xvomy"),
 &"demonio_idle": SubResource("Animation_68a8i"),
 &"transformacion": SubResource("Animation_njsam")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0efv"]
-radius = 153.0
-height = 458.0
+radius = 192.0
+height = 506.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84hls"]
-radius = 479.0
-height = 958.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yteuj"]
+size = Vector2(1011, 195)
 
 [node name="JefeSlime1" type="CharacterBody2D" unique_id=1584594003]
 motion_mode = 1
@@ -1018,22 +994,31 @@ vida_fase_chica = 20
 vida_fase_demonio = 100
 velocidad_anim_transformacion = 0.5
 distancia_vision = 600.0
+escena_enemigo_invocado = ExtResource("2_l3mhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946553770]
-position = Vector2(40, -39)
-scale = Vector2(6.8005605, 6.8005614)
-texture = ExtResource("2_3ojgo")
+position = Vector2(9, -465.00006)
+scale = Vector2(9.232191, 7.68314)
+texture = ExtResource("3_jc636")
 hframes = 14
 
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1760023455]
+visible = false
+position = Vector2(29, -56)
+scale = Vector2(3.928571, 2.8804345)
+texture = ExtResource("4_jc636")
+hframes = 6
+frame = 2
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63691399]
-position = Vector2(29, -2)
+position = Vector2(-6, -5)
 shape = SubResource("CapsuleShape2D_j2kgw")
 
 [node name="Zona_ataque" type="Area2D" parent="." unique_id=1785854644]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataque" unique_id=956994574 groups=["player"]]
-position = Vector2(19, 2)
+position = Vector2(3, -18)
 shape = SubResource("CapsuleShape2D_xre3k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=214853403]
@@ -1041,24 +1026,25 @@ libraries/ = SubResource("AnimationLibrary_kmn6e")
 
 [node name="SpriteGrande" type="Sprite2D" parent="." unique_id=670176010]
 visible = false
-position = Vector2(-18.999996, -475.99994)
-scale = Vector2(6.4124985, 6.4125)
+position = Vector2(-45.000008, -288.00003)
+scale = Vector2(4.9244847, 4.9342327)
 texture = ExtResource("3_yuiqn")
 hframes = 22
 vframes = 5
 
 [node name="ColisionDemonio" type="CollisionShape2D" parent="." unique_id=482650893]
 visible = false
-position = Vector2(0, -211)
+position = Vector2(-10, -122)
 shape = SubResource("CapsuleShape2D_g0efv")
 debug_color = Color(0.9895335, 0, 0.29477713, 0.41960785)
 
 [node name="Zona_ataqueDemonio" type="Area2D" parent="." unique_id=1022323287]
 visible = false
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataqueDemonio" unique_id=1129651076]
-position = Vector2(-16, -208)
-shape = SubResource("CapsuleShape2D_84hls")
+position = Vector2(-7.5, -78.5)
+shape = SubResource("RectangleShape2D_yteuj")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)
 
 [node name="maquina_Estado_2" type="Node" parent="." unique_id=1593192241]
@@ -1080,8 +1066,32 @@ script = ExtResource("9_jc636")
 [node name="FaseDemonio" type="Node" parent="maquina_Estado_2" unique_id=1638929630]
 script = ExtResource("10_kcayi")
 
+[node name="AtaqueBasicoDemonio" type="Node" parent="maquina_Estado_2" unique_id=372541544]
+script = ExtResource("10_yteuj")
+tiempo_antes_dano = 0.484
+tiempo_recuperacion = 0.6
+
+[node name="LanzaFuego" type="Node" parent="maquina_Estado_2" unique_id=1586452698]
+script = ExtResource("10_tw6aw")
+
+[node name="SaltoImpacto" type="Node" parent="maquina_Estado_2" unique_id=1476569137]
+script = ExtResource("11_yteuj")
+
+[node name="InvocarEnemigos" type="Node" parent="maquina_Estado_2" unique_id=1439213970]
+script = ExtResource("12_l3mhe")
+
+[node name="CuracionDemonio" type="Node" parent="maquina_Estado_2" unique_id=1938066456]
+script = ExtResource("15_vbusn")
+
 [node name="FaseChica" type="Node" parent="maquina_Estado_2" unique_id=1509357774]
 script = ExtResource("8_xvomy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1383038935]
+visible = false
+position = Vector2(-1100, -315.99988)
+scale = Vector2(2.9198842, 2.9198837)
+texture = ExtResource("17_xvomy")
+hframes = 5
 
 [connection signal="body_entered" from="Zona_ataque" to="." method="_on_zona_ataque_body_entered"]
 [connection signal="body_exited" from="Zona_ataque" to="." method="_on_zona_ataque_body_exited"]

@@ -49,7 +49,7 @@ shape = SubResource("RectangleShape2D_nx3q6")
 position = Vector2(-909, 602)
 collision_layer = 2
 collision_mask = 5
-mana = 80
+mana = 200
 velocidad = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1758778630]
@@ -63,3 +63,4 @@ limit_bottom = 825
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
 
 [node name="JefeSlime1" parent="." unique_id=1584594003 instance=ExtResource("9_pqfd2")]
+distancia_vision = 2000000.0

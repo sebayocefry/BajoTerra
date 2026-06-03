@@ -25,22 +25,28 @@ func actualizar_fisica(_delta):
 
 	if enemigo.fase_demonio:
 		if enemigo.jugador_en_rango_demonio:
+			enemigo.velocity = Vector2.ZERO
+			enemigo.move_and_slide()
 			transicion.emit("FaseDemonio")
 			return
 	else:
 		if enemigo.jugador_en_rango:
 			transicion.emit("Atacar")
 			return
-
 	var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
 
 	enemigo.velocity = direccion * enemigo.velocidad
 
 	if direccion.x < 0:
 		sprite_chico.flip_h = true
-		sprite_demonio.flip_h = true
+
 	elif direccion.x > 0:
 		sprite_chico.flip_h = false
+
+		
+	if direccion.x < 0:
 		sprite_demonio.flip_h = false
+	elif direccion.x > 0:
+		sprite_demonio.flip_h = true
 
 	enemigo.move_and_slide()

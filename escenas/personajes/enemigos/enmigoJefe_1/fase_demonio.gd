@@ -1,47 +1,28 @@
 extends EstadoJefe
 
-@export var cooldown_ataque : float = 1.4
-
-var temporizador : float = 0.0
+@export var prob_ataque_basico : int = 70
+@export var prob_invocar : int = 30
 
 func entrar():
-	enemigo.velocity = Vector2.ZERO
-	enemigo.move_and_slide()
+	print("Entré al estado FaseDemonio")
 
-	temporizador = cooldown_ataque
+	var ataque_elegido = elegir_ataque()
 
-	if animacion.has_animation(enemigo.anim_demonio_ataque):
-		animacion.play(enemigo.anim_demonio_ataque)
+	print("FaseDemonio eligió: ", ataque_elegido)
 
-	print("Jefe atacando en fase demonio")
+	transicion.emit(ataque_elegido)
 
-func actualizar_fisica(delta):
-	if enemigo.jugador == null:
-		transicion.emit("Reposo")
-		return
+func elegir_ataque() -> String:
+	var total = prob_ataque_basico + prob_invocar
+	var numero = randi_range(1, total)
 
-	var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
+	if numero <= prob_ataque_basico:
+		return "AtaqueBasicoDemonio"
+	else:
+		return "InvocarEnemigos"
 
-	if direccion.x < 0:
-		sprite_demonio.flip_h = true
-	elif direccion.x > 0:
-		sprite_demonio.flip_h = false
+func actualizar_fisica(_delta):
+	pass
 
-	if not enemigo.jugador_en_rango_demonio:
-		transicion.emit("Perseguir")
-		return
-
-	temporizador += delta
-
-	if temporizador >= cooldown_ataque:
-		ejecutar_golpe_demonio()
-		temporizador = 0.0
-
-func ejecutar_golpe_demonio():
-	if animacion.has_animation(enemigo.anim_demonio_ataque):
-		animacion.play(enemigo.anim_demonio_ataque)
-
-	print("Jefe demonio golpea: ", enemigo.dano_demonio)
-
-	if enemigo.jugador and enemigo.jugador.has_method("recibir_dano"):
-		enemigo.jugador.recibir_dano(enemigo.dano_demonio)
+func salir():
+	print("Salí del estado FaseDemonio")

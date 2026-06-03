@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://ddttm0wuqx3sx" path="res://escenas/personajes/enemigos/jefeSlime/fase_chica.gd" id="5_68a8i"]
 [ext_resource type="Script" uid="uid://bupkosjio5elg" path="res://escenas/personajes/enemigos/jefeSlime/transformacion_boss.gd" id="6_taxuf"]
 [ext_resource type="Script" uid="uid://des7lim5oluco" path="res://escenas/personajes/enemigos/jefeSlime/fase_demonio.gd" id="7_5hxh4"]
+[ext_resource type="Script" uid="uid://8frusmpb2dkg" path="res://escenas/personajes/enemigos/jefeSlime/ataque_basico_demonio.gd" id="8_6ai2c"]
+[ext_resource type="Script" uid="uid://bth36rwkj4o5i" path="res://escenas/personajes/enemigos/jefeSlime/lanza_fuego.gd" id="9_5hxh4"]
+[ext_resource type="Script" uid="uid://bx7sfag3l2tnd" path="res://escenas/personajes/enemigos/jefeSlime/salto_impacto.gd" id="10_7x656"]
+[ext_resource type="Script" uid="uid://by7fyrbnmdfnw" path="res://escenas/personajes/enemigos/jefeSlime/invocar_enemigos.gd" id="11_f6ak2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uudbi"]
 radius = 99.0
@@ -914,6 +918,18 @@ script = ExtResource("6_taxuf")
 [node name="FaseDemonio" type="Node" parent="Maquina_estados" unique_id=1076717341]
 script = ExtResource("7_5hxh4")
 
+[node name="AtaqueBasicoDemonio" type="Node" parent="Maquina_estados" unique_id=345705388]
+script = ExtResource("8_6ai2c")
+
+[node name="LanzaFuego" type="Node" parent="Maquina_estados" unique_id=223203895]
+script = ExtResource("9_5hxh4")
+
+[node name="SaltoImpacto" type="Node" parent="Maquina_estados" unique_id=1387206257]
+script = ExtResource("10_7x656")
+
+[node name="InvocarEnemigos" type="Node" parent="Maquina_estados" unique_id=1202861125]
+script = ExtResource("11_f6ak2")
+
 [node name="SpriteGrande" type="Sprite2D" parent="." unique_id=1083632980]
 visible = false
 position = Vector2(-18.999996, -475.99994)
@@ -932,7 +948,6 @@ debug_color = Color(0.9895335, 0, 0.29477713, 0.41960785)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataqueDemonio" unique_id=1856976725]
-visible = false
 position = Vector2(-16, -208)
 shape = SubResource("CapsuleShape2D_u32pr")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)

@@ -16,6 +16,8 @@ class_name EnemigoJefeBrr
 
 @export var mana_morir : int = 20
 @export var distancia_vision : float = 300.0
+@export var distancia_ataque_demonio : float = 80.0
+
 
 @export_group("Animaciones Chico")
 @export var anim_reposo : String = "chico_idle"
@@ -27,8 +29,26 @@ class_name EnemigoJefeBrr
 @export var anim_demonio_reposo : String = "demonio_idle"
 @export var anim_demonio_movimiento : String = "demonio_correr"
 @export var anim_demonio_ataque : String = "demonio_atacar"
+@export var anim_demonio_invocar : String = "demonio_invocar"
+
 
 @export var escena_cristal : PackedScene
+
+@export_group("Invocacion")
+@export var escena_enemigo_invocado : PackedScene
+@export var cantidad_invocados : int = 2
+@export var distancia_invocacion : float = 120.0
+
+@export_group("Curacion Demonio")
+@export var curacion_activada : bool = true
+@export var curaciones_maximas : int = 2
+@export var porcentaje_activar_curacion : float = 0.25
+@export var porcentaje_curacion : float = 0.75
+@export var anim_demonio_curacion : String = "demonio_curacion"
+@export var velocidad_anim_curacion : float = 1.0
+
+var curaciones_usadas : int = 0
+var curandose : bool = false
 
 var jugador : Node2D = null
 var jugador_en_rango : bool = false
@@ -76,6 +96,9 @@ func activar_forma_chica():
 	zona_ataque.monitoring = true
 	zona_ataque_demonio.monitoring = false
 
+	jugador_en_rango = false
+	jugador_en_rango_demonio = false
+
 func activar_forma_demonio():
 	fase_demonio = true
 
@@ -89,6 +112,24 @@ func activar_forma_demonio():
 	zona_ataque_demonio.monitoring = true
 
 	jugador_en_rango = false
+	jugador_en_rango_demonio = false
+
+	print("Forma demonio activada")
+	print("Zona ataque demonio monitoring: ", zona_ataque_demonio.monitoring)
+
+	await get_tree().physics_frame
+
+	var cuerpos = zona_ataque_demonio.get_overlapping_bodies()
+
+	print("Cuerpos dentro de Zona_ataqueDemonio: ", cuerpos.size())
+
+	for cuerpo in cuerpos:
+		print("Cuerpo detectado por zona demonio: ", cuerpo.name)
+
+		if cuerpo.is_in_group("player"):
+			jugador = cuerpo
+			jugador_en_rango_demonio = true
+			print("Jugador ya estaba dentro del rango demonio")
 
 func morir():
 	if not fase_demonio and not transformandose:
@@ -112,6 +153,53 @@ func morir():
 		get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
 
 	super.morir()
+
+func debe_curarse_demonio() -> bool:
+
+	if not curacion_activada:
+		return false
+
+	if not fase_demonio:
+		return false
+
+	if transformandose:
+		return false
+
+	if curandose:
+		return false
+
+	if curaciones_usadas >= curaciones_maximas:
+		return false
+
+	var vida_limite = vida_maxima * porcentaje_activar_curacion
+
+	if vida <= vida_limite:
+		return true
+
+	return false
+
+func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
+	if estado_invulnerable:
+		print("El jefe está invulnerable. No recibe daño.")
+		return
+
+	vida -= cantidad
+	empuje_actual = vector_empuje
+
+	print(nombre_entidad, " recibió ", cantidad, " de daño. Vida restante: ", vida)
+
+	if debe_curarse_demonio():
+		curandose = true
+		estado_invulnerable = true
+		velocity = Vector2.ZERO
+		move_and_slide()
+
+		print("El jefe demonio empieza curación.")
+		maquina_estados.cambiar_estado("CuracionDemonio")
+		return
+
+	if vida <= 0:
+		morir()
 
 func _on_zona_ataque_body_entered(body):
 	if body.is_in_group("player"):
