@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djrj6xh4oa0ih"
+path="res://.godot/imported/Underground Cavern - Resident Evil 4 Ambience.mp3-2f15677343d9bafc221d12826816c1cc.mp3str"
+
+[deps]
+
+source_file="res://musica/fondo/Underground Cavern - Resident Evil 4 Ambience.mp3"
+dest_files=["res://.godot/imported/Underground Cavern - Resident Evil 4 Ambience.mp3-2f15677343d9bafc221d12826816c1cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
