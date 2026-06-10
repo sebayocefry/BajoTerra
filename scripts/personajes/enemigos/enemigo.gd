@@ -50,7 +50,6 @@ func morir():
 		#la unica forma que no se rompa 
 		get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
 
-
 		
 	super.morir()
 

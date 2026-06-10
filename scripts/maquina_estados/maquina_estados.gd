@@ -22,7 +22,11 @@ func _ready():
 			hijo.visual = owner.find_child("Sprite2D")
 			if not hijo.visual:
 				hijo.visual = owner.find_child("AnimatedSprite2D")
-				
+			
+			# Compatibilidad con scripts de gabriel_brr
+			hijo.set("animacion", hijo.animador)
+			hijo.set("sprite", hijo.visual)
+			
 			hijo.transicion.connect(_al_cambiar_estado)
 
 	if estado_inicial:
@@ -39,7 +43,10 @@ func _process(delta):
 			
 func _physics_process(delta):
 	if estado_actual:
+		#print("ESTADO ACTIVO: ", estado_actual.name)
 		estado_actual.actualizar_fisica(delta)
+	else:
+		print("ERROR: La máquina no tiene un estado actual")
 
 func _unhandled_input(event):
 	if estado_actual:

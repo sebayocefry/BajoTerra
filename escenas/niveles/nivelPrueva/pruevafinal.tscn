@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cmmibcj76ljnb"]
+
+[ext_resource type="PackedScene" uid="uid://dvmksj7uvdkjc" path="res://escenas/personajes/principal/player.tscn" id="2_a6jdi"]
+[ext_resource type="PackedScene" uid="uid://bnxmypj7h1lpr" path="res://escenas/personajes/enemigos/jefeSlime/bossSlime.tscn" id="3_g10tv"]
+
+[node name="Pruevafinal" type="Node2D" unique_id=42830246]
+position = Vector2(59, 9)
+
+[node name="Jugador" parent="." unique_id=1943970634 instance=ExtResource("2_a6jdi")]
+position = Vector2(769, 221)
+
+[node name="BossSlime" parent="." unique_id=1276800214 instance=ExtResource("3_g10tv")]
+position = Vector2(-25, 278)
