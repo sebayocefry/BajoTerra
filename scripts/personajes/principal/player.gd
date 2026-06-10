@@ -25,6 +25,8 @@ var _brazo_escala: Vector2 = Vector2.ONE
 # Referencia al área que detecta NPCs para que la Máquina de Estados la lea
 @onready var detector_npc = $DetectorNPC
 @onready var linterna: PointLight2D = $PointLight2D
+@onready var audio_herido: AudioStreamPlayer2D = $AudioHerido
+@onready var audio_poca_vida: AudioStreamPlayer2D = $AudioPocaVida
 
 var last_direction = "down"
 var _tween_linterna: Tween
@@ -122,8 +124,12 @@ func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
 
 	if vida < vida_anterior:
 		Eventos.vida_actualizada.emit(vida, vida_maxima)
+		audio_herido.play()
 		if vida > 0:
 			activar_invulnerabilidad(1.0)
+		# Latido cuando queda poca vida (menos del 30%)
+		if vida <= vida_maxima * 0.3 and not audio_poca_vida.playing:
+			audio_poca_vida.play()
 
 
 func activar_invulnerabilidad(duracion: float):

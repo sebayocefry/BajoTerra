@@ -1274,14 +1274,16 @@ escena_cristal = ExtResource("2_h0esb")
 position = Vector2(3.0000021, 17.000004)
 scale = Vector2(3.40625, 3.6953123)
 sprite_frames = SubResource("SpriteFrames_c288v")
-animation = &"attack_left"
+animation = &"idle_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734157640]
+visible = false
 position = Vector2(1, -5)
 shape = SubResource("CapsuleShape2D_cw4h2")
 
 [node name="Zona_ataque" type="Area2D" parent="." unique_id=1586698361]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataque" unique_id=705418667 groups=["player"]]
 position = Vector2(0, -7)

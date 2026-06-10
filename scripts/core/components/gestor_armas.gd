@@ -3,6 +3,8 @@ class_name Gestor_armas
 
 @onready var sprite_arma = $SpriteArma
 @onready var mano = $Mano
+@onready var audio_disparo: AudioStreamPlayer2D = $Disparo
+@onready var audio_sin_municion: AudioStreamPlayer2D = $SinMunicion
 @export var armas_disponibles : Array[Arma] = []
 
 var indice_arma_actual: int = 0
@@ -48,7 +50,12 @@ func procesar_disparo(_delta: float) -> void:
 
 func apretar_gatillo(direccion: Vector2) -> void:
 	tiempo_enfriamiento = arma_equipada.cadencia
-	arma_equipada.disparar(owner as Player, direccion, mano.global_position)
+	var jugador := owner as Player
+	if jugador and jugador.mana >= arma_equipada.costo_mana:
+		audio_disparo.play()
+	else:
+		audio_sin_municion.play()
+	arma_equipada.disparar(jugador, direccion, mano.global_position)
 
 
 func _unhandled_input(event):

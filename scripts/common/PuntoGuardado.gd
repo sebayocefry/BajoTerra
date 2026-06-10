@@ -12,6 +12,7 @@ func _unhandled_input(event):
 	if jugador_cerca and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_F:
 			DatosJugador.guardar_estado_jugador(jugador_cerca)
+			DatosJugador.habitacion_resume = owner.scene_file_path
 			SistemaGuardado.guardar_partida()
 			Eventos.progreso_guardado.emit()
 

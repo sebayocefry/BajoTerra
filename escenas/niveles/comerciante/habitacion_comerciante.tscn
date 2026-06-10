@@ -36,6 +36,28 @@ size = Vector2(59, 83)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puerta"]
 size = Vector2(200, 80)
 
+[sub_resource type="Gradient" id="Gradient_4owjg"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u2l72"]
+gradient = SubResource("Gradient_4owjg")
+
+[sub_resource type="Curve" id="Curve_wk02c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s28b6"]
+curve = SubResource("Curve_wk02c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wo8fo"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_s28b6")
+color_initial_ramp = SubResource("GradientTexture1D_u2l72")
+
 [node name="habitacion_comerciante" type="Node2D" unique_id=4273041]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1528094165]
@@ -310,3 +332,75 @@ script = ExtResource("9_4owjg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puertas/PuertaHaciaFinal" unique_id=222111005]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_puerta")
+
+[node name="particulas" type="Node2D" parent="." unique_id=1368090016]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particulas" unique_id=478193984]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(72, 359)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="particulas" unique_id=1824798861]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(260, 253)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="particulas" unique_id=1086862082]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(599, 199)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="particulas" unique_id=434156788]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(933, 209)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="particulas" unique_id=1248206529]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(1249, 233)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="particulas" unique_id=1858992864]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(1460, 372)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="particulas" unique_id=348675621]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(1267, 587)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="particulas" unique_id=1682933439]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(921, 492)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D9" type="GPUParticles2D" parent="particulas" unique_id=2076956181]
+modulate = Color(2.6577253, 2.5257316, 0.6778215, 1)
+position = Vector2(589, 488)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="GPUParticles2D10" type="GPUParticles2D" parent="particulas" unique_id=1217436367]
+modulate = Color(1.4367844, 0.6778215, 2.6577253, 1)
+position = Vector2(150, 572)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_wo8fo")

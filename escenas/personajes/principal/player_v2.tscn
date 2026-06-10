@@ -34,6 +34,10 @@
 [ext_resource type="Script" uid="uid://5pudku6ubdhk" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
 [ext_resource type="Resource" uid="uid://cf8y6t82gtuwr" path="res://recursos/armas/dinamita.tres" id="31_urn3r"]
 [ext_resource type="Script" uid="uid://lbv1k3ok4nwj" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
+[ext_resource type="AudioStream" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
+[ext_resource type="AudioStream" path="res://musica/sfx/tomas_herudek-heartbeat-simple-529668.mp3" id="sfx_pocavida"]
+[ext_resource type="AudioStream" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
+[ext_resource type="AudioStream" path="res://musica/sfx/Empty weapons (Sound effect).mp3" id="sfx_sinmunicion"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2x7k2"]
 atlas = ExtResource("4_xw4gp")
@@ -245,10 +249,12 @@ velocidad = 50
 position = Vector2(-8.723518, 2.2435977)
 scale = Vector2(0.054453593, 0.04756583)
 sprite_frames = SubResource("SpriteFrames_fuw3a")
-animation = &"idle_down"
+animation = &"run_left"
 autoplay = "idle_down"
+frame_progress = 0.10584652
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353022949]
+visible = false
 position = Vector2(-10, 0)
 shape = SubResource("RectangleShape2D_ur7pv")
 
@@ -264,8 +270,14 @@ armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6")
 [node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
 scale = Vector2(0.1, 0.1)
 
+[node name="Disparo" type="AudioStreamPlayer2D" parent="Gestor_armas"]
+stream = ExtResource("sfx_disparo")
+
+[node name="SinMunicion" type="AudioStreamPlayer2D" parent="Gestor_armas"]
+stream = ExtResource("sfx_sinmunicion")
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1755864465]
-position = Vector2(-7, -2)
+position = Vector2(-9, 0)
 rotation = 3.141593
 scale = Vector2(0.13, 0.34)
 color = Color(1, 0.88, 0.42, 1)
@@ -289,6 +301,7 @@ listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorNPC" unique_id=951038440]
+visible = false
 position = Vector2(-8, -13)
 shape = SubResource("RectangleShape2D_rx50a")
 
@@ -310,5 +323,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="BrazoArma" type="Sprite2D" parent="." unique_id=112233446]
-position = Vector2(18, 27.000002)
-scale = Vector2(0.087144054, 0.09822533)
+position = Vector2(-34.284134, 10.6875)
+scale = Vector2(0.08050295, 0.11107275)
+
+[node name="AudioHerido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("sfx_herido")
+
+[node name="AudioPocaVida" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("sfx_pocavida")
+autoplay = false

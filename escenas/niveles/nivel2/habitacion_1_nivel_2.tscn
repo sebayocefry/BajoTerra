@@ -45,7 +45,7 @@ offset_top = -228.0
 offset_right = 2079.0
 offset_bottom = 1085.0
 mouse_filter = 2
-color = Color(0.08590613, 0.30133045, 0.5022551, 0.2)
+color = Color(0.022478295, 0.120287046, 0.21436195, 0)
 
 [node name="paredes" type="StaticBody2D" parent="." unique_id=62951826]
 

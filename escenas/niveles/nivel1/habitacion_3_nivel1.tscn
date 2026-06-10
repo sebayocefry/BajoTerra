@@ -53,12 +53,12 @@ mouse_filter = 2
 texture = ExtResource("1_d556v")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=450545917]
-offset_left = -250.0
-offset_top = -219.0
-offset_right = 1991.0
-offset_bottom = 1200.0
+offset_left = -175.0
+offset_top = -200.0
+offset_right = 2066.0
+offset_bottom = 1219.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.56078434)
+color = Color(0, 0, 0, 0.58431375)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1459389745]
 
@@ -388,7 +388,7 @@ position = Vector2(928, 275)
 
 [node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("10_lvrvy")]
 modulate = Color(0.82398456, 0.6256923, 0.12412956, 1)
-position = Vector2(889, 269)
+position = Vector2(903, 287)
 
 [node name="Mukiv2" parent="Enemigos" unique_id=669730601 instance=ExtResource("11_xoc2n")]
 position = Vector2(591, 464)

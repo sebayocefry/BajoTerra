@@ -51,6 +51,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="CajaObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=1203406284]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 0

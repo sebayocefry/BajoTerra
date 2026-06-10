@@ -288,6 +288,11 @@ shape = SubResource("RectangleShape2D_g2jpk")
 position = Vector2(932, 1022)
 shape = SubResource("RectangleShape2D_vxpvh")
 
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="colisiones" unique_id=1383948845]
+position = Vector2(1628, 275)
+rotation = 2.0367992
+shape = SubResource("CapsuleShape2D_c1")
+
 [node name="Puertas" type="Node2D" parent="." unique_id=2034345363]
 
 [node name="PuntoSalida" parent="Puertas" unique_id=1110160586 instance=ExtResource("6_h4n1")]

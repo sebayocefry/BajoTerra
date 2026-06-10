@@ -86,12 +86,13 @@ escena_bola_fuego = ExtResource("2_g6uq6")
 escena_cristal = ExtResource("3_chst5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=647270410]
-position = Vector2(474.12503, -212.00002)
+position = Vector2(477, -363)
 scale = Vector2(0.2636447, 0.31724137)
 sprite_frames = SubResource("SpriteFrames_1")
 frame_progress = 0.8856991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237050227]
+visible = false
 position = Vector2(475.25, -271.5625)
 shape = SubResource("RectShape_1")
 

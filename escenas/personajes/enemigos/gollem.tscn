@@ -1304,13 +1304,16 @@ animation = &"idle_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640242852]
+visible = false
 position = Vector2(11, -9)
 shape = SubResource("CapsuleShape2D_cji5b")
 
 [node name="Zona_ataque" type="Area2D" parent="." unique_id=1352320734]
+visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataque" unique_id=1700278884 groups=["player"]]
+visible = false
 position = Vector2(11, -9)
 shape = SubResource("CapsuleShape2D_baq2c")
 

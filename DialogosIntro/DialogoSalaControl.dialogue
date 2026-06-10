@@ -1,0 +1,9 @@
+~ start
+Minero: ¡¡¡¿Qué es eso?!!!!
+Zombie: trabajamos juntos pero he muerto, ¿puedes salvar mi alma?.
+- si
+	Zombie: Debes derrorar al gran jefe, suerte con eso....
+- no
+	Zombie: Siempre me caiste mas de todas formas....
+Zombie: Adios!!!
+=> END

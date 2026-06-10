@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://u348g7gr2old"]
 
 [ext_resource type="Texture2D" uid="uid://c17c540k82m8f" path="res://assets/spritesMundos/level2/piso/piso_2_nivel2.png" id="1_b85cv"]
+[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_1msyy"]
 [ext_resource type="Texture2D" uid="uid://jyo5wlb37mh" path="res://assets/spritesMundos/level2/paredes/pared_mapa2_nivel2.png" id="2_o5j7q"]
 [ext_resource type="PackedScene" uid="uid://b7ee6joypqart" path="res://escenas/objetos/decoraciones/barril_radiactivo.tscn" id="4_6yrsc"]
 [ext_resource type="PackedScene" uid="uid://cxjt87bust7v" path="res://escenas/objetos/decoraciones/barril_radiactivo2.tscn" id="5_pnqp0"]
@@ -10,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://ctb66iigg7b0b" path="res://escenas/objetos/decoraciones/scull.tscn" id="8_vxiaa"]
 [ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="9_vxiaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72d6e"]
+shader = ExtResource("2_1msyy")
+shader_parameter/fog_color = Color(0, 0.51, 0, 0.6901961)
+shader_parameter/speed = 0.06000000285
+shader_parameter/scale = 3.918000138605
 
 [sub_resource type="Gradient" id="Gradient_bvhaj"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -48,13 +55,19 @@ offset_bottom = 1071.0
 mouse_filter = 2
 texture = ExtResource("1_b85cv")
 
+[node name="neblina" type="ColorRect" parent="." unique_id=1484690917]
+material = SubResource("ShaderMaterial_72d6e")
+offset_top = -110.0
+offset_right = 1939.0
+offset_bottom = 1082.0
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=702401926]
 offset_left = -105.0
 offset_top = -210.0
 offset_right = 1979.0
 offset_bottom = 1164.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.43529412)
+color = Color(0, 0, 0, 0.59607846)
 
 [node name="paredes" type="StaticBody2D" parent="." unique_id=1612834563]
 

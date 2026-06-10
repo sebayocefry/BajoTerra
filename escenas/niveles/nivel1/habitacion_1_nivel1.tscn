@@ -52,6 +52,28 @@ gradient = SubResource("Gradient_lrrxv")
 fill = 1
 fill_from = Vector2(0.48, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_j466s"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ni1cm"]
+gradient = SubResource("Gradient_j466s")
+
+[sub_resource type="Curve" id="Curve_fv5mg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mglxq"]
+curve = SubResource("Curve_fv5mg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vasvg"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_mglxq")
+color_initial_ramp = SubResource("GradientTexture1D_ni1cm")
+
 [node name="habitacion1" type="Node2D" unique_id=1138420938]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1370990560]
@@ -62,7 +84,15 @@ offset_right = 1916.0
 offset_bottom = 1071.0
 texture = ExtResource("1_ca32q")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=461304548]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=567063025]
+offset_left = -138.0
+offset_top = -163.0
+offset_right = 2103.0
+offset_bottom = 1256.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.29803923)
+
+[node name="niebla" type="ColorRect" parent="." unique_id=461304548]
 material = SubResource("ShaderMaterial_j466s")
 offset_left = 25.0
 offset_top = 46.0
@@ -330,10 +360,26 @@ position = Vector2(905, 328)
 [node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
 
 [node name="Muki" parent="Enemigos" unique_id=1997461237 instance=ExtResource("12_f0ece")]
-position = Vector2(585, 414)
+position = Vector2(534, 501)
 
 [node name="Muki2" parent="Enemigos" unique_id=1259878405 instance=ExtResource("12_f0ece")]
-position = Vector2(1176, 408)
+position = Vector2(1483, 497)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=1494421045]
 script = ExtResource("13_j466s")
+
+[node name="Particulas" type="Node2D" parent="." unique_id=208600662]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Particulas" unique_id=1586631317]
+modulate = Color(3.447081, 7.565764, 18.892157, 1)
+position = Vector2(448, 220)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_vasvg")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particulas" unique_id=1994038653]
+modulate = Color(3.447081, 7.565764, 18.892157, 1)
+position = Vector2(1354, 211)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_vasvg")

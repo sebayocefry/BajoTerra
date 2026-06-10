@@ -61,7 +61,8 @@ func obtener_datos_diccionario() -> Dictionary:
 		"oro_actual": oro_actual,
 		"habitaciones_limpias": habitaciones_limpias,
 		"inventario_rutas": inventario_rutas,
-		"ultima_escena": get_tree().current_scene.scene_file_path # Guardamos donde stabamos
+		"ultima_escena": get_tree().current_scene.scene_file_path, # Guardamos donde estabamos
+		"habitacion_resume": habitacion_resume
 	}
 
 # Restaura los datos leidos desde el disco
@@ -70,6 +71,7 @@ func cargar_datos_diccionario(datos: Dictionary):
 	mana_actual = datos.get("mana_actual", 0)
 	oro_actual = datos.get("oro_actual", 0)
 	habitaciones_limpias = datos.get("habitaciones_limpias", {})
+	habitacion_resume = datos.get("habitacion_resume", "")
 	
 	inventario.clear()
 	var rutas = datos.get("inventario_rutas", [])

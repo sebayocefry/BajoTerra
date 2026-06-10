@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwfso7rkhfid3" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion2.png" id="1_ipaxf"]
 [ext_resource type="Texture2D" uid="uid://ecbfdx3yjvm8" path="res://assets/spritesMundos/level1/paredes/pared3_habitacion2_mundo1.png" id="2_4dqsr"]
+[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_hxv0y"]
 [ext_resource type="PackedScene" uid="uid://i6wov8hbk55m" path="res://escenas/objetos/decoraciones/calavera.tscn" id="6_be6ii"]
 [ext_resource type="PackedScene" uid="uid://b3rxrno55g1p6" path="res://escenas/objetos/decoraciones/ataud.tscn" id="7_be6ii"]
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="7_gxmhy"]
@@ -15,9 +16,15 @@
 [ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="14_cbc58"]
 [ext_resource type="Texture2D" uid="uid://b0iads0ntiw2i" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/web_rock2_shadow1.png" id="14_tvbrc"]
 [ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
-[ext_resource type="PackedScene" uid="uid://bdtk4lk8asdj8" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
+[ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
 [ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b010o"]
+shader = ExtResource("2_hxv0y")
+shader_parameter/fog_color = Color(0, 0.16615461, 0, 0.5137255)
+shader_parameter/speed = 0.06000000285
+shader_parameter/scale = 4.76400017879
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fs37"]
 size = Vector2(1947, 125)
@@ -59,6 +66,12 @@ offset_right = 1916.0
 offset_bottom = 1071.0
 mouse_filter = 2
 texture = ExtResource("1_ipaxf")
+
+[node name="neblina" type="ColorRect" parent="." unique_id=480406295]
+material = SubResource("ShaderMaterial_b010o")
+offset_top = -71.0
+offset_right = 1948.0
+offset_bottom = 1082.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=815214787]
 z_index = -10

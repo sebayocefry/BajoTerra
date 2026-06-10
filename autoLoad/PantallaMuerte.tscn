@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bkushrxj8qmx1"]
 
 [ext_resource type="Script" uid="uid://cdef3ww43sgk0" path="res://scripts/UI/menus/PantallaMuerte.gd" id="1_6srvr"]
-[ext_resource type="Texture2D" uid="uid://8eqascyg68ga" path="res://assets/Fondos/gameOver2..png" id="1_rt74y"]
+[ext_resource type="Texture2D" path="res://assets/Fondos/Game_Over.jpg" id="1_rt74y"]
+[ext_resource type="AudioStream" path="res://musica/fondo/Resident Evil 4 Soundtrack_ Game Over.mp3" id="2_gameover"]
 
 [node name="PantallaMuerte" type="CanvasLayer" unique_id=51475556]
 script = ExtResource("1_6srvr")
@@ -40,3 +41,8 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Volver al Menu Principal"
+
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=999888777]
+stream = ExtResource("2_gameover")
+volume_db = -3.0
+autoplay = false
