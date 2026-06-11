@@ -51,5 +51,9 @@ func ejecutar_disparo(jugador: Player, direccion: Vector2, punto_disparo: Vector
 	if "dano" in nueva_bala:
 		nueva_bala.dano = dano_final 
 		
-	#  Usamos los "ojos" del jugador para acceder al nivel actual
-	jugador.get_tree().current_scene.add_child(nueva_bala)
+	# Usamos el contenedor de habitaciones para que las balas se eliminen al cambiar de pieza
+	var contenedor = jugador.get_node_or_null("%ContenedorHabitaciones")
+	if contenedor and contenedor.get_child_count() > 0:
+		contenedor.get_child(0).add_child(nueva_bala)
+	else:
+		jugador.get_tree().current_scene.add_child(nueva_bala)

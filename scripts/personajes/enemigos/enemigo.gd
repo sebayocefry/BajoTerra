@@ -46,9 +46,8 @@ func morir():
 	if escena_cristal:
 		var nuevo_cristal = escena_cristal.instantiate()
 		nuevo_cristal.global_position = global_position
-		# para agregar el cristal de forma segura al nivel principal.
-		#la unica forma que no se rompa 
-		get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
+		# agregamos el cristal al mismo contenedor del enemigo (la habitacion)
+		get_parent().call_deferred("add_child", nuevo_cristal)
 
 		
 	super.morir()
