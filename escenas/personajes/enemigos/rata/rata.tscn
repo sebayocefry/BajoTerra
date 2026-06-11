@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://fhn31b2htu1p"]
 
-[ext_resource type="Script" uid="uid://dmr2q6h2ee6se" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_m0r38"]
+[ext_resource type="Script" uid="uid://by4w0d0iaed0i" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_m0r38"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_fb718"]
 [ext_resource type="Texture2D" uid="uid://c4xo5qwmdfttm" path="res://assets/spritsEnemigos/Rat/idle.png" id="2_wu4ey"]
 [ext_resource type="Texture2D" uid="uid://d488be5egsj5" path="res://assets/spritsEnemigos/Rat/attack_bite.png" id="3_fb718"]
 [ext_resource type="Texture2D" uid="uid://b3asipnhikkua" path="res://assets/spritsEnemigos/Rat/run.png" id="4_cojn5"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="5_8uqhc"]
-[ext_resource type="Script" uid="uid://bdxdqs5qqffo" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="6_l4x3d"]
-[ext_resource type="Script" uid="uid://b63fdobg6ac54" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="7_tqlcm"]
-[ext_resource type="Script" uid="uid://df1igny3gik37" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="8_07x8k"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="5_8uqhc"]
+[ext_resource type="Script" uid="uid://dpb2upmjxgqp6" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="6_l4x3d"]
+[ext_resource type="Script" uid="uid://dn75v0jnugvoj" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="7_tqlcm"]
+[ext_resource type="Script" uid="uid://c1huyomb1cia8" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="8_07x8k"]
 
 [sub_resource type="Animation" id="Animation_gjt8u"]
 length = 0.001
@@ -192,7 +192,7 @@ position = Vector2(0, -12)
 script = ExtResource("1_m0r38")
 escena_cristal = ExtResource("2_fb718")
 velocidad = 200
-metadata/_custom_type_script = "uid://dmr2q6h2ee6se"
+metadata/_custom_type_script = "uid://by4w0d0iaed0i"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589638148]
 position = Vector2(-2.000001, 10)

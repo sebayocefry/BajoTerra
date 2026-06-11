@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bbi5fx2tpvdag" path="res://assets/spritsEnemigos/muki/Orc1/Without_shadow/orc1_idle_without_shadow.png" id="4_ic24v"]
 [ext_resource type="Texture2D" uid="uid://cfl2ykogdrhmd" path="res://assets/spritsEnemigos/muki/Orc1/Without_shadow/orc1_run_without_shadow.png" id="5_m7stf"]
 [ext_resource type="Texture2D" uid="uid://ccdlm7cxxdnnx" path="res://assets/spritsEnemigos/muki/Orc1/Without_shadow/orc1_walk_without_shadow.png" id="6_co8ft"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="7_jpe7w"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="7_jpe7w"]
 [ext_resource type="Script" uid="uid://dj7yahyv7nspt" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_reposo.gd" id="9_sy6ra"]
 [ext_resource type="Script" uid="uid://xdiq6i4c6vbd" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_hostigar.gd" id="10_kva8p"]
 [ext_resource type="Script" uid="uid://h81rmirbsuo0" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_atacar.gd" id="11_qoilg"]

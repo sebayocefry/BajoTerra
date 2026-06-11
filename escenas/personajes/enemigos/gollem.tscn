@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wg0ggc8sdr4s" path="res://assets/spritsEnemigos/golem/Golem2/Death/Golem2_Death_full.png" id="2_hnno7"]
 [ext_resource type="Texture2D" uid="uid://d1kcg2ujm6fo1" path="res://assets/spritsEnemigos/golem/Golem2/Run/Golem2_Run_full.png" id="3_hnno7"]
 [ext_resource type="Texture2D" uid="uid://b20svsi68com2" path="res://assets/spritsEnemigos/golem/Golem2/Hurt/Golem2_Hurt_full.png" id="4_cji5b"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_x623i"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_x623i"]
 [ext_resource type="Texture2D" uid="uid://bc1rrh6hhjdd3" path="res://assets/spritsEnemigos/golem/Golem2/Walk/Golem2_Walk_full.png" id="5_hnno7"]
 [ext_resource type="Script" uid="uid://blkklhmed4w3c" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/reposo_gollem.gd" id="9_baq2c"]
 [ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/perseguir_gollem.gd" id="10_cji5b"]

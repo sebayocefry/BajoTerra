@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dxy83rd14mr3o" path="res://assets/SpriteMinero/RunEspalda/RunE3.png" id="23_54uao"]
 [ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="27_74tsq"]
 [ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
 [ext_resource type="Script" uid="uid://d0e1m8t7qrken" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
 [ext_resource type="Resource" path="res://recursos/armas/picota.tres" id="30_q24jm"]
 [ext_resource type="Script" uid="uid://5pudku6ubdhk" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]

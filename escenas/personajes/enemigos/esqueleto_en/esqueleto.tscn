@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://wmillnq6e7bg"]
 
-[ext_resource type="Script" uid="uid://dmr2q6h2ee6se" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_1l11b"]
+[ext_resource type="Script" uid="uid://by4w0d0iaed0i" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_1l11b"]
 [ext_resource type="Texture2D" uid="uid://c0pdfyi4bdu2q" path="res://assets/spritsEnemigos/esqueleto/Skeleton_01_Yellow_Idle.png" id="2_34cah"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_lslx6"]
 [ext_resource type="Texture2D" uid="uid://bfhk4s6wik3ht" path="res://assets/spritsEnemigos/esqueleto/Skeleton_01_Yellow_Attack1.png" id="3_lslx6"]
 [ext_resource type="Texture2D" uid="uid://cfibvph8l5jtf" path="res://assets/spritsEnemigos/esqueleto/Skeleton_01_Yellow_Walk.png" id="4_i4vqg"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="5_vjgg8"]
-[ext_resource type="Script" uid="uid://bdxdqs5qqffo" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="6_uhi0s"]
-[ext_resource type="Script" uid="uid://b63fdobg6ac54" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="7_8kkys"]
-[ext_resource type="Script" uid="uid://df1igny3gik37" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="8_q02f7"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="5_vjgg8"]
+[ext_resource type="Script" uid="uid://dpb2upmjxgqp6" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="6_uhi0s"]
+[ext_resource type="Script" uid="uid://dn75v0jnugvoj" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="7_8kkys"]
+[ext_resource type="Script" uid="uid://c1huyomb1cia8" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="8_q02f7"]
 
 [sub_resource type="Animation" id="Animation_l64a1"]
 length = 0.001
@@ -190,7 +190,7 @@ height = 200.0
 [node name="Esqueleto" type="CharacterBody2D" unique_id=1921202342]
 script = ExtResource("1_1l11b")
 escena_cristal = ExtResource("2_lslx6")
-metadata/_custom_type_script = "uid://dmr2q6h2ee6se"
+metadata/_custom_type_script = "uid://by4w0d0iaed0i"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056077544]
 position = Vector2(24, -7)

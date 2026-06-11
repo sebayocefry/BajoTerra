@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3ajd78c3flwd" path="res://escenas/personajes/enemigos/jefeSlime/boss_slime.gd" id="1_7fxks"]
 [ext_resource type="Texture2D" uid="uid://cpqjyw1ae7fn" path="res://assets/spritsEnemigos/Slime/idle.png" id="2_7fxks"]
 [ext_resource type="Texture2D" uid="uid://b3gakeyencvkf" path="res://assets/spritsEnemigos/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="3_7fxks"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_uudbi"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_uudbi"]
 [ext_resource type="Script" uid="uid://ddttm0wuqx3sx" path="res://escenas/personajes/enemigos/jefeSlime/fase_chica.gd" id="5_68a8i"]
 [ext_resource type="Script" uid="uid://bupkosjio5elg" path="res://escenas/personajes/enemigos/jefeSlime/transformacion_boss.gd" id="6_taxuf"]
 [ext_resource type="Script" uid="uid://des7lim5oluco" path="res://escenas/personajes/enemigos/jefeSlime/fase_demonio.gd" id="7_5hxh4"]
@@ -880,7 +880,7 @@ height = 786.0
 [node name="BossSlime" type="CharacterBody2D" unique_id=972433521]
 script = ExtResource("1_7fxks")
 vida_maxima = 10
-metadata/_custom_type_script = "uid://dmr2q6h2ee6se"
+metadata/_custom_type_script = "uid://by4w0d0iaed0i"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476350496]
 position = Vector2(40, -39)

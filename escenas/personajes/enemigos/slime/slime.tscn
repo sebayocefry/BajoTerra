@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ch1gyh7x7b26p"]
 
-[ext_resource type="Script" uid="uid://dmr2q6h2ee6se" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_2q62u"]
+[ext_resource type="Script" uid="uid://by4w0d0iaed0i" path="res://scripts/personajes/enemigos/enemigo.gd" id="1_2q62u"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_mtev1"]
 [ext_resource type="Texture2D" uid="uid://cpqjyw1ae7fn" path="res://assets/spritsEnemigos/Slime/idle.png" id="3_847af"]
-[ext_resource type="Script" uid="uid://bfcjloko7goq3" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_kkfwd"]
-[ext_resource type="Script" uid="uid://bdxdqs5qqffo" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="5_o5dil"]
-[ext_resource type="Script" uid="uid://b63fdobg6ac54" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="6_4i7yn"]
-[ext_resource type="Script" uid="uid://df1igny3gik37" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="7_vrb4s"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_kkfwd"]
+[ext_resource type="Script" uid="uid://dpb2upmjxgqp6" path="res://scripts/personajes/enemigos/estados_en_comun/reposo.gd" id="5_o5dil"]
+[ext_resource type="Script" uid="uid://dn75v0jnugvoj" path="res://scripts/personajes/enemigos/estados_en_comun/perseguir.gd" id="6_4i7yn"]
+[ext_resource type="Script" uid="uid://c1huyomb1cia8" path="res://scripts/personajes/enemigos/estados_en_comun/atacar.gd" id="7_vrb4s"]
 [ext_resource type="Texture2D" uid="uid://doe0cig3prj0h" path="res://assets/spritsEnemigos/Slime/attack.png" id="8_8rims"]
 [ext_resource type="Texture2D" uid="uid://587y4pvexiuc" path="res://assets/spritsEnemigos/Slime/walk.png" id="9_rxcy6"]
 
@@ -191,7 +191,7 @@ height = 170.0
 position = Vector2(89, 24)
 script = ExtResource("1_2q62u")
 escena_cristal = ExtResource("2_mtev1")
-metadata/_custom_type_script = "uid://dmr2q6h2ee6se"
+metadata/_custom_type_script = "uid://by4w0d0iaed0i"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=730663164]
 position = Vector2(-79.99999, -58)
