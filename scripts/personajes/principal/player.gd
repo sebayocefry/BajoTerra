@@ -87,9 +87,15 @@ func aplicar_datos_brazo(arma: Arma) -> void:
 func _actualizar_brazo() -> void:
 	if not is_instance_valid(brazo_arma):
 		return
-	brazo_arma.texture = _brazo_texturas.get(last_direction, null)
-	brazo_arma.position = _brazo_offsets.get(last_direction, Vector2.ZERO)
-	brazo_arma.scale = _brazo_escala
+	var nueva_textura = _brazo_texturas.get(last_direction, null)
+	brazo_arma.texture = nueva_textura
+	
+	if nueva_textura == null:
+		brazo_arma.visible = false
+	else:
+		brazo_arma.visible = true
+		brazo_arma.position = _brazo_offsets.get(last_direction, Vector2.ZERO)
+		brazo_arma.scale = _brazo_escala
 
 
 func update_animation(state):
