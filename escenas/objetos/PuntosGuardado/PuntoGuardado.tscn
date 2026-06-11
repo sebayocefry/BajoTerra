@@ -54,29 +54,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1fs8"]
-size = Vector2(57.5, 184)
+size = Vector2(30, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s66po"]
-radius = 119.03781
+radius = 80.0
 
 [node name="PuntoGuardado" type="StaticBody2D" unique_id=548028025]
 collision_mask = 0
 script = ExtResource("1_s66po")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2064049256]
-position = Vector2(-7, 13.999985)
-scale = Vector2(0.73778504, 0.6591797)
+position = Vector2(-1, -10)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8xyhs")
 autoplay = "default"
 frame_progress = 0.40725446
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=585235218]
-position = Vector2(-2, -51)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_h1fs8")
 
 [node name="ZonaInteraccion" type="Area2D" parent="." unique_id=1317240051]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion" unique_id=1318364644]
-position = Vector2(-4, -51)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_s66po")
