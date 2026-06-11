@@ -385,15 +385,6 @@ amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_vasvg")
 
-[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("16_fv5mg")]
-position = Vector2(160, 699)
-
-[node name="Rata2" parent="." unique_id=1997107826 instance=ExtResource("16_fv5mg")]
-position = Vector2(164, 827)
-
-[node name="Rata3" parent="." unique_id=1333213447 instance=ExtResource("16_fv5mg")]
-position = Vector2(338, 714)
-
 [node name="Rata4" parent="." unique_id=1557499351 instance=ExtResource("16_fv5mg")]
 position = Vector2(1571, 749)
 

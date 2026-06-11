@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bc3q1fnbbmwvg" path="res://escenas/objetos/decoraciones/geyser.tscn" id="6_34fuf"]
 [ext_resource type="PackedScene" uid="uid://bxlhd7fmyt2j3" path="res://escenas/objetos/decoraciones/dragon_izq.tscn" id="7_o66dq"]
 [ext_resource type="PackedScene" uid="uid://dcb1rd05ea86y" path="res://escenas/niveles/nivel2/puertas/puerta_1_nivel2.tscn" id="8_g05gl"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
 [ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="9_g05gl"]
+[ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="10_3ebfu"]
 
 [sub_resource type="Gradient" id="Gradient_lrrxv"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -389,3 +390,6 @@ position = Vector2(959, 1025)
 
 [node name="spawn_salida" type="Marker2D" parent="SpawnPoints" unique_id=1255485136]
 position = Vector2(899, 264)
+
+[node name="Esqueleto" parent="." unique_id=1921202342 instance=ExtResource("10_3ebfu")]
+position = Vector2(954, 292)

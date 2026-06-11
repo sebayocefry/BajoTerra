@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bpxhxcd0na58s"]
 
-[ext_resource type="Texture2D" uid="uid://s1502ac2o8fc" path="res://assets/spritesMundos/level1/tierra/piso4_nivel1.png" id="1_or5df"]
-[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_7jgji"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="3_vxpvh"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
+[ext_resource type="Texture2D" uid="uid://dm46b1kh6b50x" path="res://assets/spritesMundos/level1/tierra/piso4_nivel1.png" id="1_or5df"]
+[ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_7jgji"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_vxpvh"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
 [ext_resource type="PackedScene" uid="uid://ba0xps7ubued8" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion4_nivel1.tscn" id="6_h4n1"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="7_or5df"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="8_7jgji"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2l72"]
 shader = ExtResource("2_7jgji")
@@ -368,3 +369,15 @@ position = Vector2(390, 215)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_cp6xo")
+
+[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("8_7jgji")]
+position = Vector2(601, 502)
+
+[node name="Rata2" parent="." unique_id=1644079595 instance=ExtResource("8_7jgji")]
+position = Vector2(1195, 463)
+
+[node name="Rata3" parent="." unique_id=1580741834 instance=ExtResource("8_7jgji")]
+position = Vector2(918, 541)
+
+[node name="Rata4" parent="." unique_id=398173628 instance=ExtResource("8_7jgji")]
+position = Vector2(756, 512)

@@ -2,16 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://c4gpc6fp4dptm" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion3.png" id="1_d556v"]
 [ext_resource type="Texture2D" uid="uid://c32sr7ejgdoir" path="res://assets/spritesMundos/level1/paredes/pared4_habitacion3_mundo1.png" id="2_a0hbv"]
-[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="4_xoc2n"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="6_a0hbv"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="7_lvrvy"]
+[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="4_xoc2n"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="6_a0hbv"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="7_lvrvy"]
 [ext_resource type="PackedScene" uid="uid://bxn30cmidq5oy" path="res://escenas/objetos/luces/fire.tscn" id="7_wmyuc"]
 [ext_resource type="Texture2D" uid="uid://desm3qudufx48" path="res://assets/decoracion/esqueleto.png" id="8_hmltg"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="9_5n61j"]
 [ext_resource type="PackedScene" uid="uid://dykml77obfqgg" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitación3_nivel1.tscn" id="9_d556v"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
-[ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="10_lvrvy"]
-[ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="11_xoc2n"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
+[ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="11_xoc2n"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="12_i27g1"]
 
 [sub_resource type="Gradient" id="Gradient_lrrxv"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -386,12 +386,20 @@ position = Vector2(928, 275)
 
 [node name="Enemigos" type="Node2D" parent="." unique_id=1208577904]
 
-[node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("10_lvrvy")]
-modulate = Color(0.82398456, 0.6256923, 0.12412956, 1)
-position = Vector2(903, 287)
-
-[node name="Mukiv2" parent="Enemigos" unique_id=669730601 instance=ExtResource("11_xoc2n")]
-position = Vector2(591, 464)
-
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=814659986]
 script = ExtResource("10_a0hbv")
+
+[node name="Esqueleto" parent="." unique_id=1921202342 instance=ExtResource("11_xoc2n")]
+position = Vector2(1405, 346)
+
+[node name="Esqueleto2" parent="." unique_id=1091973982 instance=ExtResource("11_xoc2n")]
+position = Vector2(444, 290)
+
+[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("12_i27g1")]
+position = Vector2(777, 598)
+
+[node name="Rata2" parent="." unique_id=45939749 instance=ExtResource("12_i27g1")]
+position = Vector2(975, 611)
+
+[node name="Rata3" parent="." unique_id=1046453564 instance=ExtResource("12_i27g1")]
+position = Vector2(1162, 622)

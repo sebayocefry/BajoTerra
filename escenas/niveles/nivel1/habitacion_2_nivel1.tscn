@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
 [ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
-[ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="18_6afqh"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="21_835cb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b010o"]
@@ -432,10 +431,7 @@ position = Vector2(931, 354)
 [node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("16_hxv0y")]
 modulate = Color(0.40500003, 0.9, 0, 1)
 z_index = 5
-position = Vector2(781, 363)
-
-[node name="Golemv2" parent="Enemigos" unique_id=1070925211 instance=ExtResource("18_6afqh")]
-position = Vector2(1117, 388)
+position = Vector2(910, 200)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=31082958]
 script = ExtResource("17_b010o")

@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bsg77kljtlcvc" path="res://assets/spritesMundos/level1/tierra/tierra_nivefinal.png" id="1_tktx4"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="2_d20dd"]
-[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_o17o7"]
-[ext_resource type="Texture2D" uid="uid://be8tiubvs14vv" path="res://assets/spritesMundos/level1/paredes/pared_final_nivel1.png" id="2_sn1bj"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="3_1dk3o"]
-[ext_resource type="Texture2D" uid="uid://dqrfbtpd0preo" path="res://assets/decoracion/altar.png" id="3_r5c3u"]
+[ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_o17o7"]
+[ext_resource type="Texture2D" uid="uid://ch4hselu2jx8n" path="res://assets/spritesMundos/level1/paredes/pared_final_nivel1.png" id="2_sn1bj"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_1dk3o"]
+[ext_resource type="Texture2D" uid="uid://davxmfdy5xk1d" path="res://assets/decoracion/altar.png" id="3_r5c3u"]
 [ext_resource type="PackedScene" uid="uid://bt43cx0egit8x" path="res://escenas/objetos/decoraciones/estatua.tscn" id="4_g2lsb"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_xff60"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_xff60"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="6_sn1bj"]
 [ext_resource type="PackedScene" uid="uid://dysly33o23pym" path="res://escenas/objetos/decoraciones/dragon.tscn" id="7_pdr8i"]
 [ext_resource type="PackedScene" uid="uid://b5gt2fw0xwjkm" path="res://escenas/objetos/decoraciones/altar_calavera1.tscn" id="7_r5c3u"]
@@ -15,10 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="9_h6etk"]
 [ext_resource type="Texture2D" uid="uid://f32nepnr6qhm" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/grave5_shadow1.png" id="10_ls27u"]
 [ext_resource type="PackedScene" uid="uid://c4vuletjsu27p" path="res://escenas/niveles/nivel1/puertas/puerta_salida_final_nivel1.tscn" id="13_1dk3o"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="15_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://cfen74p4gisas" path="res://escenas/personajes/jefes/jefe_nivel1.tscn" id="16_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="16_o17o7"]
+[ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="20_kjb3x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d20dd"]
 shader = ExtResource("2_o17o7")
@@ -532,3 +533,12 @@ position = Vector2(2178, 799)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_nv2tb")
+
+[node name="Golemv2" parent="." unique_id=1070925211 instance=ExtResource("20_kjb3x")]
+position = Vector2(675, 119)
+
+[node name="Muki2" parent="." unique_id=728436738 instance=ExtResource("16_o17o7")]
+position = Vector2(928, 940)
+
+[node name="Muki3" parent="." unique_id=1480090345 instance=ExtResource("16_o17o7")]
+position = Vector2(1810, 835)
