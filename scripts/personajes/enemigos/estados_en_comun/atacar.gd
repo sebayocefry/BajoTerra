@@ -18,8 +18,9 @@ func actualizar_fisica(delta: float):
 	var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
 	enemigo.sprite.flip_h = direccion.x < 0
 		
-	#  Si el minero se alejo, cortamos el ataque y avisamos a la maquina
-	if not enemigo.jugador_en_rango:
+	# Si el minero se alejó más allá de la zona de ataque y de la distancia segura, cortamos el ataque
+	var distancia = enemigo.global_position.distance_to(enemigo.jugador.global_position)
+	if not enemigo.jugador_en_rango and distancia > enemigo.distancia_ataque:
 		transicion.emit("Perseguir")
 		return
 		

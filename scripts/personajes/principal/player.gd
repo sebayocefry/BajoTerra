@@ -34,6 +34,7 @@ var _tween_linterna: Tween
 
 func _ready():
 	super._ready()
+	Eventos.sacudir_camara.connect(_sacudir_camara)
 	await get_tree().process_frame
 	# Sincronizamos la UI con los valores iniciales al nacer
 	Eventos.vida_actualizada.emit(vida, vida_maxima)
@@ -179,3 +180,27 @@ func morir():
 	Eventos.jugador_muerto.emit()
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
+
+# --- SISTEMA DE SCREEN SHAKE ---
+var shake_intensidad: float = 0.0
+var shake_duracion: float = 0.0
+var camara_referencia: Camera2D
+
+func _sacudir_camara(intensidad: float, duracion: float):
+	shake_intensidad = intensidad
+	shake_duracion = duracion
+
+func _process(delta: float):
+	if shake_duracion > 0:
+		shake_duracion -= delta
+		if not camara_referencia:
+			camara_referencia = get_node_or_null("Camera2D")
+		
+		if camara_referencia:
+			camara_referencia.offset = Vector2(
+				randf_range(-shake_intensidad, shake_intensidad),
+				randf_range(-shake_intensidad, shake_intensidad)
+			)
+			
+		if shake_duracion <= 0 and camara_referencia:
+			camara_referencia.offset = Vector2.ZERO

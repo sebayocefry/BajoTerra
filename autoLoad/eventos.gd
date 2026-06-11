@@ -20,3 +20,6 @@ signal inventario_completo_actualizado(lista: Array)
 
 # Transiciones internas del nivel
 signal transicion_habitacion_solicitada(ruta_habitacion: String, spawn_destino: String)
+
+# Feedback visual
+signal sacudir_camara(intensidad: float, duracion: float)

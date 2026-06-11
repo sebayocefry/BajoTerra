@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://by1u1a2hwhmn0"]
 
 [ext_resource type="Texture2D" uid="uid://buwnl7tf1con7" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion.png" id="1_ca32q"]
-[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="1_f0ece"]
+[ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="1_f0ece"]
 [ext_resource type="Texture2D" uid="uid://b61a21kjiifbc" path="res://assets/spritesMundos/level1/paredes/pared1_habitacion1_mundo1.png" id="2_j3y4y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="3_j466s"]
-[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
-[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
-[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
-[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
+[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
+[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
+[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
+[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="9_fv5mg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
 [ext_resource type="PackedScene" uid="uid://dx4sevydfwo8o" path="res://escenas/personajes/enemigos/muki.tscn" id="12_f0ece"]
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="16_fv5mg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j466s"]
 shader = ExtResource("1_f0ece")
@@ -383,3 +384,21 @@ position = Vector2(1354, 211)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_vasvg")
+
+[node name="Rata" parent="." unique_id=352191106 instance=ExtResource("16_fv5mg")]
+position = Vector2(160, 699)
+
+[node name="Rata2" parent="." unique_id=1997107826 instance=ExtResource("16_fv5mg")]
+position = Vector2(164, 827)
+
+[node name="Rata3" parent="." unique_id=1333213447 instance=ExtResource("16_fv5mg")]
+position = Vector2(338, 714)
+
+[node name="Rata4" parent="." unique_id=1557499351 instance=ExtResource("16_fv5mg")]
+position = Vector2(1571, 749)
+
+[node name="Muki" parent="." unique_id=1932317423 instance=ExtResource("12_f0ece")]
+position = Vector2(805, 436)
+
+[node name="Muki2" parent="." unique_id=896114242 instance=ExtResource("12_f0ece")]
+position = Vector2(1109, 512)

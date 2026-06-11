@@ -53,6 +53,7 @@ func apretar_gatillo(direccion: Vector2) -> void:
 	var jugador := owner as Player
 	if jugador and jugador.mana >= arma_equipada.costo_mana:
 		audio_disparo.play()
+		Eventos.sacudir_camara.emit(1.5, 0.08) # Pequeño temblor al disparar
 	else:
 		audio_sin_municion.play()
 	arma_equipada.disparar(jugador, direccion, mano.global_position)

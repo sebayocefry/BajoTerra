@@ -11,8 +11,8 @@ class_name Enemigo
 #atributos del enemigo
 @export var dano_contacto: int = 10
 @export var mana_morir: int = 20
-@export var distancia_vision : float = 300.0
-#@export var distancia_ataque : float = 60.0
+@export var distancia_vision : float = 600.0 # Aumentado de 300 a 600
+@export var distancia_ataque : float = 60.0 # Descomentado para evitar que se queden pegados
 
 # nombre de las animaciones 
 @export_group("animaciones_enemigo")

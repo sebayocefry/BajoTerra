@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwfso7rkhfid3" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion2.png" id="1_ipaxf"]
 [ext_resource type="Texture2D" uid="uid://ecbfdx3yjvm8" path="res://assets/spritesMundos/level1/paredes/pared3_habitacion2_mundo1.png" id="2_4dqsr"]
-[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_hxv0y"]
+[ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_hxv0y"]
 [ext_resource type="PackedScene" uid="uid://i6wov8hbk55m" path="res://escenas/objetos/decoraciones/calavera.tscn" id="6_be6ii"]
 [ext_resource type="PackedScene" uid="uid://b3rxrno55g1p6" path="res://escenas/objetos/decoraciones/ataud.tscn" id="7_be6ii"]
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="7_gxmhy"]
@@ -13,12 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://bonaw3y782j2u" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/grave6_shadow1.png" id="12_fobmm"]
 [ext_resource type="Texture2D" uid="uid://cbqbjfrbqk5h3" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/skull_pile_shadow2.png" id="13_78xf6"]
 [ext_resource type="PackedScene" uid="uid://bo65x5eig351y" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion2_nivel1.tscn" id="13_cbc58"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="14_cbc58"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="14_cbc58"]
 [ext_resource type="Texture2D" uid="uid://b0iads0ntiw2i" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/web_rock2_shadow1.png" id="14_tvbrc"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
+[ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="18_6afqh"]
+[ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="21_835cb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b010o"]
 shader = ExtResource("2_hxv0y")
@@ -430,10 +432,25 @@ position = Vector2(931, 354)
 [node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("16_hxv0y")]
 modulate = Color(0.40500003, 0.9, 0, 1)
 z_index = 5
-position = Vector2(905, 363)
+position = Vector2(781, 363)
+
+[node name="Golemv2" parent="Enemigos" unique_id=1070925211 instance=ExtResource("18_6afqh")]
+position = Vector2(1117, 388)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=31082958]
 script = ExtResource("17_b010o")
 
 [node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("18_2cvx4")]
 position = Vector2(331, 222)
+
+[node name="Muki" parent="." unique_id=669730601 instance=ExtResource("21_835cb")]
+position = Vector2(565, 608)
+
+[node name="Muki2" parent="." unique_id=1082711343 instance=ExtResource("21_835cb")]
+position = Vector2(735, 620)
+
+[node name="Muki3" parent="." unique_id=622458452 instance=ExtResource("21_835cb")]
+position = Vector2(952, 619)
+
+[node name="Muki4" parent="." unique_id=1483568733 instance=ExtResource("21_835cb")]
+position = Vector2(1146, 634)

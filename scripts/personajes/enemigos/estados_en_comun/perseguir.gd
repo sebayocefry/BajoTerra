@@ -37,6 +37,10 @@ func actualizar_fisica(_delta: float):
 	
 	if distancia > enemigo.distancia_vision:
 		transicion.emit("Reposo")
+	elif enemigo.jugador_en_rango or distancia <= enemigo.distancia_ataque:
+		# Si está en el área o lo suficientemente cerca (respaldo por si choca físicamente antes de entrar al área)
+		enemigo.jugador_en_rango = true
+		transicion.emit("Atacar")
 	else:
 		
 		var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
