@@ -2,80 +2,45 @@ extends Estado
 
 class_name MukiAtacar
 
-
 @export var duracion_ataque: float = 0.8
 
-var atacando := false
+var _timer: float = 0.0
+var _golpe_aplicado: bool = false
 
 
 func entrar():
-
-	atacando = true
-
+	_timer = 0.0
+	_golpe_aplicado = false
 	enemigo.velocity = Vector2.ZERO
-
-	# VALIDAR
+	enemigo.cambiar_estado_animacion("attack")
 
 	if enemigo.jugador == null:
 		return
 
-	# DIRECCION
-
-	var direccion = (
-		enemigo.jugador.global_position -
-		enemigo.global_position
-	).normalized()
-
+	var direccion = (enemigo.jugador.global_position - enemigo.global_position).normalized()
 	enemigo.actualizar_direccion(direccion)
 
-	# ANIMACION
-
-	enemigo.cambiar_estado_animacion("attack")
-
-	# HACER el daño inmmediato
-
-	print("MUKI GOLPEA")
-
-
+	# Aplica el daño inmediatamente al entrar
 	enemigo.jugador.recibir_dano(
-
 		enemigo.dano_muki,
-
-		(
-			enemigo.jugador.global_position -
-			enemigo.global_position
-		).normalized() * 250
+		direccion * 250
 	)
-
-	# ESPERAR FIN ATAQUE
-
-	await enemigo.get_tree().create_timer(
-		duracion_ataque
-	).timeout
-
-	# VALIDAR
-
-	if enemigo == null:
-		return
-
-	# VOLVER
-
-	if enemigo.jugador_en_rango:
-		transicion.emit("MukiHostigar")
-	else:
-		transicion.emit("MukiReposo")
+	_golpe_aplicado = true
 
 
 func actualizar(delta):
+	if enemigo.muerto:
+		return
 
-	pass
+	_timer += delta
+	if _timer >= duracion_ataque:
+		# Después de atacar, el muki huye — esto da el comportamiento errático de grupo
+		transicion.emit("MukiHuir")
 
 
-func actualizar_fisica(delta):
-
+func actualizar_fisica(_delta):
 	enemigo.velocity = Vector2.ZERO
 
 
 func salir():
-
-	atacando = false
+	_golpe_aplicado = false

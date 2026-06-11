@@ -1,34 +1,62 @@
 extends Node2D
 
-@onready var puerta_salida = $PuntoSalida 
-var nombre_escena : String
-var enemigos_vivos : int = 0
+class_name ControladorNivel
+
+var _puerta: Node = null
+var _nombre_escena: String = ""
+var _enemigos_vivos: int = 0
+
 
 func _ready():
-    # Usamos la ruta del archivo como ID único de esta habitación
-    nombre_escena = get_tree().current_scene.scene_file_path
-    var lista_enemigos = get_tree().get_nodes_in_group("Enemigos")
-    
-    #  Consultar a la base de datos si ya pasamos por aqu
-    if DatosJugador.habitaciones_limpias.get(nombre_escena, false):
-        print("Habitación ya limpiada anteriormente. Borrando enemigos...")
-        for enemigo in lista_enemigos:
-            enemigo.queue_free()
-        puerta_salida.desbloquear()
-    else:
-        #  Es la primera vez que entramos
-        enemigos_vivos = lista_enemigos.size()
-        if enemigos_vivos > 0:
-            puerta_salida.bloquear() 
-            for enemigo in lista_enemigos:
-                enemigo.entidad_morir.connect(_on_enemigo_muerto)
-        else:
-            puerta_salida.desbloquear()
+	await get_tree().process_frame
+	_nombre_escena = get_parent().scene_file_path
+	_puerta = _encontrar_puerta()
 
-func _on_enemigo_muerto():
-    enemigos_vivos -= 1
-    if enemigos_vivos <= 0:
-        print("¡Habitación despejada!")
-    #aplicamos uun singleton para que no se nos duplique
-        DatosJugador.habitaciones_limpias[nombre_escena] = true
-        puerta_salida.desbloquear()
+	var enemigos = _obtener_enemigos()
+
+	if DatosJugador.habitaciones_limpias.get(_nombre_escena, false):
+		for e in enemigos:
+			e.queue_free()
+		if _puerta:
+			_puerta.desbloquear()
+		return
+
+	_enemigos_vivos = enemigos.size()
+	if _enemigos_vivos > 0:
+		if _puerta:
+			_puerta.bloquear()
+		for e in enemigos:
+			if not e.entidad_morir.is_connected(_on_enemigo_muerto):
+				e.entidad_morir.connect(_on_enemigo_muerto)
+	else:
+		if _puerta:
+			_puerta.desbloquear()
+
+
+func _on_enemigo_muerto() -> void:
+	_enemigos_vivos -= 1
+	if _enemigos_vivos <= 0:
+		DatosJugador.habitaciones_limpias[_nombre_escena] = true
+		if _puerta:
+			_puerta.desbloquear()
+
+
+func _encontrar_puerta() -> Node:
+	var nodo_puertas = get_parent().find_child("Puertas", true, false)
+	if not nodo_puertas:
+		push_warning("ControladorNivel: No existe el nodo 'Puertas' en '%s'." % _nombre_escena)
+		return null
+
+	for hijo in nodo_puertas.get_children():
+		if hijo.has_method("bloquear") and hijo.has_method("desbloquear"):
+			return hijo
+
+	push_warning("ControladorNivel: Ningún hijo de 'Puertas' tiene bloquear/desbloquear en '%s'." % _nombre_escena)
+	return null
+
+
+func _obtener_enemigos() -> Array:
+	var nodo_enemigos = get_parent().find_child("Enemigos", true, false)
+	if not nodo_enemigos:
+		return []
+	return nodo_enemigos.get_children()

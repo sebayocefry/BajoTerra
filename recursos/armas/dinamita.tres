@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ArmaLanzable" format=3 uid="uid://cf8y6t82gtuwr"]
+
+[ext_resource type="Script" uid="uid://d2pvsk0ha3iwo" path="res://scripts/objetos/armas/arma_lanzable.gd" id="1_dyn"]
+[ext_resource type="Texture2D" uid="uid://bl6pygn3x7840" path="res://assets/sprite_brazo/brazo_dinamita/brazo_abajo2.png" id="1_pbabi"]
+[ext_resource type="PackedScene" uid="uid://crrjfaf0cob26" path="res://escenas/objetos/armas/dinamita.tscn" id="2_dyn"]
+[ext_resource type="Texture2D" uid="uid://bq1mfr2fupqvh" path="res://assets/spritesArmas/dinamita/1.png" id="2_kma2q"]
+[ext_resource type="Texture2D" uid="uid://b8r6vjnx24ndx" path="res://assets/sprite_brazo/brazo_dinamita/brazo_derecho.png" id="2_r5d6y"]
+[ext_resource type="Texture2D" uid="uid://cg8e7j5r68tm4" path="res://assets/sprite_brazo/brazo_dinamita/brazo_izquierdo.png" id="3_bnnc6"]
+
+[resource]
+script = ExtResource("1_dyn")
+velocidad_lanzamiento = 180.0
+dano = 70
+costo_mana = 0
+cadencia = 3.0
+escena_bala = ExtResource("2_dyn")
+brazo_textura_abajo = ExtResource("1_pbabi")
+brazo_textura_derecha = ExtResource("2_r5d6y")
+brazo_textura_izquierda = ExtResource("3_bnnc6")
+brazo_offset_abajo = Vector2(18, 27)
+brazo_offset_derecha = Vector2(-1, 22)
+brazo_offset_izquierda = Vector2(-17, 19)
+brazo_escala = Vector2(0.087, 0.098)
+nombre = "Dinamita"
+icono = ExtResource("2_kma2q")
+precio_oro = 50

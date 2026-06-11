@@ -3,8 +3,8 @@ extends CanvasLayer
 @export_file("*.tscn") var ruta_menu_principal: String
 
 @onready var boton_reintentar = %BotonReintentar
-
-@onready var boton_menu = %BotonMenuPrincipal # esto se debe corregir cuando tengamos el menu bien hecho 
+@onready var boton_menu = %BotonMenuPrincipal # esto se debe corregir cuando tengamos el menu bien hecho
+@onready var musica_game_over: AudioStreamPlayer = $MusicaGameOver
 
 func _ready():
    
@@ -19,14 +19,16 @@ func _ready():
 	boton_menu.pressed.connect(_on_boton_menu_pressed)
 
 func _on_jugador_muerto():
-   
+
 	if not visible:
 		show()
 		get_tree().paused = true
+		musica_game_over.play()
 
 func _on_boton_reintentar_pressed():
+	musica_game_over.stop()
 	#  Liberamos la pausa antes de la transicion
-	get_tree().paused = false 
+	get_tree().paused = false
 	
 	#  Intentamos la carga desde el sistema del disco
 	if SistemaGuardado.cargar_partida():
@@ -48,9 +50,10 @@ func _on_boton_reintentar_pressed():
 		_fallback_al_menu("No existe archivo de guardado previo.")
 
 func _on_boton_menu_pressed():
+	musica_game_over.stop()
 	# no cambiar al menu con el juego pausado o el menu nacera congelado
-	get_tree().paused = false 
-	
+	get_tree().paused = false
+
 	#  Escondemos la pantalla de muerte
 	hide()
 	

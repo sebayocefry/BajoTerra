@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bcace176x3sar"]
+
+[ext_resource type="Texture2D" uid="uid://ckt4mjdxi1xod" path="res://assets/spritesMundos/comerciante/decoraciones/duende_minero.png" id="1_pcux7"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_w7mvx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7mvx"]
+atlas = ExtResource("1_pcux7")
+region = Rect2(0, 0, 170, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ylm"]
+atlas = ExtResource("1_pcux7")
+region = Rect2(166, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpvxg"]
+atlas = ExtResource("1_pcux7")
+region = Rect2(328, 0, 164, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04geu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7mvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ylm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpvxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="duende_comerciante" type="StaticBody2D" unique_id=1052276535]
+script = ExtResource("1_w7mvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2013137592]
+position = Vector2(-19.5, 32)
+scale = Vector2(0.7705882, 0.744)
+sprite_frames = SubResource("SpriteFrames_04geu")
+frame_progress = 0.7413391

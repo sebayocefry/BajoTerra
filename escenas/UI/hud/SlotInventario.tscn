@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://db6s06vs3rnui"]
 
 [node name="SlotInventario" type="MarginContainer" unique_id=315358181]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(50, 50)
 offset_right = 1610.0
 offset_bottom = 977.0
 

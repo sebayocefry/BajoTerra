@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dr6d610de3bvi"]
+
+[ext_resource type="Script" uid="uid://kcdfh2ayfhwp" path="res://scripts/personajes/Npcs/npc_dialogo.gd" id="1_ryaqa"]
+[ext_resource type="Resource" uid="uid://ctwmp12nr8lx7" path="res://DialogosIntro/Dialogos_historia1.dialogue" id="2_yao7k"]
+[ext_resource type="Texture2D" uid="uid://cq73vm2hp5jqg" path="res://escenas/personajes/Bruja/pixel_art_small (1).png" id="3_yao7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryaqa"]
+size = Vector2(1005, 1142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yao7k"]
+size = Vector2(631.8038, 82.72909)
+
+[node name="Bruja" type="Area2D"]
+script = ExtResource("1_ryaqa")
+dialogo = ExtResource("2_yao7k")
+activar_automaticamente = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(270, 503)
+scale = Vector2(1.8633293, 1.6269101)
+texture = ExtResource("3_yao7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(301, 555)
+shape = SubResource("RectangleShape2D_ryaqa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(154.00002, 367)
+scale = Vector2(1.3734236, 13.502163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(93.19772, 14.14588)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_yao7k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

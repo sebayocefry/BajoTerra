@@ -1,25 +1,75 @@
 [gd_scene format=3 uid="uid://ckhroyywkq5yq"]
 
 [ext_resource type="Texture2D" uid="uid://dw4lhjf3jm5n8" path="res://assets/spritesMundos/level2/piso/piso_final_nivel2.png" id="1_pru1v"]
-[ext_resource type="Texture2D" uid="uid://e8un6r5nul7x" path="res://assets/puertas/puertafinal_nivel2.png" id="2_a6i0e"]
+[ext_resource type="Shader" uid="uid://cumfb5q15tx0m" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_0w4k6"]
+[ext_resource type="PackedScene" uid="uid://ca18ky885mca1" path="res://escenas/niveles/nivel2/puertas/puertafinal_nivel2.tscn" id="2_nudba"]
 [ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="3_ri026"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/decoraciones/estatua_bruja.tscn" id="4_pru1v"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/decoraciones/esqueleto_jaula.tscn" id="4_ri026"]
 [ext_resource type="PackedScene" uid="uid://bhsjw741rbkb2" path="res://escenas/objetos/decoraciones/mano.tscn" id="5_h1tvc"]
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="6_nudba"]
 [ext_resource type="Texture2D" uid="uid://cbqbjfrbqk5h3" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/skull_pile_shadow2.png" id="7_vdkgj"]
-[ext_resource type="PackedScene" path="res://escenas/personajes/enemigos/gollem.tscn" id="9_vdkgj"]
-[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="11_0w4k6"]
-[ext_resource type="PackedScene" uid="uid://dx4sevydfwo8o" path="res://escenas/personajes/enemigos/muki.tscn" id="11_5n2y7"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="9_vdkgj"]
+[ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="11_5n2y7"]
+[ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="12_o71py"]
 
-[sub_resource type="Gradient" id="Gradient_1d3s4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwc18"]
+shader = ExtResource("2_0w4k6")
+shader_parameter/fog_color = Color(0.19158326, 0.05699999, 0.38, 0.6039216)
+shader_parameter/speed = 0.1890000089775
+shader_parameter/scale = 4.5030001663925
+
+[sub_resource type="Gradient" id="Gradient_5n2y7"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ts4vq"]
-gradient = SubResource("Gradient_1d3s4")
+gradient = SubResource("Gradient_5n2y7")
 fill = 1
 fill_from = Vector2(0.48, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts4vq"]
+size = Vector2(92, 1753)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nudba"]
+size = Vector2(2875, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdkgj"]
+size = Vector2(954, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n2y7"]
+size = Vector2(45, 106)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0w4k6"]
+radius = 17.464249
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwc18"]
+size = Vector2(31.414368, 780.7363)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o71py"]
+size = Vector2(796.3071, 20)
+
+[sub_resource type="Gradient" id="Gradient_0w4k6"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ni1cm"]
+gradient = SubResource("Gradient_0w4k6")
+
+[sub_resource type="Curve" id="Curve_wwc18"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mglxq"]
+curve = SubResource("Curve_wwc18")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o71py"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_mglxq")
+color_initial_ramp = SubResource("GradientTexture1D_ni1cm")
 
 [node name="habitacionfinal_nivel2" type="Node2D" unique_id=287781166]
 
@@ -39,13 +89,17 @@ offset_bottom = 1482.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.49803922)
 
-[node name="puerta" type="StaticBody2D" parent="." unique_id=797183169]
+[node name="niebla" type="ColorRect" parent="." unique_id=754784651]
+material = SubResource("ShaderMaterial_wwc18")
+offset_left = -118.0
+offset_top = -495.0
+offset_right = 3088.0
+offset_bottom = 1599.0
 
-[node name="puerta" type="Sprite2D" parent="puerta" unique_id=2053158321]
-modulate = Color(0.56342334, 0.3346067, 1.2498733, 1)
-position = Vector2(1384.0001, -89.50002)
-scale = Vector2(0.5260416, 0.65722656)
-texture = ExtResource("2_a6i0e")
+[node name="Puertas" type="Node2D" parent="." unique_id=1653683895]
+
+[node name="Area2D" parent="Puertas" unique_id=935788905 instance=ExtResource("2_nudba")]
+position = Vector2(1659, 33)
 
 [node name="decoraciones" type="Node2D" parent="." unique_id=1408902632]
 
@@ -480,34 +534,176 @@ texture = SubResource("GradientTexture2D_ts4vq")
 texture_scale = 1.19
 script = ExtResource("3_ri026")
 
-[node name="Jugador" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("11_0w4k6")]
-position = Vector2(1394, 974)
-velocidad = 500
+[node name="colisiones" type="StaticBody2D" parent="." unique_id=1822645780]
 
-[node name="Gollem" parent="." unique_id=1419715020 instance=ExtResource("9_vdkgj")]
-modulate = Color(0.21839997, 0.72, 0.17280002, 1)
-position = Vector2(1187, 179)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones" unique_id=643120832]
+position = Vector2(-58, 485.5)
+shape = SubResource("RectangleShape2D_ts4vq")
 
-[node name="Gollem2" parent="." unique_id=247880372 instance=ExtResource("9_vdkgj")]
-modulate = Color(0.21839997, 0.72, 0.17280002, 1)
-position = Vector2(1612, 157)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="colisiones" unique_id=1140916856]
+position = Vector2(2922, 549)
+shape = SubResource("RectangleShape2D_ts4vq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=991208106]
-position = Vector2(672, -12)
-zoom = Vector2(0.7, 0.7)
-limit_left = 416
-limit_top = -359
-limit_right = 2532
-limit_bottom = 1263
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="colisiones" unique_id=1137607107]
+position = Vector2(1415, 1401)
+shape = SubResource("RectangleShape2D_nudba")
 
-[node name="Muki" parent="." unique_id=1997461237 instance=ExtResource("11_5n2y7")]
-modulate = Color(0.16999649, 0.6136515, 0.26612175, 1)
-position = Vector2(967, 635)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="colisiones" unique_id=677329365]
+position = Vector2(474, -97)
+shape = SubResource("RectangleShape2D_vdkgj")
 
-[node name="Muki2" parent="." unique_id=1428358013 instance=ExtResource("11_5n2y7")]
-modulate = Color(0.16999649, 0.6136515, 0.26612175, 1)
-position = Vector2(1919, 632)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="colisiones" unique_id=152284745]
+position = Vector2(2342, -107)
+shape = SubResource("RectangleShape2D_vdkgj")
 
-[node name="Muki3" parent="." unique_id=678614956 instance=ExtResource("11_5n2y7")]
-modulate = Color(0.16999649, 0.6136515, 0.26612175, 1)
-position = Vector2(1418, 648)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="colisiones" unique_id=1544752730]
+position = Vector2(950, -26)
+shape = SubResource("RectangleShape2D_5n2y7")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="colisiones" unique_id=476604203]
+position = Vector2(1878, -37)
+shape = SubResource("RectangleShape2D_5n2y7")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="colisiones" unique_id=435694492]
+position = Vector2(546, 431)
+shape = SubResource("RectangleShape2D_5n2y7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="colisiones" unique_id=2031276360]
+position = Vector2(2334, 391)
+shape = SubResource("RectangleShape2D_5n2y7")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="colisiones" unique_id=388853756]
+position = Vector2(721, 317)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="colisiones" unique_id=1108326119]
+position = Vector2(2069, 317)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="colisiones" unique_id=922016702]
+position = Vector2(2103, 936)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=1833262907]
+position = Vector2(661, 931)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="colisiones" unique_id=904924631]
+position = Vector2(841, 1120)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="colisiones" unique_id=250101068]
+position = Vector2(456, 920)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="colisiones" unique_id=243046248]
+position = Vector2(1935, 1146)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="colisiones" unique_id=836740172]
+position = Vector2(2320, 929)
+shape = SubResource("CircleShape2D_0w4k6")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="colisiones" unique_id=1096519632]
+position = Vector2(277, 1088.9999)
+rotation = -0.7592182
+shape = SubResource("RectangleShape2D_wwc18")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="colisiones" unique_id=1660570248]
+position = Vector2(2558.0002, 1049.0001)
+rotation = -0.75049156
+shape = SubResource("RectangleShape2D_o71py")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="colisiones" unique_id=1418385976]
+position = Vector2(323, 147)
+rotation = -0.75049156
+shape = SubResource("RectangleShape2D_o71py")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="colisiones" unique_id=1865796868]
+position = Vector2(2474, 135.99988)
+rotation = -0.7592182
+shape = SubResource("RectangleShape2D_wwc18")
+
+[node name="ControladorNivel" type="Node2D" parent="." unique_id=366138589]
+script = ExtResource("9_vdkgj")
+
+[node name="Enemigos" type="Node2D" parent="." unique_id=470350354]
+
+[node name="Mukiv3" parent="Enemigos" unique_id=2103037602 instance=ExtResource("12_o71py")]
+position = Vector2(2005, 693)
+
+[node name="Mukiv4" parent="Enemigos" unique_id=437540208 instance=ExtResource("12_o71py")]
+position = Vector2(909, 689)
+
+[node name="JefeSlime1" parent="Enemigos" unique_id=1584594003 instance=ExtResource("11_5n2y7")]
+position = Vector2(1387, 531)
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=363748264]
+
+[node name="spawn_entrada" type="Marker2D" parent="SpawnPoints" unique_id=308830122]
+position = Vector2(1419, 1276)
+
+[node name="particulas" type="Node2D" parent="." unique_id=563827331]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particulas" unique_id=562455596]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(469, 921)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="particulas" unique_id=82176689]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(837, 1135)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="particulas" unique_id=1214764171]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(1933, 1160)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="particulas" unique_id=1251698196]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(2318, 926)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="particulas" unique_id=1245374464]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(2454, 1160)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="particulas" unique_id=2099942362]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(2685, 355)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="particulas" unique_id=1811163533]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(2140, -36)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="particulas" unique_id=1681261271]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(135, 495)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="GPUParticles2D9" type="GPUParticles2D" parent="particulas" unique_id=391257166]
+modulate = Color(3.447081, 18.892157, 9.6251135, 1)
+position = Vector2(610, 107)
+amount = 80
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_o71py")

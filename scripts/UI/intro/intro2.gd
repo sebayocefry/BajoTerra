@@ -14,4 +14,4 @@ func _ready():
 
 	await balloon.tree_exited
 
-	get_tree().change_scene_to_file("res://escenas/UI/intro/intro3.tscn")
+	get_tree().change_scene_to_file("res://escenas/niveles/nivel1/habitacion_historia.tscn")

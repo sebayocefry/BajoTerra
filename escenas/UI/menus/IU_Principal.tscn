@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1x77dfagdfuy"]
 
 [ext_resource type="Script" uid="uid://0ui1nm3v0b38" path="res://scripts/UI/iu_principal.gd" id="1_uwkqv"]
-[ext_resource type="Texture2D" uid="uid://cm1yklyer5iwd" path="res://assets/fondos_intro/EntradaMina.png" id="2_2kxjt"]
+[ext_resource type="Texture2D" uid="uid://cdhpgvoi33tyi" path="res://Mundo/ChatGPT Image 7 jun 2026, 06_36_10 p.m..png" id="2_2kxjt"]
 [ext_resource type="FontFile" uid="uid://cesbn4yurrfjs" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="3_4scsb"]
 [ext_resource type="AudioStream" uid="uid://f1732ls5351x" path="res://musica/intro/slimeyfox-the-last-terror-472321.mp3" id="4_1rqw0"]
 [ext_resource type="AudioStream" uid="uid://cr4r8ci24own8" path="res://musica/intro/universfield-mouse-click-117076.mp3" id="4_2kxjt"]

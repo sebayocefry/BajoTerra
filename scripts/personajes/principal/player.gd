@@ -3,105 +3,179 @@ extends Entidad
 class_name Player
 
 # Atributos del Jugador
-# con el @export podemos manipular desde el editor de forma mas visual por si el proyecto crece mucho
-@export var mana : int = 0
-# el oro en enteros, que se redonde nomas
+@export var mana : int = 100
 @export var oro : int = 0
 
 @onready var animation_sprite = $AnimatedSprite2D
-# Instanciamos la funcion de movimiento 
 @onready var movement = $Movimiento
-# @onready var mano = $Mano
 @onready var gestor_armas = $Gestor_armas
 @onready var gestor_inventario = $Gestor_inventario
+@onready var brazo_arma: Sprite2D = $BrazoArma
 
-# NUEVO: Referencia al área que detecta NPCs para que la Máquina de Estados la lea
-@onready var detector_npc = $DetectorNPC 
+# Datos del brazo — se llenan automáticamente al equipar un arma
+var _brazo_texturas: Dictionary = {
+	"up": null, "down": null, "left": null, "right": null
+}
+var _brazo_offsets: Dictionary = {
+	"up": Vector2.ZERO, "down": Vector2.ZERO,
+	"left": Vector2.ZERO, "right": Vector2.ZERO
+}
+var _brazo_escala: Vector2 = Vector2.ONE
+
+# Referencia al área que detecta NPCs para que la Máquina de Estados la lea
+@onready var detector_npc = $DetectorNPC
+@onready var linterna: PointLight2D = $PointLight2D
+@onready var audio_herido: AudioStreamPlayer2D = $AudioHerido
+@onready var audio_poca_vida: AudioStreamPlayer2D = $AudioPocaVida
 
 var last_direction = "down"
+var _tween_linterna: Tween
+
 
 func _ready():
 	super._ready()
 	await get_tree().process_frame
 	# Sincronizamos la UI con los valores iniciales al nacer
-	Eventos.vida_actualizada.emit(vida, vida_maxima) 
+	Eventos.vida_actualizada.emit(vida, vida_maxima)
 	Eventos.mana_actualizado.emit(mana)
 	Eventos.oro_actualizado.emit(oro)
 	gestor_armas.inicializar_armas()
-	gestor_inventario.actualizar_ui_objeto()
+	if gestor_inventario:
+		gestor_inventario.actualizar_ui_objeto()
+	# Orientamos la linterna a la dirección inicial
+	_actualizar_linterna(true)
+	# Ocultamos el brazo al inicio — aparece al cambiar arma con E
+	if is_instance_valid(brazo_arma):
+		brazo_arma.visible = false
+
 
 func handle_animations(direction: Vector2):
+	var dir_anterior: String = last_direction
 	if direction == Vector2.ZERO:
 		update_animation("idle")
 	else:
-		# Logica para determinar last_direction
+		# Lógica para determinar last_direction
 		if abs(direction.x) > abs(direction.y):
 			last_direction = "right" if direction.x > 0 else "left"
 		else:
 			last_direction = "down" if direction.y > 0 else "up"
-		
 		update_animation("run")
+	# Solo actualizamos la linterna y el brazo si cambió la dirección
+	if last_direction != dir_anterior:
+		_actualizar_linterna(false)
+		_actualizar_brazo()
+
+
+func aplicar_datos_brazo(arma: Arma) -> void:
+	_brazo_texturas = {
+		"up":    arma.brazo_textura_arriba,
+		"down":  arma.brazo_textura_abajo,
+		"left":  arma.brazo_textura_izquierda,
+		"right": arma.brazo_textura_derecha
+	}
+	_brazo_offsets = {
+		"up":    arma.brazo_offset_arriba,
+		"down":  arma.brazo_offset_abajo,
+		"left":  arma.brazo_offset_izquierda,
+		"right": arma.brazo_offset_derecha
+	}
+	_brazo_escala = arma.brazo_escala
+	_actualizar_brazo()
+
+
+func _actualizar_brazo() -> void:
+	if not is_instance_valid(brazo_arma):
+		return
+	brazo_arma.texture = _brazo_texturas.get(last_direction, null)
+	brazo_arma.position = _brazo_offsets.get(last_direction, Vector2.ZERO)
+	brazo_arma.scale = _brazo_escala
+
 
 func update_animation(state):
 	animation_sprite.play(state + "_" + last_direction)
 
+
+# ── Linterna ──────────────────────────────────────────────────────────────────
+# Rota el PointLight2D hacia la dirección actual del jugador.
+# instant=true se usa en _ready() para que no haya tween al arrancar.
+func _actualizar_linterna(instant: bool = false) -> void:
+	if not is_instance_valid(linterna):
+		return
+	var angulos := {
+		"up":    PI,
+		"down":  0.0,
+		"right": -PI * 0.5,
+		"left":  PI * 0.5
+	}
+	var objetivo: float = angulos.get(last_direction, PI)
+	if instant:
+		linterna.rotation = objetivo
+		return
+	if _tween_linterna:
+		_tween_linterna.kill()
+	_tween_linterna = create_tween()
+	_tween_linterna.tween_property(linterna, "rotation", objetivo, 0.12) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
 func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
-	# Guardamos la vida que teníamos antes del golpe
 	var vida_anterior = vida
 	super.recibir_dano(cantidad, vector_empuje)
-	
-	# cosas exclusivas del Jugador:
-	# Si la vida realmente bajó (no esquivamos el golpe)
+
 	if vida < vida_anterior:
-		# Avisamos a la UI de Laura SOLO cuando el Player es herido
 		Eventos.vida_actualizada.emit(vida, vida_maxima)
-		
+		audio_herido.play()
 		if vida > 0:
 			activar_invulnerabilidad(1.0)
+		# Latido cuando queda poca vida (menos del 30%)
+		if vida <= vida_maxima * 0.3 and not audio_poca_vida.playing:
+			audio_poca_vida.play()
+
 
 func activar_invulnerabilidad(duracion: float):
 	estado_invulnerable = true
-	# como que el personaje se va a poner transparente por un momento para que se sienta el cambio de estado
 	modulate.a = 0.5
-	# esto es una promesa, es programacion asincronas
 	await get_tree().create_timer(duracion).timeout
 	modulate.a = 1.0
-	estado_invulnerable = false 
+	estado_invulnerable = false
+
 
 func sumar_mana(cantidad: int):
 	mana += cantidad
-	# Laura aca te aviso para que escuches el evento 
 	Eventos.mana_actualizado.emit(mana)
-	# para mi debugg
 	print("Maná recogido: +", cantidad, " | Total: ", mana)
+
 
 func curar(cantidad: int):
 	vida += cantidad
-	# Esto asegura que la vida nunca supere la vida_maxima de la entidad
-	vida = min(vida, vida_maxima) 
-	
+	vida = min(vida, vida_maxima)
 	Eventos.vida_actualizada.emit(vida, vida_maxima)
 	print("Jugador curado: +", cantidad, " | Vida actual: ", vida)
 
-# trate de hacer lo mas limpio posible y quitarle resposabilidades a la clase jugador
 
-# El jugador solo responde si puede o no pagar
 func tiene_oro_suficiente(cantidad: int) -> bool:
 	return oro >= cantidad
 
-# El jugador solo resta oro e informa a la UI
+
 func gastar_oro(cantidad: int):
 	oro -= cantidad
 	Eventos.oro_actualizado.emit(oro)
+
 
 func sumar_oro(cantidad: int):
 	oro += cantidad
 	Eventos.oro_actualizado.emit(oro)
 
+
+# Delegamos al Gestor_inventario
+func recibir_objeto(nuevo_objeto: Objeto) -> bool:
+	if gestor_inventario:
+		return gestor_inventario.recibir_objeto(nuevo_objeto)
+	return false
+
+
 func morir():
 	print("El jugador ha muerto. Iniciando Game Over.")
 	Eventos.jugador_muerto.emit()
-	
-	# Detenemos el proceso fisico para que no pueda moverse ni recibir msa daño mientras cae la pantalla de Game Over
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)

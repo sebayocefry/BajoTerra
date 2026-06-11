@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cfen74p4gisas"]
+
+[ext_resource type="Script" uid="uid://b233com2etih2" path="res://scripts/personajes/enemigos/jefe_nivel1.gd" id="1_jefe"]
+[ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_g6uq6"]
+[ext_resource type="Texture2D" uid="uid://c2q7ykpd7ecxk" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo1.png" id="2_mc7by"]
+[ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="3_chst5"]
+[ext_resource type="Texture2D" uid="uid://cbxnebcjpwho0" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo2.png" id="3_n3vp6"]
+[ext_resource type="Texture2D" uid="uid://cgx37fsx6w64o" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo3.png" id="4_g6uq6"]
+[ext_resource type="Texture2D" uid="uid://bwisk2g4eympr" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo4.png" id="5_chst5"]
+[ext_resource type="Texture2D" uid="uid://dbgotv54ibwxu" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo5.png" id="6_88ts7"]
+[ext_resource type="Texture2D" uid="uid://j04h0lvtjpym" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo6.png" id="7_7q5qk"]
+[ext_resource type="Texture2D" uid="uid://2ee5an5bk7f7" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo7.png" id="8_018i8"]
+[ext_resource type="Texture2D" uid="uid://cm0xro61rdeiw" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo8.png" id="9_7bhed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiqiu"]
+atlas = ExtResource("2_mc7by")
+region = Rect2(0, 0, 2730, 2030)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bopj"]
+atlas = ExtResource("3_n3vp6")
+region = Rect2(0, 0, 2351, 2212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hq43"]
+atlas = ExtResource("4_g6uq6")
+region = Rect2(0, 0, 2249, 2190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tsnk"]
+atlas = ExtResource("5_chst5")
+region = Rect2(0, 0, 2358, 2320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ock"]
+atlas = ExtResource("6_88ts7")
+region = Rect2(0, 0, 2548, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgc34"]
+atlas = ExtResource("7_7q5qk")
+region = Rect2(0, 0, 2578, 1931)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk6hx"]
+atlas = ExtResource("8_018i8")
+region = Rect2(0, 0, 2419, 1987)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfrbl"]
+atlas = ExtResource("9_7bhed")
+region = Rect2(0, 0, 2472, 1886)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiqiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bopj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hq43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tsnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ock")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgc34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk6hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfrbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectShape_1"]
+size = Vector2(329.5, 361.125)
+
+[node name="JefeNivel1" type="CharacterBody2D" unique_id=421596498]
+collision_layer = 4
+script = ExtResource("1_jefe")
+escena_bola_fuego = ExtResource("2_g6uq6")
+escena_cristal = ExtResource("3_chst5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=647270410]
+position = Vector2(477, -363)
+scale = Vector2(0.2636447, 0.31724137)
+sprite_frames = SubResource("SpriteFrames_1")
+frame_progress = 0.8856991
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237050227]
+visible = false
+position = Vector2(475.25, -271.5625)
+shape = SubResource("RectShape_1")
+
+[node name="TimerAtaque" type="Timer" parent="." unique_id=1558989778]
+wait_time = 2.5
+
+[node name="PuntoDisparo" type="Marker2D" parent="." unique_id=4404052]

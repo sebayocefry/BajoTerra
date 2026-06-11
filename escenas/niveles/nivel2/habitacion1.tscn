@@ -49,10 +49,10 @@ rotation = 1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
-[node name="Jugador2" parent="." unique_id=1545161310 groups=["player"] instance=ExtResource("2_yn3n7")]
+[node name="Jugador2" parent="." unique_id=1545161310 instance=ExtResource("2_yn3n7")]
 velocidad = 250
 
-[node name="Camera2D" type="Camera2D" parent="Jugador2" unique_id=1758778630]
+[node name="Camera2D2" type="Camera2D" parent="Jugador2" unique_id=1758778630]
 position = Vector2(-218, -138)
 zoom = Vector2(1.2, 1.2)
 limit_left = -1059

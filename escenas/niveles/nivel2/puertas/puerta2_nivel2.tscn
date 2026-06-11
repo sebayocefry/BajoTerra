@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dsvgrknfyiv2n"]
+
+[ext_resource type="Texture2D" uid="uid://bna1f6qf4oaw7" path="res://assets/puertas/puerta_cerrada_4.png" id="1_nbkid"]
+[ext_resource type="Script" uid="uid://hids2veo1a8e" path="res://scripts/common/PuertaTransicion.gd" id="1_vpbso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpbso"]
+size = Vector2(215.75, 206.75)
+
+[node name="Area2D" type="Area2D" unique_id=180888001]
+script = ExtResource("1_vpbso")
+siguiente_habitacion = "uid://ckdqnuwvol32b"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142786248]
+position = Vector2(-418.75, -280.25)
+scale = Vector2(0.44368488, 0.46142578)
+texture = ExtResource("1_nbkid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443631510]
+position = Vector2(-404, -316)
+shape = SubResource("RectangleShape2D_vpbso")
