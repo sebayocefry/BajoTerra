@@ -61,7 +61,7 @@ func apretar_gatillo(direccion: Vector2) -> void:
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_E:
+		if event.keycode == KEY_Q: # Cambiado de E a Q
 			cambiar_arma(1)
 
 

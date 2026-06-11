@@ -6,7 +6,7 @@ class_name Entidad
 
 @export var vida_maxima : int = 100
 @export var nombre_entidad : String = "npc"
-@export var velocidad : int = 100
+@export var velocidad : int = 75 # Reducido de 100 a 75 para que los enemigos no sean tan rápidos
 #sin export porque no queremos que se modifique en el editor 
 var estado_invulnerable : bool = false
 var empuje_actual: Vector2 = Vector2.ZERO

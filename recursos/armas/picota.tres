@@ -13,3 +13,4 @@ costo_mana = 0
 distancia_golpe = 70.0
 fuerza_golpe = 300.0
 precio_oro = 150
+brazo_escala = Vector2(0.069, 0.056)
