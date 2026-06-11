@@ -15,20 +15,20 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BajoTerra"
-run/main_scene="uid://b1x77dfagdfuy"
+run/main_scene="res://escenas/UI/menus/IU_Principal.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Eventos="*uid://cqud440ujptxl"
+Eventos="*res://autoLoad/eventos.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-PantallaMuerte="*uid://bkushrxj8qmx1"
-MenuTienda="*uid://uaerwuhxvp4u"
-LevelTransition="*uid://b5125yfn26ln5"
-DatosJugador="*uid://t5nawrrvkqtw"
-GestorEscenas="*uid://cnks0l7i6ccbk"
-SistemaGuardado="*uid://xdpe38qcktf6"
+PantallaMuerte="*res://autoLoad/PantallaMuerte.tscn"
+MenuTienda="*res://autoLoad/MenuTienda.tscn"
+LevelTransition="*res://escenas/transicion/level_transition.tscn"
+DatosJugador="*res://autoLoad/DatosJugador.gd"
+GestorEscenas="*res://autoLoad/gestorEscenas.gd"
+SistemaGuardado="*res://autoLoad/SistemaGuardado.gd"
 
 [display]
 
