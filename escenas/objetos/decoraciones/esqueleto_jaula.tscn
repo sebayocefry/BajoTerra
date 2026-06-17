@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbasf50ud33el"]
+
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_aeloh"]
+[ext_resource type="Texture2D" uid="uid://ci5hr547ex4kx" path="res://assets/decoracion/esqueleto_jaula.png" id="1_um2bg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeloh"]
+atlas = ExtResource("1_um2bg")
+region = Rect2(0, 317, 131, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce4ot"]
+atlas = ExtResource("1_um2bg")
+region = Rect2(131, 317, 131, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go2eu"]
+atlas = ExtResource("1_um2bg")
+region = Rect2(262, 317, 131, 317)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ih8yr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeloh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce4ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go2eu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1634281641]
+modulate = Color(1, 0.87, 0.87, 1)
+script = ExtResource("1_aeloh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=205809731]
+position = Vector2(31.75, 50.75)
+scale = Vector2(1.4847329, 1.3201892)
+sprite_frames = SubResource("SpriteFrames_ih8yr")
+frame_progress = 0.16270861

@@ -1,0 +1,8 @@
+# Godot ignores
+.godot/
+.import/
+*.import
+*.uid
+export/
+.DS_Store
+Thumbs.db

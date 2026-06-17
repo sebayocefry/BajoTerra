@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bliujo2h13lcv"]
+
+[ext_resource type="Texture2D" uid="uid://hr8yfpcykn1f" path="res://assets/puertas/puerta_cerrada_3.png" id="1_p4n2"]
+[ext_resource type="Script" uid="uid://ck2iivxc8q2we" path="res://scripts/common/PuertaHaciaComerciate.gd" id="2_p4n2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4n2"]
+size = Vector2(189, 143)
+
+[node name="Area2D" type="Area2D" unique_id=1168164658]
+script = ExtResource("2_p4n2")
+siguiente_habitacion = "uid://ckhroyywkq5yq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2069306268]
+modulate = Color(0.61452836, 0.60847354, 0.25123647, 1)
+position = Vector2(-371, -268)
+scale = Vector2(0.41861978, 0.43652344)
+texture = ExtResource("1_p4n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312975063]
+position = Vector2(-377, -310)
+shape = SubResource("RectangleShape2D_p4n2")

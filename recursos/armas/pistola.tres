@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Arma" format=3 uid="uid://bpl2tr5snti78"]
+
+[ext_resource type="PackedScene" uid="uid://bcfubf2n4bv5j" path="res://escenas/objetos/balas/Bala.tscn" id="1_8p76o"]
+[ext_resource type="Texture2D" uid="uid://c0xne8tkkd4gk" path="res://assets/sprite_brazo/brazo_pistola/baj_brazo_pistola.png" id="1_bjak7"]
+[ext_resource type="Script" uid="uid://lbv1k3ok4nwj" path="res://scripts/objetos/armas/arma.gd" id="1_qe40q"]
+[ext_resource type="Texture2D" uid="uid://2rgg50614df4" path="res://assets/sprite_brazo/brazo_pistola/der_brazo_pistola.png" id="3_v35nh"]
+[ext_resource type="Texture2D" uid="uid://iyhv0l2725f7" path="res://assets/sprite_brazo/brazo_pistola/izq_brazo_pistola.png" id="4_7qnrv"]
+[ext_resource type="Texture2D" uid="uid://cfmynpplpbvyx" path="res://assets/spritesArmas/Pistola/pistola.png" id="5_bjak7"]
+
+[resource]
+script = ExtResource("1_qe40q")
+escena_bala = ExtResource("1_8p76o")
+brazo_textura_abajo = ExtResource("1_bjak7")
+brazo_textura_derecha = ExtResource("3_v35nh")
+brazo_textura_izquierda = ExtResource("4_7qnrv")
+brazo_offset_abajo = Vector2(18, 19.729)
+brazo_offset_arriba = Vector2(24, 0)
+brazo_offset_derecha = Vector2(0, 20)
+brazo_offset_izquierda = Vector2(-17, 20)
+brazo_escala = Vector2(0.069, 0.056)
+nombre = "Pistols"
+icono = ExtResource("5_bjak7")
+precio_oro = 200

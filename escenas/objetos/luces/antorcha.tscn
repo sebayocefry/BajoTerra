@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b0ioduxg56eru"]
+
+[ext_resource type="Texture2D" uid="uid://bd2plqitledup" path="res://assets/luces/fuente_luz_2.png" id="1_5kk40"]
+[ext_resource type="Script" uid="uid://b2nrlkdiywanx" path="res://scripts/objetos/luces/antorcha.gd" id="2_kmlea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmlea"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(580, 0, 116, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq2d1"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(696, 0, 116, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05rqt"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(1016, 0, 127, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u55w"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(1016, 0, 127, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlsen"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(254, 0, 127, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fkne"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(580, 0, 116, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lf24"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(696, 0, 116, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl1yj"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(912, 0, 114, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbfdj"]
+atlas = ExtResource("1_5kk40")
+region = Rect2(1026, 0, 114, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mi0gr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmlea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq2d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05rqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u55w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlsen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fkne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lf24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl1yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbfdj")
+}],
+"loop": true,
+"name": &"antorcha",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=6868419]
+script = ExtResource("2_kmlea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1432298546]
+position = Vector2(2247.9854, -28369.5)
+scale = Vector2(38.93129, 30.818754)
+sprite_frames = SubResource("SpriteFrames_mi0gr")
+animation = &"antorcha"
+frame_progress = 0.1722377

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://caflmqdfer0se"]
+
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_g7tip"]
+[ext_resource type="Texture2D" uid="uid://dlo16ia7wjia1" path="res://assets/decoracion/esqueleto_minero.png" id="2_y5wnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubveo"]
+atlas = ExtResource("2_y5wnx")
+region = Rect2(0, 0, 222, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljn18"]
+atlas = ExtResource("2_y5wnx")
+region = Rect2(222, 0, 222, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxnln"]
+atlas = ExtResource("2_y5wnx")
+region = Rect2(444, 0, 222, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s83vr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubveo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljn18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxnln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=757018310]
+script = ExtResource("1_g7tip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1224106804]
+modulate = Color(2.0038323, 2.0038323, 2.0038323, 1)
+position = Vector2(-2, -1)
+scale = Vector2(0.6441441, 0.72459894)
+sprite_frames = SubResource("SpriteFrames_s83vr")
+frame = 1
+frame_progress = 0.09024112

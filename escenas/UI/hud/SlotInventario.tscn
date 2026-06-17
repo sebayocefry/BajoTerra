@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://db6s06vs3rnui"]
+
+[node name="SlotInventario" type="MarginContainer" unique_id=315358181]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 1610.0
+offset_bottom = 977.0
+
+[node name="IconoObjeto" type="TextureRect" parent="." unique_id=412411307]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

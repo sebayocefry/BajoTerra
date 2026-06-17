@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bkushrxj8qmx1"]
+
+[ext_resource type="Script" uid="uid://cdef3ww43sgk0" path="res://scripts/UI/menus/PantallaMuerte.gd" id="1_6srvr"]
+[ext_resource type="Texture2D" path="res://assets/Fondos/Game_Over.jpg" id="1_rt74y"]
+[ext_resource type="AudioStream" path="res://musica/fondo/Resident Evil 4 Soundtrack_ Game Over.mp3" id="2_gameover"]
+
+[node name="PantallaMuerte" type="CanvasLayer" unique_id=51475556]
+script = ExtResource("1_6srvr")
+ruta_menu_principal = "uid://b1x77dfagdfuy"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=5753508]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rt74y")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1076701096]
+offset_left = 423.0
+offset_top = 556.0
+offset_right = 1187.0
+offset_bottom = 842.0
+
+[node name="MensajeMuerte" type="Label" parent="VBoxContainer" unique_id=851771714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "No pudiste escapar"
+horizontal_alignment = 1
+
+[node name="BotonReintentar" type="Button" parent="VBoxContainer" unique_id=883916553]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Cargar ultimo Punto"
+
+[node name="BotonMenuPrincipal" type="Button" parent="VBoxContainer" unique_id=1170149876]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Volver al Menu Principal"
+
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=999888777]
+stream = ExtResource("2_gameover")
+volume_db = -3.0
+autoplay = false

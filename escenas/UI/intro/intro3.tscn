@@ -1,0 +1,295 @@
+[gd_scene load_steps=22 format=3 uid="uid://cqoh57b33e7fs"]
+
+[ext_resource type="Texture2D" uid="uid://bho2w6g25pe3n" path="res://assets/fondos_intro/Tierra.png" id="1_xl0w2"]
+[ext_resource type="Texture2D" uid="uid://dnkfm4g21m8wv" path="res://Iconos_IU/Pared.png" id="2_cykfa"]
+[ext_resource type="Texture2D" uid="uid://bem7dqy0fhpcd" path="res://Mundo/ChatGPT Image 21 mar 2026, 22_09_06.png" id="5_hnavl"]
+[ext_resource type="Texture2D" uid="uid://bldljni8vp15p" path="res://Iconos_IU/barraDeVida.png" id="5_jd845"]
+[ext_resource type="FontFile" uid="uid://cesbn4yurrfjs" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="7_ti6bv"]
+[ext_resource type="Texture2D" uid="uid://b1cbn2mwfnho6" path="res://Iconos_IU/mana.png" id="8_hftf1"]
+[ext_resource type="Texture2D" uid="uid://d0skxjn34xo8b" path="res://Iconos_IU/moneda.png" id="8_t6gx7"]
+[ext_resource type="Texture2D" uid="uid://cjkjq8u2wqkr1" path="res://Iconos_IU/iconoPistola.png" id="11_yrjye"]
+[ext_resource type="Texture2D" uid="uid://cekd5k7qj8p36" path="res://Iconos_IU/iconoMana.png" id="12_cykfa"]
+[ext_resource type="Texture2D" uid="uid://d4mn84lkx24k6" path="res://Iconos_IU/iconoVida.png" id="12_yrjye"]
+[ext_resource type="Texture2D" uid="uid://cybemeafc3uop" path="res://Iconos_IU/sangre.png" id="13_cykfa"]
+[ext_resource type="Texture2D" uid="uid://c8ikyrfxgvpmg" path="res://Iconos_IU/IconoInventario.png" id="15_ofwpp"]
+[ext_resource type="AudioStream" uid="uid://gogroj1t3hpk" path="res://musica/intro/luisranm-musica-fundo-suspense-e-terror-423727.mp3" id="15_yrjye"]
+[ext_resource type="Texture2D" uid="uid://cvcbredxafkcp" path="res://Iconos_IU/IconoMapa.png" id="16_lyy6f"]
+[ext_resource type="Texture2D" uid="uid://bqdcthwf7mn70" path="res://Iconos_IU/IconoConfiguracion.png" id="17_qgmsr"]
+[ext_resource type="Texture2D" uid="uid://d3xxrpemgchih" path="res://Iconos_IU/cofre.png" id="17_xl0w2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rcon"]
+size = Vector2(1171, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqbkm"]
+size = Vector2(98, 702)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hftf1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3u074"]
+bg_color = Color(0.54509807, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6brm2"]
+radius = 83.60024
+
+[node name="Galeria1" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [65.0, 33.0, 602.0, 641.0]
+
+[node name="Tierra" type="TextureRect" parent="."]
+modulate = Color(0.5324511, 0.8640314, 0.962223, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -95.0
+offset_right = 1603.0
+offset_bottom = 929.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8896612, 0.75882)
+texture = ExtResource("1_xl0w2")
+stretch_mode = 3
+
+[node name="CapaMuro" type="StaticBody2D" parent="."]
+scale = Vector2(0.6264437, 1.0163224)
+
+[node name="pared" type="Sprite2D" parent="CapaMuro"]
+position = Vector2(228, 88)
+scale = Vector2(0.33025935, 0.28811374)
+texture = ExtResource("2_cykfa")
+
+[node name="pared2" type="Sprite2D" parent="CapaMuro"]
+position = Vector2(686, 88)
+scale = Vector2(0.33025935, 0.28811374)
+texture = ExtResource("2_cykfa")
+
+[node name="pared3" type="Sprite2D" parent="CapaMuro"]
+position = Vector2(1137, 88)
+scale = Vector2(0.33025935, 0.28811374)
+texture = ExtResource("2_cykfa")
+
+[node name="pared4" type="Sprite2D" parent="CapaMuro"]
+position = Vector2(1599.5054, 88.554565)
+scale = Vector2(0.33025935, 0.28811374)
+texture = ExtResource("2_cykfa")
+
+[node name="pared5" type="Sprite2D" parent="CapaMuro"]
+position = Vector2(2059.2434, 87.57064)
+scale = Vector2(0.33025935, 0.28811374)
+texture = ExtResource("2_cykfa")
+
+[node name="CollisionMuro1" type="CollisionShape2D" parent="CapaMuro"]
+visible = false
+position = Vector2(575.5, 58.5)
+shape = SubResource("RectangleShape2D_2rcon")
+
+[node name="CapaParedes" type="StaticBody2D" parent="."]
+
+[node name="CollisionParedLateral" type="CollisionShape2D" parent="CapaParedes"]
+visible = false
+position = Vector2(104, 304)
+shape = SubResource("RectangleShape2D_aqbkm")
+
+[node name="CollisionParedLateral2" type="CollisionShape2D" parent="CapaParedes"]
+visible = false
+position = Vector2(104, 304)
+shape = SubResource("RectangleShape2D_aqbkm")
+
+[node name="IU" type="CanvasLayer" parent="."]
+
+[node name="Salud" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.00003
+offset_top = -13.0
+offset_right = 360.00003
+offset_bottom = 27.0
+scale = Vector2(1.2941779, 1.5301442)
+metadata/_edit_use_anchors_ = true
+
+[node name="cantidadVida" type="ProgressBar" parent="IU/Salud"]
+layout_mode = 0
+offset_left = 109.981865
+offset_top = 40.008488
+offset_right = 314.98187
+offset_bottom = 67.008484
+scale = Vector2(1.0702164, 0.7259801)
+theme_override_styles/background = SubResource("StyleBoxFlat_hftf1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3u074")
+value = 90.0
+
+[node name="BarraVida" type="Sprite2D" parent="IU/Salud"]
+position = Vector2(193.94551, 55.550323)
+scale = Vector2(0.2168719, 0.19154869)
+texture = ExtResource("5_jd845")
+
+[node name="Monedas" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 494.0
+offset_top = 82.0
+offset_right = 534.0
+offset_bottom = 122.0
+
+[node name="BoxContainer" type="BoxContainer" parent="IU/Monedas"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 19.000004
+offset_right = 3274.0
+offset_bottom = 1079.0
+grow_horizontal = 0
+scale = Vector2(0.030426927, 0.03099)
+
+[node name="MonedaChilena" type="TextureRect" parent="IU/Monedas/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("8_t6gx7")
+
+[node name="contador" type="Label" parent="IU/Monedas/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_ti6bv")
+theme_override_font_sizes/font_size = 900
+text = "$ 100"
+
+[node name="Mana" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -311.0
+offset_top = 77.00001
+offset_right = -271.0
+offset_bottom = 117.00001
+scale = Vector2(0.9950812, 1.0285852)
+
+[node name="BoxContainer" type="BoxContainer" parent="IU/Mana"]
+layout_mode = 0
+offset_left = 896.40924
+offset_top = 22.36081
+offset_right = 3669.4092
+offset_bottom = 2145.3608
+scale = Vector2(0.031303197, 0.03132547)
+
+[node name="TextureRect" type="TextureRect" parent="IU/Mana/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_hftf1")
+
+[node name="Label" type="Label" parent="IU/Mana/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_ti6bv")
+theme_override_font_sizes/font_size = 900
+text = "100
+"
+
+[node name="Equipo" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 57.0
+offset_top = 518.0
+offset_right = 97.0
+offset_bottom = 558.0
+rotation = -0.05771832
+scale = Vector2(10.421445, 6.6219387)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IU/Equipo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.021765564, 0.035008296)
+
+[node name="botonMana" type="TextureButton" parent="IU/Equipo/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_cykfa")
+texture_pressed = ExtResource("12_cykfa")
+
+[node name="botonVida" type="TextureButton" parent="IU/Equipo/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_yrjye")
+texture_pressed = ExtResource("12_yrjye")
+
+[node name="botonPistola" type="TextureButton" parent="IU/Equipo/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_yrjye")
+texture_pressed = ExtResource("11_yrjye")
+
+[node name="Botones2" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 538.0
+offset_top = 524.0
+offset_right = 578.0
+offset_bottom = 564.0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="IU/Botones2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0001
+offset_top = -240.99997
+offset_right = -109.00012
+offset_bottom = 1254.0
+grow_vertical = 0
+scale = Vector2(0.19143204, 0.18052302)
+
+[node name="TextureButton" type="TextureButton" parent="IU/Botones2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_ofwpp")
+texture_pressed = ExtResource("15_ofwpp")
+
+[node name="TextureButton4" type="TextureButton" parent="IU/Botones2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_lyy6f")
+texture_pressed = ExtResource("16_lyy6f")
+
+[node name="TextureButton3" type="TextureButton" parent="IU/Botones2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("17_qgmsr")
+texture_pressed = ExtResource("17_qgmsr")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(152, 278)
+
+[node name="minero" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0.99998474, 9.0000305)
+scale = Vector2(0.08496093, 0.06705729)
+texture = ExtResource("5_hnavl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_6brm2")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(426, 46)
+scale = Vector2(0.59374976, 0.14013097)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1.0215362, 1.0162636)
+stream = ExtResource("15_yrjye")
+autoplay = true
+
+[node name="cofre" type="TextureRect" parent="."]
+offset_left = 977.0
+offset_top = 70.0
+offset_right = 2513.0
+offset_bottom = 1094.0
+scale = Vector2(0.11045238, 0.11804229)
+texture = ExtResource("17_xl0w2")
+
+[node name="sangre" type="TextureRect" parent="."]
+offset_left = 890.00006
+offset_top = 112.0
+offset_right = 2426.0
+offset_bottom = 1136.0
+scale = Vector2(0.11052912, 0.13573821)
+texture = ExtResource("13_cykfa")

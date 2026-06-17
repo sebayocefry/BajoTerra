@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkc6npwgeki71"]
+
+[ext_resource type="Script" uid="uid://c7wdwg5ro5x6i" path="res://scripts/personajes/Npcs/npc_dialogo.gd" id="1_4e1wb"]
+[ext_resource type="Resource" uid="uid://cg1k7ogpy202s" path="res://DialogosIntro/DialogoSalaControl.dialogue" id="2_4e1wb"]
+[ext_resource type="Texture2D" uid="uid://bsii3k6uh8kxm" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 7 jun 2026, 01_20_51 p.m..png" id="3_ev4vi"]
+[ext_resource type="Script" uid="uid://bw32q427cqim0" path="res://MineroZombie.gd" id="4_ev4vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryaqa"]
+size = Vector2(111.625, 197.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yao7k"]
+size = Vector2(68.44214, 11.1833935)
+
+[node name="MineroZombie" type="Area2D"]
+script = ExtResource("1_4e1wb")
+dialogo = ExtResource("2_4e1wb")
+activar_automaticamente = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 21)
+scale = Vector2(0.22332965, 0.17756419)
+texture = ExtResource("3_ev4vi")
+hframes = 2
+frame = 1
+script = ExtResource("4_ev4vi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.8125, 10.1875)
+shape = SubResource("RectangleShape2D_ryaqa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(188, 248)
+scale = Vector2(1.3734236, 13.502163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-144.89336, -17.589775)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_yao7k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

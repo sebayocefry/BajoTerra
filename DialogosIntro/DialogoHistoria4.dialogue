@@ -1,0 +1,14 @@
+~ start
+
+Minero: ¡¡¡Por fin he llegado a la sala de control!!!
+Fantasma: Espera...
+Fantasma: Antes de activar el sistema debo saber si realmente recorriste esta mina.
+Fantasma: Responde.
+Fantasma: ¿Lo pasaste bien este semestre?
+- Si 
+    Fantasma: Que bueno, fue mucho contenido en especial de proyecto...
+    Fantasma: Pero sal antes que el profesor se arrepienta y te deje atrapado..
+    => END
+- NO
+    Fantasma: Que pena pero hiciste lo que pudiste, te dejaré salir por pena me caiste bien....
+    => END

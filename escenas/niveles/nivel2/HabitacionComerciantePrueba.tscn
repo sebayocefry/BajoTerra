@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bcrdnfk5tj2t5"]
+
+[ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_oswpc"]
+[ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="5_8wywf"]
+[ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_kcvj7"]
+[ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="6_3e6lv"]
+[ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="7_5tc7a"]
+[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="8_inj1v"]
+[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="8_kcvj7"]
+[ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="9_3e6lv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
+size = Vector2(2288, 102.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdgj3"]
+size = Vector2(2284.5, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qbj0"]
+size = Vector2(1795.2097, 70.1062)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx3q6"]
+size = Vector2(1614.3297, 88.4317)
+
+[node name="Habitacion" type="Node2D" unique_id=1160383842]
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=95117601]
+texture = ExtResource("1_oswpc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=585155463]
+collision_mask = 0
+
+[node name="arriba" type="CollisionShape2D" parent="StaticBody2D" unique_id=219623845]
+position = Vector2(-1, -866.25)
+shape = SubResource("RectangleShape2D_s4v4f")
+
+[node name="abajo" type="CollisionShape2D" parent="StaticBody2D" unique_id=1837176042]
+position = Vector2(2.75, 855)
+shape = SubResource("RectangleShape2D_qdgj3")
+
+[node name="izquierda" type="CollisionShape2D" parent="StaticBody2D" unique_id=256807822]
+position = Vector2(-1104.9465, 16.93801)
+rotation = -1.5550884
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_0qbj0")
+
+[node name="derecha" type="CollisionShape2D" parent="StaticBody2D" unique_id=387828036]
+position = Vector2(1098.2158, 3.9999998)
+rotation = 1.5707964
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_nx3q6")
+
+[node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_kcvj7")]
+
+[node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("6_3e6lv")]
+position = Vector2(795, -601)
+
+[node name="Comerciante" parent="." unique_id=631148056 instance=ExtResource("5_8wywf")]
+position = Vector2(0, -648)
+inventario_tienda = Array[ExtResource("7_5tc7a")]([ExtResource("8_kcvj7"), ExtResource("9_3e6lv")])
+
+[node name="Jugador2" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("8_inj1v")]
+position = Vector2(-630, 129)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador2" unique_id=1758778630]
+position = Vector2(412, -267)
+zoom = Vector2(1.2, 1.2)
+limit_left = -1059
+limit_top = -797
+limit_right = 1057
+limit_bottom = 825

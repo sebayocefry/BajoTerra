@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dhsh3d78phm"]
+
+[ext_resource type="Texture2D" uid="uid://c2q7ykpd7ecxk" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo1.png" id="1_jmnq3"]
+[ext_resource type="Texture2D" uid="uid://cbxnebcjpwho0" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo2.png" id="2_djj6w"]
+[ext_resource type="Texture2D" uid="uid://cgx37fsx6w64o" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo3.png" id="3_5lmoe"]
+[ext_resource type="Texture2D" uid="uid://bwisk2g4eympr" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo4.png" id="4_avnvx"]
+[ext_resource type="Texture2D" uid="uid://dbgotv54ibwxu" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo5.png" id="5_tpteh"]
+[ext_resource type="Texture2D" uid="uid://j04h0lvtjpym" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo6.png" id="6_xj1rm"]
+[ext_resource type="Texture2D" uid="uid://2ee5an5bk7f7" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo7.png" id="7_i0d1k"]
+[ext_resource type="Texture2D" uid="uid://cm0xro61rdeiw" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo8.png" id="8_ehbys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvgt4"]
+atlas = ExtResource("1_jmnq3")
+region = Rect2(0, 0, 2730, 2030)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olelg"]
+atlas = ExtResource("2_djj6w")
+region = Rect2(0, 0, 2351, 2212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bew0d"]
+atlas = ExtResource("3_5lmoe")
+region = Rect2(0, 0, 2249, 2190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtnx"]
+atlas = ExtResource("4_avnvx")
+region = Rect2(0, 0, 2358, 2320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri26x"]
+atlas = ExtResource("5_tpteh")
+region = Rect2(0, 0, 2548, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhi03"]
+atlas = ExtResource("6_xj1rm")
+region = Rect2(0, 0, 2578, 1931)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clr3r"]
+atlas = ExtResource("7_i0d1k")
+region = Rect2(0, 0, 2419, 1987)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qntb"]
+atlas = ExtResource("8_ehbys")
+region = Rect2(0, 0, 2472, 1886)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6r3ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvgt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olelg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bew0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri26x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhi03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clr3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qntb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re0ri"]
+size = Vector2(310.8125, 441.0625)
+
+[node name="diablo" type="CharacterBody2D" unique_id=1162291902]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1402524528]
+position = Vector2(1038.7562, 329.5)
+scale = Vector2(0.3064057, 0.35517246)
+sprite_frames = SubResource("SpriteFrames_6r3ti")
+frame_progress = 0.46124974
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663275540]
+position = Vector2(1028, 285)
+shape = SubResource("RectangleShape2D_re0ri")

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dysly33o23pym"]
+
+[ext_resource type="Script" uid="uid://b2nrlkdiywanx" path="res://scripts/objetos/luces/antorcha.gd" id="1_pjc7b"]
+[ext_resource type="Texture2D" uid="uid://b11jhvnsf7pri" path="res://assets/decoracion/dragon_trap.png" id="2_lvwuo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewhxf"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(0, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0vj8"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(32, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bepec"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(64, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_414cu"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(96, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0sqx"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(128, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmij0"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(160, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1wf4"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(192, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hivbb"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(224, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6cvc"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(256, 0, 32, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctw5n"]
+atlas = ExtResource("2_lvwuo")
+region = Rect2(288, 0, 32, 82)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbkan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewhxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0vj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bepec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_414cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0sqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmij0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1wf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hivbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6cvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctw5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=216067911]
+script = ExtResource("1_pjc7b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1222429323]
+modulate = Color(0.82398456, 0.052902482, 0.23260382, 1)
+position = Vector2(91.49999, 179.99997)
+scale = Vector2(6.7187495, 5.390243)
+sprite_frames = SubResource("SpriteFrames_gbkan")
+frame_progress = 0.024538504

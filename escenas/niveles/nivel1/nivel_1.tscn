@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cjhmojpqlyn8f"]
+
+[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="1_q4suu"]
+[ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="2_lg0wv"]
+[ext_resource type="Script" uid="uid://bsk2tsje75t5y" path="res://scripts/gestores/GestorNivel.gd" id="3_ar765"]
+[ext_resource type="AudioStream" uid="uid://djrj6xh4oa0ih" path="res://musica/fondo/Underground Cavern - Resident Evil 4 Ambience.mp3" id="4_ambient"]
+
+[node name="nivel1" type="Node2D" unique_id=430794997]
+
+[node name="Jugador" parent="." unique_id=1943970634 instance=ExtResource("1_q4suu")]
+unique_name_in_owner = true
+z_index = 5
+position = Vector2(108, 126)
+velocidad = 200
+
+[node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("2_lg0wv")]
+
+[node name="GestorNivel" type="Node" parent="." unique_id=1247986830]
+script = ExtResource("3_ar765")
+
+[node name="Ambiental" type="AudioStreamPlayer" parent="." unique_id=1111222333]
+stream = ExtResource("4_ambient")
+volume_db = -6.0
+autoplay = true
+
+[node name="ContenedorHabitaciones" type="Node2D" parent="." unique_id=1793613546]
+unique_name_in_owner = true

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dtohxppjijlpo"]
+
+[ext_resource type="Script" uid="uid://buvdh2815lska" path="res://scripts/common/PuntoGuardado.gd" id="1_s66po"]
+[ext_resource type="Texture2D" uid="uid://dsyowsaue1jx0" path="res://assets/decoracion/ghost.png" id="2_s66po"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn4tc"]
+atlas = ExtResource("2_s66po")
+region = Rect2(0, 0, 307, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwjrw"]
+atlas = ExtResource("2_s66po")
+region = Rect2(921, 0, 307, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kjud"]
+atlas = ExtResource("2_s66po")
+region = Rect2(298, 0, 298, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwh7n"]
+atlas = ExtResource("2_s66po")
+region = Rect2(921, 0, 307, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0l5u"]
+atlas = ExtResource("2_s66po")
+region = Rect2(612, 0, 306, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8oxw"]
+atlas = ExtResource("2_s66po")
+region = Rect2(1208, 0, 302, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xyhs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn4tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwjrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kjud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwh7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0l5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8oxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1fs8"]
+size = Vector2(57.5, 184)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s66po"]
+radius = 119.03781
+
+[node name="PuntoGuardado" type="StaticBody2D" unique_id=548028025]
+collision_mask = 0
+script = ExtResource("1_s66po")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2064049256]
+position = Vector2(-7, 13.999985)
+scale = Vector2(0.73778504, 0.6591797)
+sprite_frames = SubResource("SpriteFrames_8xyhs")
+autoplay = "default"
+frame_progress = 0.40725446
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=585235218]
+position = Vector2(-2, -51)
+shape = SubResource("RectangleShape2D_h1fs8")
+
+[node name="ZonaInteraccion" type="Area2D" parent="." unique_id=1317240051]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion" unique_id=1318364644]
+position = Vector2(-4, -51)
+shape = SubResource("CircleShape2D_s66po")

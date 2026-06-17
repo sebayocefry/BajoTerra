@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bhsjw741rbkb2"]
+
+[ext_resource type="Texture2D" uid="uid://di3c55q3bb0bl" path="res://assets/decoracion/mano.png" id="1_blk5d"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="2_pmi23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blk5d"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(1, 1, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmi23"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(150, 1, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6frkw"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(299, 1, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26fwu"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(1, 186, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67bq3"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(150, 186, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d1rr"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(299, 186, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o22t"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(1, 371, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf8ln"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(150, 371, 149, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23yjg"]
+atlas = ExtResource("1_blk5d")
+region = Rect2(299, 371, 149, 185)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kdo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blk5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmi23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6frkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26fwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67bq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d1rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o22t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf8ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23yjg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=353752391]
+script = ExtResource("2_pmi23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=974906428]
+sprite_frames = SubResource("SpriteFrames_6kdo5")
+frame_progress = 0.87854505

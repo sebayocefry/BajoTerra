@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dgt4w1jldfdnh"]
+
+[ext_resource type="Texture2D" uid="uid://dr3efj6evy4ua" path="res://assets/decoracion/mina_1.png" id="1_hdv2e"]
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="2_qk4ve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk4ve"]
+atlas = ExtResource("1_hdv2e")
+region = Rect2(48, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyuvf"]
+atlas = ExtResource("1_hdv2e")
+region = Rect2(192, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t6y1"]
+atlas = ExtResource("1_hdv2e")
+region = Rect2(336, 192, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyxo4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk4ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyuvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t6y1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=538130148]
+script = ExtResource("2_qk4ve")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037115609]
+modulate = Color(0.30937988, 0.3859194, 0.6267665, 1)
+position = Vector2(9.5, -11.500002)
+scale = Vector2(1.3958333, 1.2395833)
+sprite_frames = SubResource("SpriteFrames_eyxo4")
+frame = 1
+frame_progress = 0.23542872

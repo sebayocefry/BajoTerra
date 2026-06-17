@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Consumible" format=3 uid="uid://bjqoclop8cuck"]
+
+[ext_resource type="Script" uid="uid://cfvgcgcvi2o8" path="res://scripts/objetos/consumibles/consumible.gd" id="1_1x4ok"]
+[ext_resource type="Texture2D" uid="uid://c6itxs0t41sha" path="res://assets/iconos/Vida.png" id="1_lsyka"]
+
+[resource]
+script = ExtResource("1_1x4ok")
+recupera_mana = 200
+nombre = "Pocion de vida"
+descripcion = "Una pocion de vida echa con sangre de los que perecieron"
+icono = ExtResource("1_lsyka")
+precio_oro = 50
+metadata/_custom_type_script = "uid://cfvgcgcvi2o8"

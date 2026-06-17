@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://be60ms1ikvg6q"]
+
+[ext_resource type="Script" uid="uid://xxk6ymvqbb7y" path="res://scripts/objetos/luces/antorcha.gd" id="1_kdj7m"]
+[ext_resource type="Texture2D" uid="uid://bc1rg56twaec3" path="res://assets/decoracion/imbuche.png" id="1_vulsb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdj7m"]
+atlas = ExtResource("1_vulsb")
+region = Rect2(1, 223, 204, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxscm"]
+atlas = ExtResource("1_vulsb")
+region = Rect2(211, 407, 204, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xv4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdj7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxscm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2081040897]
+modulate = Color(0.9684872, 0.9684872, 0.94185615, 0.9607843)
+script = ExtResource("1_kdj7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=447634254]
+position = Vector2(3, 0.9999924)
+scale = Vector2(0.78681624, 0.8164626)
+sprite_frames = SubResource("SpriteFrames_2xv4t")
+frame_progress = 0.74461114

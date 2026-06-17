@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ca18ky885mca1"]
+
+[ext_resource type="Texture2D" uid="uid://07ec8xlkxid5" path="res://assets/puertas/puerta_final_nivel1.png" id="1_7032a"]
+[ext_resource type="Script" uid="uid://phistoriaescena_gd" path="res://scripts/common/PuertaHistoriaEscena.gd" id="1_kw3ti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw3ti"]
+size = Vector2(294, 206)
+
+[node name="Area2D" type="Area2D" unique_id=935788905]
+script = ExtResource("1_kw3ti")
+escena_historia = "res://escenas/niveles/nivel1/habitacion_historia3.tscn"
+habitacion_resume = ""
+spawn_resume = "spawn_entrada"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1167940128]
+modulate = Color(0.38499993, 0.100000024, 1, 1)
+position = Vector2(-275.5, -194)
+scale = Vector2(0.64127606, 0.62109375)
+texture = ExtResource("1_7032a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324220244]
+position = Vector2(-271, -307)
+shape = SubResource("RectangleShape2D_kw3ti")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vpjxu3f5n2mv"]
+
+[ext_resource type="Texture2D" uid="uid://bqnofmi0eq7yk" path="res://assets/spritesArmas/pistola.png" id="1_7ujtx"]
+[ext_resource type="Script" uid="uid://b8gw81fkn2kbp" path="res://scripts/objetos/armas/arma.gd" id="1_p36co"]
+[ext_resource type="PackedScene" uid="uid://bcfubf2n4bv5j" path="res://escenas/objetos/balas/Bala.tscn" id="2_vilpr"]
+
+[node name="Pistola" type="Node2D" unique_id=839215746]
+script = ExtResource("1_p36co")
+escena_bala = ExtResource("2_vilpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=430373234]
+position = Vector2(2.0000153, 0.9999924)
+scale = Vector2(0.02, 0.014)
+texture = ExtResource("1_7ujtx")
+
+[node name="Punta_arma" type="Marker2D" parent="." unique_id=1759370459]
+position = Vector2(8, -4)
+scale = Vector2(0.02, 0.02)
