@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ye4sppq8udsl"]
 
-[ext_resource type="Texture2D" uid="uid://bx87h6fdjs3nc" path="res://assets/Fondos/fondoUiObjetos.png" id="1_4vav8"]
+[ext_resource type="Texture2D" path="res://assets/Fondos/inventario_5slots.png" id="1_4vav8"]
 [ext_resource type="Script" uid="uid://bp0otnvld0e1m" path="res://scripts/UI/hud/pantalla_inventario.gd" id="1_d68tm"]
 [ext_resource type="PackedScene" uid="uid://db6s06vs3rnui" path="res://escenas/UI/hud/SlotInventario.tscn" id="2_g4l0q"]
 
@@ -8,27 +8,29 @@
 script = ExtResource("1_d68tm")
 
 [node name="CajaInventario" type="TextureRect" parent="." unique_id=531883343]
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -130.0
-offset_right = 220.0
-offset_bottom = -10.0
-grow_vertical = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -256.0
+offset_right = 384.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_4vav8")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="GridContainer" type="GridContainer" parent="CajaInventario" unique_id=1252312522]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 192.0
-offset_bottom = 100.0
-theme_override_constants/h_separation = 8
-columns = 3
+offset_left = 95.0
+offset_top = 200.0
+offset_right = 679.0
+offset_bottom = 300.0
+theme_override_constants/h_separation = 21
+theme_override_constants/v_separation = 0
+columns = 5
 
 [node name="SlotInventario" parent="CajaInventario/GridContainer" unique_id=315358181 instance=ExtResource("2_g4l0q")]
 layout_mode = 2
@@ -37,4 +39,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SlotInventario3" parent="CajaInventario/GridContainer" unique_id=915778604 instance=ExtResource("2_g4l0q")]
+layout_mode = 2
+
+[node name="SlotInventario4" parent="CajaInventario/GridContainer" unique_id=915778605 instance=ExtResource("2_g4l0q")]
+layout_mode = 2
+
+[node name="SlotInventario5" parent="CajaInventario/GridContainer" unique_id=915778606 instance=ExtResource("2_g4l0q")]
 layout_mode = 2

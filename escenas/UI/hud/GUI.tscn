@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bah2fwyx7jvcg" path="res://scripts/UI/hud/gui.gd" id="1_msgfq"]
 [ext_resource type="PackedScene" uid="uid://ye4sppq8udsl" path="res://escenas/UI/hud/PantallaInventario.tscn" id="2_msgfq"]
+[ext_resource type="Texture2D" path="res://assets/Fondos/hotbar_3slots.png" id="3_hotbar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kesuo"]
 bg_color = Color(0.05, 0.039166667, 0, 1)
@@ -30,49 +31,79 @@ size_flags_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_kesuo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_msgfq")
 
-[node name="espaciador" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1230254430]
-layout_mode = 2
-
-[node name="FilaInferior" type="BoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1648299665]
-layout_mode = 2
-
-[node name="CajaArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=501408766]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="IconoArma" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaArma" unique_id=1305160183]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-expand_mode = 2
-stretch_mode = 5
-
-[node name="CajaObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=1203406284]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="IconoObjeto" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaInferior/CajaObjeto" unique_id=691727991]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-expand_mode = 2
-stretch_mode = 5
-
-[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=68388404]
+[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer" unique_id=68388404]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TextoOro" type="Label" parent="MarginContainer/VBoxContainer/FilaInferior" unique_id=748291054]
+[node name="TextoOro" type="Label" parent="MarginContainer/VBoxContainer" unique_id=748291054]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Oro: 0"
+
+[node name="CajaHotbar" type="TextureRect" parent="." unique_id=1648299665]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -266.0
+offset_right = 394.0
+offset_bottom = -10.0
+grow_vertical = 0
+texture = ExtResource("3_hotbar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GridHotbar" type="GridContainer" parent="CajaHotbar" unique_id=1591017968]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 90.0
+offset_right = 310.0
+offset_bottom = 180.0
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="CajaArma" type="Control" parent="CajaHotbar/GridHotbar" unique_id=501408766]
+custom_minimum_size = Vector2(65, 90)
+layout_mode = 2
+
+[node name="IconoArma" type="TextureRect" parent="CajaHotbar/GridHotbar/CajaArma" unique_id=1305160183]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 53.0
+offset_bottom = 65.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CajaObjeto" type="Control" parent="CajaHotbar/GridHotbar" unique_id=1203406284]
+custom_minimum_size = Vector2(65, 90)
+layout_mode = 2
+
+[node name="IconoObjeto" type="TextureRect" parent="CajaHotbar/GridHotbar/CajaObjeto" unique_id=691727991]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 53.0
+offset_bottom = 65.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CajaObjeto2" type="Control" parent="CajaHotbar/GridHotbar" unique_id=1565919533]
+custom_minimum_size = Vector2(65, 90)
+layout_mode = 2
+
+[node name="IconoObjeto2" type="TextureRect" parent="CajaHotbar/GridHotbar/CajaObjeto2" unique_id=1035668364]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 53.0
+offset_bottom = 65.0
+expand_mode = 1
+stretch_mode = 5
 
 [node name="PantallaInventario" parent="." instance=ExtResource("2_msgfq")]
 

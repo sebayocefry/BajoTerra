@@ -33,12 +33,10 @@ func _on_oro_actualizado(oro_actual: int):
 func _on_arma_cambiada(nuevo_sprite: Texture2D):
 	if icono_arma:
 		icono_arma.texture = nuevo_sprite
-		icono_arma.set_deferred("size", Vector2(40, 40))
 
 func _on_objeto_cambiado(nuevo_sprite: Texture2D):
 	if icono_objeto:
 		icono_objeto.texture = nuevo_sprite
-		icono_objeto.set_deferred("size", Vector2(40, 40))
 
 func _on_progreso_guardado():
 	var tween = create_tween()

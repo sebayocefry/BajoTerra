@@ -19,6 +19,10 @@ func manejar_input(event: InputEvent):
 		if player.gestor_inventario:
 			player.gestor_inventario.usar_objeto_seleccionado()
 
+	elif event.is_action_pressed("ciclar_objeto"):
+		if player.gestor_inventario:
+			player.gestor_inventario.ciclar_objeto()
+
 	elif event.is_action_pressed("arma_siguiente"):
 		pass  # gestor_armas lo maneja con _unhandled_input
 
