@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_e67an"]
 [ext_resource type="PackedScene" uid="uid://bliujo2h13lcv" path="res://escenas/niveles/nivel2/puertas/puerta4_nivel2.tscn" id="3_h4n2"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_m8a4q"]
-[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="6_m8a4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8a4q"]
@@ -263,6 +263,9 @@ position = Vector2(893, 284)
 
 [node name="Enemigos" type="Node2D" parent="." unique_id=650431037]
 
+[node name="JefeSlime1" parent="Enemigos" unique_id=1584594003 instance=ExtResource("6_m8a4q")]
+position = Vector2(1308, 538)
+
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=147698611]
 script = ExtResource("5_h4n2")
 
@@ -337,6 +340,3 @@ position = Vector2(1770, 231)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_p7rnx")
-
-[node name="JefeSlime1" parent="." unique_id=1584594003 instance=ExtResource("6_m8a4q")]
-position = Vector2(1308, 538)

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c72xxq3thipwh" path="res://escenas/objetos/decoraciones/monster_green.tscn" id="7_glfcm"]
 [ext_resource type="PackedScene" uid="uid://dsvgrknfyiv2n" path="res://escenas/niveles/nivel2/puertas/puerta2_nivel2.tscn" id="8_glfcm"]
 [ext_resource type="PackedScene" uid="uid://ctb66iigg7b0b" path="res://escenas/objetos/decoraciones/scull.tscn" id="8_vxiaa"]
-[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="9_vxiaa"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="12_72d6e"]
 
@@ -396,8 +396,8 @@ position = Vector2(676, 328)
 [node name="Mukiv4" parent="Enemigos" unique_id=2039961687 instance=ExtResource("9_vxiaa")]
 position = Vector2(1108, 313)
 
+[node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("12_72d6e")]
+position = Vector2(888, 508)
+
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=986253405]
 script = ExtResource("9_glfcm")
-
-[node name="Gollem" parent="." unique_id=1419715020 instance=ExtResource("12_72d6e")]
-position = Vector2(888, 508)
