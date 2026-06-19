@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cp5133yjdxw8y"]
 
 [ext_resource type="Texture2D" uid="uid://bbx87k2b824fr" path="res://assets/spritesMundos/comerciante/piso/piso_comerciante3.png" id="1_4owjg"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="3_fidbl"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="3_fidbl"]
 [ext_resource type="PackedScene" uid="uid://bcace176x3sar" path="res://escenas/objetos/decoraciones/duende_comerciante.tscn" id="4_j8leb"]
 [ext_resource type="Texture2D" uid="uid://bgybpndh5oih2" path="res://assets/spritesMundos/comerciante/decoraciones/oro.png" id="5_o2s8l"]
 [ext_resource type="PackedScene" uid="uid://cull3xlnhnw73" path="res://escenas/objetos/decoraciones/libros.tscn" id="5_v7662"]
-[ext_resource type="Script" uid="uid://cq08rbmb3xurl" path="res://scripts/objetos/luces/iluminacion.gd" id="6_4owjg"]
+[ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="6_4owjg"]
 [ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="8_4owjg"]
-[ext_resource type="Script" uid="uid://cu8s3w661b1dc" path="res://scripts/common/PuertaSalidaComerciate.gd" id="9_4owjg"]
+[ext_resource type="Script" uid="uid://dsc3eaht4pbfp" path="res://scripts/common/PuertaSalidaComerciate.gd" id="9_4owjg"]
 
 [sub_resource type="Gradient" id="Gradient_1d3s4"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)

@@ -311,15 +311,23 @@ position = Vector2(928, 275)
 
 [node name="Rata" parent="Enemigos" unique_id=352191106 instance=ExtResource("8_7jgji")]
 position = Vector2(601, 502)
+dano_contacto = 1
+vida_maxima = 50
 
 [node name="Rata2" parent="Enemigos" unique_id=1644079595 instance=ExtResource("8_7jgji")]
 position = Vector2(1195, 463)
+dano_contacto = 1
+vida_maxima = 30
 
 [node name="Rata3" parent="Enemigos" unique_id=1580741834 instance=ExtResource("8_7jgji")]
-position = Vector2(918, 541)
+position = Vector2(909, 445)
+dano_contacto = 1
+vida_maxima = 50
 
 [node name="Rata4" parent="Enemigos" unique_id=398173628 instance=ExtResource("8_7jgji")]
 position = Vector2(756, 512)
+dano_contacto = 1
+vida_maxima = 50
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=1274331727]
 script = ExtResource("7_h4n1")

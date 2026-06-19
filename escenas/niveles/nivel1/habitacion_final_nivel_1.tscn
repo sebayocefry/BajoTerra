@@ -464,9 +464,13 @@ position = Vector2(1467, -241)
 
 [node name="Mukiv2" parent="Enemigos" unique_id=669730601 instance=ExtResource("15_jvhvx")]
 position = Vector2(573, 680)
+dano_contacto = 3
+vida_maxima = 20
 
 [node name="Mukiv3" parent="Enemigos" unique_id=2103037602 instance=ExtResource("16_o17o7")]
 position = Vector2(2334, 669)
+dano_contacto = 3
+vida_maxima = 20
 
 [node name="JefeNivel1" parent="Enemigos" unique_id=421596498 instance=ExtResource("16_jvhvx")]
 modulate = Color(0.804255, 0.804255, 0.804255, 0.8666667)
@@ -477,9 +481,13 @@ position = Vector2(675, 119)
 
 [node name="Muki2" parent="Enemigos" unique_id=728436738 instance=ExtResource("16_o17o7")]
 position = Vector2(928, 940)
+dano_contacto = 2
+vida_maxima = 30
 
 [node name="Muki3" parent="Enemigos" unique_id=1480090345 instance=ExtResource("16_o17o7")]
 position = Vector2(1810, 835)
+dano_contacto = 2
+vida_maxima = 30
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=702666213]
 

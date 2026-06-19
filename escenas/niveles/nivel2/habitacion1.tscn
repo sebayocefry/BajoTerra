@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c71q3u2hgdhk2" path="res://escenas/personajes/enemigos/nivel2/zombie.tscn" id="4_nx3q6"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_owbix"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="6_yn3n7"]
+[ext_resource type="PackedScene" uid="uid://cfen74p4gisas" path="res://escenas/personajes/jefes/jefe_nivel1.tscn" id="8_mied4"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="9_pqfd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
@@ -21,6 +22,7 @@ size = Vector2(1795.2097, 70.1062)
 size = Vector2(1614.3297, 88.4317)
 
 [node name="Habitacion" type="Node2D" unique_id=1160383842]
+position = Vector2(44, 935)
 
 [node name="fondo" type="Sprite2D" parent="." unique_id=95117601]
 position = Vector2(5, -7)
@@ -50,15 +52,16 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
 [node name="Jugador2" parent="." unique_id=1545161310 instance=ExtResource("2_yn3n7")]
+position = Vector2(-32, -10)
 velocidad = 250
 
 [node name="Camera2D2" type="Camera2D" parent="Jugador2" unique_id=1758778630]
 position = Vector2(-218, -138)
-zoom = Vector2(1.2, 1.2)
-limit_left = -1059
-limit_top = -797
-limit_right = 1057
-limit_bottom = 825
+zoom = Vector2(0.9, 0.9)
+limit_left = -1054
+limit_top = -810
+limit_right = 1062
+limit_bottom = 812
 
 [node name="fanastma" parent="." unique_id=2071527795 instance=ExtResource("2_qdgj3")]
 position = Vector2(714, 538)
@@ -66,7 +69,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="Zombie" parent="." unique_id=1661008805 instance=ExtResource("4_nx3q6")]
-position = Vector2(-415, -756)
+position = Vector2(1083, -792)
 
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_owbix")]
 
@@ -74,3 +77,8 @@ position = Vector2(-415, -756)
 position = Vector2(795, -601)
 
 [node name="JefeSlime1" parent="." unique_id=1584594003 instance=ExtResource("9_pqfd2")]
+position = Vector2(1378, -698)
+
+[node name="JefeNivel1" parent="." unique_id=421596498 instance=ExtResource("8_mied4")]
+modulate = Color(0.804255, 0.804255, 0.804255, 0.8666667)
+position = Vector2(-466, -323)

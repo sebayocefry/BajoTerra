@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bfhdinqjhm5uc" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI2.png" id="7_2n6m8"]
 [ext_resource type="Texture2D" uid="uid://b8bra37dpde5b" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD1.png" id="8_dnn21"]
 [ext_resource type="Texture2D" uid="uid://dfyr72nxj0tro" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD2.png" id="9_ajrcj"]
-[ext_resource type="Script" uid="uid://de2qea0pm4beo" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
+[ext_resource type="Script" uid="uid://cwoyba3gtlf46" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://vpyk80ym31kl" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE1.png" id="10_a6vc4"]
 [ext_resource type="Script" uid="uid://8osbbkl1qr1o" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
 [ext_resource type="Texture2D" uid="uid://c6ixemevgtcma" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE2.png" id="11_yvfvj"]
 [ext_resource type="Texture2D" uid="uid://drpm7j36y8ckq" path="res://assets/SpriteMinero/RunFrente/run1.png" id="12_woisn"]
-[ext_resource type="Script" uid="uid://coxqqr0f6dmds" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
+[ext_resource type="Script" uid="uid://dgseh1f2b6lyw" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
 [ext_resource type="Texture2D" uid="uid://cc4a8lb8yo2we" path="res://assets/SpriteMinero/RunFrente/run2.png" id="13_418ft"]
 [ext_resource type="Texture2D" uid="uid://yq1fxdrsb8se" path="res://assets/SpriteMinero/RunFrente/run3.png" id="14_dgqpe"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="14_y2iy6"]
@@ -27,17 +27,17 @@
 [ext_resource type="Texture2D" uid="uid://dhfx77h3qo0xc" path="res://assets/SpriteMinero/RunEspalda/RunE2.png" id="22_fdhd4"]
 [ext_resource type="Texture2D" uid="uid://dxy83rd14mr3o" path="res://assets/SpriteMinero/RunEspalda/RunE3.png" id="23_54uao"]
 [ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="27_74tsq"]
-[ext_resource type="Script" uid="uid://cuq77m0s6dgb0" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
-[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
-[ext_resource type="Script" uid="uid://d0e1m8t7qrken" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
+[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
+[ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
+[ext_resource type="Script" uid="uid://v85gytgq76uc" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
 [ext_resource type="Resource" path="res://recursos/armas/picota.tres" id="30_q24jm"]
-[ext_resource type="Script" uid="uid://5pudku6ubdhk" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
+[ext_resource type="Script" uid="uid://drrux4jvy225h" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
 [ext_resource type="Resource" uid="uid://cf8y6t82gtuwr" path="res://recursos/armas/dinamita.tres" id="31_urn3r"]
-[ext_resource type="Script" uid="uid://lbv1k3ok4nwj" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
-[ext_resource type="AudioStream" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
-[ext_resource type="AudioStream" path="res://musica/sfx/tomas_herudek-heartbeat-simple-529668.mp3" id="sfx_pocavida"]
-[ext_resource type="AudioStream" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
-[ext_resource type="AudioStream" path="res://musica/sfx/Empty weapons (Sound effect).mp3" id="sfx_sinmunicion"]
+[ext_resource type="Script" uid="uid://cu5arw70uur8w" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
+[ext_resource type="AudioStream" uid="uid://bva83lnus4xj7" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
+[ext_resource type="AudioStream" uid="uid://c3auk6hws2r8" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
+[ext_resource type="AudioStream" uid="uid://dk1v1aje7fpmo" path="res://musica/sfx/tomas_herudek-heartbeat-simple-529668.mp3" id="sfx_pocavida"]
+[ext_resource type="AudioStream" uid="uid://2wybnep1am81" path="res://musica/sfx/Empty weapons (Sound effect).mp3" id="sfx_sinmunicion"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2x7k2"]
 atlas = ExtResource("4_xw4gp")
@@ -270,10 +270,10 @@ armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6")
 [node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
 scale = Vector2(0.1, 0.1)
 
-[node name="Disparo" type="AudioStreamPlayer2D" parent="Gestor_armas"]
+[node name="Disparo" type="AudioStreamPlayer2D" parent="Gestor_armas" unique_id=1499422157]
 stream = ExtResource("sfx_disparo")
 
-[node name="SinMunicion" type="AudioStreamPlayer2D" parent="Gestor_armas"]
+[node name="SinMunicion" type="AudioStreamPlayer2D" parent="Gestor_armas" unique_id=1128730355]
 stream = ExtResource("sfx_sinmunicion")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1755864465]
@@ -326,9 +326,8 @@ position_smoothing_speed = 8.0
 position = Vector2(-34.284134, 10.6875)
 scale = Vector2(0.08050295, 0.11107275)
 
-[node name="AudioHerido" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioHerido" type="AudioStreamPlayer2D" parent="." unique_id=1115236857]
 stream = ExtResource("sfx_herido")
 
-[node name="AudioPocaVida" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioPocaVida" type="AudioStreamPlayer2D" parent="." unique_id=215814202]
 stream = ExtResource("sfx_pocavida")
-autoplay = false
