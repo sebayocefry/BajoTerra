@@ -163,10 +163,8 @@ escena_cristal = ExtResource("3_cristal")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128368813]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_chonchon")
-animation = &"muerte"
+animation = &"arriba"
 autoplay = "frente"
-frame = 2
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704604929]
 shape = SubResource("RectShape_chonchon")

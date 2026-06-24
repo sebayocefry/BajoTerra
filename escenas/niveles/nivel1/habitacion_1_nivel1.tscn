@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
 [ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
 [ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="14_j466s"]
+[ext_resource type="PackedScene" uid="uid://bjiqp68k8ggwh" path="res://escenas/personajes/enemigos/fantasma.tscn" id="15_fv5mg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j466s"]
 shader = ExtResource("1_f0ece")
@@ -360,7 +361,10 @@ position = Vector2(905, 328)
 [node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
 
 [node name="Chonchon" parent="Enemigos" unique_id=281540093 instance=ExtResource("14_j466s")]
-position = Vector2(920, 414)
+position = Vector2(151, 453)
+
+[node name="Fantasma" parent="Enemigos" unique_id=1496251229 instance=ExtResource("15_fv5mg")]
+position = Vector2(920, 404)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=1494421045]
 script = ExtResource("13_j466s")
