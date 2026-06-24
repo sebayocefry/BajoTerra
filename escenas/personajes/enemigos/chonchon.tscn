@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://d1yxss0hdyjpb"]
+
+[ext_resource type="Script" uid="uid://cbjjbumqtt502" path="res://scripts/personajes/enemigos/chonchon.gd" id="1_chonchon"]
+[ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_bola"]
+[ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="3_cristal"]
+[ext_resource type="Texture2D" uid="uid://fw2c6kaf3ip5" path="res://assets/spritsEnemigos/chonchon/frente/1.png" id="4_f1"]
+[ext_resource type="Texture2D" uid="uid://dno4mvdm017a0" path="res://assets/spritsEnemigos/chonchon/arriba/1.png" id="4_n58hs"]
+[ext_resource type="Texture2D" uid="uid://c0fgp5o7u8mf7" path="res://assets/spritsEnemigos/chonchon/frente/2.png" id="5_f2"]
+[ext_resource type="Texture2D" uid="uid://dks214nbi4ndm" path="res://assets/spritsEnemigos/chonchon/arriba/2.png" id="5_tx5su"]
+[ext_resource type="Texture2D" uid="uid://bncl1vyglduvu" path="res://assets/spritsEnemigos/chonchon/arriba/3.png" id="6_6krrm"]
+[ext_resource type="Texture2D" uid="uid://c4ashhlcpsjfc" path="res://assets/spritsEnemigos/chonchon/frente/3.png" id="6_f3"]
+[ext_resource type="Texture2D" uid="uid://c81mmii1e2rd4" path="res://assets/spritsEnemigos/chonchon/der/1.png" id="7_d1"]
+[ext_resource type="Texture2D" uid="uid://dgyyvobl80u7k" path="res://assets/spritsEnemigos/chonchon/der/2.png" id="8_d2"]
+[ext_resource type="Texture2D" uid="uid://dvdgfi7lkhkq6" path="res://assets/spritsEnemigos/chonchon/izq/1.png" id="9_i1"]
+[ext_resource type="Texture2D" uid="uid://bdf1q1kbw2f4y" path="res://assets/spritsEnemigos/chonchon/izq/2.png" id="10_i2"]
+[ext_resource type="Texture2D" uid="uid://cxxreo8uxprq2" path="res://assets/spritsEnemigos/chonchon/ataque/1.png" id="11_a1"]
+[ext_resource type="Texture2D" uid="uid://i6bhop8ajb6j" path="res://assets/spritsEnemigos/chonchon/ataque/2.png" id="12_a2"]
+[ext_resource type="Texture2D" uid="uid://dbdqfkb158bne" path="res://assets/spritsEnemigos/chonchon/ataque/3.png" id="13_a3"]
+[ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="14_maquina"]
+[ext_resource type="Script" uid="uid://ditv1bjh508k5" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_reposo.gd" id="15_reposo"]
+[ext_resource type="Script" uid="uid://cxhadsq0p7pyo" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_perseguir.gd" id="16_perseguir"]
+[ext_resource type="Script" uid="uid://ducjw7bnavhjo" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_atacar.gd" id="17_atacar"]
+[ext_resource type="Texture2D" uid="uid://bshqhckeed506" path="res://assets/spritsEnemigos/chonchon/muerte/1.png" id="17_nb5vf"]
+[ext_resource type="Texture2D" uid="uid://ya4paookuho0" path="res://assets/spritsEnemigos/chonchon/muerte/2.png" id="18_kunq3"]
+[ext_resource type="Texture2D" uid="uid://bt006bq8f8agu" path="res://assets/spritsEnemigos/chonchon/muerte/3.png" id="19_oxvc2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru5jj"]
+atlas = ExtResource("4_n58hs")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ebyt"]
+atlas = ExtResource("5_tx5su")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t3xk"]
+atlas = ExtResource("6_6krrm")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32er2"]
+atlas = ExtResource("7_d1")
+region = Rect2(0, 0, 1254, 1254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb5vf"]
+atlas = ExtResource("8_d2")
+region = Rect2(0, 0, 1254, 1254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kunq3"]
+atlas = ExtResource("9_i1")
+region = Rect2(0, 0, 1254, 1254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxvc2"]
+atlas = ExtResource("10_i2")
+region = Rect2(0, 0, 1254, 1254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7rmo"]
+atlas = ExtResource("17_nb5vf")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvmjm"]
+atlas = ExtResource("18_kunq3")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7r4m"]
+atlas = ExtResource("19_oxvc2")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chonchon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru5jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ebyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3xk")
+}],
+"loop": true,
+"name": &"arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a3")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32er2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb5vf")
+}],
+"loop": true,
+"name": &"der",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f3")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kunq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxvc2")
+}],
+"loop": true,
+"name": &"izq",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7rmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvmjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7r4m")
+}],
+"loop": false,
+"name": &"muerte",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectShape_chonchon"]
+size = Vector2(110, 110)
+
+[sub_resource type="CircleShape2D" id="CircleShape_zona_ataque"]
+radius = 186.21762
+
+[node name="Chonchon" type="CharacterBody2D" unique_id=877625359]
+collision_layer = 4
+script = ExtResource("1_chonchon")
+escena_bola_fuego = ExtResource("2_bola")
+color_bola = Color(0, 0, 0.8509804, 1)
+escala_bola = 0.5
+distancia_ataque = 320.0
+escena_cristal = ExtResource("3_cristal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128368813]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_chonchon")
+animation = &"muerte"
+autoplay = "frente"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704604929]
+shape = SubResource("RectShape_chonchon")
+
+[node name="Zona_ataque" type="Area2D" parent="." unique_id=139349269]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataque" unique_id=1246709434 groups=["player"]]
+shape = SubResource("CircleShape_zona_ataque")
+
+[node name="Maquina_estados" type="Node" parent="." unique_id=1396636548]
+script = ExtResource("14_maquina")
+estado_inicial = NodePath("Reposo")
+
+[node name="Reposo" type="Node" parent="Maquina_estados" unique_id=1824680926]
+script = ExtResource("15_reposo")
+
+[node name="Perseguir" type="Node" parent="Maquina_estados" unique_id=1958502307]
+script = ExtResource("16_perseguir")
+
+[node name="Atacar" type="Node" parent="Maquina_estados" unique_id=1247300815]
+script = ExtResource("17_atacar")
+
+[connection signal="body_entered" from="Zona_ataque" to="." method="_on_zona_ataque_body_entered"]
+[connection signal="body_exited" from="Zona_ataque" to="." method="_on_zona_ataque_body_exited"]

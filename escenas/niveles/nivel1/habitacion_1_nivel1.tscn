@@ -12,10 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
-[ext_resource type="PackedScene" uid="uid://dx4sevydfwo8o" path="res://escenas/personajes/enemigos/muki.tscn" id="12_f0ece"]
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
 [ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
-[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="16_fv5mg"]
+[ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="14_j466s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j466s"]
 shader = ExtResource("1_f0ece")
@@ -360,20 +359,8 @@ position = Vector2(905, 328)
 
 [node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
 
-[node name="Muki" parent="Enemigos" unique_id=1997461237 instance=ExtResource("12_f0ece")]
-position = Vector2(534, 501)
-
-[node name="Muki2" parent="Enemigos" unique_id=1259878405 instance=ExtResource("12_f0ece")]
-position = Vector2(1483, 497)
-
-[node name="Rata4" parent="Enemigos" unique_id=1557499351 instance=ExtResource("16_fv5mg")]
-position = Vector2(1571, 749)
-
-[node name="Muki3" parent="Enemigos" unique_id=1932317423 instance=ExtResource("12_f0ece")]
-position = Vector2(805, 436)
-
-[node name="Muki4" parent="Enemigos" unique_id=896114242 instance=ExtResource("12_f0ece")]
-position = Vector2(1109, 512)
+[node name="Chonchon" parent="Enemigos" unique_id=281540093 instance=ExtResource("14_j466s")]
+position = Vector2(920, 414)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=1494421045]
 script = ExtResource("13_j466s")
