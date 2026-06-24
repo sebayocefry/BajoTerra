@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dlxn4mvpqultb"]
+
+[ext_resource type="Script" uid="uid://d0o21tpo8pbnx" path="res://scripts/objetos/loot/cristal_oro.gd" id="1_oro"]
+[ext_resource type="Texture2D" uid="uid://c5u1ymjkeld0u" path="res://assets/oro/ChatGPT Image 24 jun 2026, 05_14_59 p.m..png" id="2_oro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4vpe"]
+atlas = ExtResource("2_oro")
+region = Rect2(0, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qseec"]
+atlas = ExtResource("2_oro")
+region = Rect2(341, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf6jg"]
+atlas = ExtResource("2_oro")
+region = Rect2(682, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ftw"]
+atlas = ExtResource("2_oro")
+region = Rect2(0, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc5ye"]
+atlas = ExtResource("2_oro")
+region = Rect2(341, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66wei"]
+atlas = ExtResource("2_oro")
+region = Rect2(682, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ts2n"]
+atlas = ExtResource("2_oro")
+region = Rect2(0, 682, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82r6y"]
+atlas = ExtResource("2_oro")
+region = Rect2(341, 682, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivxf"]
+atlas = ExtResource("2_oro")
+region = Rect2(682, 682, 341, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrvap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qseec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf6jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ftw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc5ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66wei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ts2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82r6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivxf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_oro"]
+offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oro"]
+gradient = SubResource("Gradient_oro")
+fill = 1
+fill_from = Vector2(0.48, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oro"]
+radius = 93.69308
+
+[node name="CristalOro" type="Area2D" unique_id=1457766281]
+collision_layer = 16
+script = ExtResource("1_oro")
+
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="." unique_id=1230348776]
+position = Vector2(0, 0.99999905)
+scale = Vector2(0.16523461, 0.14470676)
+sprite_frames = SubResource("SpriteFrames_nrvap")
+autoplay = "default"
+frame_progress = 0.81100714
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimationSprite2D" unique_id=387049680]
+position = Vector2(-1.5258789e-05, -6.9105225)
+scale = Vector2(5.808826, 5.9853125)
+color = Color(1, 0.8392157, 0.2, 0.75686276)
+energy = 0.79
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_oro")
+texture_scale = 1.19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329500907]
+position = Vector2(-1, 0)
+scale = Vector2(0.36987305, 0.2758789)
+shape = SubResource("CircleShape2D_oro")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

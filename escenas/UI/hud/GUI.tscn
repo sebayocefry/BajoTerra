@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bah2fwyx7jvcg" path="res://scripts/UI/hud/gui.gd" id="1_msgfq"]
 [ext_resource type="PackedScene" uid="uid://ye4sppq8udsl" path="res://escenas/UI/hud/PantallaInventario.tscn" id="2_msgfq"]
 [ext_resource type="Texture2D" path="res://assets/Fondos/hotbar_3slots.png" id="3_hotbar"]
+[ext_resource type="Texture2D" path="res://assets/iconos/cristalMana.png" id="4_icono_mana"]
+[ext_resource type="Texture2D" path="res://assets/iconos/oro.png" id="5_icono_oro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kesuo"]
 bg_color = Color(0.05, 0.039166667, 0, 1)
@@ -31,13 +33,37 @@ size_flags_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_kesuo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_msgfq")
 
-[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer" unique_id=68388404]
-unique_name_in_owner = true
+[node name="FilaMana" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 6
 
-[node name="TextoOro" type="Label" parent="MarginContainer/VBoxContainer" unique_id=748291054]
+[node name="IconoMana" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaMana"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_icono_mana")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoMana" type="Label" parent="MarginContainer/VBoxContainer/FilaMana" unique_id=68388404]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FilaOro" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="IconoOro" type="TextureRect" parent="MarginContainer/VBoxContainer/FilaOro"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_icono_oro")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoOro" type="Label" parent="MarginContainer/VBoxContainer/FilaOro" unique_id=748291054]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
 text = "Oro: 0"
 
 [node name="CajaHotbar" type="TextureRect" parent="." unique_id=1648299665]

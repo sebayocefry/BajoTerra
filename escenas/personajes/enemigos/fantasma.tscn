@@ -226,10 +226,8 @@ escena_cristal = ExtResource("3_cristal")
 position = Vector2(-15.320001, 31.270016)
 scale = Vector2(0.31416667, 0.2700586)
 sprite_frames = SubResource("SpriteFrames_fantasma")
-animation = &"muerte"
+animation = &"abajo"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.0044098813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254226937]
 position = Vector2(-9, 24)

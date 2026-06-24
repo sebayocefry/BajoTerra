@@ -21,6 +21,7 @@ class_name Enemigo
 @export var anim_ataque : String = "atacar"
 
 @export var escena_cristal: PackedScene # con esto arrastramo la escena del cistal en el godot
+@export var escena_oro: PackedScene # escena del cristal de oro a soltar al morir
 
 # Esta variable almacena la referencia al obj jugador para que el enemigo
 # entregue el mana al morir y este no se pierda.
@@ -42,14 +43,18 @@ func _ready():
 	jugador = get_tree().get_first_node_in_group("player")
 
 func morir():
-	#ya no suma al morir como orden porque si, ahora solatara el mana bien 
+	#ya no suma al morir como orden porque si, ahora solatara el mana bien
 	if escena_cristal:
 		var nuevo_cristal = escena_cristal.instantiate()
 		nuevo_cristal.global_position = global_position
 		# agregamos el cristal al mismo contenedor del enemigo (la habitacion)
 		get_parent().call_deferred("add_child", nuevo_cristal)
 
-		
+	if escena_oro:
+		var nuevo_oro = escena_oro.instantiate()
+		nuevo_oro.global_position = global_position
+		get_parent().call_deferred("add_child", nuevo_oro)
+
 	super.morir()
 
 #borre lo funcion que le daba comportamientos al enemigo porquew estaba gigante 

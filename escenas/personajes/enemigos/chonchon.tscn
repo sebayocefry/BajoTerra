@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbjjbumqtt502" path="res://scripts/personajes/enemigos/chonchon.gd" id="1_chonchon"]
 [ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_bola"]
-[ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="3_cristal"]
+[ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="3_nb5vf"]
 [ext_resource type="Texture2D" uid="uid://fw2c6kaf3ip5" path="res://assets/spritsEnemigos/chonchon/frente/1.png" id="4_f1"]
 [ext_resource type="Texture2D" uid="uid://dno4mvdm017a0" path="res://assets/spritsEnemigos/chonchon/arriba/1.png" id="4_n58hs"]
 [ext_resource type="Texture2D" uid="uid://c0fgp5o7u8mf7" path="res://assets/spritsEnemigos/chonchon/frente/2.png" id="5_f2"]
@@ -158,7 +158,7 @@ escena_bola_fuego = ExtResource("2_bola")
 color_bola = Color(0, 0, 0.8509804, 1)
 escala_bola = 0.5
 distancia_ataque = 320.0
-escena_cristal = ExtResource("3_cristal")
+escena_oro = ExtResource("3_nb5vf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128368813]
 scale = Vector2(0.1, 0.1)
