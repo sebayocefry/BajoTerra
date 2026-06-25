@@ -11,8 +11,10 @@ func usar(jugador: CharacterBody2D) -> void:
 	#asi tambien si queremos usar mas consumibles o uno mixto no tocamos tanto 
 	
 	if jugador is Player:
-		jugador.vida += cura_vida
-		jugador.mana += recupera_mana
+		if cura_vida != 0:
+			jugador.curar(cura_vida)
+		if recupera_mana != 0:
+			jugador.sumar_mana(recupera_mana)
 		
 		# Como ya sabemos que es el Player, Godot reconoce nombre_entidad, vida y mana
 		print(jugador.nombre_entidad, " usó ", nombre, ". Vida actual: ", jugador.vida, " | Maná: ", jugador.mana)

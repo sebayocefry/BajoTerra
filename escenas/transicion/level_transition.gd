@@ -37,7 +37,7 @@ func ir_a_escena(ruta: String) -> void:
 	# Solo fade_out + cambio de escena. El destino maneja su propio fade_in
 	# (por ejemplo, GestorNivel llama fade_in al terminar de cargar la habitación).
 	await fade_out()
-	get_tree().change_scene_to_file(ruta)
+	GestorEscenas.cambiar_nivel(ruta)
 
 
 func ir_a_escena_final() -> void:

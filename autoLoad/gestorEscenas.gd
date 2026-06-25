@@ -7,13 +7,19 @@ signal nivel_cargado(nombre_nivel: String)
 ## lo lee PuertaSalidaComerciate al salir.
 var habitacion_post_comerciante: String = ""
 
+func _get_true_player() -> Node:
+    for nodo in get_tree().get_nodes_in_group("player"):
+        if "oro" in nodo and "mana" in nodo:
+            return nodo
+    return null
+
 func cambiar_nivel(ruta_nuevo_nivel: String):
     #  Antes de destruir la escena, guardamos al jugador
-    var player = get_tree().get_first_node_in_group("Player")
+    var player = _get_true_player()
     if player:
         DatosJugador.guardar_estado_jugador(player)
     else:
-        push_warning("Arquitectura: No se encontró un nodo en el grupo 'Player' para guardar.")
+        push_warning("Arquitectura: No se encontró un nodo en el grupo 'player' para guardar.")
     call_deferred("_transicion_segura", ruta_nuevo_nivel)
 
 func _transicion_segura(ruta: String):
@@ -26,7 +32,7 @@ func _transicion_segura(ruta: String):
         await get_tree().process_frame 
         
         #  Buscamos al nuevo jugador que acaba de nacer en esta escena y le inyectamos los datos
-        var nuevo_player = get_tree().get_first_node_in_group("Player")
+        var nuevo_player = _get_true_player()
         if nuevo_player:
             DatosJugador.cargar_estado_jugador(nuevo_player)
             

@@ -23,3 +23,7 @@ signal transicion_habitacion_solicitada(ruta_habitacion: String, spawn_destino: 
 
 # Feedback visual
 signal sacudir_camara(intensidad: float, duracion: float)
+
+# Tutorial
+signal mostrar_mensaje_tutorial(texto: String, duracion: float)
+signal ocultar_mensaje_tutorial()

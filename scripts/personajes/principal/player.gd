@@ -35,6 +35,10 @@ var _tween_linterna: Tween
 func _ready():
 	super._ready()
 	Eventos.sacudir_camara.connect(_sacudir_camara)
+	
+	# PULL the state from the autoload. This guarantees the player ALWAYS has the correct state.
+	DatosJugador.cargar_estado_jugador(self)
+	
 	await get_tree().process_frame
 	# Sincronizamos la UI con los valores iniciales al nacer
 	Eventos.vida_actualizada.emit(vida, vida_maxima)
@@ -150,6 +154,7 @@ func activar_invulnerabilidad(duracion: float):
 func sumar_mana(cantidad: int):
 	mana += cantidad
 	Eventos.mana_actualizado.emit(mana)
+	DatosJugador.mana_actual = mana
 	print("Maná recogido: +", cantidad, " | Total: ", mana)
 
 
@@ -157,6 +162,7 @@ func curar(cantidad: int):
 	vida += cantidad
 	vida = min(vida, vida_maxima)
 	Eventos.vida_actualizada.emit(vida, vida_maxima)
+	DatosJugador.vida_actual = vida
 	print("Jugador curado: +", cantidad, " | Vida actual: ", vida)
 
 
@@ -167,11 +173,13 @@ func tiene_oro_suficiente(cantidad: int) -> bool:
 func gastar_oro(cantidad: int):
 	oro -= cantidad
 	Eventos.oro_actualizado.emit(oro)
+	DatosJugador.oro_actual = oro
 
 
 func sumar_oro(cantidad: int):
 	oro += cantidad
 	Eventos.oro_actualizado.emit(oro)
+	DatosJugador.oro_actual = oro
 
 
 # Delegamos al Gestor_inventario

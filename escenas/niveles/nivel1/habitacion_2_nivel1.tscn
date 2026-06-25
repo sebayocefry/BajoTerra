@@ -17,9 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://b0iads0ntiw2i" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/web_rock2_shadow1.png" id="14_tvbrc"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="21_835cb"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="21_n4wuu"]
+[ext_resource type="Texture2D" uid="uid://b5bu7h18iyqq0" path="res://assets/assetTutotrial/TablaTuto-Photoroom.png" id="22_r8noe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b010o"]
 shader = ExtResource("2_hxv0y")
@@ -454,3 +456,8 @@ script = ExtResource("17_b010o")
 
 [node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("18_2cvx4")]
 position = Vector2(331, 222)
+
+[node name="MensajeGuardado" parent="." unique_id=86627673 instance=ExtResource("21_n4wuu")]
+position = Vector2(445, 335)
+mensaje = "Presiona [E]: Vincula tu alma al espíritu. Si caes, este será tu santuario de retorno."
+icono_personalizado = ExtResource("22_r8noe")

@@ -49,22 +49,9 @@ rotation = 1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_nx3q6")
 
-[node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("5_kcvj7")]
-
 [node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("6_3e6lv")]
 position = Vector2(795, -601)
 
 [node name="Comerciante" parent="." unique_id=631148056 instance=ExtResource("5_8wywf")]
 position = Vector2(0, -648)
 inventario_tienda = Array[ExtResource("7_5tc7a")]([ExtResource("8_kcvj7"), ExtResource("9_3e6lv")])
-
-[node name="Jugador2" parent="." unique_id=1943970634 groups=["player"] instance=ExtResource("8_inj1v")]
-position = Vector2(-630, 129)
-
-[node name="Camera2D" type="Camera2D" parent="Jugador2" unique_id=1758778630]
-position = Vector2(412, -267)
-zoom = Vector2(1.2, 1.2)
-limit_left = -1059
-limit_top = -797
-limit_right = 1057
-limit_bottom = 825

@@ -16,7 +16,7 @@ var habitaciones_limpias : Dictionary = {}
 var habitacion_resume: String = ""
 var spawn_resume: String = "spawn_entrada"
 
-func guardar_estado_jugador(player: Player):
+func guardar_estado_jugador(player: Node):
 	print("--- INICIANDO EXTRACCIÓN DE DATOS ---")
 	
 	# Extraemos uno por uno para ver cuál hace crashear el juego
@@ -29,16 +29,18 @@ func guardar_estado_jugador(player: Player):
 	oro_actual = player.oro
 	print("Oro extraído: ", oro_actual)
 	
-	inventario = player.gestor_inventario.listaObjetos.duplicate()
-	print("Inventario duplicado. Cantidad de objetos: ", inventario.size())
+	if "gestor_inventario" in player and player.gestor_inventario != null:
+		inventario = player.gestor_inventario.listaObjetos.duplicate()
+		print("Inventario duplicado. Cantidad de objetos: ", inventario.size())
 	
 	print("--- EXTRACCIÓN EXITOSA, PASANDO A SISTEMA GUARDADO ---")
-func cargar_estado_jugador(player: Player):
+func cargar_estado_jugador(player: Node):
 	player.vida = vida_actual
 	player.mana = mana_actual
 	player.oro = oro_actual
-	player.gestor_inventario.listaObjetos = inventario.duplicate()
 	
+	if "gestor_inventario" in player and player.gestor_inventario != null:
+		player.gestor_inventario.listaObjetos.assign(inventario.duplicate())
 	
 	Eventos.vida_actualizada.emit(player.vida, 100) 
 	Eventos.mana_actualizado.emit(player.mana)

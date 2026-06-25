@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var icono_arma = %IconoArma
 @onready var icono_objeto = %IconoObjeto
 @onready var imagen_guardado = %ImagenGuardado
+@onready var contenedor_tutorial = $ContenedorTutorial
+@onready var mensaje_tutorial = %MensajeTutorial
 
 func _ready():
 	Eventos.vida_actualizada.connect(_on_vida_actualizada)
@@ -14,6 +16,8 @@ func _ready():
 	Eventos.arma_equipada_cambiada.connect(_on_arma_cambiada)
 	Eventos.consumible_equipado_cambiado.connect(_on_objeto_cambiado)
 	Eventos.progreso_guardado.connect(_on_progreso_guardado)
+	Eventos.mostrar_mensaje_tutorial.connect(_on_mostrar_mensaje_tutorial)
+	Eventos.ocultar_mensaje_tutorial.connect(_on_ocultar_mensaje_tutorial)
 	imagen_guardado.texture = load("res://assets/Fondos/partida_guardad.png")
 
 func _on_vida_actualizada(v_actual: int, v_max: int):
@@ -46,3 +50,23 @@ func _on_progreso_guardado():
 	tween.tween_interval(2.5)
 	# Desaparece en 0.5s
 	tween.tween_property(imagen_guardado, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE)
+
+func _on_mostrar_mensaje_tutorial(texto: String, duracion: float):
+	if mensaje_tutorial and contenedor_tutorial:
+		mensaje_tutorial.text = texto
+		contenedor_tutorial.visible = true
+		
+		var tween = create_tween()
+		tween.tween_property(contenedor_tutorial, "modulate:a", 1.0, 0.3).set_trans(Tween.TRANS_SINE)
+		
+		# Si duracion es mayor a 0, se oculta automaticamente
+		if duracion > 0.0:
+			tween.tween_interval(duracion)
+			tween.tween_property(contenedor_tutorial, "modulate:a", 0.0, 0.3).set_trans(Tween.TRANS_SINE)
+			tween.tween_callback(func(): contenedor_tutorial.visible = false)
+
+func _on_ocultar_mensaje_tutorial():
+	if contenedor_tutorial and contenedor_tutorial.visible:
+		var tween = create_tween()
+		tween.tween_property(contenedor_tutorial, "modulate:a", 0.0, 0.3).set_trans(Tween.TRANS_SINE)
+		tween.tween_callback(func(): contenedor_tutorial.visible = false)
