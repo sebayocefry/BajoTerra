@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfen74p4gisas"]
 
-[ext_resource type="Script" uid="uid://b233com2etih2" path="res://scripts/personajes/enemigos/jefe_nivel1.gd" id="1_jefe"]
+[ext_resource type="Script" uid="uid://dob6nnlbi8tjk" path="res://scripts/personajes/enemigos/jefe_nivel1.gd" id="1_jefe"]
 [ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_g6uq6"]
 [ext_resource type="Texture2D" uid="uid://c2q7ykpd7ecxk" path="res://assets/spritesJefes/SpriteDiablo/SpriteDiablo1.png" id="2_mc7by"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="3_chst5"]
@@ -81,6 +81,7 @@ size = Vector2(329.5, 361.125)
 
 [node name="JefeNivel1" type="CharacterBody2D" unique_id=421596498]
 collision_layer = 4
+motion_mode = 1
 script = ExtResource("1_jefe")
 escena_bola_fuego = ExtResource("2_g6uq6")
 escena_cristal = ExtResource("3_chst5")

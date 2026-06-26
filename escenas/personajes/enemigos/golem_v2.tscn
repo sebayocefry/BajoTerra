@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://te4yy03wh61x"]
 
-[ext_resource type="Script" uid="uid://bvlyh3au5uvk3" path="res://scripts/personajes/enemigos/enemigo_gollem.gd" id="1_glmv2"]
+[ext_resource type="Script" uid="uid://cxuaqs5crps3i" path="res://scripts/personajes/enemigos/enemigo_gollem.gd" id="1_glmv2"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_glmv2"]
-[ext_resource type="Texture2D" uid="uid://itc5dqnsecvr" path="res://assets/spritsEnemigos/golem/Golem3/Attack/Golem3_Attack_full.png" id="3_1c5du"]
-[ext_resource type="Texture2D" uid="uid://mqo314ocq73s" path="res://assets/spritsEnemigos/golem/Golem3/Idle/Golem3_Idle_full.png" id="3_82ouc"]
+[ext_resource type="Texture2D" uid="uid://6xamlm4wto1g" path="res://assets/spritsEnemigos/golem/Golem3/Attack/Golem3_Attack_full.png" id="3_1c5du"]
+[ext_resource type="Texture2D" uid="uid://ccwvfb5qtofws" path="res://assets/spritsEnemigos/golem/Golem3/Idle/Golem3_Idle_full.png" id="3_82ouc"]
 [ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="3_glmv2"]
-[ext_resource type="Texture2D" uid="uid://0iyitr4n6hg4" path="res://assets/spritsEnemigos/golem/Golem3/Death/Golem3_Death_full.png" id="4_1g8j8"]
-[ext_resource type="Script" uid="uid://blkklhmed4w3c" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/reposo_gollem.gd" id="4_glmv2"]
-[ext_resource type="Texture2D" uid="uid://521pjwwyqf2k" path="res://assets/spritsEnemigos/golem/Golem3/Hurt/Golem3_Hurt_full.png" id="5_80p45"]
-[ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/perseguir_gollem.gd" id="5_glmv2"]
-[ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/atacar_gollem.gd" id="6_glmv2"]
-[ext_resource type="Texture2D" uid="uid://c8kxodybwwvbt" path="res://assets/spritsEnemigos/golem/Golem3/Run/Golem3_Run_full.png" id="7_uycsg"]
-[ext_resource type="Texture2D" uid="uid://3h6of2pgk5yn" path="res://assets/spritsEnemigos/golem/Golem3/Walk/Golem3_Walk_full.png" id="8_b0qmr"]
+[ext_resource type="Texture2D" uid="uid://cx8gg63dnt2v6" path="res://assets/spritsEnemigos/golem/Golem3/Death/Golem3_Death_full.png" id="4_1g8j8"]
+[ext_resource type="Script" uid="uid://cu4hls07gnfw6" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/reposo_gollem.gd" id="4_glmv2"]
+[ext_resource type="Texture2D" uid="uid://b2qj2i52oefrp" path="res://assets/spritsEnemigos/golem/Golem3/Hurt/Golem3_Hurt_full.png" id="5_80p45"]
+[ext_resource type="Script" uid="uid://bby02f4eoicwe" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/perseguir_gollem.gd" id="5_glmv2"]
+[ext_resource type="Script" uid="uid://cfiimxjv1p820" path="res://scripts/personajes/enemigos/estados_en_comun/estados_golem/atacar_gollem.gd" id="6_glmv2"]
+[ext_resource type="Texture2D" uid="uid://b8dt0ci2dgcvj" path="res://assets/spritsEnemigos/golem/Golem3/Run/Golem3_Run_full.png" id="7_uycsg"]
+[ext_resource type="Texture2D" uid="uid://c5sqlok6wco3w" path="res://assets/spritsEnemigos/golem/Golem3/Walk/Golem3_Walk_full.png" id="8_b0qmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gacmi"]
 atlas = ExtResource("3_1c5du")
@@ -1293,6 +1293,7 @@ radius = 134.0
 height = 286.0
 
 [node name="Golemv2" type="CharacterBody2D" unique_id=1070925211]
+motion_mode = 1
 script = ExtResource("1_glmv2")
 escena_cristal = ExtResource("2_glmv2")
 
@@ -1328,7 +1329,6 @@ script = ExtResource("5_glmv2")
 
 [node name="Atacar" type="Node" parent="Maquina_estados" unique_id=298534265]
 script = ExtResource("6_glmv2")
-cooldown_ataque = 1.0
 
 [connection signal="body_entered" from="Zona_ataque" to="." method="_on_zona_ataque_body_entered"]
 [connection signal="body_exited" from="Zona_ataque" to="." method="_on_zona_ataque_body_exited"]

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bjiqp68k8ggwh"]
 
-[ext_resource type="Script" uid="uid://b2hob27yyytso" path="res://scripts/personajes/enemigos/fantasma.gd" id="1_fantasma"]
+[ext_resource type="Script" uid="uid://c3s0lwvuq7nu6" path="res://scripts/personajes/enemigos/fantasma.gd" id="1_fantasma"]
 [ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_bola"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="3_cristal"]
-[ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_maquina"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="4_maquina"]
 [ext_resource type="Texture2D" uid="uid://dq8kxpk8tmvhr" path="res://assets/spritsEnemigos/fantasma/abajo.png" id="4_rxhqh"]
 [ext_resource type="Texture2D" uid="uid://c2di73mve0fa1" path="res://assets/spritsEnemigos/fantasma/arriba.png" id="5_qho5c"]
 [ext_resource type="Script" uid="uid://b2rv1c5wgs4ef" path="res://scripts/personajes/enemigos/estados_en_comun/estados_fantasma/fantasma_reposo.gd" id="5_reposo"]
@@ -216,6 +216,7 @@ radius = 191.00262
 
 [node name="Fantasma" type="CharacterBody2D" unique_id=1496251229]
 collision_layer = 4
+motion_mode = 1
 script = ExtResource("1_fantasma")
 escena_bola_fuego = ExtResource("2_bola")
 color_bola = Color(10.018106, 17.976582, 18.892157, 1)

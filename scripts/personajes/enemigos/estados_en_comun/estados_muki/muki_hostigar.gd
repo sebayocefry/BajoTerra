@@ -11,8 +11,9 @@ func entrar():
 
 
 func actualizar(_delta):
-	if enemigo.jugador == null:
+	if enemigo.jugador == null or not enemigo.tiene_linea_de_vision():
 		transicion.emit("MukiReposo")
+		return
 		return
 
 	var distancia = enemigo.global_position.distance_to(enemigo.jugador.global_position)

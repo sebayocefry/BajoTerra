@@ -27,6 +27,7 @@ class_name Enemigo
 # entregue el mana al morir y este no se pierda.
 var jugador : Entidad = null
 var jugador_en_rango : bool = false
+var raycast_vision: RayCast2D
 
 # es una referencua al nodo de animaciones 
 @onready var animacion: AnimationPlayer = get_node("AnimationPlayer")
@@ -41,6 +42,35 @@ func _ready():
 	super._ready()
 	# Buscamos al jugador en el grupo que creamos antes
 	jugador = get_tree().get_first_node_in_group("player")
+	
+	# Creamos el raycast dinámicamente para no obligar al usuario a editar 20 escenas
+	raycast_vision = RayCast2D.new()
+	raycast_vision.enabled = false # Lo actualizamos solo cuando lo necesitamos por rendimiento
+	raycast_vision.collision_mask = 1 # Asumimos que las paredes están en la capa 1
+	add_child(raycast_vision)
+
+func tiene_linea_de_vision() -> bool:
+	if not jugador: return false
+	
+	var distancia = global_position.distance_to(jugador.global_position)
+	if distancia > distancia_vision:
+		return false
+		
+	# Apuntamos el rayo hacia el jugador
+	raycast_vision.global_position = global_position
+	raycast_vision.target_position = raycast_vision.to_local(jugador.global_position)
+	raycast_vision.force_raycast_update()
+	
+	# Si choca con algo (la capa 1, es decir paredes), significa que NO lo puede ver
+	# Ojo: si choca, is_colliding() es true. Queremos que devuelva true si NO choca.
+	return not raycast_vision.is_colliding()
+
+func es_punto_caminable(punto: Vector2) -> bool:
+	# Apuntamos el rayo hacia el punto de destino
+	raycast_vision.global_position = global_position
+	raycast_vision.target_position = raycast_vision.to_local(punto)
+	raycast_vision.force_raycast_update()
+	return not raycast_vision.is_colliding()
 
 func morir():
 	#ya no suma al morir como orden porque si, ahora solatara el mana bien

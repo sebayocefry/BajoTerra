@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fxcae1xw8faq"]
 
-[ext_resource type="Script" uid="uid://doxqkvvpyvabt" path="res://scripts/personajes/enemigos/muki.gd" id="1_375f4"]
+[ext_resource type="Script" uid="uid://bf3163qhhwq61" path="res://scripts/personajes/enemigos/muki.gd" id="1_375f4"]
 [ext_resource type="PackedScene" uid="uid://dsx5dgire1s5f" path="res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn" id="2_h0esb"]
 [ext_resource type="Texture2D" uid="uid://b1ck5kotxoqlu" path="res://assets/spritsEnemigos/muki/Orc2/Without_shadow/orc2_attack_without_shadow.png" id="2_o2r3i"]
 [ext_resource type="Texture2D" uid="uid://bm8jb87l0h82" path="res://assets/spritsEnemigos/muki/Orc2/Without_shadow/orc2_idle_without_shadow.png" id="3_51700"]
@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://b1qsuahoqlh1r" path="res://assets/spritsEnemigos/muki/Orc2/Without_shadow/orc2_run_without_shadow.png" id="6_0vqfr"]
 [ext_resource type="Texture2D" uid="uid://cmnl7o72isl3p" path="res://assets/spritsEnemigos/muki/Orc2/Without_shadow/orc2_walk_without_shadow.png" id="7_1sm0c"]
 [ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="8_bnewi"]
-[ext_resource type="Script" uid="uid://dj7yahyv7nspt" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_reposo.gd" id="9_h0esb"]
-[ext_resource type="Script" uid="uid://xdiq6i4c6vbd" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_hostigar.gd" id="10_hica0"]
-[ext_resource type="Script" uid="uid://h81rmirbsuo0" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_atacar.gd" id="11_nn2hn"]
-[ext_resource type="Script" uid="uid://c2e6ueajeb3ip" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_hurt.gd" id="12_genul"]
-[ext_resource type="Script" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_huir.gd" id="13_4smhi"]
+[ext_resource type="Script" uid="uid://67e0qubs81oj" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_reposo.gd" id="9_h0esb"]
+[ext_resource type="Script" uid="uid://dbpfmeomt3vkh" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_hostigar.gd" id="10_hica0"]
+[ext_resource type="Script" uid="uid://bw3jun10m034u" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_atacar.gd" id="11_nn2hn"]
+[ext_resource type="Script" uid="uid://p12jkwdp3bey" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_hurt.gd" id="12_genul"]
+[ext_resource type="Script" uid="uid://hx7rvodgcock" path="res://scripts/personajes/enemigos/estados_en_comun/estados_muki/muki_huir.gd" id="13_4smhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0esb"]
 atlas = ExtResource("2_o2r3i")
@@ -1267,6 +1267,7 @@ radius = 34.0
 height = 122.0
 
 [node name="Muki" type="CharacterBody2D" unique_id=669730601 groups=["player"]]
+motion_mode = 1
 script = ExtResource("1_375f4")
 escena_cristal = ExtResource("2_h0esb")
 

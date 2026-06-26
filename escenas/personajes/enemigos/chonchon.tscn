@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1yxss0hdyjpb"]
 
-[ext_resource type="Script" uid="uid://cbjjbumqtt502" path="res://scripts/personajes/enemigos/chonchon.gd" id="1_chonchon"]
+[ext_resource type="Script" uid="uid://cglk2lplvqnu0" path="res://scripts/personajes/enemigos/chonchon.gd" id="1_chonchon"]
 [ext_resource type="PackedScene" uid="uid://d0ycxo1ptyeqd" path="res://escenas/objetos/balas/bola_fuego.tscn" id="2_bola"]
 [ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="3_nb5vf"]
 [ext_resource type="Texture2D" uid="uid://fw2c6kaf3ip5" path="res://assets/spritsEnemigos/chonchon/frente/1.png" id="4_f1"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cxxreo8uxprq2" path="res://assets/spritsEnemigos/chonchon/ataque/1.png" id="11_a1"]
 [ext_resource type="Texture2D" uid="uid://i6bhop8ajb6j" path="res://assets/spritsEnemigos/chonchon/ataque/2.png" id="12_a2"]
 [ext_resource type="Texture2D" uid="uid://dbdqfkb158bne" path="res://assets/spritsEnemigos/chonchon/ataque/3.png" id="13_a3"]
-[ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="14_maquina"]
+[ext_resource type="Script" uid="uid://b407uigj5l845" path="res://scripts/maquina_estados/maquina_estados.gd" id="14_maquina"]
 [ext_resource type="Script" uid="uid://ditv1bjh508k5" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_reposo.gd" id="15_reposo"]
 [ext_resource type="Script" uid="uid://cxhadsq0p7pyo" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_perseguir.gd" id="16_perseguir"]
 [ext_resource type="Script" uid="uid://ducjw7bnavhjo" path="res://scripts/personajes/enemigos/estados_en_comun/estados_chonchon/chonchon_atacar.gd" id="17_atacar"]
@@ -153,6 +153,7 @@ radius = 186.21762
 
 [node name="Chonchon" type="CharacterBody2D" unique_id=877625359]
 collision_layer = 4
+motion_mode = 1
 script = ExtResource("1_chonchon")
 escena_bola_fuego = ExtResource("2_bola")
 color_bola = Color(0, 0, 0.8509804, 1)
