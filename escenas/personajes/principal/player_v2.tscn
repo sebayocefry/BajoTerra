@@ -33,6 +33,7 @@
 [ext_resource type="Resource" path="res://recursos/armas/picota.tres" id="30_q24jm"]
 [ext_resource type="Script" uid="uid://drrux4jvy225h" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
 [ext_resource type="Resource" uid="uid://cf8y6t82gtuwr" path="res://recursos/armas/dinamita.tres" id="31_urn3r"]
+[ext_resource type="Resource" path="res://recursos/armas/rifle.tres" id="33_rifle"]
 [ext_resource type="Script" uid="uid://cu5arw70uur8w" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
 [ext_resource type="AudioStream" uid="uid://bva83lnus4xj7" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
 [ext_resource type="AudioStream" uid="uid://c3auk6hws2r8" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
@@ -263,7 +264,7 @@ script = ExtResource("10_oecxe")
 
 [node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
 script = ExtResource("13_0piy6")
-armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6"), ExtResource("30_q24jm"), ExtResource("31_urn3r")])
+armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6"), ExtResource("30_q24jm"), ExtResource("31_urn3r"), ExtResource("33_rifle")])
 
 [node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
 
@@ -323,7 +324,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="BrazoArma" type="Sprite2D" parent="." unique_id=112233446]
-position = Vector2(-34.284134, 10.6875)
+position = Vector2(-21, 22.000002)
 scale = Vector2(0.08050295, 0.11107275)
 
 [node name="AudioHerido" type="AudioStreamPlayer2D" parent="." unique_id=1115236857]

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://grxbu2o4h784"]
+
+[ext_resource type="Script" uid="uid://bb6gc6gsbycjg" path="res://scripts/objetos/balas/bala.gd" id="1_bala"]
+[ext_resource type="Texture2D" uid="uid://cp0puil61lmjc" path="res://assets/spritesBalas/All_Fire_Bullet_Pixel_16x16_00.png" id="2_vcla8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h74c"]
+atlas = ExtResource("2_vcla8")
+region = Rect2(252, 128, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaowc"]
+atlas = ExtResource("2_vcla8")
+region = Rect2(270, 128, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sep63"]
+atlas = ExtResource("2_vcla8")
+region = Rect2(288, 128, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj3mh"]
+atlas = ExtResource("2_vcla8")
+region = Rect2(306, 128, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_balarifle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h74c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaowc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sep63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj3mh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_balarifle"]
+radius = 14.0
+
+[node name="Area2D" type="Area2D" unique_id=394407718]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_bala")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=114066857]
+sprite_frames = SubResource("SpriteFrames_balarifle")
+autoplay = "default"
+frame_progress = 0.4753059
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252030326]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_balarifle")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=647659023]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

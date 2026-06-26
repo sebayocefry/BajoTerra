@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Arma" format=3 uid="uid://00fpuffsryx0"]
+
+[ext_resource type="PackedScene" uid="uid://grxbu2o4h784" path="res://escenas/objetos/balas/BalaRifle.tscn" id="1_bala"]
+[ext_resource type="Script" uid="uid://cu5arw70uur8w" path="res://scripts/objetos/armas/arma.gd" id="1_rifle"]
+[ext_resource type="Texture2D" uid="uid://c7a2i6pyv5li2" path="res://assets/sprite_brazo/brazo_rifle/brazo_rifle_abajo.png" id="2_abajo"]
+[ext_resource type="Texture2D" uid="uid://bvkvdwpub4bva" path="res://assets/sprite_brazo/brazo_rifle/brazo_rifle_arriba.png" id="3_arriba"]
+[ext_resource type="Texture2D" uid="uid://begiwawr4bhvv" path="res://assets/sprite_brazo/brazo_rifle/brazo_rifle_derecha.png" id="4_der"]
+[ext_resource type="Texture2D" uid="uid://c8mjx53r52qo7" path="res://assets/sprite_brazo/brazo_rifle/brazo_rifle_izquierda.png" id="5_izq"]
+[ext_resource type="Texture2D" uid="uid://cj5vjg15w4ua5" path="res://assets/iconos/Rifle.png" id="6_icono"]
+
+[resource]
+script = ExtResource("1_rifle")
+dano = 15
+costo_mana = 2
+cadencia = 0.15
+escena_bala = ExtResource("1_bala")
+brazo_textura_abajo = ExtResource("2_abajo")
+brazo_textura_arriba = ExtResource("3_arriba")
+brazo_textura_derecha = ExtResource("4_der")
+brazo_textura_izquierda = ExtResource("5_izq")
+brazo_offset_abajo = Vector2(18, 19.729)
+brazo_offset_arriba = Vector2(24, 0)
+brazo_offset_derecha = Vector2(0, 20)
+brazo_offset_izquierda = Vector2(-17, 20)
+brazo_escala = Vector2(0.069, 0.056)
+nombre = "Rifle"
+icono = ExtResource("6_icono")
+precio_oro = 350

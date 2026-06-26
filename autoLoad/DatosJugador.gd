@@ -2,7 +2,7 @@ extends Node
 
 
 var vida_actual : int = 100
-var mana_actual : int = 0
+var mana_actual : int = 100
 var oro_actual : int = 0
 var inventario : Array = [] 
 
@@ -39,7 +39,7 @@ func cargar_estado_jugador(player: Node):
 	player.mana = mana_actual
 	player.oro = oro_actual
 	
-	if "gestor_inventario" in player and player.gestor_inventario != null:
+	if "gestor_inventario" in player and player.gestor_inventario != null and inventario.size() > 0:
 		player.gestor_inventario.listaObjetos.assign(inventario.duplicate())
 	
 	Eventos.vida_actualizada.emit(player.vida, 100) 
