@@ -5,6 +5,7 @@ var vida_actual : int = 100
 var mana_actual : int = 0
 var oro_actual : int = 0
 var inventario : Array = [] 
+var partida_iniciada: bool = false
 
 # Memoria falsa o espacial: {"res://habitacion_1.tscn": true, "res://habitacion_2.tscn": true}
 # guardamos como los datos de la habitacion como en un diccionario asi no se pierden las cosas, esto
@@ -18,6 +19,7 @@ var spawn_resume: String = "spawn_entrada"
 
 func guardar_estado_jugador(player: Node):
 	print("--- INICIANDO EXTRACCIÓN DE DATOS ---")
+	partida_iniciada = true
 	
 	# Extraemos uno por uno para ver cuál hace crashear el juego
 	vida_actual = player.vida
@@ -35,12 +37,21 @@ func guardar_estado_jugador(player: Node):
 	
 	print("--- EXTRACCIÓN EXITOSA, PASANDO A SISTEMA GUARDADO ---")
 func cargar_estado_jugador(player: Node):
+	if not partida_iniciada:
+		# Es una partida nueva recién creada. Respetamos los stats iniciales del inspector!
+		vida_actual = player.vida
+		mana_actual = player.mana
+		oro_actual = player.oro
+		partida_iniciada = true
+		
 	player.vida = vida_actual
 	player.mana = mana_actual
 	player.oro = oro_actual
 	
 	if "gestor_inventario" in player and player.gestor_inventario != null:
-		player.gestor_inventario.listaObjetos.assign(inventario.duplicate())
+		# Solo cargamos si el autoload realmente tiene datos de inventario guardados
+		if inventario.size() > 0:
+			player.gestor_inventario.listaObjetos.assign(inventario.duplicate())
 	
 	Eventos.vida_actualizada.emit(player.vida, 100) 
 	Eventos.mana_actualizado.emit(player.mana)
@@ -69,6 +80,7 @@ func obtener_datos_diccionario() -> Dictionary:
 
 # Restaura los datos leidos desde el disco
 func cargar_datos_diccionario(datos: Dictionary):
+	partida_iniciada = true # Marcamos que es una partida cargada
 	vida_actual = datos.get("vida_actual", 100)
 	mana_actual = datos.get("mana_actual", 0)
 	oro_actual = datos.get("oro_actual", 0)

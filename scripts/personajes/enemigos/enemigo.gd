@@ -61,9 +61,17 @@ func tiene_linea_de_vision() -> bool:
 	raycast_vision.target_position = raycast_vision.to_local(jugador.global_position)
 	raycast_vision.force_raycast_update()
 	
-	# Si choca con algo (la capa 1, es decir paredes), significa que NO lo puede ver
-	# Ojo: si choca, is_colliding() es true. Queremos que devuelva true si NO choca.
-	return not raycast_vision.is_colliding()
+	# Si el rayo choca con algo, verificamos si ese algo es el jugador
+	if raycast_vision.is_colliding():
+		var objeto_chocado = raycast_vision.get_collider()
+		# Si chocó con el jugador (o con su propia zona que pueda interferir), hay visión
+		if objeto_chocado == jugador or objeto_chocado == self:
+			return true
+		# Si chocó con otra cosa (pared), no hay visión
+		return false
+		
+	# Si no chocó con nada (raro, pero posible si el jugador no tiene colisión en esa capa)
+	return true
 
 func es_punto_caminable(punto: Vector2) -> bool:
 	# Apuntamos el rayo hacia el punto de destino
