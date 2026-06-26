@@ -27,6 +27,7 @@ class_name Enemigo
 # entregue el mana al morir y este no se pierda.
 var jugador : Entidad = null
 var jugador_en_rango : bool = false
+var raycast_vision: RayCast2D
 
 # es una referencua al nodo de animaciones 
 @onready var animacion: AnimationPlayer = get_node("AnimationPlayer")
@@ -41,6 +42,43 @@ func _ready():
 	super._ready()
 	# Buscamos al jugador en el grupo que creamos antes
 	jugador = get_tree().get_first_node_in_group("player")
+	
+	# Creamos el raycast dinámicamente para no obligar al usuario a editar 20 escenas
+	raycast_vision = RayCast2D.new()
+	raycast_vision.enabled = false # Lo actualizamos solo cuando lo necesitamos por rendimiento
+	raycast_vision.collision_mask = 1 # Asumimos que las paredes están en la capa 1
+	add_child(raycast_vision)
+
+func tiene_linea_de_vision() -> bool:
+	if not jugador: return false
+	
+	var distancia = global_position.distance_to(jugador.global_position)
+	if distancia > distancia_vision:
+		return false
+		
+	# Apuntamos el rayo hacia el jugador
+	raycast_vision.global_position = global_position
+	raycast_vision.target_position = raycast_vision.to_local(jugador.global_position)
+	raycast_vision.force_raycast_update()
+	
+	# Si el rayo choca con algo, verificamos si ese algo es el jugador
+	if raycast_vision.is_colliding():
+		var objeto_chocado = raycast_vision.get_collider()
+		# Si chocó con el jugador (o con su propia zona que pueda interferir), hay visión
+		if objeto_chocado == jugador or objeto_chocado == self:
+			return true
+		# Si chocó con otra cosa (pared), no hay visión
+		return false
+		
+	# Si no chocó con nada (raro, pero posible si el jugador no tiene colisión en esa capa)
+	return true
+
+func es_punto_caminable(punto: Vector2) -> bool:
+	# Apuntamos el rayo hacia el punto de destino
+	raycast_vision.global_position = global_position
+	raycast_vision.target_position = raycast_vision.to_local(punto)
+	raycast_vision.force_raycast_update()
+	return not raycast_vision.is_colliding()
 
 func morir():
 	#ya no suma al morir como orden porque si, ahora solatara el mana bien

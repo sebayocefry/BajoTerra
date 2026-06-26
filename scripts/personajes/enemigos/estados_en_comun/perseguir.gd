@@ -3,7 +3,9 @@ extends Estado
 var zona_ataque: Area2D
 
 func entrar():
-	if animador.current_animation != enemigo.anim_movimiento:
+	if enemigo.has_method("actualizar_animacion"):
+		enemigo.actualizar_animacion("run")
+	elif animador.current_animation != enemigo.anim_movimiento:
 		animador.play(enemigo.anim_movimiento)
 		
 	if not zona_ataque:
@@ -32,12 +34,10 @@ func actualizar_fisica(_delta: float):
 	if not enemigo.jugador:
 		return
 		
-	# Solo medimos distancia para saber si el jugador se escapo de la vista
-	var distancia = enemigo.global_position.distance_to(enemigo.jugador.global_position)
-	
-	if distancia > enemigo.distancia_vision:
+	# Si pierde línea de visión (se esconde detrás de un muro) o se aleja demasiado
+	if not enemigo.tiene_linea_de_vision():
 		transicion.emit("Reposo")
-	elif enemigo.jugador_en_rango or distancia <= enemigo.distancia_ataque:
+	elif enemigo.jugador_en_rango or enemigo.global_position.distance_to(enemigo.jugador.global_position) <= enemigo.distancia_ataque:
 		# Si está en el área o lo suficientemente cerca (respaldo por si choca físicamente antes de entrar al área)
 		enemigo.jugador_en_rango = true
 		transicion.emit("Atacar")
@@ -46,10 +46,15 @@ func actualizar_fisica(_delta: float):
 		var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
 		enemigo.velocity = direccion * enemigo.velocidad
 		
-		# Truco del espejo
-		if direccion.x < 0:
-			visual.flip_h = true
-		elif direccion.x > 0:
-			visual.flip_h = false
+		if enemigo.has_method("actualizar_animacion"):
+			if enemigo.has_method("actualizar_direccion"):
+				enemigo.actualizar_direccion(direccion)
+			enemigo.actualizar_animacion("run")
+		else:
+			# Truco del espejo
+			if direccion.x < 0:
+				visual.flip_h = true
+			elif direccion.x > 0:
+				visual.flip_h = false
 		
 		enemigo.move_and_slide()

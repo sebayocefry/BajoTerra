@@ -4,6 +4,7 @@ class_name GestorNivel
 
 @export var habitacion_inicial: String = "res://escenas/niveles/nivel1/habitacion_1_nivel1.tscn"
 @export var spawn_inicial: String = "spawn_entrada"
+@export var lista_musica: Array[AudioStream] = []
 
 @onready var contenedor_habitaciones = %"ContenedorHabitaciones"
 @onready var player = %"Jugador"
@@ -14,6 +15,10 @@ var transicionando := false
 
 func _ready():
 	Eventos.transicion_habitacion_solicitada.connect(_on_transicion_habitacion_solicitada)
+	
+	# Inicia la lista de reproducción usando las canciones asignadas en el inspector
+	if not lista_musica.is_empty():
+		AudioManager.play_music(lista_musica)
 
 	# Si venimos de una escena historia standalone, DatosJugador guarda en qué
 	# habitación hay que continuar. Lo consumimos aquí y arrancamos desde ahí.

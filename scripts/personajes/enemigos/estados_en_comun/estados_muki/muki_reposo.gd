@@ -15,13 +15,10 @@ func entrar():
 
 func actualizar(delta):
 	tiempo_actual -= delta
-
-	if enemigo.jugador != null:
-		var distancia = enemigo.global_position.distance_to(enemigo.jugador.global_position)
-		# Solo persigue si el jugador entra al rango de visión
-		if distancia < enemigo.distancia_vision:
-			transicion.emit("MukiHostigar")
-			return
+	
+	if enemigo.jugador and enemigo.tiene_linea_de_vision():
+		transicion.emit("MukiHostigar")
+		return
 
 	# Si pasó el tiempo de reposo y no hay jugador cerca, sigue esperando
 	if tiempo_actual <= 0:

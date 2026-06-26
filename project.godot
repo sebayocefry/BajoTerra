@@ -27,6 +27,7 @@ PantallaMuerte="*res://autoLoad/PantallaMuerte.tscn"
 MenuTienda="*res://autoLoad/MenuTienda.tscn"
 LevelTransition="*res://escenas/transicion/level_transition.tscn"
 DatosJugador="*res://autoLoad/DatosJugador.gd"
+AudioManager="*uid://cupy336r07jvy"
 GestorEscenas="*res://autoLoad/gestorEscenas.gd"
 SistemaGuardado="*res://autoLoad/SistemaGuardado.gd"
 
