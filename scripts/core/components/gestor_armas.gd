@@ -6,6 +6,7 @@ class_name Gestor_armas
 @onready var audio_disparo: AudioStreamPlayer2D = $Disparo
 @onready var audio_sin_municion: AudioStreamPlayer2D = $SinMunicion
 @export var armas_disponibles : Array[Arma] = []
+@export var icono_manos_libres: Texture2D
 
 var indice_arma_actual: int = 0
 var arma_equipada: Arma
@@ -52,7 +53,9 @@ func apretar_gatillo(direccion: Vector2) -> void:
 	tiempo_enfriamiento = arma_equipada.cadencia
 	var jugador := owner as Player
 	if jugador and jugador.mana >= arma_equipada.costo_mana:
-		audio_disparo.play()
+		# La dinamita (y otras armas no disparadas a bala) no usan el sonido de disparo de pistola.
+		if not arma_equipada is ArmaLanzable:
+			audio_disparo.play()
 		Eventos.sacudir_camara.emit(1.5, 0.08) # Pequeño temblor al disparar
 	else:
 		audio_sin_municion.play()
@@ -75,20 +78,24 @@ func cambiar_arma(direccion: int):
 	elif indice_arma_actual < 0:
 		indice_arma_actual = armas_disponibles.size() - 1
 
-	# Mostrar el brazo la primera vez que el jugador cambia de arma
-	var jugador := owner as Player
-	if is_instance_valid(jugador) and is_instance_valid(jugador.brazo_arma):
-		jugador.brazo_arma.visible = true
-
 	equipar_arma(armas_disponibles[indice_arma_actual])
 
 
 func equipar_arma(nueva_arma: Arma):
 	arma_equipada = nueva_arma
 	sprite_arma.visible = false
+	var jugador := owner as Player
+
+	if nueva_arma == null:
+		# Manos libres: sin arma, sin brazo visible, sin cooldown.
+		tiempo_enfriamiento = 0.0
+		Eventos.arma_equipada_cambiada.emit(icono_manos_libres)
+		if is_instance_valid(jugador) and is_instance_valid(jugador.brazo_arma):
+			jugador.brazo_arma.visible = false
+		return
+
 	tiempo_enfriamiento = arma_equipada.cadencia
 	Eventos.arma_equipada_cambiada.emit(arma_equipada.icono)
 	# Actualizar brazo del jugador con los datos del arma equipada
-	var jugador := owner as Player
 	if is_instance_valid(jugador):
 		jugador.aplicar_datos_brazo(arma_equipada)

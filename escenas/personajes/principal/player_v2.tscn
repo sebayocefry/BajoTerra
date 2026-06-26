@@ -30,10 +30,10 @@
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
 [ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
 [ext_resource type="Script" uid="uid://v85gytgq76uc" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
-[ext_resource type="Resource" path="res://recursos/armas/picota.tres" id="30_q24jm"]
 [ext_resource type="Script" uid="uid://drrux4jvy225h" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
 [ext_resource type="Resource" uid="uid://cf8y6t82gtuwr" path="res://recursos/armas/dinamita.tres" id="31_urn3r"]
 [ext_resource type="Resource" path="res://recursos/armas/rifle.tres" id="33_rifle"]
+[ext_resource type="Texture2D" path="res://assets/iconos/mano.png" id="34_icono_mano"]
 [ext_resource type="Script" uid="uid://cu5arw70uur8w" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
 [ext_resource type="AudioStream" uid="uid://bva83lnus4xj7" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
 [ext_resource type="AudioStream" uid="uid://c3auk6hws2r8" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
@@ -264,7 +264,8 @@ script = ExtResource("10_oecxe")
 
 [node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
 script = ExtResource("13_0piy6")
-armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6"), ExtResource("30_q24jm"), ExtResource("31_urn3r"), ExtResource("33_rifle")])
+armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6"), ExtResource("31_urn3r"), ExtResource("33_rifle"), null])
+icono_manos_libres = ExtResource("34_icono_mano")
 
 [node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
 

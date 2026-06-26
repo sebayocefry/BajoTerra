@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://blqrwovw4vo7q" path="res://assets/sprite_bola/flame2/png/13.png" id="15_oayn4"]
 [ext_resource type="Texture2D" uid="uid://d3rc1mi3mgyxp" path="res://assets/sprite_bola/flame2/png/14.png" id="16_8fcnj"]
 [ext_resource type="Texture2D" uid="uid://mapmgderwjvm" path="res://assets/sprite_bola/flame2/png/15.png" id="17_1pbgb"]
+[ext_resource type="AudioStream" path="res://musica/efectos_disparo/dragon-studio-loud-explosion-425457.mp3" id="18_audio_exp"]
 
 [sub_resource type="CircleShape2D" id="Circle_1"]
 radius = 90.0
@@ -155,3 +156,6 @@ scale = Vector2(0.49901092, 0.48522034)
 sprite_frames = SubResource("SpriteFrames_ywfrm")
 frame = 15
 frame_progress = 1.0
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_audio_exp")

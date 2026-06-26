@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_dyn")
-velocidad_lanzamiento = 180.0
+velocidad_lanzamiento = 350.0
 dano = 70
 costo_mana = 0
 cadencia = 3.0

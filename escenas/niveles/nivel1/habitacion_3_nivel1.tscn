@@ -35,11 +35,11 @@ size = Vector2(64, 1138)
 size = Vector2(712.25, 125)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a0hbv"]
-radius = 47.33789
-height = 527.09827
+radius = 4.927063
+height = 510.04553
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvrvy"]
-radius = 35.46643
+radius = 4.8917236
 height = 351.5017
 
 [node name="habitacion1" type="Node2D" unique_id=1138420938]

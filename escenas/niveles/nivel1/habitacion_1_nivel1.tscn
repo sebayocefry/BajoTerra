@@ -4,16 +4,16 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="1_f0ece"]
 [ext_resource type="Texture2D" uid="uid://b61a21kjiifbc" path="res://assets/spritesMundos/level1/paredes/pared1_habitacion1_mundo1.png" id="2_j3y4y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="3_j466s"]
-[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
-[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
-[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
-[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
+[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
+[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
+[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
+[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="9_fv5mg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
-[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
 [ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="14_j466s"]
 [ext_resource type="PackedScene" uid="uid://bjiqp68k8ggwh" path="res://escenas/personajes/enemigos/fantasma.tscn" id="15_fv5mg"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="17_vasvg"]
@@ -37,6 +37,9 @@ size = Vector2(64, 1138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fs37"]
 size = Vector2(671.5, 125)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvhaj"]
+radius = 32.24903
 
 [sub_resource type="Gradient" id="Gradient_bvhaj"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -230,6 +233,34 @@ shape = SubResource("RectangleShape2D_8fs37")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="colisiones" unique_id=80576443]
 position = Vector2(1554, 92)
 shape = SubResource("RectangleShape2D_8fs37")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="colisiones" unique_id=964067195]
+position = Vector2(-220, 280)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="colisiones" unique_id=1590878181]
+position = Vector2(1251, 950)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="colisiones" unique_id=2118919100]
+position = Vector2(85, 286)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="colisiones" unique_id=1151753178]
+position = Vector2(1604, 369)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="colisiones" unique_id=1810471243]
+position = Vector2(355, 398)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="colisiones" unique_id=913497998]
+position = Vector2(1726, 950)
+shape = SubResource("CircleShape2D_bvhaj")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="colisiones" unique_id=1490390594]
+position = Vector2(114, 977)
+shape = SubResource("CircleShape2D_bvhaj")
 
 [node name="Sombras" type="Node2D" parent="." unique_id=527405941]
 
