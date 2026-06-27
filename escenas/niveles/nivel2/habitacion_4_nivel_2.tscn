@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_e67an"]
 [ext_resource type="PackedScene" uid="uid://bliujo2h13lcv" path="res://escenas/niveles/nivel2/puertas/puerta4_nivel2.tscn" id="3_h4n2"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_m8a4q"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="6_m8a4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8a4q"]
@@ -30,6 +30,9 @@ size = Vector2(535.5778, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8a4q"]
 size = Vector2(19.186508, 772.35754)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7rnx"]
+size = Vector2(2194.25, 60)
 
 [sub_resource type="Gradient" id="Gradient_e67an"]
 
@@ -247,6 +250,10 @@ shape = SubResource("RectangleShape2D_m8a4q")
 position = Vector2(2014, 849)
 rotation = 2.5691247
 shape = SubResource("RectangleShape2D_e67an")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=537677264]
+position = Vector2(1279, -126)
+shape = SubResource("RectangleShape2D_p7rnx")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=478352712]
 

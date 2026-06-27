@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c72xxq3thipwh" path="res://escenas/objetos/decoraciones/monster_green.tscn" id="7_glfcm"]
 [ext_resource type="PackedScene" uid="uid://dsvgrknfyiv2n" path="res://escenas/niveles/nivel2/puertas/puerta2_nivel2.tscn" id="8_glfcm"]
 [ext_resource type="PackedScene" uid="uid://ctb66iigg7b0b" path="res://escenas/objetos/decoraciones/scull.tscn" id="8_vxiaa"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="9_vxiaa"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="12_72d6e"]
 
@@ -45,6 +45,9 @@ radius = 29.068884
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72d6e"]
 size = Vector2(35, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv56h"]
+size = Vector2(2194.125, 60)
 
 [node name="habitacion" type="Node2D" unique_id=449706887]
 
@@ -382,6 +385,10 @@ shape = SubResource("CircleShape2D_q05xa")
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="colisiones" unique_id=1604069001]
 position = Vector2(1241, 302)
 shape = SubResource("CircleShape2D_q05xa")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="colisiones" unique_id=1697371173]
+position = Vector2(1036, -44)
+shape = SubResource("RectangleShape2D_rv56h")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1624122091]
 

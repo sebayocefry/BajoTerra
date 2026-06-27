@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://desm3qudufx48" path="res://assets/decoracion/esqueleto.png" id="8_hmltg"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="9_5n61j"]
 [ext_resource type="PackedScene" uid="uid://dykml77obfqgg" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitación3_nivel1.tscn" id="9_d556v"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="11_xoc2n"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="12_i27g1"]
 
@@ -41,6 +41,9 @@ height = 510.04553
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvrvy"]
 radius = 4.8917236
 height = 351.5017
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoc2n"]
+size = Vector2(2225.0625, 60)
 
 [node name="habitacion1" type="Node2D" unique_id=1138420938]
 
@@ -370,6 +373,10 @@ shape = SubResource("CapsuleShape2D_lvrvy")
 position = Vector2(893.00006, 926)
 rotation = -1.9355701
 shape = SubResource("CapsuleShape2D_lvrvy")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=1813799402]
+position = Vector2(1091.4688, -1)
+shape = SubResource("RectangleShape2D_xoc2n")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=1887721345]
 

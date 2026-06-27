@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_vxpvh"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
 [ext_resource type="PackedScene" uid="uid://ba0xps7ubued8" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion4_nivel1.tscn" id="6_h4n1"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="7_or5df"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="8_7jgji"]
 
@@ -49,6 +49,9 @@ size = Vector2(595.3434, 53.196075)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxpvh"]
 size = Vector2(663.5, 47.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jgji"]
+size = Vector2(2194.25, 60)
 
 [sub_resource type="Gradient" id="Gradient_or5df"]
 
@@ -293,6 +296,10 @@ shape = SubResource("RectangleShape2D_vxpvh")
 position = Vector2(1628, 275)
 rotation = 2.0367992
 shape = SubResource("CapsuleShape2D_c1")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=1126809521]
+position = Vector2(1076, 16)
+shape = SubResource("RectangleShape2D_7jgji")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=2034345363]
 

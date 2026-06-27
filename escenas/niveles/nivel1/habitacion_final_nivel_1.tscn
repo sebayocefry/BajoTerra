@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="9_h6etk"]
 [ext_resource type="Texture2D" uid="uid://f32nepnr6qhm" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/grave5_shadow1.png" id="10_ls27u"]
 [ext_resource type="PackedScene" uid="uid://c4vuletjsu27p" path="res://escenas/niveles/nivel1/puertas/puerta_salida_final_nivel1.tscn" id="13_1dk3o"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="15_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://cfen74p4gisas" path="res://escenas/personajes/jefes/jefe_nivel1.tscn" id="16_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="16_o17o7"]
@@ -46,7 +46,7 @@ fill = 1
 fill_from = Vector2(0.48, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6etk"]
-size = Vector2(148.5, 1567.375)
+size = Vector2(148.5, 1646.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls27u"]
 size = Vector2(1149.5, 110)
@@ -65,6 +65,9 @@ height = 108.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xff60"]
 radius = 61.0
 height = 122.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjb3x"]
+size = Vector2(3355.125, 52)
 
 [sub_resource type="Gradient" id="Gradient_kjb3x"]
 
@@ -385,7 +388,7 @@ position = Vector2(126, 264)
 [node name="colisiones" type="StaticBody2D" parent="." unique_id=1123319366]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones" unique_id=1506438120]
-position = Vector2(-78, 626.25)
+position = Vector2(-78, 586.46875)
 shape = SubResource("RectangleShape2D_h6etk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="colisiones" unique_id=1558468302]
@@ -457,6 +460,10 @@ shape = SubResource("RectangleShape2D_ls27u")
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="colisiones" unique_id=75486595]
 position = Vector2(175, 1090)
 shape = SubResource("CapsuleShape2D_1dk3o")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="colisiones" unique_id=1755195345]
+position = Vector2(1576, -348)
+shape = SubResource("RectangleShape2D_kjb3x")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=964374058]
 

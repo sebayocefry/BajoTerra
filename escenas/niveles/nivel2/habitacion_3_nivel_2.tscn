@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bt43cx0egit8x" path="res://escenas/objetos/decoraciones/estatua.tscn" id="5_37teh"]
 [ext_resource type="PackedScene" uid="uid://caflmqdfer0se" path="res://escenas/objetos/decoraciones/esqueleto_minero.tscn" id="6_hy2py"]
 [ext_resource type="Script" uid="uid://byegwu018djte" path="res://scripts/objetos/luces/estatua.gd" id="7_j7flu"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="8_4nv5p"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="8_4nv5p"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="9_chfdq"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="10_qvfx8"]
 
@@ -33,6 +33,9 @@ size = Vector2(122, 1112)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j7flu"]
 radius = 31.257
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvfx8"]
+size = Vector2(2194.25, 60)
 
 [node name="habitacion3_nivel2" type="Node2D" unique_id=1053186016]
 
@@ -271,6 +274,10 @@ shape = SubResource("CircleShape2D_j7flu")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="colisiones" unique_id=1804471295]
 position = Vector2(2080, 167)
 shape = SubResource("CircleShape2D_j7flu")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=874881902]
+position = Vector2(1186, -171)
+shape = SubResource("RectangleShape2D_qvfx8")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=2115726299]
 position = Vector2(0, 1)

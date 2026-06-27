@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bhsjw741rbkb2" path="res://escenas/objetos/decoraciones/mano.tscn" id="5_h1tvc"]
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="6_nudba"]
 [ext_resource type="Texture2D" uid="uid://cbqbjfrbqk5h3" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/skull_pile_shadow2.png" id="7_vdkgj"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="9_vdkgj"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="9_vdkgj"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="11_5n2y7"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="12_o71py"]
 
@@ -48,6 +48,9 @@ size = Vector2(31.414368, 780.7363)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o71py"]
 size = Vector2(796.3071, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w4k6"]
+size = Vector2(3500.125, 60)
 
 [sub_resource type="Gradient" id="Gradient_0w4k6"]
 
@@ -623,6 +626,10 @@ shape = SubResource("RectangleShape2D_o71py")
 position = Vector2(2474, 135.99988)
 rotation = -0.7592182
 shape = SubResource("RectangleShape2D_wwc18")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="colisiones" unique_id=390776785]
+position = Vector2(1611, -342)
+shape = SubResource("RectangleShape2D_0w4k6")
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=366138589]
 script = ExtResource("9_vdkgj")

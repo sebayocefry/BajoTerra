@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bc3q1fnbbmwvg" path="res://escenas/objetos/decoraciones/geyser.tscn" id="6_34fuf"]
 [ext_resource type="PackedScene" uid="uid://bxlhd7fmyt2j3" path="res://escenas/objetos/decoraciones/dragon_izq.tscn" id="7_o66dq"]
 [ext_resource type="PackedScene" uid="uid://dcb1rd05ea86y" path="res://escenas/niveles/nivel2/puertas/puerta_1_nivel2.tscn" id="8_g05gl"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
 [ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="9_g05gl"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="10_3ebfu"]
 
@@ -31,6 +31,9 @@ size = Vector2(1900, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1qbk"]
 size = Vector2(693, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pff3y"]
+size = Vector2(2194.25, 60)
 
 [node name="habitacion1_nivel2" type="Node2D" unique_id=791111738]
 
@@ -365,6 +368,10 @@ shape = SubResource("RectangleShape2D_h1qbk")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="colisiones" unique_id=595438290]
 position = Vector2(1547, 35)
 shape = SubResource("RectangleShape2D_h1qbk")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=1776426272]
+position = Vector2(1076, -21)
+shape = SubResource("RectangleShape2D_pff3y")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=876391030]
 

@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
 [ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="14_j466s"]
 [ext_resource type="PackedScene" uid="uid://bjiqp68k8ggwh" path="res://escenas/personajes/enemigos/fantasma.tscn" id="15_fv5mg"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="17_vasvg"]
@@ -30,7 +30,7 @@ shader_parameter/scale = 4.5030001663925
 size = Vector2(61, 1029)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxev"]
-size = Vector2(1972.5, 60)
+size = Vector2(2194.25, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63auv"]
 size = Vector2(64, 1138)
@@ -262,7 +262,12 @@ shape = SubResource("CircleShape2D_bvhaj")
 position = Vector2(114, 977)
 shape = SubResource("CircleShape2D_bvhaj")
 
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="colisiones" unique_id=1676322135]
+position = Vector2(1109, 56)
+shape = SubResource("RectangleShape2D_epxev")
+
 [node name="Sombras" type="Node2D" parent="." unique_id=527405941]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Sombras" unique_id=178150515]
 position = Vector2(911.99994, 61.999996)

@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b0iads0ntiw2i" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/web_rock2_shadow1.png" id="14_tvbrc"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="21_835cb"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="21_n4wuu"]
@@ -49,6 +49,9 @@ size = Vector2(48.25, 156)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n4wuu"]
 radius = 37.576588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_835cb"]
+size = Vector2(2194.25, 60)
 
 [sub_resource type="Gradient" id="Gradient_bvhaj"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -274,6 +277,10 @@ shape = SubResource("CircleShape2D_n4wuu")
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="colisiones" unique_id=107833929]
 position = Vector2(1614, 490)
 shape = SubResource("CircleShape2D_835cb")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="colisiones" unique_id=1127356739]
+position = Vector2(1080, 36)
+shape = SubResource("RectangleShape2D_835cb")
 
 [node name="Puertas" type="Node2D" parent="." unique_id=1431887662]
 
