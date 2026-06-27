@@ -1067,7 +1067,7 @@ motion_mode = 1
 script = ExtResource("1_xycwc")
 vida_fase_demonio = 900
 velocidad_anim_transformacion = 0.5
-distancia_vision = 600.0
+distancia_vision = 3000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946553770]
 position = Vector2(22, -412.99997)
