@@ -36,7 +36,7 @@ position = Vector2(-1, -866.25)
 shape = SubResource("RectangleShape2D_s4v4f")
 
 [node name="abajo" type="CollisionShape2D" parent="StaticBody2D" unique_id=1837176042]
-position = Vector2(2.75, 855)
+position = Vector2(2196, 771)
 shape = SubResource("RectangleShape2D_qdgj3")
 
 [node name="izquierda" type="CollisionShape2D" parent="StaticBody2D" unique_id=256807822]
@@ -82,3 +82,6 @@ position = Vector2(1378, -698)
 [node name="JefeNivel1" parent="." unique_id=421596498 instance=ExtResource("8_mied4")]
 modulate = Color(0.804255, 0.804255, 0.804255, 0.8666667)
 position = Vector2(-466, -323)
+
+[node name="JefeSlime2" parent="." unique_id=566232953 instance=ExtResource("9_pqfd2")]
+position = Vector2(-580, -577)

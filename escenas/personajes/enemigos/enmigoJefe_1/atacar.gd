@@ -23,9 +23,9 @@ func actualizar_fisica(delta):
 	var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
 
 	if direccion.x < 0:
-		sprite_chico.flip_h = true
-	elif direccion.x > 0:
 		sprite_chico.flip_h = false
+	elif direccion.x > 0:
+		sprite_chico.flip_h = true
 
 	if not enemigo.jugador_en_rango:
 		transicion.emit("Perseguir")

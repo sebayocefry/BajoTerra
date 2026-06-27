@@ -17,6 +17,18 @@ class_name EnemigoJefeBrr
 @export var mana_morir : int = 20
 @export var distancia_vision : float = 300.0
 
+
+@export_group("Curacion Demonio")
+@export var curacion_activada : bool = true
+@export var curaciones_maximas : int = 2
+@export var porcentaje_activar_curacion : float = 0.25
+@export var porcentaje_curacion : float = 0.75
+@export var anim_demonio_curacion : String = "demonio_curacion"
+@export var velocidad_anim_curacion : float = 1.0
+
+var curaciones_usadas : int = 0
+var curandose : bool = false
+
 @export_group("Animaciones Chico")
 @export var anim_reposo : String = "chico_idle"
 @export var anim_movimiento : String = "chico_correr"
@@ -48,6 +60,53 @@ var transformandose : bool = false
 @onready var zona_ataque_demonio : Area2D = $Zona_ataqueDemonio
 
 @onready var maquina_estados : MaquinaEstadoJefe = $maquina_Estado_2
+
+func debe_curarse_demonio() -> bool:
+	if not curacion_activada:
+		return false
+
+	if not fase_demonio:
+		return false
+
+	if transformandose:
+		return false
+
+	if curandose:
+		return false
+
+	if curaciones_usadas >= curaciones_maximas:
+		return false
+
+	var vida_limite = vida_maxima * porcentaje_activar_curacion
+
+	if vida <= vida_limite:
+		return true
+
+	return false
+
+
+func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
+	if estado_invulnerable:
+		print("El jefe está invulnerable. No recibe daño.")
+		return
+
+	vida -= cantidad
+	empuje_actual = vector_empuje
+
+	print(nombre_entidad, " recibió ", cantidad, " de daño. Vida restante: ", vida)
+
+	if debe_curarse_demonio():
+		curandose = true
+		estado_invulnerable = true
+		velocity = Vector2.ZERO
+		move_and_slide()
+
+		print("El jefe demonio empieza curación.")
+		maquina_estados.cambiar_estado("CuracionDemonio")
+		return
+
+	if vida <= 0:
+		morir()
 
 func _ready():
 	super._ready()
@@ -112,6 +171,12 @@ func morir():
 		get_tree().current_scene.call_deferred("add_child", nuevo_cristal)
 
 	super.morir()
+	
+	
+	
+	
+	
+	
 
 func _on_zona_ataque_body_entered(body):
 	if body.is_in_group("player"):

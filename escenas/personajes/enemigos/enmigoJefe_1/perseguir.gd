@@ -38,9 +38,9 @@ func actualizar_fisica(_delta):
 
 	if direccion.x < 0:
 		sprite_chico.flip_h = true
-		sprite_demonio.flip_h = true
+		sprite_demonio.flip_h = false
 	elif direccion.x > 0:
 		sprite_chico.flip_h = false
-		sprite_demonio.flip_h = false
+		sprite_demonio.flip_h = true
 
 	enemigo.move_and_slide()
