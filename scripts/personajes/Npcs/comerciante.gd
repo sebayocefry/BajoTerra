@@ -35,13 +35,23 @@ func abrir_tienda():
 
 func intentar_comprar_objeto(jugador: Player, objeto_a_comprar: Objeto):
 	var costo = objeto_a_comprar.precio_oro
-	
+
 	if not jugador.tiene_oro_suficiente(costo):
 		print("El comerciante te rechaza: No tienes oro. Cuesta: ", costo)
 		return false
-		
+
+	# Las armas no van al inventario de objetos: se agregan directo al ciclo de armas (tecla Q).
+	if objeto_a_comprar is Arma:
+		if jugador.gestor_armas.armas_disponibles.has(objeto_a_comprar):
+			print("Ya tienes esa arma.")
+			return false
+		jugador.gestor_armas.armas_disponibles.append(objeto_a_comprar)
+		jugador.gastar_oro(costo)
+		print("Transaccion exitosa: arma agregada al inventario de armas.")
+		return true
+
 	var se_pudo_guardar = jugador.recibir_objeto(objeto_a_comprar)
-	
+
 	if se_pudo_guardar:
 		jugador.gastar_oro(costo)
 		print("Transaccion exitosa")

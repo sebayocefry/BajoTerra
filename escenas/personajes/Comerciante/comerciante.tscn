@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cae2yq6txkmps" path="res://scripts/objetos/objeto.gd" id="2_nsn2m"]
 [ext_resource type="Resource" path="res://pocion_vida.tres" id="3_6xl14"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="4_laldv"]
+[ext_resource type="Resource" uid="uid://b4pha3mitqjdx" path="res://recursos/consumibles/pocion_mana.tres" id="5_pmana"]
+[ext_resource type="Resource" path="res://recursos/armas/escopeta.tres" id="6_escopeta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21kyf"]
 size = Vector2(176, 188)
@@ -14,7 +16,7 @@ size = Vector2(281, 234)
 
 [node name="Comerciante" type="StaticBody2D" unique_id=631148056]
 script = ExtResource("2_21kyf")
-inventario_tienda = Array[ExtResource("2_nsn2m")]([ExtResource("3_6xl14"), ExtResource("4_laldv"), null])
+inventario_tienda = Array[ExtResource("2_nsn2m")]([ExtResource("3_6xl14"), ExtResource("4_laldv"), ExtResource("5_pmana"), ExtResource("6_escopeta")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166120188]
 position = Vector2(-60.499996, -49.499992)

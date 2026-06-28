@@ -1,3 +1,13 @@
-[gd_resource type="Resource" format=3 uid="uid://b4pha3mitqjdx"]
+[gd_resource type="Resource" script_class="Consumible" format=3 uid="uid://b4pha3mitqjdx"]
+
+[ext_resource type="Script" uid="uid://cfvgcgcvi2o8" path="res://scripts/objetos/consumibles/consumible.gd" id="1_mana"]
+[ext_resource type="Texture2D" path="res://assets/iconos/consumible_mana_munición.png" id="2_icono"]
 
 [resource]
+script = ExtResource("1_mana")
+recupera_mana = 200
+nombre = "Munición de Maná"
+descripcion = "Cristal de maná concentrado, recarga tus disparos."
+icono = ExtResource("2_icono")
+precio_oro = 30
+metadata/_custom_type_script = "uid://cfvgcgcvi2o8"

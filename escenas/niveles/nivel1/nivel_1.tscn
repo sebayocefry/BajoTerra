@@ -12,6 +12,7 @@
 unique_name_in_owner = true
 z_index = 5
 position = Vector2(108, 126)
+oro = 100
 velocidad = 200
 
 [node name="Gui" parent="." unique_id=1866949275 instance=ExtResource("2_lg0wv")]

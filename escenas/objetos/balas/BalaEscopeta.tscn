@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bq3cc3m4cyipk"]
+
+[ext_resource type="Script" uid="uid://bb6gc6gsbycjg" path="res://scripts/objetos/balas/bala.gd" id="1_bala"]
+[ext_resource type="Texture2D" uid="uid://cp0puil61lmjc" path="res://assets/spritesBalas/All_Fire_Bullet_Pixel_16x16_00.png" id="2_ohvfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohvfi"]
+atlas = ExtResource("2_ohvfi")
+region = Rect2(220, 353, 44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tndc8"]
+atlas = ExtResource("2_ohvfi")
+region = Rect2(264, 353, 44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47vkn"]
+atlas = ExtResource("2_ohvfi")
+region = Rect2(308, 353, 44, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_balaescopeta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohvfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tndc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47vkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_balaescopeta"]
+radius = 14.0
+
+[node name="Area2D" type="Area2D" unique_id=1140142405]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_bala")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2046812703]
+sprite_frames = SubResource("SpriteFrames_balaescopeta")
+autoplay = "default"
+frame_progress = 0.078093864
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=724266202]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_balaescopeta")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=123445962]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
