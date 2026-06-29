@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://dhvc83odub52o"]
+[gd_scene load_steps=31 format=3 uid="uid://dhvc83odub52o"]
 
-[ext_resource type="Script" path="res://escenas/niveles/nivel1/habitacion_historia3_final.gd" id="1_oxwue"]
+[ext_resource type="Script" uid="uid://bkf8ko7h3gacb" path="res://escenas/niveles/nivel1/habitacion_historia3_final.gd" id="1_oxwue"]
 [ext_resource type="Texture2D" uid="uid://cvujql8nmly87" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 7 jun 2026, 05_56_40 p.m..png" id="2_oxwue"]
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="3_lxrg3"]
 [ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="4_qho64"]
-[ext_resource type="Texture2D" uid="uid://68oj3wthtep" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_39 p.m. (1).png" id="5_iy054"]
-[ext_resource type="Texture2D" uid="uid://c2q85cp2aqowc" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_40 p.m. (2).png" id="6_x2hq7"]
-[ext_resource type="Texture2D" uid="uid://cdyi8md2rnnnh" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_40 p.m. (3).png" id="7_pyb8o"]
+[ext_resource type="Texture2D" uid="uid://duun0ft5ncdec" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_39 p.m. (1).png" id="5_iy054"]
+[ext_resource type="Texture2D" uid="uid://bqh423ogbtwjk" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_40 p.m. (2).png" id="6_x2hq7"]
+[ext_resource type="Texture2D" uid="uid://bo2kgp2g47iug" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_40 p.m. (3).png" id="7_pyb8o"]
 [ext_resource type="Script" uid="uid://bmccugu5pch84" path="res://escenas/niveles/nivel1/lampara.gd" id="8_puvdk"]
 [ext_resource type="Texture2D" uid="uid://cg3s2doh45wva" path="res://assets/decoracion/vela_frame_2.png" id="9_swdul"]
 [ext_resource type="Texture2D" uid="uid://ba4j23unj42kn" path="res://assets/decoracion/vela_frame_3.png" id="10_ej2fp"]
@@ -318,13 +318,6 @@ texture_scale = 1.19
 position = Vector2(797, 823)
 scale = Vector2(1.1868399, 1.4278297)
 velocidad = 61
-
-[node name="Camera2D" parent="Jugador2"]
-zoom = Vector2(1.016, 1.016)
-limit_left = 4
-limit_top = 7
-limit_right = 1916
-limit_bottom = 1071
 
 [node name="lampara" type="AnimatedSprite2D" parent="."]
 visible = false
