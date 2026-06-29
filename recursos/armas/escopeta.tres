@@ -25,4 +25,4 @@ brazo_offset_izquierda = Vector2(-17, 20)
 brazo_escala = Vector2(0.069, 0.056)
 nombre = "Escopeta"
 icono = ExtResource("6_icono")
-precio_oro = 15
+precio_oro = 10
