@@ -42,6 +42,13 @@ func cargar_estado_jugador(player: Node):
 		vida_actual = player.vida
 		mana_actual = player.mana
 		oro_actual = player.oro
+		
+		# ¡IMPORTANTE! Limpiar el progreso de sesiones anteriores
+		habitaciones_limpias.clear()
+		inventario.clear()
+		habitacion_resume = ""
+		spawn_resume = "spawn_entrada"
+		
 		partida_iniciada = true
 		
 	player.vida = vida_actual

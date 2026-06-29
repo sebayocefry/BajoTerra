@@ -14,11 +14,11 @@ func _get_true_player() -> Node:
     return null
 
 func cambiar_nivel(ruta_nuevo_nivel: String):
-    #  Antes de destruir la escena, guardamos al jugador
+    # Antes de destruir la escena, guardamos al jugador
     var player = _get_true_player()
-    if player:
+    if player and player.vida > 0:
         DatosJugador.guardar_estado_jugador(player)
-    else:
+    elif not player:
         push_warning("Arquitectura: No se encontró un nodo en el grupo 'player' para guardar.")
     call_deferred("_transicion_segura", ruta_nuevo_nivel)
 
