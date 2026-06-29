@@ -10,6 +10,9 @@ extends CanvasLayer
 @onready var contenedor_tutorial = $ContenedorTutorial
 @onready var mensaje_tutorial = %MensajeTutorial
 
+var fondo_foto: ColorRect
+var imagen_foto: TextureRect
+
 func _ready():
 	Eventos.vida_actualizada.connect(_on_vida_actualizada)
 	Eventos.mana_actualizado.connect(_on_mana_actualizado)
@@ -19,7 +22,38 @@ func _ready():
 	Eventos.progreso_guardado.connect(_on_progreso_guardado)
 	Eventos.mostrar_mensaje_tutorial.connect(_on_mostrar_mensaje_tutorial)
 	Eventos.ocultar_mensaje_tutorial.connect(_on_ocultar_mensaje_tutorial)
+	Eventos.mostrar_foto.connect(_on_mostrar_foto)
+	Eventos.ocultar_foto.connect(_on_ocultar_foto)
 	imagen_guardado.texture = load("res://assets/Fondos/partida_guardad.png")
+	
+	_crear_nodos_foto()
+
+func _crear_nodos_foto():
+	fondo_foto = ColorRect.new()
+	fondo_foto.color = Color(0, 0, 0, 0.8) # Fondo semi-transparente
+	fondo_foto.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fondo_foto.visible = false
+	fondo_foto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(fondo_foto)
+	
+	imagen_foto = TextureRect.new()
+	imagen_foto.set_anchors_preset(Control.PRESET_FULL_RECT)
+	imagen_foto.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	imagen_foto.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	imagen_foto.visible = false
+	imagen_foto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(imagen_foto)
+
+func _on_mostrar_foto(textura: Texture2D):
+	if imagen_foto and fondo_foto:
+		imagen_foto.texture = textura
+		fondo_foto.visible = true
+		imagen_foto.visible = true
+
+func _on_ocultar_foto():
+	if imagen_foto and fondo_foto:
+		fondo_foto.visible = false
+		imagen_foto.visible = false
 
 func _on_vida_actualizada(v_actual: int, v_max: int):
 	if barra_vida:

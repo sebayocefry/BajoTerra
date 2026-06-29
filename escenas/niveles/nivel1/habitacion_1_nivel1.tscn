@@ -4,18 +4,20 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="1_f0ece"]
 [ext_resource type="Texture2D" uid="uid://b61a21kjiifbc" path="res://assets/spritesMundos/level1/paredes/pared1_habitacion1_mundo1.png" id="2_j3y4y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="3_j466s"]
-[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
-[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
-[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
-[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
+[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="4_wq0bd"]
+[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="5_heiiv"]
+[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="6_7767w"]
+[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="7_f0ece"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="9_fv5mg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="10_vasvg"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="11_heiiv"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="12_7767w"]
 [ext_resource type="PackedScene" uid="uid://bktmyv0newtpq" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion1.tscn" id="12_heiiv"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="13_j466s"]
 [ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="14_j466s"]
 [ext_resource type="PackedScene" uid="uid://bjiqp68k8ggwh" path="res://escenas/personajes/enemigos/fantasma.tscn" id="15_fv5mg"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerFoto.tscn" id="16_xhco0"]
+[ext_resource type="Texture2D" uid="uid://ccg40ivqx512m" path="res://assets/Fondos/FondoTienda2..png" id="17_oa1rv"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="17_vasvg"]
 [ext_resource type="Texture2D" uid="uid://bgldb7idvk1t7" path="res://assets/assetTutotrial/abuela.png" id="18_lr6cd"]
 [ext_resource type="Texture2D" uid="uid://b5bu7h18iyqq0" path="res://assets/assetTutotrial/TablaTuto-Photoroom.png" id="19_bvhaj"]
@@ -400,10 +402,10 @@ position = Vector2(905, 328)
 [node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
 
 [node name="Chonchon" parent="Enemigos" unique_id=281540093 instance=ExtResource("14_j466s")]
-position = Vector2(1344, 268)
+position = Vector2(1291, 200)
 
 [node name="Fantasma" parent="Enemigos" unique_id=1496251229 instance=ExtResource("15_fv5mg")]
-position = Vector2(512, 290)
+position = Vector2(924, 151)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=1494421045]
 script = ExtResource("13_j466s")
@@ -425,7 +427,7 @@ lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_vasvg")
 
 [node name="MensajeCaminar" parent="." unique_id=1412274021 instance=ExtResource("17_vasvg")]
-position = Vector2(729, 848)
+position = Vector2(742, 682)
 mensaje = "Moverse: [W][A][S][D]"
 icono_personalizado = ExtResource("18_lr6cd")
 
@@ -437,4 +439,9 @@ icono_personalizado = ExtResource("19_bvhaj")
 [node name="MensajeMochila" parent="." unique_id=57464224 instance=ExtResource("17_vasvg")]
 position = Vector2(1092, 312)
 mensaje = "Presiona [M] para abrir el inventario."
+icono_personalizado = ExtResource("19_bvhaj")
+
+[node name="TriggerFoto" parent="." unique_id=1395661106 instance=ExtResource("16_xhco0")]
+position = Vector2(754, 853)
+foto_a_mostrar = ExtResource("17_oa1rv")
 icono_personalizado = ExtResource("19_bvhaj")

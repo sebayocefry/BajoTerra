@@ -27,3 +27,7 @@ signal sacudir_camara(intensidad: float, duracion: float)
 # Tutorial
 signal mostrar_mensaje_tutorial(texto: String, duracion: float)
 signal ocultar_mensaje_tutorial()
+
+# Fotos
+signal mostrar_foto(textura: Texture2D)
+signal ocultar_foto()
