@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var texto_oro = %TextoOro
 @onready var icono_arma = %IconoArma
 @onready var icono_objeto = %IconoObjeto
+@onready var icono_objeto2 = %IconoObjeto2
 @onready var imagen_guardado = %ImagenGuardado
 @onready var contenedor_tutorial = $ContenedorTutorial
 @onready var mensaje_tutorial = %MensajeTutorial
@@ -38,9 +39,13 @@ func _on_arma_cambiada(nuevo_sprite: Texture2D):
 	if icono_arma:
 		icono_arma.texture = nuevo_sprite
 
-func _on_objeto_cambiado(nuevo_sprite: Texture2D):
+func _on_objeto_cambiado(icono1: Texture2D, icono2: Texture2D, slot_activo: int):
 	if icono_objeto:
-		icono_objeto.texture = nuevo_sprite
+		icono_objeto.texture = icono1
+		icono_objeto.get_parent().modulate = Color(1, 1, 1, 1) if slot_activo == 1 else Color(0.5, 0.5, 0.5, 1)
+	if icono_objeto2:
+		icono_objeto2.texture = icono2
+		icono_objeto2.get_parent().modulate = Color(1, 1, 1, 1) if slot_activo == 2 else Color(0.5, 0.5, 0.5, 1)
 
 func _on_progreso_guardado():
 	var tween = create_tween()

@@ -4,7 +4,7 @@ extends Node
 signal vida_actualizada(vida_actual: int, vida_maxima: int)
 signal mana_actualizado(mana_actual: int)
 signal arma_equipada_cambiada(icono: Texture2D)
-signal consumible_equipado_cambiado(icono: Texture2D)
+signal consumible_equipado_cambiado(icono1: Texture2D, icono2: Texture2D, slot_activo: int)
 
 signal oro_actualizado(nuevo_total: int)
 
