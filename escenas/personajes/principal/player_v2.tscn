@@ -1,40 +1,40 @@
-[gd_scene format=3 uid="uid://cfuireiuab5gd"]
+[gd_scene load_steps=65 format=3 uid="uid://cfuireiuab5gd"]
 
 [ext_resource type="Script" uid="uid://cae2yq6txkmps" path="res://scripts/objetos/objeto.gd" id="2_0fn1c"]
 [ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://pocion_vida.tres" id="3_0piy6"]
-[ext_resource type="Texture2D" uid="uid://eibimpldkhl6" path="res://assets/SpriteMinero/EstaticoFrente/estatico1.png" id="4_xw4gp"]
-[ext_resource type="Texture2D" uid="uid://84pmipnl7voh" path="res://assets/SpriteMinero/EstaticoFrente/estatico2.png" id="5_74tsq"]
-[ext_resource type="Texture2D" uid="uid://cnyt1t8pc55jw" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI1.png" id="6_p4r2q"]
-[ext_resource type="Texture2D" uid="uid://bfhdinqjhm5uc" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI2.png" id="7_2n6m8"]
-[ext_resource type="Texture2D" uid="uid://b8bra37dpde5b" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD1.png" id="8_dnn21"]
-[ext_resource type="Texture2D" uid="uid://dfyr72nxj0tro" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD2.png" id="9_ajrcj"]
-[ext_resource type="Script" uid="uid://cwoyba3gtlf46" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
-[ext_resource type="Texture2D" uid="uid://vpyk80ym31kl" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE1.png" id="10_a6vc4"]
+[ext_resource type="Texture2D" uid="uid://bmqup5q00njwa" path="res://assets/SpriteMinero/EstaticoFrente/estatico1.png" id="4_xw4gp"]
+[ext_resource type="Texture2D" uid="uid://dr5dwswu3822h" path="res://assets/SpriteMinero/EstaticoFrente/estatico2.png" id="5_74tsq"]
+[ext_resource type="Texture2D" uid="uid://bikbkqa7sksr4" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI1.png" id="6_p4r2q"]
+[ext_resource type="Texture2D" uid="uid://dm330vgbel5su" path="res://assets/SpriteMinero/EstaticoIzquierdo/estaticoI2.png" id="7_2n6m8"]
+[ext_resource type="Texture2D" uid="uid://bvrxhmw7a3y26" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD1.png" id="8_dnn21"]
+[ext_resource type="Texture2D" uid="uid://do4lrrpw7ifof" path="res://assets/SpriteMinero/EstaticoDerecho/estaticoD2.png" id="9_ajrcj"]
+[ext_resource type="Script" uid="uid://c83frxsjrjl56" path="res://scripts/personajes/principal/player.gd" id="9_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://bqdu8xkaw5p7y" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE1.png" id="10_a6vc4"]
 [ext_resource type="Script" uid="uid://8osbbkl1qr1o" path="res://scripts/core/components/movimiento.gd" id="10_oecxe"]
-[ext_resource type="Texture2D" uid="uid://c6ixemevgtcma" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE2.png" id="11_yvfvj"]
-[ext_resource type="Texture2D" uid="uid://drpm7j36y8ckq" path="res://assets/SpriteMinero/RunFrente/run1.png" id="12_woisn"]
-[ext_resource type="Script" uid="uid://dgseh1f2b6lyw" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
-[ext_resource type="Texture2D" uid="uid://cc4a8lb8yo2we" path="res://assets/SpriteMinero/RunFrente/run2.png" id="13_418ft"]
-[ext_resource type="Texture2D" uid="uid://yq1fxdrsb8se" path="res://assets/SpriteMinero/RunFrente/run3.png" id="14_dgqpe"]
+[ext_resource type="Texture2D" uid="uid://8d7cwoq2vfeg" path="res://assets/SpriteMinero/EstaticoEspalda/estaticoE2.png" id="11_yvfvj"]
+[ext_resource type="Texture2D" uid="uid://dur1mqp0oeq8w" path="res://assets/SpriteMinero/RunFrente/run1.png" id="12_woisn"]
+[ext_resource type="Script" uid="uid://c2xtsj8kahojn" path="res://scripts/core/components/gestor_armas.gd" id="13_0piy6"]
+[ext_resource type="Texture2D" uid="uid://5yfvkijuj6i3" path="res://assets/SpriteMinero/RunFrente/run2.png" id="13_418ft"]
+[ext_resource type="Texture2D" uid="uid://dduufiv2xwsun" path="res://assets/SpriteMinero/RunFrente/run3.png" id="14_dgqpe"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="14_y2iy6"]
-[ext_resource type="Texture2D" uid="uid://2mimkoadpjin" path="res://assets/SpriteMinero/RunIzquierda/RunI1.png" id="15_7qt5a"]
-[ext_resource type="Texture2D" uid="uid://b55py085tkoe6" path="res://assets/SpriteMinero/RunIzquierda/RunI2.png" id="16_64nio"]
-[ext_resource type="Texture2D" uid="uid://bi51lb2deosly" path="res://assets/SpriteMinero/RunIzquierda/RunI3.png" id="17_so2i5"]
-[ext_resource type="Texture2D" uid="uid://dtvly44y8yqq5" path="res://assets/SpriteMinero/RunDerecha/RunD1.png" id="18_5gp22"]
-[ext_resource type="Texture2D" uid="uid://c00ovo8csrvfb" path="res://assets/SpriteMinero/RunDerecha/RunD2.png" id="19_w8si3"]
-[ext_resource type="Texture2D" uid="uid://cu1svbfa20e7c" path="res://assets/SpriteMinero/RunDerecha/RunD3.png" id="20_enyys"]
-[ext_resource type="Texture2D" uid="uid://cjyo4uqriq6r4" path="res://assets/SpriteMinero/RunEspalda/RunE1.png" id="21_djrho"]
-[ext_resource type="Texture2D" uid="uid://dhfx77h3qo0xc" path="res://assets/SpriteMinero/RunEspalda/RunE2.png" id="22_fdhd4"]
-[ext_resource type="Texture2D" uid="uid://dxy83rd14mr3o" path="res://assets/SpriteMinero/RunEspalda/RunE3.png" id="23_54uao"]
+[ext_resource type="Texture2D" uid="uid://crlsj2ylb00cw" path="res://assets/SpriteMinero/RunIzquierda/RunI1.png" id="15_7qt5a"]
+[ext_resource type="Texture2D" uid="uid://c8aycndr8pfqb" path="res://assets/SpriteMinero/RunIzquierda/RunI2.png" id="16_64nio"]
+[ext_resource type="Texture2D" uid="uid://cw7sta8o7wl3l" path="res://assets/SpriteMinero/RunIzquierda/RunI3.png" id="17_so2i5"]
+[ext_resource type="Texture2D" uid="uid://3t1dpfs1l1uc" path="res://assets/SpriteMinero/RunDerecha/RunD1.png" id="18_5gp22"]
+[ext_resource type="Texture2D" uid="uid://bcik24tsxot25" path="res://assets/SpriteMinero/RunDerecha/RunD2.png" id="19_w8si3"]
+[ext_resource type="Texture2D" uid="uid://boko7nr6nj5la" path="res://assets/SpriteMinero/RunDerecha/RunD3.png" id="20_enyys"]
+[ext_resource type="Texture2D" uid="uid://dn113bpt1uv71" path="res://assets/SpriteMinero/RunEspalda/RunE1.png" id="21_djrho"]
+[ext_resource type="Texture2D" uid="uid://dhqyi2dagkuc3" path="res://assets/SpriteMinero/RunEspalda/RunE2.png" id="22_fdhd4"]
+[ext_resource type="Texture2D" uid="uid://bgm08xsjodgxf" path="res://assets/SpriteMinero/RunEspalda/RunE3.png" id="23_54uao"]
 [ext_resource type="Texture2D" uid="uid://bx40pacgdyg7h" path="res://assets/decoracion/flashlight_4.png" id="27_74tsq"]
-[ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
+[ext_resource type="Script" uid="uid://caolkgxg7xw3s" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="28_p4r2q"]
 [ext_resource type="Script" uid="uid://dfvkbw34yvm1o" path="res://scripts/maquina_estados/maquina_estados.gd" id="29_p3vbo"]
 [ext_resource type="Script" uid="uid://v85gytgq76uc" path="res://scripts/maquina_estados/estado_activo.gd" id="30_kuclh"]
-[ext_resource type="Script" uid="uid://drrux4jvy225h" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
+[ext_resource type="Script" uid="uid://c0f6wwoornloo" path="res://scripts/core/components/Gestor_inventario.gd" id="31_gestorinv"]
 [ext_resource type="Resource" uid="uid://cf8y6t82gtuwr" path="res://recursos/armas/dinamita.tres" id="31_urn3r"]
-[ext_resource type="Resource" path="res://recursos/armas/rifle.tres" id="33_rifle"]
-[ext_resource type="Texture2D" path="res://assets/iconos/mano.png" id="34_icono_mano"]
 [ext_resource type="Script" uid="uid://cu5arw70uur8w" path="res://scripts/objetos/armas/arma.gd" id="32_armascript"]
+[ext_resource type="Resource" uid="uid://00fpuffsryx0" path="res://recursos/armas/rifle.tres" id="33_rifle"]
+[ext_resource type="Texture2D" uid="uid://bfq3hvvuqg21d" path="res://assets/iconos/mano.png" id="34_icono_mano"]
 [ext_resource type="AudioStream" uid="uid://bva83lnus4xj7" path="res://musica/sfx/Resident Evil 4 - Sound Effects - Handgun.mp3" id="sfx_disparo"]
 [ext_resource type="AudioStream" uid="uid://c3auk6hws2r8" path="res://musica/sfx/eaglaxle-not-seriuos-kick-3-530804.mp3" id="sfx_herido"]
 [ext_resource type="AudioStream" uid="uid://dk1v1aje7fpmo" path="res://musica/sfx/tomas_herudek-heartbeat-simple-529668.mp3" id="sfx_pocavida"]
@@ -224,7 +224,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
-size = Vector2(138.71875, 155.34375)
+size = Vector2(107, 148.67188)
 
 [sub_resource type="Gradient" id="Gradient_ambient"]
 offsets = PackedFloat32Array(0, 0.55, 1)
@@ -238,15 +238,15 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx50a"]
-size = Vector2(178, 166.5)
+size = Vector2(114, 148.25)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1943970634 groups=["player"]]
+[node name="Jugador" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("9_qfm1y")
 mana = 9999
 velocidad = 50
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058999725]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8.723518, 2.2435977)
 scale = Vector2(0.054453593, 0.04756583)
 sprite_frames = SubResource("SpriteFrames_fuw3a")
@@ -254,31 +254,30 @@ animation = &"run_left"
 autoplay = "idle_down"
 frame_progress = 0.10584652
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353022949]
-visible = false
-position = Vector2(-10, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, 3.3359375)
 shape = SubResource("RectangleShape2D_ur7pv")
 
-[node name="Movimiento" type="Node" parent="." unique_id=434910059]
+[node name="Movimiento" type="Node" parent="."]
 script = ExtResource("10_oecxe")
 
-[node name="Gestor_armas" type="Node2D" parent="." unique_id=1683583289]
+[node name="Gestor_armas" type="Node2D" parent="."]
 script = ExtResource("13_0piy6")
 armas_disponibles = Array[ExtResource("32_armascript")]([ExtResource("14_y2iy6"), ExtResource("31_urn3r"), ExtResource("33_rifle"), null])
 icono_manos_libres = ExtResource("34_icono_mano")
 
-[node name="Mano" type="Marker2D" parent="Gestor_armas" unique_id=454468367]
+[node name="Mano" type="Marker2D" parent="Gestor_armas"]
 
-[node name="SpriteArma" type="Sprite2D" parent="Gestor_armas" unique_id=555453063]
+[node name="SpriteArma" type="Sprite2D" parent="Gestor_armas"]
 scale = Vector2(0.1, 0.1)
 
-[node name="Disparo" type="AudioStreamPlayer2D" parent="Gestor_armas" unique_id=1499422157]
+[node name="Disparo" type="AudioStreamPlayer2D" parent="Gestor_armas"]
 stream = ExtResource("sfx_disparo")
 
-[node name="SinMunicion" type="AudioStreamPlayer2D" parent="Gestor_armas" unique_id=1128730355]
+[node name="SinMunicion" type="AudioStreamPlayer2D" parent="Gestor_armas"]
 stream = ExtResource("sfx_sinmunicion")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1755864465]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-9, 0)
 rotation = 3.141593
 scale = Vector2(0.13, 0.34)
@@ -289,47 +288,46 @@ texture = ExtResource("27_74tsq")
 offset = Vector2(0, -55)
 script = ExtResource("28_p4r2q")
 
-[node name="LuzAmbiente" type="PointLight2D" parent="." unique_id=1755864466]
+[node name="LuzAmbiente" type="PointLight2D" parent="."]
 scale = Vector2(0.28, 0.28)
 color = Color(0.9, 0.72, 0.38, 1)
 energy = 0.32
 texture = SubResource("GradientTexture2D_ambient")
 
-[node name="Gestor_inventario" type="Node" parent="." unique_id=987654322]
+[node name="Gestor_inventario" type="Node" parent="."]
 script = ExtResource("31_gestorinv")
 listaObjetos = Array[ExtResource("2_0fn1c")]([ExtResource("3_0piy6")])
 
-[node name="DetectorNPC" type="Area2D" parent="." unique_id=1088014150]
+[node name="DetectorNPC" type="Area2D" parent="."]
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorNPC" unique_id=951038440]
-visible = false
-position = Vector2(-8, -13)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorNPC"]
+position = Vector2(-8, -3.875)
 shape = SubResource("RectangleShape2D_rx50a")
 
-[node name="Maquina_estados" type="Node" parent="." unique_id=507663815]
+[node name="Maquina_estados" type="Node" parent="."]
 script = ExtResource("29_p3vbo")
 estado_inicial = NodePath("EstadoActivoJugador")
 
-[node name="EstadoActivoJugador" type="Node" parent="Maquina_estados" unique_id=1683118646]
+[node name="EstadoActivoJugador" type="Node" parent="Maquina_estados"]
 script = ExtResource("30_kuclh")
 
-[node name="EstadoDialogoJugador" type="Node" parent="Maquina_estados" unique_id=34504740]
+[node name="EstadoDialogoJugador" type="Node" parent="Maquina_estados"]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1792963425]
-limit_left = -10000006
-limit_top = -100
-limit_right = 9999994
-limit_bottom = 10000001
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, 0)
+zoom = Vector2(1.5, 1.5)
+limit_right = 9999981
+limit_bottom = 9999968
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="BrazoArma" type="Sprite2D" parent="." unique_id=112233446]
+[node name="BrazoArma" type="Sprite2D" parent="."]
 position = Vector2(-21, 22.000002)
 scale = Vector2(0.08050295, 0.11107275)
 
-[node name="AudioHerido" type="AudioStreamPlayer2D" parent="." unique_id=1115236857]
+[node name="AudioHerido" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("sfx_herido")
 
-[node name="AudioPocaVida" type="AudioStreamPlayer2D" parent="." unique_id=215814202]
+[node name="AudioPocaVida" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("sfx_pocavida")

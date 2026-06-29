@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="BajoTerra"
 run/main_scene="res://escenas/UI/menus/IU_Principal.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,7 +27,7 @@ PantallaMuerte="*res://autoLoad/PantallaMuerte.tscn"
 MenuTienda="*res://autoLoad/MenuTienda.tscn"
 LevelTransition="*res://escenas/transicion/level_transition.tscn"
 DatosJugador="*res://autoLoad/DatosJugador.gd"
-AudioManager="*uid://cupy336r07jvy"
+AudioManager="*res://escenas/Musica/AudioManager.tscn"
 GestorEscenas="*res://autoLoad/gestorEscenas.gd"
 SistemaGuardado="*res://autoLoad/SistemaGuardado.gd"
 

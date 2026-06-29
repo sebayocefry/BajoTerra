@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://b1x77dfagdfuy"]
+[gd_scene load_steps=9 format=3 uid="uid://b1x77dfagdfuy"]
 
-[ext_resource type="Script" uid="uid://j6itg2mwqsbt" path="res://scripts/UI/iu_principal.gd" id="1_uwkqv"]
-[ext_resource type="Texture2D" uid="uid://7qa6xv72pwmp" path="res://Mundo/ChatGPT Image 7 jun 2026, 06_36_10 p.m..png" id="2_2kxjt"]
-[ext_resource type="FontFile" uid="uid://kp6j0sxfwyr" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="3_4scsb"]
+[ext_resource type="Script" uid="uid://b7y370fuxa3da" path="res://scripts/UI/iu_principal.gd" id="1_uwkqv"]
+[ext_resource type="Texture2D" uid="uid://cdhpgvoi33tyi" path="res://Mundo/ChatGPT Image 7 jun 2026, 06_36_10 p.m..png" id="2_2kxjt"]
+[ext_resource type="FontFile" uid="uid://cixxb5xgufexy" path="res://Tipografia/blood_crow/bloodcrow.ttf" id="3_4scsb"]
 [ext_resource type="AudioStream" uid="uid://barr78ukadkp0" path="res://musica/intro/slimeyfox-the-last-terror-472321.mp3" id="4_1rqw0"]
 [ext_resource type="AudioStream" uid="uid://rs1qx1jkuwc5" path="res://musica/intro/universfield-mouse-click-117076.mp3" id="4_2kxjt"]
 
@@ -15,7 +15,7 @@ bg_color = Color(0.011764706, 0.023529412, 0.02745098, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4scsb"]
 bg_color = Color(0.011764706, 0.023529412, 0.02745098, 1)
 
-[node name="IU" type="Control" unique_id=600714324]
+[node name="IU" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uwkqv")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1484962842]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Fondo" type="TextureRect" parent="." unique_id=803374032]
+[node name="Fondo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ expand_mode = 2
 stretch_mode = 6
 metadata/_edit_group_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1565328156]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -59,33 +59,33 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 9
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1496847971]
+[node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4scsb")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_uwkqv")
 text = "Nueva Partida"
 
-[node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1400392731]
+[node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4scsb")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_akdx2")
 text = "Cargar Partida "
 
-[node name="Salir" type="Button" parent="VBoxContainer" unique_id=904138615]
+[node name="Salir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4scsb")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_4scsb")
 text = "SALIR"
 
-[node name="MusicaFondo" type="AudioStreamPlayer" parent="." unique_id=962353894]
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1rqw0")
 volume_db = -13.867
 autoplay = true
 
-[node name="Boton" type="AudioStreamPlayer" parent="." unique_id=693779609]
+[node name="Boton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2kxjt")
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]

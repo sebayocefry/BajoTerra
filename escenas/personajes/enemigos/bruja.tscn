@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dr6d610de3bvi"]
+[gd_scene load_steps=6 format=3 uid="uid://dr6d610de3bvi"]
 
-[ext_resource type="Script" uid="uid://kcdfh2ayfhwp" path="res://scripts/personajes/Npcs/npc_dialogo.gd" id="1_ryaqa"]
-[ext_resource type="Resource" uid="uid://ctwmp12nr8lx7" path="res://DialogosIntro/Dialogos_historia1.dialogue" id="2_yao7k"]
+[ext_resource type="Script" uid="uid://bg7kvebfgw6eq" path="res://scripts/personajes/Npcs/npc_dialogo.gd" id="1_ryaqa"]
+[ext_resource type="Resource" uid="uid://bgaxvi8bdsid2" path="res://DialogosIntro/Dialogos_historia1.dialogue" id="2_yao7k"]
 [ext_resource type="Texture2D" uid="uid://cq73vm2hp5jqg" path="res://escenas/personajes/Bruja/pixel_art_small (1).png" id="3_yao7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryaqa"]
@@ -21,6 +21,7 @@ scale = Vector2(1.8633293, 1.6269101)
 texture = ExtResource("3_yao7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(301, 555)
 shape = SubResource("RectangleShape2D_ryaqa")
 
