@@ -16,17 +16,24 @@ func _ready():
 
 	if DatosJugador.habitaciones_limpias.get(_nombre_escena, false):
 		for e in enemigos:
-			e.queue_free()
+			if e.has_signal("entidad_morir"):
+				e.queue_free()
 		if _puerta:
 			_puerta.desbloquear()
 		return
 
-	_enemigos_vivos = enemigos.size()
+	# Filtrar los que realmente son enemigos (por si arrastraron otros nodos por error)
+	var verdaderos_enemigos = []
+	for e in enemigos:
+		if e.has_signal("entidad_morir"):
+			verdaderos_enemigos.append(e)
+
+	_enemigos_vivos = verdaderos_enemigos.size()
 	if _enemigos_vivos > 0:
 		if _puerta:
 			_puerta.bloquear()
-		for e in enemigos:
-			if not e.entidad_morir.is_connected(_on_enemigo_muerto):
+		for e in verdaderos_enemigos:
+			if not e.is_connected("entidad_morir", _on_enemigo_muerto):
 				e.entidad_morir.connect(_on_enemigo_muerto)
 	else:
 		if _puerta:

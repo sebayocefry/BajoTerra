@@ -3,7 +3,10 @@ class_name Gestor_inventario
 
 @export var limite_inventario : int = 5
 @export var listaObjetos : Array[Objeto] = []
-var indice_objeto_seleccionado: int = 0
+
+var indice_qa_1: int = 0
+var indice_qa_2: int = -1
+var qa_activo: int = 1
 
 
 func _ready():
@@ -26,8 +29,14 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 	for i in range(listaObjetos.size()):
 		if listaObjetos[i] == null:
 			listaObjetos[i] = nuevo_objeto
-			if i == indice_objeto_seleccionado:
-				actualizar_ui_objeto()
+			
+			# Autoequipar si hay espacio en acceso rapido
+			if indice_qa_1 == -1:
+				indice_qa_1 = i
+			elif indice_qa_2 == -1:
+				indice_qa_2 = i
+				
+			actualizar_ui_objeto()
 			Eventos.inventario_completo_actualizado.emit(listaObjetos)
 			return true
 
@@ -36,32 +45,36 @@ func recibir_objeto(nuevo_objeto: Objeto) -> bool:
 
 
 func ciclar_objeto():
-	if listaObjetos.is_empty():
-		return
-
-	indice_objeto_seleccionado += 1
-	if indice_objeto_seleccionado >= limite_inventario:
-		indice_objeto_seleccionado = 0
-
+	qa_activo = 2 if qa_activo == 1 else 1
 	actualizar_ui_objeto()
 
 
 func actualizar_ui_objeto():
-	var objeto_actual = listaObjetos[indice_objeto_seleccionado]
-	if objeto_actual != null:
-		Eventos.consumible_equipado_cambiado.emit(objeto_actual.icono)
-	else:
-		Eventos.consumible_equipado_cambiado.emit(null)
+	var obj1 = listaObjetos[indice_qa_1] if indice_qa_1 >= 0 and indice_qa_1 < listaObjetos.size() else null
+	var obj2 = listaObjetos[indice_qa_2] if indice_qa_2 >= 0 and indice_qa_2 < listaObjetos.size() else null
+	
+	var icono1 = obj1.icono if obj1 else null
+	var icono2 = obj2.icono if obj2 else null
+	
+	Eventos.consumible_equipado_cambiado.emit(icono1, icono2, qa_activo)
 
 
 func usar_objeto_seleccionado():
-	var objeto_actual = listaObjetos[indice_objeto_seleccionado]
+	var index = indice_qa_1 if qa_activo == 1 else indice_qa_2
+	
+	if index < 0 or index >= listaObjetos.size():
+		print("No hay objeto en este acceso rapido.")
+		return
+		
+	var objeto_actual = listaObjetos[index]
 
 	if objeto_actual != null:
 		objeto_actual.usar(owner as Player)
 
-		if objeto_actual is Consumible:
-			listaObjetos[indice_objeto_seleccionado] = null
+		if objeto_actual.get_class() == "Consumible" or objeto_actual is Consumible:
+			listaObjetos[index] = null
+			if indice_qa_1 == index: indice_qa_1 = -1
+			if indice_qa_2 == index: indice_qa_2 = -1
 			print("El objeto se usó y se eliminó.")
 			actualizar_ui_objeto()
 			Eventos.inventario_completo_actualizado.emit(listaObjetos)
