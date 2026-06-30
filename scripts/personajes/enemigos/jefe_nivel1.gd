@@ -3,6 +3,7 @@ class_name JefeNivel1
 
 @export var escena_bola_fuego: PackedScene
 @export var escena_cristal: PackedScene
+@export var escena_oro: PackedScene
 @export var dano_bola: int = 20
 @export var velocidad_bola: float = 200.0
 @export var cadencia_ataque: float = 2.5
@@ -87,5 +88,9 @@ func morir() -> void:
 		var cristal := escena_cristal.instantiate()
 		cristal.global_position = global_position
 		get_tree().current_scene.call_deferred("add_child", cristal)
+	if escena_oro:
+		var oro := escena_oro.instantiate()
+		oro.global_position = global_position
+		get_tree().current_scene.call_deferred("add_child", oro)
 	print("¡Jefe del nivel 1 derrotado!")
 	super.morir()

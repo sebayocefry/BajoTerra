@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="6_4owjg"]
 [ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="8_4owjg"]
 [ext_resource type="Script" uid="uid://dsc3eaht4pbfp" path="res://scripts/common/PuertaSalidaComerciate.gd" id="9_4owjg"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="9_wk02c"]
 
 [sub_resource type="Gradient" id="Gradient_1d3s4"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -404,3 +405,11 @@ position = Vector2(150, 572)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_wo8fo")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=270890438]
+script = ExtResource("9_wk02c")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = 53.0
+limite_derecho = 1537.0
+limite_inferior = 1000.0

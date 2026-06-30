@@ -105,10 +105,22 @@ func _ajustar_camara(habitacion: Node) -> void:
 		return
 
 	var origen = habitacion.global_position
-	cam.limit_left   = int(origen.x + rect_nodo.offset_left)
-	cam.limit_right  = int(origen.x + rect_nodo.offset_right)
-	cam.limit_top    = int(origen.y + rect_nodo.offset_top) - 50
-	cam.limit_bottom = int(origen.y + rect_nodo.offset_bottom)
+	var config = habitacion.find_child("ConfigCamara", true, false) as ConfigCamaraHabitacion
+
+	if config and config.usar_limites_manuales:
+		cam.limit_left   = int(origen.x + config.limite_izquierdo)
+		cam.limit_right  = int(origen.x + config.limite_derecho)
+		cam.limit_top    = int(origen.y + config.limite_superior)
+		cam.limit_bottom = int(origen.y + config.limite_inferior)
+	else:
+		cam.limit_left   = int(origen.x + rect_nodo.offset_left)
+		cam.limit_right  = int(origen.x + rect_nodo.offset_right)
+		cam.limit_top    = int(origen.y + rect_nodo.offset_top) - 50
+		cam.limit_bottom = int(origen.y + rect_nodo.offset_bottom)
+
+	if config and config.zoom_manual > 0.0:
+		cam.zoom = Vector2.ONE * config.zoom_manual
+		return
 
 	# Auto-zoom: si la habitación es más pequeña que el viewport, acercar la cámara
 	var ancho = rect_nodo.size.x

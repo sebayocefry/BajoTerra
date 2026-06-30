@@ -17,11 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://b0iads0ntiw2i" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/web_rock2_shadow1.png" id="14_tvbrc"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="15_2cvx4"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="16_hxv0y"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="17_b010o"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="18_2cvx4"]
+[ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="19_n4wuu"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="21_835cb"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="21_n4wuu"]
 [ext_resource type="Texture2D" uid="uid://b5bu7h18iyqq0" path="res://assets/assetTutotrial/TablaTuto-Photoroom.png" id="22_r8noe"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="24_r8noe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b010o"]
 shader = ExtResource("2_hxv0y")
@@ -501,6 +503,8 @@ position = Vector2(910, 200)
 
 [node name="Muki" parent="Enemigos" unique_id=669730601 instance=ExtResource("21_835cb")]
 position = Vector2(565, 608)
+escena_cristal = null
+escena_oro = ExtResource("19_n4wuu")
 vida_maxima = 80
 
 [node name="Muki2" parent="Enemigos" unique_id=1082711343 instance=ExtResource("21_835cb")]
@@ -509,6 +513,8 @@ vida_maxima = 80
 
 [node name="Muki3" parent="Enemigos" unique_id=622458452 instance=ExtResource("21_835cb")]
 position = Vector2(952, 619)
+escena_cristal = null
+escena_oro = ExtResource("19_n4wuu")
 vida_maxima = 80
 
 [node name="Muki4" parent="Enemigos" unique_id=1483568733 instance=ExtResource("21_835cb")]
@@ -525,3 +531,11 @@ position = Vector2(331, 222)
 position = Vector2(445, 335)
 mensaje = "Presiona [E]: Vincula tu alma al espíritu. Si caes, este será tu santuario de retorno."
 icono_personalizado = ExtResource("22_r8noe")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=1294920629]
+script = ExtResource("24_r8noe")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = -63.0
+limite_derecho = 1918.0
+limite_inferior = 1072.0

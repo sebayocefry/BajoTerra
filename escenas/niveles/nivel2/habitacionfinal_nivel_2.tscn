@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bhsjw741rbkb2" path="res://escenas/objetos/decoraciones/mano.tscn" id="5_h1tvc"]
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="6_nudba"]
 [ext_resource type="Texture2D" uid="uid://cbqbjfrbqk5h3" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/skull_pile_shadow2.png" id="7_vdkgj"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="9_vdkgj"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="9_vdkgj"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="11_5n2y7"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="12_o71py"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="13_wwc18"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwc18"]
 shader = ExtResource("2_0w4k6")
@@ -714,3 +715,11 @@ position = Vector2(610, 107)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_o71py")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=304495412]
+script = ExtResource("13_wwc18")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = -390.0
+limite_derecho = 2879.0
+limite_inferior = 1350.0

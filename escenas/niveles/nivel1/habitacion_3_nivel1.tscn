@@ -9,9 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://desm3qudufx48" path="res://assets/decoracion/esqueleto.png" id="8_hmltg"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="9_5n61j"]
 [ext_resource type="PackedScene" uid="uid://dykml77obfqgg" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitación3_nivel1.tscn" id="9_d556v"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
+[ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="11_i27g1"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="11_xoc2n"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="12_i27g1"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="14_pnr65"]
 
 [sub_resource type="Gradient" id="Gradient_lrrxv"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -395,11 +397,15 @@ position = Vector2(928, 275)
 
 [node name="Esqueleto" parent="Enemigos" unique_id=1921202342 instance=ExtResource("11_xoc2n")]
 position = Vector2(1405, 346)
+escena_cristal = null
+escena_oro = ExtResource("11_i27g1")
 vida_maxima = 50
 
 [node name="Esqueleto2" parent="Enemigos" unique_id=1091973982 instance=ExtResource("11_xoc2n")]
 position = Vector2(444, 290)
 dano_contacto = 2
+escena_cristal = null
+escena_oro = ExtResource("11_i27g1")
 vida_maxima = 50
 
 [node name="Rata" parent="Enemigos" unique_id=352191106 instance=ExtResource("12_i27g1")]
@@ -415,7 +421,17 @@ vida_maxima = 30
 [node name="Rata3" parent="Enemigos" unique_id=1046453564 instance=ExtResource("12_i27g1")]
 position = Vector2(1162, 622)
 dano_contacto = 5
+escena_cristal = null
+escena_oro = ExtResource("11_i27g1")
 vida_maxima = 30
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=814659986]
 script = ExtResource("10_a0hbv")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=273798497]
+script = ExtResource("14_pnr65")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = -63.0
+limite_derecho = 1918.0
+limite_inferior = 1071.0

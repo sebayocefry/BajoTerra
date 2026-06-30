@@ -4,8 +4,9 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_e67an"]
 [ext_resource type="PackedScene" uid="uid://bliujo2h13lcv" path="res://escenas/niveles/nivel2/puertas/puerta4_nivel2.tscn" id="3_h4n2"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_m8a4q"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="6_m8a4q"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="7_p7rnx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8a4q"]
 shader = ExtResource("2_e67an")
@@ -201,6 +202,7 @@ texture_scale = 1.19
 script = ExtResource("3_m8a4q")
 
 [node name="colisiones" type="StaticBody2D" parent="." unique_id=1976173939]
+visible = false
 position = Vector2(-341, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones" unique_id=548709222]
@@ -258,7 +260,7 @@ shape = SubResource("RectangleShape2D_p7rnx")
 [node name="Puertas" type="Node2D" parent="." unique_id=478352712]
 
 [node name="PuntoSalida" parent="Puertas" unique_id=1194403748 instance=ExtResource("3_h4n2")]
-position = Vector2(1286, 357)
+position = Vector2(1284, 453)
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=500027400]
 
@@ -347,3 +349,10 @@ position = Vector2(1770, 231)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_p7rnx")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=1700769431]
+script = ExtResource("7_p7rnx")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_derecho = 1924.0
+limite_inferior = 1071.0

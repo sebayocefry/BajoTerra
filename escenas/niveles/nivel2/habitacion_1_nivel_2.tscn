@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bc3q1fnbbmwvg" path="res://escenas/objetos/decoraciones/geyser.tscn" id="6_34fuf"]
 [ext_resource type="PackedScene" uid="uid://bxlhd7fmyt2j3" path="res://escenas/objetos/decoraciones/dragon_izq.tscn" id="7_o66dq"]
 [ext_resource type="PackedScene" uid="uid://dcb1rd05ea86y" path="res://escenas/niveles/nivel2/puertas/puerta_1_nivel2.tscn" id="8_g05gl"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="8_o66dq"]
 [ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="9_g05gl"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="10_3ebfu"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="11_i4gp4"]
 
 [sub_resource type="Gradient" id="Gradient_lrrxv"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -400,3 +401,11 @@ position = Vector2(959, 1025)
 
 [node name="spawn_salida" type="Marker2D" parent="SpawnPoints" unique_id=1255485136]
 position = Vector2(899, 264)
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=298827972]
+script = ExtResource("11_i4gp4")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = -105.0
+limite_derecho = 1918.0
+limite_inferior = 1071.0

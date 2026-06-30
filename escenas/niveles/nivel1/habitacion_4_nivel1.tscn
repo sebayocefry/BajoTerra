@@ -5,9 +5,10 @@
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_vxpvh"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
 [ext_resource type="PackedScene" uid="uid://ba0xps7ubued8" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion4_nivel1.tscn" id="6_h4n1"]
-[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
+[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="7_or5df"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="8_7jgji"]
+[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="9_u2l72"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2l72"]
 shader = ExtResource("2_7jgji")
@@ -396,3 +397,11 @@ position = Vector2(390, 215)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_cp6xo")
+
+[node name="ConfigCamara" type="Node2D" parent="." unique_id=710793734]
+script = ExtResource("9_u2l72")
+usar_limites_manuales = true
+limite_izquierdo = 4.0
+limite_superior = 4.0
+limite_derecho = 1918.0
+limite_inferior = 1072.0
