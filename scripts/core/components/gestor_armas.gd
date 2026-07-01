@@ -15,6 +15,10 @@ var tiempo_enfriamiento: float = 0.0
 
 
 func inicializar_armas() -> void:
+	var picota = preload("res://recursos/armas/picota.tres")
+	if picota and not armas_disponibles.has(picota):
+		armas_disponibles.append(picota)
+		
 	if armas_disponibles.size() > 0 and armas_disponibles[0] != null:
 		equipar_arma(armas_disponibles[0])
 
@@ -50,16 +54,16 @@ func procesar_disparo(_delta: float) -> void:
 
 
 func apretar_gatillo(direccion: Vector2) -> void:
-	tiempo_enfriamiento = arma_equipada.cadencia
 	var jugador := owner as Player
 	if jugador and jugador.mana >= arma_equipada.costo_mana:
+		tiempo_enfriamiento = arma_equipada.cadencia
 		# La dinamita (y otras armas no disparadas a bala) no usan el sonido de disparo de pistola.
 		if not arma_equipada is ArmaLanzable:
 			audio_disparo.play()
 		Eventos.sacudir_camara.emit(1.5, 0.08) # Pequeño temblor al disparar
+		arma_equipada.disparar(jugador, direccion, mano.global_position)
 	else:
 		audio_sin_municion.play()
-	arma_equipada.disparar(jugador, direccion, mano.global_position)
 
 
 func _unhandled_input(event):

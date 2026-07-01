@@ -14,6 +14,8 @@ var fondo_foto: ColorRect
 var imagen_foto: TextureRect
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS # Asegura que la GUI procese inputs incluso cuando el juego se pausa
+	
 	Eventos.vida_actualizada.connect(_on_vida_actualizada)
 	Eventos.mana_actualizado.connect(_on_mana_actualizado)
 	Eventos.oro_actualizado.connect(_on_oro_actualizado)
@@ -27,6 +29,17 @@ func _ready():
 	imagen_guardado.texture = load("res://assets/Fondos/partida_guardad.png")
 	
 	_crear_nodos_foto()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if imagen_foto and imagen_foto.visible:
+		# Si se presiona E, Espacio, Enter o Escape, cerramos la foto y despausamos
+		if event.is_action_pressed("interactuar") or event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel") or event is InputEventMouseButton:
+			if event is InputEventMouseButton and not event.pressed:
+				return # Ignorar clicks cuando se suelta el boton
+				
+			_on_ocultar_foto()
+			get_tree().paused = false
+			get_viewport().set_input_as_handled()
 
 func _crear_nodos_foto():
 	fondo_foto = ColorRect.new()

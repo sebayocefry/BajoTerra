@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ArmaCuerpoACuerpo" format=3]
+[gd_resource type="Resource" script_class="ArmaCuerpoACuerpo" format=3 uid="uid://u104i6rgb54d"]
 
-[ext_resource type="Script" path="res://scripts/objetos/armas/arma_cuerpo_a_cuerpo.gd" id="1_pic"]
+[ext_resource type="Script" uid="uid://drfupklv58yg7" path="res://scripts/objetos/armas/arma_cuerpo_a_cuerpo.gd" id="1_pic"]
+[ext_resource type="Texture2D" uid="uid://bo2quawf5h4jw" path="res://assets/fondos_intro/IconoPicota.png" id="2_k128y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/armas/hitbox_melee.tscn" id="2_pic"]
 
 [resource]
 script = ExtResource("1_pic")
 escena_hitbox = ExtResource("2_pic")
-nombre = "Picota"
 dano = 35
-cadencia = 0.6
 costo_mana = 0
-distancia_golpe = 70.0
-fuerza_golpe = 300.0
-precio_oro = 150
+cadencia = 0.6
 brazo_escala = Vector2(0.069, 0.056)
+nombre = "Picota"
+icono = ExtResource("2_k128y")
+precio_oro = 150
