@@ -17,6 +17,7 @@ var _fase_enojo: bool = false
 # Cada cuántos ataques normales se dispara el circular
 const ATAQUES_PARA_CIRCULAR: int = 4
 var _contador_ataques: int = 0
+var barra_vida: ProgressBar
 
 func _ready() -> void:
 	super._ready()
@@ -26,6 +27,41 @@ func _ready() -> void:
 		sprite.play("default")
 	timer_ataque.timeout.connect(_atacar)
 	timer_ataque.start()
+	
+	_crear_barra_vida_jefe()
+
+func _crear_barra_vida_jefe() -> void:
+	barra_vida = ProgressBar.new()
+	barra_vida.max_value = vida_maxima
+	barra_vida.value = vida
+	barra_vida.show_percentage = false
+	
+	# Tamaño y posición (Más grande por ser jefe)
+	barra_vida.custom_minimum_size = Vector2(80, 10)
+	barra_vida.size = Vector2(80, 10)
+	barra_vida.position = Vector2(-40, -80) # Centrado y arriba
+	barra_vida.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	# Colores
+	var style_bg = StyleBoxFlat.new()
+	style_bg.bg_color = Color(0.1, 0.1, 0.1, 0.9)
+	style_bg.corner_radius_top_left = 3
+	style_bg.corner_radius_top_right = 3
+	style_bg.corner_radius_bottom_left = 3
+	style_bg.corner_radius_bottom_right = 3
+	
+	var style_fg = StyleBoxFlat.new()
+	style_fg.bg_color = Color(0.6, 0.0, 0.5, 1.0) # Morado/Rojo oscuro para el jefe
+	style_fg.corner_radius_top_left = 3
+	style_fg.corner_radius_top_right = 3
+	style_fg.corner_radius_bottom_left = 3
+	style_fg.corner_radius_bottom_right = 3
+	
+	barra_vida.add_theme_stylebox_override("background", style_bg)
+	barra_vida.add_theme_stylebox_override("fill", style_fg)
+	
+	barra_vida.top_level = false
+	add_child(barra_vida)
 
 func _atacar() -> void:
 	if not is_instance_valid(_jugador) or not escena_bola_fuego:
@@ -61,6 +97,13 @@ func _crear_bola(origen: Vector2, dir: Vector2) -> void:
 
 func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO) -> void:
 	super.recibir_dano(cantidad, vector_empuje)
+	
+	if barra_vida:
+		barra_vida.max_value = vida_maxima
+		barra_vida.value = vida
+		if vida <= 0:
+			barra_vida.visible = false
+			
 	if not is_instance_valid(sprite):
 		return
 

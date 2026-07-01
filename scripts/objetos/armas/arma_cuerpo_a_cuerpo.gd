@@ -10,7 +10,10 @@ func ejecutar_disparo(jugador: Player, direccion: Vector2, punto_disparo: Vector
 		push_error("ArmaCuerpoACuerpo: no tiene escena_hitbox asignada.")
 		return
 	var hitbox = escena_hitbox.instantiate()
+	
+	# Añadimos al current_scene de forma segura
 	jugador.get_tree().current_scene.add_child(hitbox)
+		
 	# Posicionar el hitbox frente al jugador en la dirección de ataque
 	hitbox.global_position = punto_disparo + direccion * distancia_golpe
 	hitbox.dano = dano
