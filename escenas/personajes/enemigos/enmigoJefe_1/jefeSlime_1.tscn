@@ -1060,7 +1060,7 @@ radius = 153.0
 height = 458.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw6aw"]
-size = Vector2(802, 286)
+size = Vector2(802, 312)
 
 [node name="JefeSlime1" type="CharacterBody2D" unique_id=1584594003]
 motion_mode = 1
@@ -1109,7 +1109,7 @@ debug_color = Color(0.9895335, 0, 0.29477713, 0.41960785)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataqueDemonio" unique_id=1129651076]
-position = Vector2(7, -199)
+position = Vector2(7, -125)
 shape = SubResource("RectangleShape2D_tw6aw")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)
 

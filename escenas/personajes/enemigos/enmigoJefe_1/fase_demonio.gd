@@ -1,23 +1,62 @@
 extends EstadoJefe
 
-@export var cooldown_ataque : float = 1.4
+@export var tiempo_momento_impacto : float = 0.4843
+@export var tiempo_total_ataque : float = 0.56
+@export var tiempo_recuperacion : float = 0.5
 
-var temporizador : float = 0.0
+var activo : bool = false
 
 func entrar():
+	activo = true
+
 	enemigo.velocity = Vector2.ZERO
 	enemigo.move_and_slide()
 
-	temporizador = cooldown_ataque
-
-	if animacion.has_animation(enemigo.anim_demonio_ataque):
-		animacion.play(enemigo.anim_demonio_ataque)
-
 	print("Jefe atacando en fase demonio")
 
-func actualizar_fisica(delta):
+	mirar_jugador()
+
+	if animacion.has_animation(enemigo.anim_demonio_ataque):
+		animacion.stop()
+		animacion.play(enemigo.anim_demonio_ataque)
+	else:
+		print("No existe animación demonio ataque")
+
+	await get_tree().create_timer(tiempo_momento_impacto).timeout
+
+	if not activo:
+		return
+
+	aplicar_dano_si_sigue_en_rango()
+
+	var tiempo_restante = max(tiempo_total_ataque - tiempo_momento_impacto, 0.0)
+
+	await get_tree().create_timer(tiempo_restante).timeout
+
+	if not activo:
+		return
+
+	await get_tree().create_timer(tiempo_recuperacion).timeout
+
+	if not activo:
+		return
+
+	transicion.emit("Perseguir")
+
+func aplicar_dano_si_sigue_en_rango():
+	var cuerpos = enemigo.zona_ataque_demonio.get_overlapping_bodies()
+
+	for cuerpo in cuerpos:
+		if cuerpo.is_in_group("player"):
+			if cuerpo.has_method("recibir_dano"):
+				cuerpo.recibir_dano(enemigo.dano_demonio)
+				print("Ataque demonio hizo daño en el segundo configurado")
+			return
+
+	print("Ataque demonio falló porque el jugador salió del rango antes del impacto")
+
+func mirar_jugador():
 	if enemigo.jugador == null:
-		transicion.emit("Reposo")
 		return
 
 	var direccion = enemigo.global_position.direction_to(enemigo.jugador.global_position)
@@ -27,21 +66,10 @@ func actualizar_fisica(delta):
 	elif direccion.x > 0:
 		sprite_demonio.flip_h = true
 
-	if not enemigo.jugador_en_rango_demonio:
-		transicion.emit("Perseguir")
-		return
+func actualizar_fisica(_delta):
+	enemigo.velocity = Vector2.ZERO
+	enemigo.move_and_slide()
 
-	temporizador += delta
-
-	if temporizador >= cooldown_ataque:
-		ejecutar_golpe_demonio()
-		temporizador = 0.0
-
-func ejecutar_golpe_demonio():
-	if animacion.has_animation(enemigo.anim_demonio_ataque):
-		animacion.play(enemigo.anim_demonio_ataque)
-
-	print("Jefe demonio golpea: ", enemigo.dano_demonio)
-
-	if enemigo.jugador and enemigo.jugador.has_method("recibir_dano"):
-		enemigo.jugador.recibir_dano(enemigo.dano_demonio)
+func salir():
+	activo = false
+	print("Salí de FaseDemonio")
