@@ -77,7 +77,8 @@ position = Vector2(1083, -792)
 position = Vector2(795, -601)
 
 [node name="JefeSlime1" parent="." unique_id=1584594003 instance=ExtResource("9_pqfd2")]
-position = Vector2(1378, -698)
+position = Vector2(1668, -390)
+vida_fase_demonio = 400
 
 [node name="JefeNivel1" parent="." unique_id=421596498 instance=ExtResource("8_mied4")]
 modulate = Color(0.804255, 0.804255, 0.804255, 0.8666667)
@@ -85,3 +86,6 @@ position = Vector2(-466, -323)
 
 [node name="JefeSlime2" parent="." unique_id=566232953 instance=ExtResource("9_pqfd2")]
 position = Vector2(-580, -577)
+vida_fase_chica = 50
+vida_fase_demonio = 400
+porcentaje_curacion = 0.4

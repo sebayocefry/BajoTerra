@@ -4,9 +4,9 @@
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_e67an"]
 [ext_resource type="PackedScene" uid="uid://bliujo2h13lcv" path="res://escenas/niveles/nivel2/puertas/puerta4_nivel2.tscn" id="3_h4n2"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_m8a4q"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
+[ext_resource type="Script" uid="uid://5eaws7hwangl" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
 [ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="6_m8a4q"]
-[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="7_p7rnx"]
+[ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="7_p7rnx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8a4q"]
 shader = ExtResource("2_e67an")
@@ -274,6 +274,10 @@ position = Vector2(893, 284)
 
 [node name="JefeSlime1" parent="Enemigos" unique_id=1584594003 instance=ExtResource("6_m8a4q")]
 position = Vector2(1308, 538)
+vida_fase_chica = 50
+vida_fase_demonio = 300
+curaciones_maximas = 1
+porcentaje_curacion = 0.39
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=147698611]
 script = ExtResource("5_h4n2")

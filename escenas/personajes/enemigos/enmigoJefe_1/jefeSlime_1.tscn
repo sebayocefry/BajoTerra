@@ -1065,8 +1065,10 @@ size = Vector2(802, 286)
 [node name="JefeSlime1" type="CharacterBody2D" unique_id=1584594003]
 motion_mode = 1
 script = ExtResource("1_xycwc")
-vida_fase_demonio = 900
+vida_fase_demonio = 500
 velocidad_anim_transformacion = 0.5
+dano_contacto = 5
+dano_demonio = 7
 distancia_vision = 3000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946553770]
