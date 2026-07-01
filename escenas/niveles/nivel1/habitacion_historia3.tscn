@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhvc83odub52o"]
 
-[ext_resource type="Script" path="res://escenas/niveles/nivel1/habitacion_historia3_final.gd" id="1_oxwue"]
-[ext_resource type="Texture2D" uid="uid://cvujql8nmly87" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 7 jun 2026, 05_56_40 p.m..png" id="2_oxwue"]
+[ext_resource type="Script" uid="uid://bkf8ko7h3gacb" path="res://escenas/niveles/nivel1/habitacion_historia3_final.gd" id="1_oxwue"]
+[ext_resource type="Texture2D" uid="uid://bj6vsip64ajm0" path="res://escenas/niveles/nivelPrueva/ChatGPT Image 7 jun 2026, 05_56_40 p.m..png" id="2_oxwue"]
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="3_lxrg3"]
 [ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="4_qho64"]
 [ext_resource type="Texture2D" uid="uid://68oj3wthtep" path="res://assets/fondos_intro/ChatGPT Image 17 may 2026, 01_22_39 p.m. (1).png" id="5_iy054"]
@@ -112,17 +112,17 @@ gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_m8a4q")
 color_initial_ramp = SubResource("GradientTexture1D_e67an")
 
-[node name="habitacionHistoria" type="Node2D"]
+[node name="habitacionHistoria" type="Node2D" unique_id=1995021915]
 script = ExtResource("1_oxwue")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1435629264]
 offset_top = -3.0
 offset_right = 40.0
 offset_bottom = 37.0
 scale = Vector2(1.1462111, 1.2497972)
 texture = ExtResource("2_oxwue")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=775525160]
 material = SubResource("ShaderMaterial_ns6qq")
 offset_left = 29.0
 offset_top = 53.0
@@ -130,67 +130,68 @@ offset_right = 1933.0
 offset_bottom = 1072.0
 color = Color(0.28306893, 0.10050032, 0.3970313, 1)
 
-[node name="niebla" type="ColorRect" parent="."]
+[node name="niebla" type="ColorRect" parent="." unique_id=190605521]
 material = SubResource("ShaderMaterial_kijwv")
 offset_left = 17.0
 offset_top = -4.0
 offset_right = 1945.0
 offset_bottom = 1071.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1320022]
+visible = false
 position = Vector2(-9, -111)
 scale = Vector2(1.019082, 1.0035348)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1993494950]
 visible = false
 position = Vector2(946, 104)
 shape = SubResource("RectangleShape2D_xgtnb")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1724984531]
 position = Vector2(26.256477, 655.98645)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=862163261]
 position = Vector2(1879.1423, 902.8088)
 rotation = -3.1415925
 scale = Vector2(9.029657, 0.54387784)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1148911210]
 position = Vector2(1834.985, 315.88345)
 rotation = -3.1415925
 scale = Vector2(9.029657, 0.54387784)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1400299993]
 position = Vector2(154.0603, 1061.2488)
 rotation = -3.1415925
 scale = Vector2(9.029657, 0.54387784)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=1677022102]
 position = Vector2(93.22114, 457.38318)
 rotation = -3.1415925
 scale = Vector2(9.029657, 0.54387784)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=2140856382]
 position = Vector2(1859.5168, 696.53784)
 shape = SubResource("RectangleShape2D_knp1b")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=451965673]
 position = Vector2(998, 1231)
 shape = SubResource("RectangleShape2D_wbkfv")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1197130349]
 position = Vector2(953.79974, 82.70764)
 rotation = -3.1415925
 scale = Vector2(9.029657, 0.54387784)
 shape = SubResource("RectangleShape2D_1xfo1")
 
-[node name="Sombras" type="Node2D" parent="."]
+[node name="Sombras" type="Node2D" parent="." unique_id=1616927330]
 
-[node name="PointLight2D" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D" type="PointLight2D" parent="Sombras" unique_id=1762878830]
 position = Vector2(952, 223)
 scale = Vector2(6.7423854, 5.8495274)
 color = Color(0.007843138, 0.02745098, 0.972549, 1)
@@ -199,7 +200,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_ee7by")
 texture_scale = 1.19
 
-[node name="PointLight2D3" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D3" type="PointLight2D" parent="Sombras" unique_id=1149205423]
 position = Vector2(581, 256)
 scale = Vector2(1.8119739, 1.7069324)
 color = Color(0.5568628, 0.09019608, 0.84313726, 1)
@@ -208,7 +209,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D4" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D4" type="PointLight2D" parent="Sombras" unique_id=570895180]
 visible = false
 position = Vector2(1216, 257)
 scale = Vector2(1.8119739, 1.7069324)
@@ -218,7 +219,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D5" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D5" type="PointLight2D" parent="Sombras" unique_id=355738573]
 visible = false
 position = Vector2(1094, 342)
 scale = Vector2(2.022229, 1.7525638)
@@ -228,7 +229,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D7" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D7" type="PointLight2D" parent="Sombras" unique_id=459094977]
 position = Vector2(998.00006, 846.0001)
 scale = Vector2(6.8820276, 5.1530294)
 color = Color(0.9411765, 0.1764706, 0.8392157, 1)
@@ -237,7 +238,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D8" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D8" type="PointLight2D" parent="Sombras" unique_id=88989501]
 position = Vector2(1088, 967)
 scale = Vector2(5.4294834, 4.082778)
 energy = 2.49
@@ -245,7 +246,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D11" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D11" type="PointLight2D" parent="Sombras" unique_id=492873833]
 position = Vector2(1086, 966.0001)
 scale = Vector2(4.023369, 3.3411813)
 energy = 2.49
@@ -253,7 +254,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D15" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D15" type="PointLight2D" parent="Sombras" unique_id=1282273926]
 position = Vector2(356.00006, 773)
 scale = Vector2(4.023369, 3.3411813)
 editor_only = true
@@ -262,7 +263,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.48
 
-[node name="PointLight2D16" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D16" type="PointLight2D" parent="Sombras" unique_id=220527377]
 position = Vector2(94, 778.99994)
 scale = Vector2(4.023369, 3.3411813)
 editor_only = true
@@ -271,7 +272,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.48
 
-[node name="PointLight2D17" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D17" type="PointLight2D" parent="Sombras" unique_id=393956667]
 position = Vector2(1565, 150)
 rotation = 1.587145
 scale = Vector2(2.0063286, 2.5092478)
@@ -281,7 +282,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.48
 
-[node name="PointLight2D18" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D18" type="PointLight2D" parent="Sombras" unique_id=652974550]
 position = Vector2(800.00006, 953)
 scale = Vector2(1.4738091, 1.1828759)
 editor_only = true
@@ -290,7 +291,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 2.66
 
-[node name="PointLight2D14" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D14" type="PointLight2D" parent="Sombras" unique_id=1628661550]
 position = Vector2(961.00006, 164.99998)
 scale = Vector2(4.023369, 3.3411813)
 energy = 2.49
@@ -298,7 +299,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D13" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D13" type="PointLight2D" parent="Sombras" unique_id=852100509]
 position = Vector2(1729, 106.999985)
 scale = Vector2(4.023369, 3.3411813)
 energy = 2.49
@@ -306,7 +307,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="PointLight2D12" type="PointLight2D" parent="Sombras"]
+[node name="PointLight2D12" type="PointLight2D" parent="Sombras" unique_id=839993806]
 position = Vector2(1522, 184)
 scale = Vector2(4.023369, 3.3411813)
 energy = 2.49
@@ -314,19 +315,19 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_aeuua")
 texture_scale = 1.19
 
-[node name="Jugador2" parent="." instance=ExtResource("4_qho64")]
+[node name="Jugador2" parent="." unique_id=876178774 instance=ExtResource("4_qho64")]
 position = Vector2(797, 823)
 scale = Vector2(1.1868399, 1.4278297)
 velocidad = 61
 
 [node name="Camera2D" parent="Jugador2"]
 zoom = Vector2(1.016, 1.016)
-limit_left = 4
-limit_top = 7
-limit_right = 1916
-limit_bottom = 1071
+limit_left = 8
+limit_top = 10
+limit_right = 1910
+limit_bottom = 1165
 
-[node name="lampara" type="AnimatedSprite2D" parent="."]
+[node name="lampara" type="AnimatedSprite2D" parent="." unique_id=1246985980]
 visible = false
 modulate = Color(0.38431373, 0.41568628, 0.15294118, 1)
 position = Vector2(1839, 507)
@@ -334,7 +335,7 @@ scale = Vector2(0.054147124, 0.060683794)
 sprite_frames = SubResource("SpriteFrames_ee7by")
 script = ExtResource("8_puvdk")
 
-[node name="lampara2" type="AnimatedSprite2D" parent="."]
+[node name="lampara2" type="AnimatedSprite2D" parent="." unique_id=1615833426]
 visible = false
 modulate = Color(0.85775584, 0.6550339, 0.41116914, 1)
 position = Vector2(1649, 407)
@@ -342,7 +343,7 @@ scale = Vector2(0.08117308, 0.10203197)
 sprite_frames = SubResource("SpriteFrames_ee7by")
 script = ExtResource("8_puvdk")
 
-[node name="vela" type="AnimatedSprite2D" parent="."]
+[node name="vela" type="AnimatedSprite2D" parent="." unique_id=1247998198]
 visible = false
 modulate = Color(0.38431373, 0.41568628, 0.15294118, 1)
 position = Vector2(1240.0001, 774.00006)
@@ -351,7 +352,7 @@ sprite_frames = SubResource("SpriteFrames_kijwv")
 frame_progress = 0.5788703
 script = ExtResource("12_ko10c")
 
-[node name="vela2" type="AnimatedSprite2D" parent="."]
+[node name="vela2" type="AnimatedSprite2D" parent="." unique_id=372632821]
 visible = false
 modulate = Color(0.38431373, 0.41568628, 0.15294118, 1)
 position = Vector2(1585.0001, 678.00006)
@@ -360,7 +361,7 @@ sprite_frames = SubResource("SpriteFrames_kijwv")
 frame_progress = 0.7863526
 script = ExtResource("12_ko10c")
 
-[node name="vela3" type="AnimatedSprite2D" parent="."]
+[node name="vela3" type="AnimatedSprite2D" parent="." unique_id=1826837092]
 visible = false
 modulate = Color(0.38431373, 0.41568628, 0.15294118, 1)
 position = Vector2(1696, 768.00006)
@@ -369,7 +370,7 @@ sprite_frames = SubResource("SpriteFrames_kijwv")
 frame_progress = 0.7863526
 script = ExtResource("12_ko10c")
 
-[node name="vela4" type="AnimatedSprite2D" parent="."]
+[node name="vela4" type="AnimatedSprite2D" parent="." unique_id=1203388326]
 visible = false
 modulate = Color(0.38431373, 0.41568628, 0.15294118, 1)
 position = Vector2(1639.9999, 774)
@@ -378,76 +379,76 @@ sprite_frames = SubResource("SpriteFrames_kijwv")
 frame_progress = 0.7863526
 script = ExtResource("12_ko10c")
 
-[node name="FantasmaSala" parent="." instance=ExtResource("13_72n4j")]
+[node name="FantasmaSala" parent="." unique_id=1449896658 instance=ExtResource("13_72n4j")]
 position = Vector2(630, 248)
 scale = Vector2(1.4489051, 2.351111)
 
-[node name="particulas" type="Node2D" parent="."]
+[node name="particulas" type="Node2D" parent="." unique_id=767100263]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particulas" unique_id=1105047499]
 modulate = Color(2.6577253, 2.5120184, 0.47211713, 0.654902)
 position = Vector2(414, 257)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="particulas" unique_id=786631095]
 modulate = Color(2.6577253, 2.5120184, 0.47211713, 0.654902)
 position = Vector2(1569, 151)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="particulas" unique_id=1549107407]
 modulate = Color(2.6577253, 2.5120184, 0.47211713, 0.654902)
 position = Vector2(1807, 796)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="particulas" unique_id=1879255031]
 modulate = Color(2.6577253, 2.5120184, 0.47211713, 0.654902)
 position = Vector2(106, 792)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D5" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="particulas" unique_id=299802769]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(1537, 856)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D6" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="particulas" unique_id=2037695834]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(713, 45)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D7" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="particulas" unique_id=1539193709]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(621, 72)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D8" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="particulas" unique_id=450960355]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(965, 193)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D9" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D9" type="GPUParticles2D" parent="particulas" unique_id=189221677]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(170, 420)
 amount = 80
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_lxrg3")
 
-[node name="GPUParticles2D10" type="GPUParticles2D" parent="particulas"]
+[node name="GPUParticles2D10" type="GPUParticles2D" parent="particulas" unique_id=740638965]
 modulate = Color(1.9789016, 0.3949781, 2.6577253, 0.654902)
 position = Vector2(1770, 231)
 amount = 80
