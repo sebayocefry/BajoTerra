@@ -28,6 +28,7 @@ class_name Enemigo
 var jugador : Entidad = null
 var jugador_en_rango : bool = false
 var raycast_vision: RayCast2D
+var barra_vida: ProgressBar
 
 # es una referencua al nodo de animaciones 
 @onready var animacion: AnimationPlayer = get_node("AnimationPlayer")
@@ -48,6 +49,52 @@ func _ready():
 	raycast_vision.enabled = false # Lo actualizamos solo cuando lo necesitamos por rendimiento
 	raycast_vision.collision_mask = 1 # Asumimos que las paredes están en la capa 1
 	add_child(raycast_vision)
+	
+	_crear_barra_vida_dinamica()
+
+func _crear_barra_vida_dinamica():
+	barra_vida = ProgressBar.new()
+	barra_vida.max_value = vida_maxima
+	barra_vida.value = vida
+	barra_vida.show_percentage = false
+	
+	# Tamaño y posición
+	barra_vida.custom_minimum_size = Vector2(40, 6)
+	barra_vida.size = Vector2(40, 6)
+	barra_vida.position = Vector2(-20, -50) # Centrado y arriba del enemigo
+	barra_vida.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	# Colores para la barra (Fondo oscuro, Relleno rojo)
+	var style_bg = StyleBoxFlat.new()
+	style_bg.bg_color = Color(0.1, 0.1, 0.1, 0.8)
+	style_bg.corner_radius_top_left = 2
+	style_bg.corner_radius_top_right = 2
+	style_bg.corner_radius_bottom_left = 2
+	style_bg.corner_radius_bottom_right = 2
+	
+	var style_fg = StyleBoxFlat.new()
+	style_fg.bg_color = Color(0.8, 0.1, 0.1, 1.0) # Rojo
+	style_fg.corner_radius_top_left = 2
+	style_fg.corner_radius_top_right = 2
+	style_fg.corner_radius_bottom_left = 2
+	style_fg.corner_radius_bottom_right = 2
+	
+	barra_vida.add_theme_stylebox_override("background", style_bg)
+	barra_vida.add_theme_stylebox_override("fill", style_fg)
+	
+	# Mantener la barra siempre en el mismo nivel que el sprite para que no gire si el enemigo rota
+	barra_vida.top_level = false
+	
+	add_child(barra_vida)
+
+func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
+	super.recibir_dano(cantidad, vector_empuje)
+	if barra_vida:
+		barra_vida.max_value = vida_maxima # Asegurarnos que max coincide con el padre
+		barra_vida.value = vida
+		# Si quisiéramos que se oculte cuando muere:
+		if vida <= 0:
+			barra_vida.visible = false
 
 func tiene_linea_de_vision() -> bool:
 	if not jugador: return false
