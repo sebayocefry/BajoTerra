@@ -33,6 +33,11 @@ func procesar_disparo(_delta: float) -> void:
 	if not arma_equipada:
 		return
 
+	# Chequeo SOLID: verificamos si la escena actual declara ser una zona pacífica
+	var escena = get_tree().current_scene
+	if escena and escena.has_method("es_zona_pacifica") and escena.es_zona_pacifica():
+		return
+
 	var vector_disparo = Input.get_vector("disparar_izq", "disparar_der", "disparar_arriba", "disparar_abajo")
 
 	if vector_disparo != Vector2.ZERO:

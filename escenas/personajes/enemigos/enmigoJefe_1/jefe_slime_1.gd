@@ -48,6 +48,7 @@ var jugador_en_rango_demonio : bool = false
 
 var fase_demonio : bool = false
 var transformandose : bool = false
+var barra_vida: ProgressBar
 
 @onready var animacion : AnimationPlayer = $AnimationPlayer
 @onready var sprite_chico : Sprite2D = $Sprite2D
@@ -105,6 +106,12 @@ func recibir_dano(cantidad: int, vector_empuje: Vector2 = Vector2.ZERO):
 		maquina_estados.cambiar_estado("CuracionDemonio")
 		return
 
+	if barra_vida:
+		barra_vida.max_value = vida_maxima
+		barra_vida.value = vida
+		if vida <= 0:
+			barra_vida.visible = false
+
 	if vida <= 0:
 		morir()
 
@@ -122,6 +129,41 @@ func _ready():
 		print("Jefe encontró jugador: ", jugador.name)
 	else:
 		print("Jefe NO encontró jugador en grupo player")
+		
+	_crear_barra_vida_jefe()
+
+func _crear_barra_vida_jefe() -> void:
+	barra_vida = ProgressBar.new()
+	barra_vida.max_value = vida_maxima
+	barra_vida.value = vida
+	barra_vida.show_percentage = false
+	
+	# Tamaño y posición (Más grande por ser jefe)
+	barra_vida.custom_minimum_size = Vector2(80, 10)
+	barra_vida.size = Vector2(80, 10)
+	barra_vida.position = Vector2(-40, -100) # Centrado y bastante arriba
+	barra_vida.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	# Colores
+	var style_bg = StyleBoxFlat.new()
+	style_bg.bg_color = Color(0.1, 0.1, 0.1, 0.9)
+	style_bg.corner_radius_top_left = 3
+	style_bg.corner_radius_top_right = 3
+	style_bg.corner_radius_bottom_left = 3
+	style_bg.corner_radius_bottom_right = 3
+	
+	var style_fg = StyleBoxFlat.new()
+	style_fg.bg_color = Color(0.0, 0.6, 0.3, 1.0) # Verde oscuro/tóxico para el slime
+	style_fg.corner_radius_top_left = 3
+	style_fg.corner_radius_top_right = 3
+	style_fg.corner_radius_bottom_left = 3
+	style_fg.corner_radius_bottom_right = 3
+	
+	barra_vida.add_theme_stylebox_override("background", style_bg)
+	barra_vida.add_theme_stylebox_override("fill", style_fg)
+	
+	barra_vida.top_level = false
+	add_child(barra_vida)
 
 func activar_forma_chica():
 	fase_demonio = false

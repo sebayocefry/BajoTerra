@@ -22,6 +22,7 @@ class_name Enemigo
 
 @export var escena_cristal: PackedScene # con esto arrastramo la escena del cistal en el godot
 @export var escena_oro: PackedScene # escena del cristal de oro a soltar al morir
+@export var probabilidad_dropear_oro: float = 0.5 # 50% (1 de cada 2 monstruos aprox)
 
 # Esta variable almacena la referencia al obj jugador para que el enemigo
 # entregue el mana al morir y este no se pierda.
@@ -49,6 +50,14 @@ func _ready():
 	raycast_vision.enabled = false # Lo actualizamos solo cuando lo necesitamos por rendimiento
 	raycast_vision.collision_mask = 1 # Asumimos que las paredes están en la capa 1
 	add_child(raycast_vision)
+	
+	# Precargar oro si no fue asignado en el editor para garantizar que todos lo suelten
+	if not escena_oro:
+		escena_oro = load("res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn")
+		
+	# Precargar mana si no fue asignado en el editor para garantizar que todos lo suelten
+	if not escena_cristal:
+		escena_cristal = load("res://escenas/objetos/Drop_enemigos/Cristal_mana.tscn")
 	
 	_crear_barra_vida_dinamica()
 
@@ -135,9 +144,9 @@ func morir():
 		# agregamos el cristal al mismo contenedor del enemigo (la habitacion)
 		get_parent().call_deferred("add_child", nuevo_cristal)
 
-	if escena_oro:
+	if escena_oro and randf() <= probabilidad_dropear_oro:
 		var nuevo_oro = escena_oro.instantiate()
-		nuevo_oro.global_position = global_position
+		nuevo_oro.global_position = global_position + Vector2(randf_range(-15, 15), 0) # Pequeño offset para que no se superponga con el mana
 		get_parent().call_deferred("add_child", nuevo_oro)
 
 	super.morir()

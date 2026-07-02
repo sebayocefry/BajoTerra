@@ -17,6 +17,16 @@ var habitaciones_limpias : Dictionary = {}
 var habitacion_resume: String = ""
 var spawn_resume: String = "spawn_entrada"
 
+func resetear_datos_partida_nueva():
+	partida_iniciada = false
+	habitaciones_limpias.clear()
+	inventario.clear()
+	vida_actual = 100
+	mana_actual = 100
+	oro_actual = 0
+	habitacion_resume = ""
+	spawn_resume = "spawn_entrada"
+
 func guardar_estado_jugador(player: Node):
 	print("--- INICIANDO EXTRACCIÓN DE DATOS ---")
 	partida_iniciada = true

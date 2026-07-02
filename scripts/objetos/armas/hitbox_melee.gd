@@ -5,8 +5,18 @@ var fuerza: float = 300.0
 var cuerpos_golpeados: Array = []
 
 func _ready() -> void:
+	# Aseguramos que la máscara de colisión escanee la capa 1 y 3 (igual que las balas)
+	# Esto soluciona que ignore enemigos como el Golem que están en la capa 1
+	collision_mask = 5
+	
 	body_entered.connect(_on_body_entered)
-	# Destruir el hitbox después de un corto tiempo (animación del golpe)
+	
+	# Chequeo infalible
+	await get_tree().physics_frame
+	for cuerpo in get_overlapping_bodies():
+		_on_body_entered(cuerpo)
+		
+	# Destruir el hitbox después de un corto tiempo
 	await get_tree().create_timer(0.15).timeout
 	queue_free()
 

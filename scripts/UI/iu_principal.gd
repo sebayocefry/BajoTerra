@@ -4,6 +4,7 @@ const PanelSlotsScene = preload("res://scripts/UI/menus/panel_slots.gd")
 
 # ── Nueva Partida ──────────────────────────────────────────────────────────────
 func _on_play_pressed() -> void:
+	DatosJugador.resetear_datos_partida_nueva()
 	get_tree().change_scene_to_file("res://escenas/UI/intro/intro_video.tscn")
 
 
