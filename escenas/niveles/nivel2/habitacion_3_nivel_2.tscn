@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="10_qvfx8"]
 [ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="13_vp78c"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="14_pb5sm"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="15_37n2q"]
+[ext_resource type="Texture2D" uid="uid://bxftajfchilox" path="res://assets/assetTutotrial/cuervo.png" id="16_7lvjs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vp78c"]
 shader = ExtResource("2_qvfx8")
@@ -308,3 +310,8 @@ limite_inferior = 1071.0
 
 [node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("14_pb5sm")]
 position = Vector2(290, 287)
+
+[node name="TriggerTutorial" parent="." unique_id=521913725 instance=ExtResource("15_37n2q")]
+position = Vector2(1628, 194)
+mensaje = "Salamanca nos advirtió. Cavamos demasiado profundo y tocamos el infierno. La mina no traga hombres, traga pecados. Si escuchas la voz de quien mataste, ya eres parte de la veta"
+icono_personalizado = ExtResource("16_7lvjs")
