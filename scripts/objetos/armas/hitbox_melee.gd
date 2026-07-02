@@ -3,6 +3,7 @@ extends Area2D
 var dano: int = 0
 var fuerza: float = 300.0
 var cuerpos_golpeados: Array = []
+var escena_efecto: PackedScene = null
 
 func _ready() -> void:
 	# Aseguramos que la máscara de colisión escanee la capa 1 y 3 (igual que las balas)
@@ -28,3 +29,7 @@ func _on_body_entered(cuerpo: Node2D) -> void:
 		cuerpos_golpeados.append(cuerpo)
 		var dir: Vector2 = global_position.direction_to(cuerpo.global_position)
 		cuerpo.recibir_dano(dano, dir * fuerza)
+		if escena_efecto:
+			var efecto = escena_efecto.instantiate()
+			efecto.global_position = cuerpo.global_position
+			get_tree().current_scene.add_child(efecto)

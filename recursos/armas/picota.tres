@@ -1,16 +1,30 @@
 [gd_resource type="Resource" script_class="ArmaCuerpoACuerpo" format=3 uid="uid://u104i6rgb54d"]
 
 [ext_resource type="Script" uid="uid://drfupklv58yg7" path="res://scripts/objetos/armas/arma_cuerpo_a_cuerpo.gd" id="1_pic"]
-[ext_resource type="Texture2D" uid="uid://bo2quawf5h4jw" path="res://assets/fondos_intro/IconoPicota.png" id="2_k128y"]
+[ext_resource type="Texture2D" uid="uid://bxnt8aq8il2m" path="res://assets/iconos/picota.png" id="2_k128y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/armas/hitbox_melee.tscn" id="2_pic"]
+[ext_resource type="PackedScene" uid="uid://bbumwpfiamiru" path="res://escenas/objetos/efectos/chispa_picota.tscn" id="3_pic"]
+[ext_resource type="Texture2D" uid="uid://bpec57ailx1l7" path="res://assets/sprite_brazo/brazo_picota/brazo_abajo_picota.png" id="4_pic"]
+[ext_resource type="Texture2D" uid="uid://dxho7koi42qyq" path="res://assets/sprite_brazo/brazo_picota/brazo_arriba_picota.png" id="5_pic"]
+[ext_resource type="Texture2D" uid="uid://b0370ihg6cf6i" path="res://assets/sprite_brazo/brazo_picota/brazo_derecho_picota.png" id="6_pic"]
+[ext_resource type="Texture2D" uid="uid://ci4t0hevx8imv" path="res://assets/sprite_brazo/brazo_picota/brazo_izquierdo_picota.png" id="7_pic"]
 
 [resource]
 script = ExtResource("1_pic")
 escena_hitbox = ExtResource("2_pic")
+escena_efecto = ExtResource("3_pic")
 distancia_golpe = 120.0
 dano = 35
 costo_mana = 0
 cadencia = 0.6
+brazo_textura_abajo = ExtResource("4_pic")
+brazo_textura_arriba = ExtResource("5_pic")
+brazo_textura_derecha = ExtResource("6_pic")
+brazo_textura_izquierda = ExtResource("7_pic")
+brazo_offset_abajo = Vector2(18, 20)
+brazo_offset_arriba = Vector2(24, 0)
+brazo_offset_derecha = Vector2(0, 20)
+brazo_offset_izquierda = Vector2(-17, 20)
 brazo_escala = Vector2(0.069, 0.056)
 nombre = "Picota"
 icono = ExtResource("2_k128y")

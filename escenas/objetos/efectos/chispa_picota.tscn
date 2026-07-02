@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bbumwpfiamiru"]
+
+[ext_resource type="Script" uid="uid://c3vwappwih566" path="res://scripts/objetos/efectos/chispa_picota.gd" id="1_chispa"]
+[ext_resource type="AudioStream" uid="uid://ckf1k75l6wyj1" path="res://musica/efectos_disparo/sonido_picota_golpe.mp3" id="2_chispa"]
+[ext_resource type="Texture2D" uid="uid://dyobkp4pqsixx" path="res://assets/spritesBalas/picota_golpe_efecto.png" id="2_n52ft"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8rdd"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(1, 0, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toow2"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(331, 0, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3syj6"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(661, 0, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b73fp"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(991, 0, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crod2"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(1, 512, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d68t1"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(331, 512, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqhmb"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(661, 512, 330, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibfc8"]
+atlas = ExtResource("2_n52ft")
+region = Rect2(991, 512, 330, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crod2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8rdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toow2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3syj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b73fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crod2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d68t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqhmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibfc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="ChispaPicota" type="Node2D" unique_id=1039317614]
+script = ExtResource("1_chispa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=358996811]
+modulate = Color(8.804608, 8.804608, 0, 1)
+position = Vector2(0, -3.999999)
+scale = Vector2(0.2670454, 0.28125003)
+sprite_frames = SubResource("SpriteFrames_crod2")
+frame_progress = 0.14395697
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1937814425]
+stream = ExtResource("2_chispa")
