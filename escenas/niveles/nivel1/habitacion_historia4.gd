@@ -12,6 +12,9 @@ func _ready() -> void:
 	LevelTransition.fade_in()
 	DialogueManager.dialogue_ended.connect(_on_dialogo_terminado)
 
+func es_zona_pacifica() -> bool:
+	return true
+
 func _on_dialogo_terminado(_resource: DialogueResource) -> void:
 	DialogueManager.dialogue_ended.disconnect(_on_dialogo_terminado)
 	dialogo_terminado = true
