@@ -6,6 +6,9 @@ var playlist: Array[AudioStream] = []
 var indice_actual: int = 0
 
 func _ready():
+	# Permitir que el AudioManager siga procesando aunque el árbol principal esté pausado
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	# Conectar la señal para cambiar de canción automáticamente cuando termine
 	music_player.finished.connect(_on_music_finished)
 

@@ -16,6 +16,11 @@ var transicionando := false
 func _ready():
 	Eventos.transicion_habitacion_solicitada.connect(_on_transicion_habitacion_solicitada)
 	
+	# Permitir que el sonido ambiental siga sonando cuando el juego se pausa
+	var ambiental = get_node_or_null("../Ambiental")
+	if ambiental:
+		ambiental.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	# Inicia la lista de reproducción usando las canciones asignadas en el inspector
 	if not lista_musica.is_empty():
 		AudioManager.play_music(lista_musica)

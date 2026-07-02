@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://djrj6xh4oa0ih" path="res://musica/fondo/Underground Cavern - Resident Evil 4 Ambience.mp3" id="4_ambient"]
 [ext_resource type="AudioStream" uid="uid://cf2u46sxyhcsp" path="res://musica/Soundtrack/YTMP3GG_YouTube_The-Shining-Theme_Media_1mzNO6MzFEg_007_128k.mp3" id="4_ar765"]
 [ext_resource type="AudioStream" uid="uid://rbxvsy1t787g" path="res://musica/Soundtrack/Creepy Music Box (Dark Music) - Terra Fantasy Music (320k).mp3" id="5_travl"]
-[ext_resource type="AudioStream" uid="uid://byv707jpsyppo" path="res://musica/Soundtrack/Just Take My Wallet.mp3" id="6_1h48g"]
 
 [node name="nivel1" type="Node2D" unique_id=430794997]
 
@@ -20,7 +19,7 @@ velocidad = 200
 
 [node name="GestorNivel" type="Node" parent="." unique_id=1247986830]
 script = ExtResource("3_ar765")
-lista_musica = Array[AudioStream]([ExtResource("4_ar765"), ExtResource("5_travl"), ExtResource("6_1h48g")])
+lista_musica = Array[AudioStream]([ExtResource("4_ar765"), ExtResource("5_travl")])
 
 [node name="Ambiental" type="AudioStreamPlayer" parent="." unique_id=1111222333]
 stream = ExtResource("4_ambient")
