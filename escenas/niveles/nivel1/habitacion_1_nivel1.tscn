@@ -403,7 +403,7 @@ position = Vector2(905, 328)
 [node name="Enemigos" type="Node2D" parent="." unique_id=355805113]
 
 [node name="Chonchon" parent="Enemigos" unique_id=281540093 instance=ExtResource("14_j466s")]
-position = Vector2(1860, 167)
+position = Vector2(1716, 171)
 
 [node name="Fantasma" parent="Enemigos" unique_id=1496251229 instance=ExtResource("15_fv5mg")]
 position = Vector2(916, 117)
@@ -430,6 +430,11 @@ process_material = SubResource("ParticleProcessMaterial_vasvg")
 [node name="MensajeMochila" parent="." unique_id=57464224 instance=ExtResource("17_vasvg")]
 position = Vector2(1092, 312)
 mensaje = "Presiona [M] para abrir el inventario."
+icono_personalizado = ExtResource("19_bvhaj")
+
+[node name="MensajePuerta" parent="." unique_id=1506400849 instance=ExtResource("17_vasvg")]
+position = Vector2(780, 253)
+mensaje = "Necesitas vencer a todos los enemigos paara que se abran las puertas"
 icono_personalizado = ExtResource("19_bvhaj")
 
 [node name="MensajeCaminarDisparar" parent="." unique_id=1395661106 instance=ExtResource("16_xhco0")]

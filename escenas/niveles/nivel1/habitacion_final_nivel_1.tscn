@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bsg77kljtlcvc" path="res://assets/spritesMundos/level1/tierra/tierra_nivefinal.png" id="1_tktx4"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="2_d20dd"]
 [ext_resource type="Shader" uid="uid://361cm43ptdpk" path="res://escenas/niveles/nivel1/neblina1.gdshader" id="2_o17o7"]
-[ext_resource type="Texture2D" uid="uid://be8tiubvs14vv" path="res://assets/spritesMundos/level1/paredes/pared_final_nivel1.png" id="2_sn1bj"]
+[ext_resource type="Texture2D" uid="uid://ch4hselu2jx8n" path="res://assets/spritesMundos/level1/paredes/pared_final_nivel1.png" id="2_sn1bj"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_1dk3o"]
-[ext_resource type="Texture2D" uid="uid://dqrfbtpd0preo" path="res://assets/decoracion/altar.png" id="3_r5c3u"]
+[ext_resource type="Texture2D" uid="uid://davxmfdy5xk1d" path="res://assets/decoracion/altar.png" id="3_r5c3u"]
 [ext_resource type="PackedScene" uid="uid://bt43cx0egit8x" path="res://escenas/objetos/decoraciones/estatua.tscn" id="4_g2lsb"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_xff60"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="6_sn1bj"]
@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://g2r6s5q1ft10" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_arm_sword_shadow3.png" id="9_h6etk"]
 [ext_resource type="Texture2D" uid="uid://f32nepnr6qhm" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/grave5_shadow1.png" id="10_ls27u"]
 [ext_resource type="PackedScene" uid="uid://c4vuletjsu27p" path="res://escenas/niveles/nivel1/puertas/puerta_salida_final_nivel1.tscn" id="13_1dk3o"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="14_xff60"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="15_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://cfen74p4gisas" path="res://escenas/personajes/jefes/jefe_nivel1.tscn" id="16_jvhvx"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="16_o17o7"]
 [ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="18_jvbvm"]
 [ext_resource type="PackedScene" uid="uid://te4yy03wh61x" path="res://escenas/personajes/enemigos/golem_v2.tscn" id="20_kjb3x"]
-[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="22_nv2tb"]
+[ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="22_nv2tb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d20dd"]
 shader = ExtResource("2_o17o7")
@@ -477,12 +477,12 @@ position = Vector2(1467, -241)
 [node name="Enemigos" type="Node2D" parent="." unique_id=1965545012]
 
 [node name="Mukiv2" parent="Enemigos" unique_id=669730601 instance=ExtResource("15_jvhvx")]
-position = Vector2(573, 680)
+position = Vector2(1253, 526)
 dano_contacto = 3
 vida_maxima = 20
 
 [node name="Mukiv3" parent="Enemigos" unique_id=2103037602 instance=ExtResource("16_o17o7")]
-position = Vector2(2334, 669)
+position = Vector2(2162, 612)
 dano_contacto = 3
 escena_cristal = null
 escena_oro = ExtResource("18_jvbvm")
@@ -496,19 +496,19 @@ cadencia_ataque = 1.5
 vida_maxima = 600
 
 [node name="Golemv2" parent="Enemigos" unique_id=1070925211 instance=ExtResource("20_kjb3x")]
-position = Vector2(675, 119)
+position = Vector2(874, 125)
 escena_cristal = null
 escena_oro = ExtResource("18_jvbvm")
 
 [node name="Muki2" parent="Enemigos" unique_id=728436738 instance=ExtResource("16_o17o7")]
-position = Vector2(928, 940)
+position = Vector2(1482, 562)
 dano_contacto = 2
 escena_cristal = null
 escena_oro = ExtResource("18_jvbvm")
 vida_maxima = 30
 
 [node name="Muki3" parent="Enemigos" unique_id=1480090345 instance=ExtResource("16_o17o7")]
-position = Vector2(1810, 835)
+position = Vector2(1645, 729)
 dano_contacto = 2
 vida_maxima = 30
 

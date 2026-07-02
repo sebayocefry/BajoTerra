@@ -2,18 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://c4gpc6fp4dptm" path="res://assets/spritesMundos/level1/tierra/tierra_nivel1_habitacion3.png" id="1_d556v"]
 [ext_resource type="Texture2D" uid="uid://c32sr7ejgdoir" path="res://assets/spritesMundos/level1/paredes/pared4_habitacion3_mundo1.png" id="2_a0hbv"]
-[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="4_xoc2n"]
+[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="4_xoc2n"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="6_a0hbv"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="7_lvrvy"]
 [ext_resource type="PackedScene" uid="uid://bxn30cmidq5oy" path="res://escenas/objetos/luces/fire.tscn" id="7_wmyuc"]
 [ext_resource type="Texture2D" uid="uid://desm3qudufx48" path="res://assets/decoracion/esqueleto.png" id="8_hmltg"]
 [ext_resource type="Texture2D" uid="uid://34xmb5hdc2jl" path="res://assets/decoracion/dragon.png" id="9_5n61j"]
 [ext_resource type="PackedScene" uid="uid://dykml77obfqgg" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitación3_nivel1.tscn" id="9_d556v"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="10_a0hbv"]
 [ext_resource type="PackedScene" uid="uid://dlxn4mvpqultb" path="res://escenas/objetos/Drop_enemigos/Cristal_oro.tscn" id="11_i27g1"]
 [ext_resource type="PackedScene" uid="uid://wmillnq6e7bg" path="res://escenas/personajes/enemigos/esqueleto_en/esqueleto.tscn" id="11_xoc2n"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="12_i27g1"]
-[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="14_pnr65"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="13_hmltg"]
+[ext_resource type="Texture2D" uid="uid://bxftajfchilox" path="res://assets/assetTutotrial/cuervo.png" id="14_5n61j"]
+[ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="14_pnr65"]
 
 [sub_resource type="Gradient" id="Gradient_lrrxv"]
 offsets = PackedFloat32Array(0.38221154, 0.7235577, 0.7235677, 0.8485577)
@@ -409,21 +411,26 @@ escena_oro = ExtResource("11_i27g1")
 vida_maxima = 50
 
 [node name="Rata" parent="Enemigos" unique_id=352191106 instance=ExtResource("12_i27g1")]
-position = Vector2(777, 598)
+position = Vector2(789, 450)
 dano_contacto = 5
 vida_maxima = 30
 
 [node name="Rata2" parent="Enemigos" unique_id=45939749 instance=ExtResource("12_i27g1")]
-position = Vector2(975, 611)
+position = Vector2(963, 466)
 dano_contacto = 5
 vida_maxima = 30
 
 [node name="Rata3" parent="Enemigos" unique_id=1046453564 instance=ExtResource("12_i27g1")]
-position = Vector2(1162, 622)
+position = Vector2(1140, 493)
 dano_contacto = 5
 escena_cristal = null
 escena_oro = ExtResource("11_i27g1")
 vida_maxima = 30
+
+[node name="TriggerTutorial" parent="Enemigos" unique_id=888621069 instance=ExtResource("13_hmltg")]
+position = Vector2(1789, 214)
+mensaje = "Día 12. Clausuramos el pique sur. No por riesgo de derrumbe, sino por el olor. A 500 metros bajo tierra, la roca huele a neumáticos quemados y bencina. Y ese pájaro de mier*** no deja de llorar."
+icono_personalizado = ExtResource("14_5n61j")
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=814659986]
 script = ExtResource("10_a0hbv")

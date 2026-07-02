@@ -2,11 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c046kv4m706uy" path="res://assets/spritesMundos/level2/piso/pisoL2.png" id="1_oswpc"]
 [ext_resource type="PackedScene" uid="uid://c4x6tueta56hm" path="res://escenas/personajes/Comerciante/comerciante.tscn" id="5_8wywf"]
-[ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="5_kcvj7"]
 [ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="6_3e6lv"]
 [ext_resource type="Script" uid="uid://br5ofeqoidb7u" path="res://scripts/objetos/objeto.gd" id="7_5tc7a"]
-[ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="8_inj1v"]
-[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://recursos/consumibles/pocion_vida.tres" id="8_kcvj7"]
+[ext_resource type="Resource" uid="uid://bjqoclop8cuck" path="res://pocion_vida.tres" id="8_kcvj7"]
 [ext_resource type="Resource" uid="uid://bpl2tr5snti78" path="res://recursos/armas/pistola.tres" id="9_3e6lv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]

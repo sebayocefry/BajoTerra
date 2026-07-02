@@ -503,23 +503,23 @@ z_index = 5
 position = Vector2(910, 200)
 
 [node name="Muki" parent="Enemigos" unique_id=669730601 instance=ExtResource("21_835cb")]
-position = Vector2(565, 608)
+position = Vector2(1088, 630)
 escena_cristal = null
 escena_oro = ExtResource("19_n4wuu")
 vida_maxima = 80
 
 [node name="Muki2" parent="Enemigos" unique_id=1082711343 instance=ExtResource("21_835cb")]
-position = Vector2(735, 620)
+position = Vector2(344, 417)
 vida_maxima = 80
 
 [node name="Muki3" parent="Enemigos" unique_id=622458452 instance=ExtResource("21_835cb")]
-position = Vector2(952, 619)
+position = Vector2(1141, 336)
 escena_cristal = null
 escena_oro = ExtResource("19_n4wuu")
 vida_maxima = 80
 
 [node name="Muki4" parent="Enemigos" unique_id=1483568733 instance=ExtResource("21_835cb")]
-position = Vector2(1146, 634)
+position = Vector2(783, 347)
 vida_maxima = 80
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=31082958]

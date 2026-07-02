@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bt43cx0egit8x" path="res://escenas/objetos/decoraciones/estatua.tscn" id="5_37teh"]
 [ext_resource type="PackedScene" uid="uid://caflmqdfer0se" path="res://escenas/objetos/decoraciones/esqueleto_minero.tscn" id="6_hy2py"]
 [ext_resource type="Script" uid="uid://byegwu018djte" path="res://scripts/objetos/luces/estatua.gd" id="7_j7flu"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="8_4nv5p"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="8_4nv5p"]
 [ext_resource type="PackedScene" uid="uid://fxcae1xw8faq" path="res://escenas/personajes/enemigos/muki_v2.tscn" id="9_chfdq"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="10_qvfx8"]
-[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="13_vp78c"]
+[ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="13_vp78c"]
+[ext_resource type="PackedScene" uid="uid://dtohxppjijlpo" path="res://escenas/objetos/PuntosGuardado/PuntoGuardado.tscn" id="14_pb5sm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vp78c"]
 shader = ExtResource("2_qvfx8")
@@ -304,3 +305,6 @@ limite_izquierdo = 4.0
 limite_superior = -90.0
 limite_derecho = 1930.0
 limite_inferior = 1071.0
+
+[node name="PuntoGuardado" parent="." unique_id=548028025 instance=ExtResource("14_pb5sm")]
+position = Vector2(290, 287)

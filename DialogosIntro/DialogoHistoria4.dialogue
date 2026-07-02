@@ -1,14 +1,14 @@
 ~ start
-
-Minero: ¡¡¡Por fin he llegado a la sala de control!!!
-Fantasma: Espera...
-Fantasma: Antes de activar el sistema debo saber si realmente recorriste esta mina.
-Fantasma: Responde.
-Fantasma: ¿Lo pasaste bien este semestre?
-- Si 
-    Fantasma: Que bueno, fue mucho contenido en especial de proyecto...
-    Fantasma: Pero sal antes que el profesor se arrepienta y te deje atrapado..
+MINERO: ¡La sala de control! Si activo los extractores de aire podré despejar los gases y encontrar el elevador secundario.
+FANTASMA (Esqueleto encapuchado): ¿Despejar el humo, papi? ¿Como intentaste hacerlo con las ventanas del auto?
+MINERO: ¡No! ¡Elena, perdóname! ¡Fue un error! ¡Tenía miedo!
+FANTASMA: El miedo es delicioso. A los brujos les encantó tu ofrenda. 
+MINERO: Eres un monstruo de esta mina, ¡no eres ella!
+FANTASMA: Soy el *Tué-Tué*. Soy el dolor de Elena inmortalizado en la piedra. Y tú caminaste directo a nuestra jaula.
+FANTASMA: El Imbunche ya selló la última puerta detrás de ti. 
+- Activar los sistemas (Aceptar la culpa)
+    FANTASMA: Las máquinas no funcionan, papi. Solo nos queda esperar en la oscuridad. Grita para nosotros.
     => END
-- NO
-    Fantasma: Que pena pero hiciste lo que pudiste, te dejaré salir por pena me caiste bien....
+- Intentar huir (Negación total)
+    FANTASMA: ¡Corre a lo oscuro, papi! ¡El Imbunche tiene hambre y le gusta la carne que huye! ¡Arderemos en la cueva para siempre!
     => END

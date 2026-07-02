@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_vxpvh"]
 [ext_resource type="Script" uid="uid://dlv2f2m6l45yc" path="res://escenas/niveles/nivel2/point_light_2D.gd" id="4_h4n1"]
 [ext_resource type="PackedScene" uid="uid://ba0xps7ubued8" path="res://escenas/niveles/nivel1/puertas/puerta_salida_habitacion4_nivel1.tscn" id="6_h4n1"]
-[ext_resource type="Script" uid="uid://clsc7y5xr45ok" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
+[ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="7_h4n1"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/efectos/rayo.tscn" id="7_or5df"]
 [ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="8_7jgji"]
-[ext_resource type="Script" uid="uid://b48ohxwwa24nq" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="9_u2l72"]
+[ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="9_u2l72"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2l72"]
 shader = ExtResource("2_7jgji")
@@ -318,22 +318,22 @@ position = Vector2(928, 275)
 [node name="Enemigos" type="Node2D" parent="." unique_id=1256749191]
 
 [node name="Rata" parent="Enemigos" unique_id=352191106 instance=ExtResource("8_7jgji")]
-position = Vector2(601, 502)
+position = Vector2(1163, 543)
 dano_contacto = 1
 vida_maxima = 50
 
 [node name="Rata2" parent="Enemigos" unique_id=1644079595 instance=ExtResource("8_7jgji")]
-position = Vector2(1195, 463)
+position = Vector2(1017, 300)
 dano_contacto = 1
 vida_maxima = 30
 
 [node name="Rata3" parent="Enemigos" unique_id=1580741834 instance=ExtResource("8_7jgji")]
-position = Vector2(909, 445)
+position = Vector2(1151, 310)
 dano_contacto = 1
 vida_maxima = 50
 
 [node name="Rata4" parent="Enemigos" unique_id=398173628 instance=ExtResource("8_7jgji")]
-position = Vector2(756, 512)
+position = Vector2(847, 328)
 dano_contacto = 1
 vida_maxima = 50
 

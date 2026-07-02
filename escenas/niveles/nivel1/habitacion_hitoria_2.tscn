@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuireiuab5gd" path="res://escenas/personajes/principal/player_v2.tscn" id="3_p8f28"]
 [ext_resource type="PackedScene" uid="uid://ddwewg1uwvbiy" path="res://escenas/personajes/enemigos/bruja_zombie.tscn" id="4_bd5oi"]
 [ext_resource type="Texture2D" uid="uid://ck5r2wy13dxru" path="res://assets/spritesMundos/level1/tierra/pixel_art_small (4).png" id="5_iuq6s"]
-[ext_resource type="Texture2D" uid="uid://wnqm2d365sh2" path="res://Iconos_IU/sangre.png" id="5_p8f28"]
+[ext_resource type="Texture2D" uid="uid://cybemeafc3uop" path="res://Iconos_IU/sangre.png" id="5_p8f28"]
 [ext_resource type="Texture2D" uid="uid://cakaw3qel4lj3" path="res://assets/spritesMundos/level1/tierra/pixel_art_small (6).png" id="6_02che"]
 [ext_resource type="Texture2D" uid="uid://bdjusw7wvc123" path="res://assets/spritesMundos/level1/tierra/pixel_art_small (5).png" id="7_no10q"]
 [ext_resource type="Script" uid="uid://dxj6ksdqu0emy" path="res://escenas/niveles/nivel1/caldero_chorreante.gd" id="8_02che"]
@@ -286,13 +286,6 @@ texture_scale = 1.19
 [node name="Jugador2" parent="." unique_id=1188690017 instance=ExtResource("3_p8f28")]
 position = Vector2(1035, 664)
 scale = Vector2(0.92395675, 1.0391982)
-
-[node name="Camera2D" parent="Jugador2"]
-zoom = Vector2(1.016, 1.016)
-limit_left = 75
-limit_top = 53
-limit_right = 1970
-limit_bottom = 1120
 
 [node name="bruja_zombie" parent="." unique_id=197276932 instance=ExtResource("4_bd5oi")]
 position = Vector2(572.00006, 214)

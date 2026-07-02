@@ -18,13 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://dtx24mpnajm61" path="res://Mundo/pixel_art_small (12).png" id="16_fvy86"]
 [ext_resource type="Texture2D" uid="uid://ctuy0eb5jyevj" path="res://Mundo/pixel_art_small (13).png" id="17_txlio"]
 [ext_resource type="Script" uid="uid://bjl2uwydmv4qu" path="res://escenas/niveles/nivel1/duente.gd" id="18_v2hvd"]
-[ext_resource type="Texture2D" uid="uid://csvem1xcwyk7e" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="19_qkbfs"]
-[ext_resource type="Texture2D" uid="uid://batsd3vs72wvs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="20_qhrq8"]
-[ext_resource type="Texture2D" uid="uid://dkx71am7mqtdj" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="21_7kvlx"]
-[ext_resource type="Texture2D" uid="uid://bjhmr8du4kqqs" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="22_hl1nc"]
+[ext_resource type="Texture2D" uid="uid://copp0w45ch2cc" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Violet_crystal3.png" id="19_qkbfs"]
+[ext_resource type="Texture2D" uid="uid://cw474a7ax8d1i" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/Yellow_crystal1.png" id="20_qhrq8"]
+[ext_resource type="Texture2D" uid="uid://b00uuwuxlfprh" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal3.png" id="21_7kvlx"]
+[ext_resource type="Texture2D" uid="uid://cxexhv8cbomtm" path="res://assets/rocas/Assets_texture_shadow/Assets_texture_shadow/White_crystal1.png" id="22_hl1nc"]
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="23_tdthg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="24_f0lcu"]
 [ext_resource type="AudioStream" uid="uid://dvyc58o221vmm" path="res://Mundo/everything_is_dead-horror-scary-horror-549984.mp3" id="25_qhrq8"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="26_hl1nc"]
+[ext_resource type="Texture2D" uid="uid://bxftajfchilox" path="res://assets/assetTutotrial/cuervo.png" id="27_tdthg"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerFoto.tscn" id="28_c4yx6"]
+[ext_resource type="Texture2D" uid="uid://dm7j6y34cs5qp" path="res://assets/assetTutotrial/dibujoTerror.png" id="29_u0dsq"]
+[ext_resource type="Texture2D" uid="uid://00j1p2n2bq40" path="res://assets/assetTutotrial/hoja.png" id="30_awmfa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ns6qq"]
 shader = ExtResource("3_pnxp1")
@@ -409,13 +414,6 @@ position = Vector2(939, 831)
 scale = Vector2(0.71773016, 0.86219025)
 velocidad = 61
 
-[node name="Camera2D" parent="Jugador2"]
-zoom = Vector2(1.016, 1.016)
-limit_left = 8
-limit_top = 8
-limit_right = 1910
-limit_bottom = 1165
-
 [node name="lampara" type="AnimatedSprite2D" parent="." unique_id=332647043]
 position = Vector2(804, 54.000004)
 scale = Vector2(0.043720167, 0.049671475)
@@ -461,7 +459,7 @@ frame_progress = 0.7863526
 script = ExtResource("12_qkbfs")
 
 [node name="MineroZombie" parent="." unique_id=17375600 instance=ExtResource("13_qhrq8")]
-position = Vector2(1190, 564)
+position = Vector2(1188.0001, 648.00006)
 rotation = 0.027642671
 scale = Vector2(-1.2153082, 1.0942843)
 
@@ -606,7 +604,7 @@ scale = Vector2(2.4375, 2.5)
 texture = ExtResource("21_7kvlx")
 
 [node name="WhiteCrystal1" type="Sprite2D" parent="decoraciones" unique_id=911344177]
-position = Vector2(1096, 341)
+position = Vector2(1159, 426)
 scale = Vector2(1.15625, 1.15625)
 texture = ExtResource("22_hl1nc")
 
@@ -631,5 +629,15 @@ texture = ExtResource("24_f0lcu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2016165601]
 stream = ExtResource("25_qhrq8")
 autoplay = true
+
+[node name="TriggerTutorial" parent="." unique_id=1502137501 instance=ExtResource("26_hl1nc")]
+position = Vector2(742, 822)
+mensaje = "Salamanca nos advirtió. Cavamos demasiado profundo y tocamos el infierno. La mina no traga hombres, traga pecados. Si escuchas la voz de quien mataste, ya eres parte de la veta"
+icono_personalizado = ExtResource("27_tdthg")
+
+[node name="dibujoAuto" parent="." unique_id=1412503656 instance=ExtResource("28_c4yx6")]
+position = Vector2(756, 441)
+foto_a_mostrar = ExtResource("29_u0dsq")
+icono_personalizado = ExtResource("30_awmfa")
 
 [connection signal="body_entered" from="SalidaHistoria4" to="." method="_on_salida_historia4_body_entered"]

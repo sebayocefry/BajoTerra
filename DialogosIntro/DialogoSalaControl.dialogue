@@ -1,9 +1,13 @@
 ~ start
-Minero: ¡¡¡¿Qué es eso?!!!!
-Zombie: trabajamos juntos pero he muerto, ¿puedes salvar mi alma?.
-- si
-	Zombie: Debes derrorar al gran jefe, suerte con eso....
-- no
-	Zombie: Siempre me caiste mas de todas formas....
-Zombie: Adios!!!
+MINERO: ¡Pedro! ¡Dios mío, estás vivo! ¿Qué te pasó en la cara? ¡Tus orejas!
+ZOMBIE (Pedro): Me las arranqué, Tomás. Pero no sirvió. El graznido está adentro de mi cráneo.
+MINERO: Ven conmigo, te sacaré de aquí. Conozco los planos.
+ZOMBIE: ¡Nadie sale! El Chonchón... me voló la cabeza con sus alas invisibles. Y no dejaba de hablarme con la voz de tu hija.
+MINERO: ¡Cállate! ¡No hables de Elena!
+ZOMBIE: "Papi, me quemo... Papi, ¿por qué corres?". Eso repetía el pájaro, Tomás. Eres un cobarde.
+ZOMBIE: El Imbunche me dejó aquí para bloquearte el paso. Solo puedes avanzar si apagas mi alma.
+- Matar a Pedro
+    ZOMBIE: Gracias... haz que el fuego de esa niña se apague...
+- Negarse
+    ZOMBIE: Eres igual de cobarde que esa noche. ¡Entonces arderemos juntos cuando el guardián nos atrape!
 => END
