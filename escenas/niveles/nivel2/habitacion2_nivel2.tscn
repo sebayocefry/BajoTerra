@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="9_glfcm"]
 [ext_resource type="PackedScene" uid="uid://c7vhqvdlsyf82" path="res://escenas/personajes/enemigos/muki_v3.tscn" id="9_vxiaa"]
 [ext_resource type="PackedScene" uid="uid://l22fhd10ao1r" path="res://escenas/personajes/enemigos/gollem.tscn" id="12_72d6e"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerFoto.tscn" id="12_kw3ss"]
+[ext_resource type="Texture2D" uid="uid://dm7j6y34cs5qp" path="res://assets/assetTutotrial/dibujoTerror.png" id="13_l0fdg"]
 [ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="13_rv56h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_72d6e"]
@@ -406,6 +408,10 @@ position = Vector2(1108, 313)
 
 [node name="Gollem" parent="Enemigos" unique_id=1419715020 instance=ExtResource("12_72d6e")]
 position = Vector2(887, 230)
+
+[node name="TriggerFoto" parent="Enemigos" unique_id=1461076712 instance=ExtResource("12_kw3ss")]
+position = Vector2(1758, 202)
+foto_a_mostrar = ExtResource("13_l0fdg")
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=986253405]
 script = ExtResource("9_glfcm")

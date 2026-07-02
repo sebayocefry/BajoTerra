@@ -25,11 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://3rmn7bhn8vpm" path="res://escenas/objetos/decoraciones/bola.tscn" id="23_tdthg"]
 [ext_resource type="Texture2D" uid="uid://cpgs81mkmyts4" path="res://assets/esqueletos/esqueletos/PNG/Objects_separately/bone_claws_shadow2.png" id="24_f0lcu"]
 [ext_resource type="AudioStream" uid="uid://dvyc58o221vmm" path="res://Mundo/everything_is_dead-horror-scary-horror-549984.mp3" id="25_qhrq8"]
-[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerTutorial.tscn" id="26_hl1nc"]
-[ext_resource type="Texture2D" uid="uid://bxftajfchilox" path="res://assets/assetTutotrial/cuervo.png" id="27_tdthg"]
-[ext_resource type="PackedScene" path="res://escenas/objetos/TriggerFoto.tscn" id="28_c4yx6"]
-[ext_resource type="Texture2D" uid="uid://dm7j6y34cs5qp" path="res://assets/assetTutotrial/dibujoTerror.png" id="29_u0dsq"]
-[ext_resource type="Texture2D" uid="uid://00j1p2n2bq40" path="res://assets/assetTutotrial/hoja.png" id="30_awmfa"]
 [ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="31_gui4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ns6qq"]
@@ -639,15 +634,5 @@ texture = ExtResource("24_f0lcu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2016165601]
 stream = ExtResource("25_qhrq8")
 autoplay = true
-
-[node name="TriggerTutorial" parent="." unique_id=1502137501 instance=ExtResource("26_hl1nc")]
-position = Vector2(742, 822)
-mensaje = "Salamanca nos advirtió. Cavamos demasiado profundo y tocamos el infierno. La mina no traga hombres, traga pecados. Si escuchas la voz de quien mataste, ya eres parte de la veta"
-icono_personalizado = ExtResource("27_tdthg")
-
-[node name="dibujoAuto" parent="." unique_id=1412503656 instance=ExtResource("28_c4yx6")]
-position = Vector2(756, 441)
-foto_a_mostrar = ExtResource("29_u0dsq")
-icono_personalizado = ExtResource("30_awmfa")
 
 [connection signal="body_entered" from="SalidaHistoria4" to="." method="_on_salida_historia4_body_entered"]

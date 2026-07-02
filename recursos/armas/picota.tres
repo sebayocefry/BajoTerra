@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://drfupklv58yg7" path="res://scripts/objetos/armas/arma_cuerpo_a_cuerpo.gd" id="1_pic"]
 [ext_resource type="Texture2D" uid="uid://bxnt8aq8il2m" path="res://assets/iconos/picota.png" id="2_k128y"]
 [ext_resource type="PackedScene" path="res://escenas/objetos/armas/hitbox_melee.tscn" id="2_pic"]
-[ext_resource type="PackedScene" uid="uid://bbumwpfiamiru" path="res://escenas/objetos/efectos/chispa_picota.tscn" id="3_pic"]
+[ext_resource type="PackedScene" path="res://escenas/objetos/efectos/chispa_picota.tscn" id="3_pic"]
 [ext_resource type="Texture2D" uid="uid://bpec57ailx1l7" path="res://assets/sprite_brazo/brazo_picota/brazo_abajo_picota.png" id="4_pic"]
 [ext_resource type="Texture2D" uid="uid://dxho7koi42qyq" path="res://assets/sprite_brazo/brazo_picota/brazo_arriba_picota.png" id="5_pic"]
 [ext_resource type="Texture2D" uid="uid://b0370ihg6cf6i" path="res://assets/sprite_brazo/brazo_picota/brazo_derecho_picota.png" id="6_pic"]
-[ext_resource type="Texture2D" uid="uid://ci4t0hevx8imv" path="res://assets/sprite_brazo/brazo_picota/brazo_izquierdo_picota.png" id="7_pic"]
+[ext_resource type="Texture2D" uid="uid://82yvwk2j4cuy" path="res://assets/sprite_brazo/brazo_picota/brazo_izquierdo_picota.png" id="7_pic"]
 
 [resource]
 script = ExtResource("1_pic")
