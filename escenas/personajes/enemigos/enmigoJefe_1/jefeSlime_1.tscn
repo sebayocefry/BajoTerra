@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drjt7i4vhbalr" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefe_slime_1.gd" id="1_xycwc"]
 [ext_resource type="Texture2D" uid="uid://bihw1oandxflt" path="res://escenas/personajes/enemigos/enmigoJefe_1/ataque_sprite_H19_FRAME147x146_ALINEADO_BRILLANTE_TRANSPARENTE.png" id="2_xycwc"]
+[ext_resource type="PackedScene" uid="uid://fhn31b2htu1p" path="res://escenas/personajes/enemigos/rata/rata.tscn" id="2_yuiqn"]
 [ext_resource type="Texture2D" uid="uid://b3gakeyencvkf" path="res://assets/spritsEnemigos/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="3_yuiqn"]
 [ext_resource type="Script" uid="uid://ul0vlymd4r74" path="res://scripts/maquina_estado_jefe/maquina_estado_2.gd" id="4_tw6aw"]
 [ext_resource type="Script" uid="uid://c1c7n0o2yl4d7" path="res://escenas/personajes/enemigos/enmigoJefe_1/perseguir.gd" id="5_yteuj"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bgcnd3is5u1yc" path="res://escenas/personajes/enemigos/enmigoJefe_1/transformacion.gd" id="9_jc636"]
 [ext_resource type="Script" uid="uid://ct2rmp1sbycad" path="res://escenas/personajes/enemigos/enmigoJefe_1/fase_demonio.gd" id="10_kcayi"]
 [ext_resource type="Script" uid="uid://bqwjg1xrb6baw" path="res://escenas/personajes/enemigos/enmigoJefe_1/curacion_demonio.gd" id="11_3ojgo"]
+[ext_resource type="Script" uid="uid://cn5lbqcrrsi55" path="res://escenas/personajes/enemigos/enmigoJefe_1/invocar_enemigos.gd" id="11_yuiqn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2kgw"]
 radius = 99.0
@@ -212,6 +214,70 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["res://.godot/imported/idle_sprite_H14_FRAME147x146_ALINEADO_TRANSPARENTE.png-3cce814584c7dc71e8e283b15c05d9bd.ctex"]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SpriteGrande:texture:load_path")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/demon_slime_FREE_v1.0_288x160_spritesheet.png-b44cd61a01d73acce7852c4c9f2ad827.ctex"]
+}
+
+[sub_resource type="Animation" id="Animation_xycwc"]
+resource_name = "ataque2"
+length = 0.3466
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteGrande:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/demon_slime_FREE_v1.0_288x160_spritesheet.png-b44cd61a01d73acce7852c4c9f2ad827.ctex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteGrande:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [22]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteGrande:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpriteGrande:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [58, 57, 56, 55, 54, 53, 54, 55, 56, 57, 58]
 }
 
 [sub_resource type="Animation" id="Animation_5hxh4"]
@@ -918,6 +984,58 @@ tracks/9/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_3ojgo"]
+resource_name = "invocacion"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteGrande:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/demon_slime_FREE_v1.0_288x160_spritesheet.png-b44cd61a01d73acce7852c4c9f2ad827.ctex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteGrande:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [22]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteGrande:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpriteGrande:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [58, 57, 56, 55, 56, 57, 58, 57, 56, 55, 56, 57, 58]
+}
+
 [sub_resource type="Animation" id="Animation_njsam"]
 resource_name = "transformacion"
 length = 0.7736
@@ -1045,6 +1163,7 @@ tracks/9/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kmn6e"]
 _data = {
 &"RESET": SubResource("Animation_6ai2c"),
+&"ataque2": SubResource("Animation_xycwc"),
 &"chico_atacar": SubResource("Animation_5hxh4"),
 &"chico_correr": SubResource("Animation_7x656"),
 &"chico_idle": SubResource("Animation_f6ak2"),
@@ -1052,15 +1171,16 @@ _data = {
 &"demonio_correr": SubResource("Animation_uudbi"),
 &"demonio_curacion": SubResource("Animation_yuiqn"),
 &"demonio_idle": SubResource("Animation_68a8i"),
+&"invocacion": SubResource("Animation_3ojgo"),
 &"transformacion": SubResource("Animation_njsam")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0efv"]
 radius = 153.0
-height = 458.0
+height = 362.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw6aw"]
-size = Vector2(802, 312)
+size = Vector2(1142, 312)
 
 [node name="JefeSlime1" type="CharacterBody2D" unique_id=1584594003]
 motion_mode = 1
@@ -1070,6 +1190,8 @@ velocidad_anim_transformacion = 0.5
 dano_contacto = 5
 dano_demonio = 7
 distancia_vision = 3000.0
+escena_enemigo_invocado = ExtResource("2_yuiqn")
+cantidad_invocados = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946553770]
 position = Vector2(22, -412.99997)
@@ -1101,7 +1223,7 @@ vframes = 5
 
 [node name="ColisionDemonio" type="CollisionShape2D" parent="." unique_id=482650893]
 visible = false
-position = Vector2(0, -211)
+position = Vector2(5, -156)
 shape = SubResource("CapsuleShape2D_g0efv")
 debug_color = Color(0.9895335, 0, 0.29477713, 0.41960785)
 
@@ -1109,7 +1231,7 @@ debug_color = Color(0.9895335, 0, 0.29477713, 0.41960785)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_ataqueDemonio" unique_id=1129651076]
-position = Vector2(7, -125)
+position = Vector2(-2, -125)
 shape = SubResource("RectangleShape2D_tw6aw")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)
 
@@ -1134,6 +1256,9 @@ script = ExtResource("10_kcayi")
 
 [node name="CuracionDemonio" type="Node" parent="maquina_Estado_2" unique_id=876576537]
 script = ExtResource("11_3ojgo")
+
+[node name="InvocarEnemigos" type="Node" parent="maquina_Estado_2" unique_id=412001488]
+script = ExtResource("11_yuiqn")
 
 [connection signal="body_entered" from="Zona_ataque" to="." method="_on_zona_ataque_body_entered"]
 [connection signal="body_exited" from="Zona_ataque" to="." method="_on_zona_ataque_body_exited"]

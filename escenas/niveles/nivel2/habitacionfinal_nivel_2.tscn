@@ -147,6 +147,7 @@ position = Vector2(2230, 677)
 texture = ExtResource("7_vdkgj")
 
 [node name="sombras" type="Node2D" parent="." unique_id=811708858]
+visible = false
 
 [node name="PointLight2D3" type="PointLight2D" parent="sombras" unique_id=835694121]
 position = Vector2(466.00003, 886)
@@ -249,7 +250,7 @@ texture_scale = 1.19
 script = ExtResource("3_ri026")
 
 [node name="morado" type="PointLight2D" parent="sombras" unique_id=176543786]
-position = Vector2(1397, 568.00006)
+position = Vector2(1407, 560.00006)
 scale = Vector2(12.447479, 8.798269)
 color = Color(0.5120001, 0.16, 0.8, 1)
 energy = 1.92
@@ -569,7 +570,7 @@ position = Vector2(1878, -37)
 shape = SubResource("RectangleShape2D_5n2y7")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="colisiones" unique_id=435694492]
-position = Vector2(546, 431)
+position = Vector2(539, 479)
 shape = SubResource("RectangleShape2D_5n2y7")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="colisiones" unique_id=2031276360]
@@ -638,15 +639,17 @@ script = ExtResource("9_vdkgj")
 [node name="Enemigos" type="Node2D" parent="." unique_id=470350354]
 
 [node name="Mukiv3" parent="Enemigos" unique_id=2103037602 instance=ExtResource("12_o71py")]
-position = Vector2(2005, 693)
+position = Vector2(1848, 996)
 
 [node name="Mukiv4" parent="Enemigos" unique_id=437540208 instance=ExtResource("12_o71py")]
-position = Vector2(909, 689)
+position = Vector2(1040, 965)
 
 [node name="JefeSlime1" parent="Enemigos" unique_id=1584594003 instance=ExtResource("11_5n2y7")]
-position = Vector2(1387, 531)
+position = Vector2(1487, 168)
 vida_fase_chica = 50
-vida_fase_demonio = 300
+vida_fase_demonio = 400
+dano_contacto = 10
+dano_demonio = 13
 curaciones_maximas = 1
 porcentaje_curacion = 0.5
 

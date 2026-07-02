@@ -29,6 +29,13 @@ class_name EnemigoJefeBrr
 var curaciones_usadas : int = 0
 var curandose : bool = false
 
+@export_group("Invocacion")
+@export var anim_demonio_invocacion : String = "invocacion"
+@export var escena_enemigo_invocado : PackedScene
+@export var cantidad_invocados : int = 2
+@export var distancia_invocacion : float = 120.0
+
+
 @export_group("Animaciones Chico")
 @export var anim_reposo : String = "chico_idle"
 @export var anim_movimiento : String = "chico_correr"
@@ -39,6 +46,7 @@ var curandose : bool = false
 @export var anim_demonio_reposo : String = "demonio_idle"
 @export var anim_demonio_movimiento : String = "demonio_correr"
 @export var anim_demonio_ataque : String = "demonio_atacar"
+@export var anim_demonio_ataque_2 : String = "ataque2"
 
 @export var escena_cristal : PackedScene
 
