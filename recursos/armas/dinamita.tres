@@ -10,8 +10,8 @@
 [resource]
 script = ExtResource("1_dyn")
 velocidad_lanzamiento = 350.0
-dano = 70
-costo_mana = 0
+dano = 100
+costo_mana = 40
 cadencia = 3.0
 escena_bala = ExtResource("2_dyn")
 brazo_textura_abajo = ExtResource("1_pbabi")

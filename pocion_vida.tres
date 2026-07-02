@@ -9,5 +9,5 @@ cura_vida = 50
 nombre = "Pocion de vida"
 descripcion = "Una pocion de vida echa con sangre de los que perecieron"
 icono = ExtResource("1_lsyka")
-precio_oro = 50
+precio_oro = 10
 metadata/_custom_type_script = "uid://cfvgcgcvi2o8"

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bliujo2h13lcv" path="res://escenas/niveles/nivel2/puertas/puerta4_nivel2.tscn" id="3_h4n2"]
 [ext_resource type="Script" uid="uid://cga54tyyxm3ug" path="res://scripts/objetos/luces/iluminacion.gd" id="3_m8a4q"]
 [ext_resource type="Script" uid="uid://cst7gnh4x1f16" path="res://scripts/common/ControladorNivel.gd" id="5_h4n2"]
-[ext_resource type="PackedScene" uid="uid://pysus3o7btm1" path="res://escenas/personajes/enemigos/enmigoJefe_1/jefeSlime_1.tscn" id="6_m8a4q"]
+[ext_resource type="PackedScene" uid="uid://d1yxss0hdyjpb" path="res://escenas/personajes/enemigos/chonchon.tscn" id="5_p7rnx"]
 [ext_resource type="Script" uid="uid://cs0xjeys62gm6" path="res://scripts/common/ConfigCamaraHabitacion.gd" id="7_p7rnx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8a4q"]
@@ -272,12 +272,11 @@ position = Vector2(893, 284)
 
 [node name="Enemigos" type="Node2D" parent="." unique_id=650431037]
 
-[node name="JefeSlime1" parent="Enemigos" unique_id=1584594003 instance=ExtResource("6_m8a4q")]
-position = Vector2(1308, 538)
-vida_fase_chica = 50
-vida_fase_demonio = 300
-curaciones_maximas = 1
-porcentaje_curacion = 0.39
+[node name="Chonchon2" parent="Enemigos" unique_id=877625359 instance=ExtResource("5_p7rnx")]
+position = Vector2(446, 405)
+
+[node name="Chonchon3" parent="Enemigos" unique_id=998788834 instance=ExtResource("5_p7rnx")]
+position = Vector2(1260, 455)
 
 [node name="ControladorNivel" type="Node2D" parent="." unique_id=147698611]
 script = ExtResource("5_h4n2")
@@ -360,3 +359,6 @@ usar_limites_manuales = true
 limite_izquierdo = 4.0
 limite_derecho = 1924.0
 limite_inferior = 1071.0
+
+[node name="Chonchon" parent="." unique_id=1587555259 instance=ExtResource("5_p7rnx")]
+position = Vector2(867, 361)
