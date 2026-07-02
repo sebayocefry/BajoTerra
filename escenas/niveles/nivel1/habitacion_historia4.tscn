@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" path="res://escenas/objetos/TriggerFoto.tscn" id="28_c4yx6"]
 [ext_resource type="Texture2D" uid="uid://dm7j6y34cs5qp" path="res://assets/assetTutotrial/dibujoTerror.png" id="29_u0dsq"]
 [ext_resource type="Texture2D" uid="uid://00j1p2n2bq40" path="res://assets/assetTutotrial/hoja.png" id="30_awmfa"]
+[ext_resource type="PackedScene" uid="uid://b8hyfb6xkhqwf" path="res://escenas/UI/hud/GUI.tscn" id="31_gui4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ns6qq"]
 shader = ExtResource("3_pnxp1")
@@ -157,6 +158,8 @@ color_initial_ramp = SubResource("GradientTexture1D_ni1cm")
 
 [node name="habitacionHistoria" type="Node2D" unique_id=1411430258]
 script = ExtResource("1_kfh2s")
+
+[node name="GUI" parent="." instance=ExtResource("31_gui4")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=160739336]
 offset_top = -3.0
@@ -413,6 +416,13 @@ texture_scale = 1.19
 position = Vector2(939, 831)
 scale = Vector2(0.71773016, 0.86219025)
 velocidad = 61
+
+[node name="Camera2D" parent="Jugador2"]
+zoom = Vector2(1.016, 1.016)
+limit_left = 8
+limit_top = 8
+limit_right = 1910
+limit_bottom = 1165
 
 [node name="lampara" type="AnimatedSprite2D" parent="." unique_id=332647043]
 position = Vector2(804, 54.000004)

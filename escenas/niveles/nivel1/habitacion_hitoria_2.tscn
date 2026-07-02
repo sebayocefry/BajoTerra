@@ -287,6 +287,13 @@ texture_scale = 1.19
 position = Vector2(1035, 664)
 scale = Vector2(0.92395675, 1.0391982)
 
+[node name="Camera2D" parent="Jugador2"]
+zoom = Vector2(1.016, 1.016)
+limit_left = 75
+limit_top = 53
+limit_right = 1970
+limit_bottom = 1120
+
 [node name="bruja_zombie" parent="." unique_id=197276932 instance=ExtResource("4_bd5oi")]
 position = Vector2(572.00006, 214)
 scale = Vector2(0.23453185, 0.19710875)
